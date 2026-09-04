@@ -1,6 +1,6 @@
 # Canon
 
-This file defines established facts and decisions about the Personal AI Core project.
+This file defines established facts and decisions about PAE.
 
 ## Canon Rules
 
@@ -43,7 +43,8 @@ under the user's control wherever technically practical.
 
 ## Established Decisions
 
-- Project working name: Personal AI Core
+- Project name: PAE
+- Pronunciation: roughly “pei”
 - Public-facing assistant name: UNKNOWN
 - Repository: hssgj/PAE
 - Architecture: provider-independent
