@@ -23,34 +23,21 @@ The eventual system should NOT depend on a single markdown file as its final mem
 - Current stage: Foundation
 - Main objective: build a persistent, provider-independent artificial entity
 
-## CORE VISION
+## CORE UNDERSTANDING
 
-PAE should eventually be more than a chatbot or a wrapper around one model.
+PAE is not intended to be another chatbot or a permanent wrapper around one AI provider.
 
-It should maintain persistent memory, identity, continuity, capabilities and increasing autonomy while being able to change the AI models and tools underneath it.
+The persistent layer belongs to the project; models and tools are replaceable components.
 
-The long-term direction includes:
-
-- multi-model capability
-- intelligent routing
-- user-owned memory and continuity
-- tool use and external integrations
-- task decomposition and planning
-- verification and recovery from ordinary failures
-- increasingly autonomous execution
-- eventual reduction of dependence on commercial AI providers
-- potentially self-controlled or local infrastructure
-- persistent personality and possibly an affective/emotional model
+Important project knowledge should remain portable outside individual AI conversations. GitHub is part of that continuity philosophy.
 
 ## CONTINUITY PHILOSOPHY
 
-Important projects should not live only inside an AI conversation.
+Projects should remain usable when the AI working on them changes.
 
-GitHub and other portable repositories can act as external continuity layers that different AI systems can read and work with.
+Existing projects such as AOT, Naruto 5e, Frostfire, Silkbound and related work are examples of portable knowledge units that different AI systems can access and continue.
 
-The AI may change. The project knowledge should remain portable.
-
-Existing projects such as AOT, Naruto 5e, Frostfire, Silkbound and related work are examples of this philosophy.
+The AI may change. The project knowledge should remain.
 
 ## PRINCIPLES
 
@@ -70,6 +57,6 @@ Step 1 has started.
 
 Repository foundation is being established.
 
-The long-term destination has become clearer, but implementation architecture has not yet been finalized.
+The immediate task is to define the architecture without prematurely implementing the five-year destination.
 
-Future concepts such as genuine emotion, an own language, consciousness, self-improvement and fully autonomous operation remain UNKNOWN rather than established capabilities.
+The ambitious long-term destination is preserved separately in `PROMISE.md`.
