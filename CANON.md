@@ -79,20 +79,13 @@ PAE must prefer an explicit UNKNOWN, uncertainty or failure state over inventing
 - Repository: hssgj/PAE
 - Architecture: provider-independent
 - Target: mobile-stable personal AI system
-- Long-term direction: increasingly autonomous, persistent and self-controlled
+- Long-term direction: persistent and increasingly autonomous
 - Current stage: Foundation
 
-## Long-Term Ideas Not Yet Canonized
+## Future Direction
 
-The following are intentional future directions, not guaranteed capabilities:
+Ambitious long-term concepts are intentionally preserved in `PROMISE.md` rather than treated as present-day requirements or guaranteed capabilities.
 
-- persistent personality and identity
-- an internal affective/emotional model
-- an own language or structured internal communication system
-- substantial self-hosted or local intelligence
-- autonomous long-running goals
-- self-maintained programs and workflows
-- self-repair or self-improvement mechanisms
-- a formal PAE constitution governing high-level behavior
+`VISION.md` describes the current direction and near-term architectural intent.
 
-Whether these become technically or philosophically possible in the intended form remains UNKNOWN.
+`PROMISE.md` preserves the larger destination.
