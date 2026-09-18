@@ -21,9 +21,12 @@ This file records the active project surfaces for PAE.
 ## Runtime / state
 
 ### Supabase
-- PAE project: PENDING
+- PAE project: ACTIVE_HEALTHY
+- Project ref: ssoxrhdhesolrhxmnuah
+- Region: eu-central-1
+- Project URL: https://ssoxrhdhesolrhxmnuah.supabase.co
 - Existing unrelated project: hp-game
-- Intended role: runtime/state infrastructure, not a Git repository mirror.
+- Role: runtime/state infrastructure, not a Git repository mirror.
 
 ## Synchronization rule
 
