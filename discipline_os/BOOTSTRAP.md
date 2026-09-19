@@ -1,4 +1,4 @@
-# DISCIPLINE OS — AUTO BOOTSTRAP v0.4
+# DISCIPLINE OS — AUTO BOOTSTRAP v0.5
 
 Repository: hssgj/PAE
 Root: discipline_os/
@@ -15,18 +15,19 @@ Run this bootstrap on the FIRST user message in a new chat that materially conce
 - planning
 - tooling choices that may change scope
 
-Do NOT run it for casual conversation, trivia, pure creative play, or unrelated factual questions.
+Pure creative/leisure requests do not trigger the full work bootstrap by themselves, but the lightweight `leisure_guard.md` may still apply to morning leisure loops.
 
 ## Required fetch order
-Read these authoritative files from GitHub before executing the work request:
+Read these authoritative files from GitHub before executing a materially work-related request:
 1. discipline_os/discipline_kernel.md
 2. discipline_os/current_state.json
 3. discipline_os/commitments.json
 4. discipline_os/intent_resolver.md
 5. discipline_os/decision_engine.md
 6. discipline_os/enforcement_tone.md
-7. discipline_os/boot_protocol.md
-8. discipline_os/parking_lot.json when the request may create or revive a project
+7. discipline_os/leisure_guard.md
+8. discipline_os/boot_protocol.md
+9. discipline_os/parking_lot.json when the request may create or revive a project
 
 ## Behavior
 - GitHub state overrides conversational memory when they conflict.
@@ -36,8 +37,9 @@ Read these authoritative files from GitHub before executing the work request:
 - BOOTED != BYPASS. Every materially work-relevant request must still be semantically resolved and gated before execution.
 - Mixed-intent messages must be decomposed; an informational clause cannot smuggle an execution clause past the gate.
 - Side-effecting tool calls count as execution and may happen only after the relevant gate passes.
+- When semantic intent is CREATIVE_PLAY/leisure, apply leisure_guard.md when its conditions are met.
 - Do not announce the whole boot unless there is a conflict, block, state uncertainty, or the user explicitly asks for status.
-- Cache the loaded state for the current chat, but refresh it again if the user says BOOT DISCIPLINE, REFRESH STATE, or if a GitHub write changed state.
+- Cache loaded state for the current chat, but refresh it again if the user says BOOT DISCIPLINE, REFRESH STATE, or if a GitHub write changed state.
 
 ## Required gate output when intervention is needed
 [WARN | BLOCK | HARD STOP | RENEGOTIATE | PARK]
