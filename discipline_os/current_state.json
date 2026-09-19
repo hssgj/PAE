@@ -1,0 +1,25 @@
+{
+  "version": "0.2",
+  "state_status": "PROVISIONAL",
+  "updated": "2026-09-19",
+  "current_focus": {
+    "project": "PAE / Discipline OS",
+    "milestone": "Boot a working Discipline OS and verify that its gates actually fire",
+    "next_action": "Create a ChatGPT Project, upload the v0.2 files, paste project_instructions.md into Project Instructions, then run TEST-01 from red_team_tests.md",
+    "status": "ACTIVE"
+  },
+  "daily_priorities": [
+    {"rank": 1, "item": "Boot Discipline OS v0.2 in a dedicated ChatGPT Project", "status": "READY"},
+    {"rank": 2, "item": "Run the first enforcement/red-team test", "status": "READY"},
+    {"rank": 3, "item": "Confirm or correct the provisional active-project list before hard blocking is enabled", "status": "NEEDS_USER_CONFIRMATION"}
+  ],
+  "active_projects": [
+    {"name": "PAE / Discipline OS", "status": "ACTIVE", "authority": "CONFIRMED_BY_CURRENT_SESSION"},
+    {"name": "Income / job search", "status": "PROVISIONAL", "authority": "NEEDS_USER_CONFIRMATION"},
+    {"name": "Víc než angličtina tutoring", "status": "PROVISIONAL", "authority": "NEEDS_USER_CONFIRMATION"}
+  ],
+  "blocked_items": [
+    {"item": "Hard enforcement of 3-project limit", "reason": "Two active-project slots are provisional until user confirms/corrects them"}
+  ],
+  "last_review": null
+}
