@@ -1,0 +1,15 @@
+{
+  "version": "0.2",
+  "commitments": [
+    {
+      "id": "C-001",
+      "created": "2026-09-19",
+      "text": "Make Discipline OS function as an enforceable system rather than a memory-only prompt.",
+      "status": "ACTIVE",
+      "project": "PAE / Discipline OS",
+      "next_action": "Boot v0.2 and run TEST-01",
+      "due": null,
+      "authority": "CONFIRMED_BY_CURRENT_SESSION"
+    }
+  ]
+}
