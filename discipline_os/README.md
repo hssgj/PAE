@@ -1,23 +1,24 @@
-# MATTHAEL DISCIPLINE OS v0.2
+# MATTHAEL DISCIPLINE OS v0.3
 
 Persistent enforcement layer for PAE.
 
-## Boot order
-1. discipline_kernel.md
-2. current_state.json
-3. commitments.json
-4. decision_engine.md
-5. boot_protocol.md
+## Automatic ChatGPT boot
+On the first materially work-related prompt in a new chat, use `BOOTSTRAP.md` as the entrypoint and fetch authoritative state from this repository before executing the request.
 
-## ChatGPT Project boot
-1. Create a dedicated ChatGPT Project named `DISCIPLINE OS`.
-2. Upload the files from this folder.
-3. Copy `project_instructions.md` into Project Instructions.
-4. Start a new chat and send `BOOT DISCIPLINE`.
-5. Run tests from `red_team_tests.md`.
+Important limitation: no system can run before the user sends the first message. Auto-boot means "first relevant message -> fetch state -> then answer".
+
+## Boot order
+1. BOOTSTRAP.md
+2. discipline_kernel.md
+3. current_state.json
+4. commitments.json
+5. decision_engine.md
+6. enforcement_tone.md
+7. boot_protocol.md
+8. parking_lot.json when relevant
 
 ## Important
-`current_state.json` contains two PROVISIONAL active projects. They are placeholders, not confirmed canon. Hard enforcement of the 3-project limit remains disabled until confirmed or corrected.
+`current_state.json` currently contains PROVISIONAL project state. Provisional entries are not confirmed canon.
 
 ## Repository role
-This folder is the persistent source of truth. Chat memory is context, not authoritative runtime state.
+This folder is the authoritative persistent state for Discipline OS. Chat memory is context, not runtime truth.
