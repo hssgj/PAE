@@ -1,5 +1,5 @@
 import unittest
-from semantic_task_tree import TaskTree, SemanticUnit, Task, build_from_interpretation
+from core.semantic_task_tree import TaskTree, SemanticUnit, Task, build_from_interpretation
 
 class TaskTreeTests(unittest.TestCase):
     def setUp(self):
