@@ -1,4 +1,4 @@
-# SESSION BOOT PROTOCOL v0.4
+# SESSION BOOT PROTOCOL v0.5
 
 ## Automatic boot trigger
 On the FIRST user message in a new chat that materially concerns work, projects, priorities, commitments, scope, execution, blockers, planning, or tooling choices that may change scope:
@@ -8,6 +8,8 @@ On the FIRST user message in a new chat that materially concerns work, projects,
 3. Do not rely on conversational memory for current focus when GitHub state is available.
 4. Do not announce boot noise unless intervention or state uncertainty matters.
 
+A pure leisure/creative opening message does not require the full work bootstrap, but `leisure_guard.md` remains applicable as a lightweight behavioral guard.
+
 ## Required load order
 1. `discipline_kernel.md`
 2. `current_state.json`
@@ -15,7 +17,8 @@ On the FIRST user message in a new chat that materially concerns work, projects,
 4. `intent_resolver.md`
 5. `decision_engine.md`
 6. `enforcement_tone.md`
-7. `parking_lot.json` when relevant
+7. `leisure_guard.md`
+8. `parking_lot.json` when relevant
 
 ## Session Boot vs Per-Request Gate
 Session boot and enforcement are separate mechanisms.
@@ -30,30 +33,35 @@ PER-REQUEST GATE:
 - evaluates operational effect and impact,
 - gates each execution-relevant clause before action.
 
+LEISURE GUARD:
+- may run even when full work boot is not required,
+- only interrupts leisure/creative loops under the conditions in `leisure_guard.md`,
+- does not reclassify leisure as a work project.
+
 BOOTED != BYPASS.
 
-A loaded session must not treat earlier boot as permission to execute later scope changes, new projects, tooling detours, commitments, or priority changes.
-
 ## Per-Request Sequence
-For every materially work-relevant request:
-1. Decompose the message using `intent_resolver.md`.
-2. Identify stated intent and operational effect.
-3. Assign semantic intents and impact level per meaningful clause.
-4. Determine which clauses require a mandatory gate.
-5. Map dominant operational effect to a primary request class.
-6. Compare against current focus, milestone, next action, commitments, and active-project state.
-7. Apply `decision_engine.md`.
-8. Only after ALLOW/WARN permits execution may side-effecting tools or state mutations occur.
-9. If BLOCK/PARK fires, do not implement the side quest anyway.
+For every request:
+1. Resolve semantic intent enough to distinguish work from leisure/casual content.
+2. If CREATIVE_PLAY/leisure, apply `leisure_guard.md` and answer accordingly.
+3. If materially work-relevant, decompose the message using `intent_resolver.md`.
+4. Identify stated intent and operational effect.
+5. Assign semantic intents and impact level per meaningful clause.
+6. Determine which clauses require a mandatory gate.
+7. Map dominant operational effect to a primary request class.
+8. Compare against current focus, milestone, next action, commitments, and active-project state.
+9. Apply `decision_engine.md`.
+10. Only after ALLOW/WARN permits execution may side-effecting tools or state mutations occur.
+11. If BLOCK/PARK fires, do not implement the side quest anyway.
 
-## After load
-1. Identify the one `current_focus` and its `next_action`.
-2. Check CONFIRMED vs PROVISIONAL.
-3. Resolve the current request semantically.
-4. Classify the request.
-5. Apply the relevant gate.
-6. If state files conflict, surface the conflict instead of resolving it from memory.
-7. If GitHub cannot be read, mark state as `STATE UNVERIFIED`; never invent current state.
+## Cross-Chat Caution
+A new chat cannot safely infer whether daily orientation or a priority was completed in another chat or offline unless authoritative state records it.
+
+Therefore:
+- do not falsely claim the user has done nothing,
+- first morning leisure request under unknown state -> ALLOW + NUDGE,
+- repeated leisure HOLD may rely on repetition visible in the current session,
+- stronger claims require authoritative evidence.
 
 ## Refresh triggers
 Refresh GitHub state when:
