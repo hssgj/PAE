@@ -1,25 +1,75 @@
 {
-  "version": "0.2",
+  "version": "0.3",
   "state_status": "PROVISIONAL",
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "current_focus": {
-    "project": "PAE / Discipline OS",
-    "milestone": "Boot a working Discipline OS and verify that its gates actually fire",
-    "next_action": "Create a ChatGPT Project, upload the v0.2 files, paste project_instructions.md into Project Instructions, then run TEST-01 from red_team_tests.md",
-    "status": "ACTIVE"
+    "project": "Daily consolidation / closure of existing obligations (not a new project)",
+    "milestone": "Finish existing administrative clean-up, correct stale Discipline OS state, and prevent new major projects today.",
+    "next_action": "Confirm OS state synchronization, then return to offline responsibilities; only handle concrete incoming obligations. Do not start Shimeji implementation today.",
+    "status": "ACTIVE",
+    "authority": "USER_CONFIRMED_2026-09-20"
   },
   "daily_priorities": [
-    {"rank": 1, "item": "Boot Discipline OS v0.2 in a dedicated ChatGPT Project", "status": "READY"},
-    {"rank": 2, "item": "Run the first enforcement/red-team test", "status": "READY"},
-    {"rank": 3, "item": "Confirm or correct the provisional active-project list before hard blocking is enabled", "status": "NEEDS_USER_CONFIRMATION"}
+    {
+      "rank": 1,
+      "item": "Nessie safely home after morning search",
+      "status": "DONE",
+      "authority": "USER_CONFIRMED"
+    },
+    {
+      "rank": 2,
+      "item": "Financial admin: confirm CraftNest cancellation and N26/coeo outgoing suspension request; preserve pending creditor response as OPEN",
+      "status": "DONE_WITH_PENDING_EXTERNAL_REPLY",
+      "authority": "GMAIL_VERIFIED_2026-09-20"
+    },
+    {
+      "rank": 3,
+      "item": "Synchronize outdated Discipline OS current state without developing new functions",
+      "status": "IN_PROGRESS",
+      "authority": "USER_REQUESTED"
+    }
   ],
   "active_projects": [
-    {"name": "PAE / Discipline OS", "status": "ACTIVE", "authority": "CONFIRMED_BY_CURRENT_SESSION"},
-    {"name": "Income / job search", "status": "PROVISIONAL", "authority": "NEEDS_USER_CONFIRMATION"},
-    {"name": "Víc než angličtina tutoring", "status": "PROVISIONAL", "authority": "NEEDS_USER_CONFIRMATION"}
+    {
+      "name": "PAE / Discipline OS",
+      "status": "MAINTENANCE_ONLY",
+      "authority": "USER_CONFIRMED_2026-09-20",
+      "note": "User considers baseline sufficiently tested for daily use; formal red-team TEST-01 not independently verified. Further development paused."
+    },
+    {
+      "name": "Income / job search",
+      "status": "PROVISIONAL",
+      "authority": "NEEDS_USER_CONFIRMATION"
+    },
+    {
+      "name": "Víc než angličtina tutoring",
+      "status": "PROVISIONAL",
+      "authority": "NEEDS_USER_CONFIRMATION"
+    }
+  ],
+  "open_external_items": [
+    {
+      "name": "N26 / coeo",
+      "status": "AWAITING_REPLY",
+      "last_action": "Temporary suspension request emailed 2026-09-19; sent message verified in Gmail; no approval confirmed as of 2026-09-20",
+      "note": "Debt/collections case remains open. Do not mark paid, suspended or resolved."
+    },
+    {
+      "name": "CraftNest membership",
+      "status": "CANCELLATION_CONFIRMED",
+      "last_action": "Cancellation confirmation received 2026-09-20"
+    }
+  ],
+  "parked_for_today": [
+    "New PAE features and system redesign",
+    "Shimeji implementation and other substantial creative/technical project work"
   ],
   "blocked_items": [
-    {"item": "Hard enforcement of 3-project limit", "reason": "Two active-project slots are provisional until user confirms/corrects them"}
+    {
+      "item": "Hard enforcement of 3-project limit",
+      "reason": "Two project slots remain provisional pending user confirmation"
+    }
   ],
-  "last_review": null
+  "last_review": "2026-09-20",
+  "review_note": "Morning Riftwake Brief: dog's return confirmed, real-world garden work outside chat; user asks assistant to prevent new major projects and consolidate instead. Existing boot v0.2/TEST-01 next action superseded for today; formal test completion unverified."
 }
