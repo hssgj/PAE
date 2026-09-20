@@ -1,15 +1,26 @@
 {
-  "version": "0.2",
+  "version": "0.3",
   "commitments": [
     {
       "id": "C-001",
       "created": "2026-09-19",
       "text": "Make Discipline OS function as an enforceable system rather than a memory-only prompt.",
-      "status": "ACTIVE",
+      "status": "RENEGOTIATED",
       "project": "PAE / Discipline OS",
-      "next_action": "Boot v0.2 and run TEST-01",
+      "next_action": "Use current OS in maintenance mode and log a concrete observed failure if one occurs; formal TEST-01 completion remains UNVERIFIED.",
       "due": null,
-      "authority": "CONFIRMED_BY_CURRENT_SESSION"
+      "authority": "USER_CONFIRMED_2026-09-20",
+      "resolution_note": "User accepts current baseline as sufficiently functioning for daily use and explicitly pauses further development today. No independent assertion that formal red-team tests passed."
+    },
+    {
+      "id": "C-002",
+      "created": "2026-09-20",
+      "text": "Follow up on N26/coeo creditor response to request for temporary suspension; do not treat collection as suspended until confirmed.",
+      "status": "ACTIVE",
+      "project": "Financial administration",
+      "next_action": "Await coeo response and review any creditor deadline or reply when received.",
+      "due": null,
+      "authority": "GMAIL_VERIFIED_2026-09-20"
     }
   ]
 }
