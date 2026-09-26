@@ -1,5 +1,5 @@
 {
-  "version": "0.3",
+  "version": "0.4",
   "commitments": [
     {
       "id": "C-001",
@@ -7,10 +7,10 @@
       "text": "Make Discipline OS function as an enforceable system rather than a memory-only prompt.",
       "status": "RENEGOTIATED",
       "project": "PAE / Discipline OS",
-      "next_action": "Use current OS in maintenance mode and log a concrete observed failure if one occurs; formal TEST-01 completion remains UNVERIFIED.",
+      "next_action": "Use current OS in maintenance mode and log concrete observed failures. The stale-state failure observed 2026-09-26 is recorded; do not expand features unless a specific repair is required.",
       "due": null,
-      "authority": "USER_CONFIRMED_2026-09-20",
-      "resolution_note": "User accepts current baseline as sufficiently functioning for daily use and explicitly pauses further development today. No independent assertion that formal red-team tests passed."
+      "authority": "USER_CONFIRMED_2026-09-26",
+      "resolution_note": "Baseline remains active. The 2026-09-26 stale-state incident is a maintenance defect, not authorization for a redesign."
     },
     {
       "id": "C-002",
@@ -18,9 +18,39 @@
       "text": "Follow up on N26/coeo creditor response to request for temporary suspension; do not treat collection as suspended until confirmed.",
       "status": "ACTIVE",
       "project": "Financial administration",
-      "next_action": "Await coeo response and review any creditor deadline or reply when received.",
+      "next_action": "Send a concrete written follow-up requesting the missing response to the 2026-09-19 suspension request, current status, fees, and whether any collection action is paused.",
+      "due": "2026-09-27",
+      "authority": "GMAIL_VERIFIED_2026-09-23"
+    },
+    {
+      "id": "C-003",
+      "created": "2026-09-26",
+      "text": "Call Levová at Srdcovka after her reply requesting a phone call to arrange a meeting about the cook position.",
+      "status": "ACTIVE",
+      "project": "Income / job search",
+      "next_action": "Call Srdcovka and agree the meeting time.",
       "due": null,
-      "authority": "GMAIL_VERIFIED_2026-09-20"
+      "authority": "GMAIL_VERIFIED_2026-09-25"
+    },
+    {
+      "id": "C-004",
+      "created": "2026-09-26",
+      "text": "Continue written review of the PAIR/HelloFresh claim without acknowledging the debt until the requested supporting documentation is provided and reviewed.",
+      "status": "ACTIVE",
+      "project": "Financial administration",
+      "next_action": "Reply that the 2026-09-25 response is incomplete and request the missing account/cancellation, delivery, reminder, and cost documentation.",
+      "due": "2026-10-05",
+      "authority": "GMAIL_VERIFIED_2026-09-25"
+    },
+    {
+      "id": "C-005",
+      "created": "2026-09-26",
+      "text": "Attend the scheduled control with MUDr. Dlouhý for a fresh dentistry report.",
+      "status": "ACTIVE",
+      "project": "Personal administration",
+      "next_action": "Attend the calendar event on 2026-10-12 between 09:00 and 12:00.",
+      "due": "2026-10-12",
+      "authority": "CALENDAR_VERIFIED_2026-09-26"
     }
   ]
 }
