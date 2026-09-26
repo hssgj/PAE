@@ -4,8 +4,8 @@
   "updated": "2026-09-26",
   "current_focus": {
     "project": "Close verified live obligations before opening new work",
-    "milestone": "Resolve the active income/admin items surfaced by the 2026-09-26 Riftwake review: Srdcovka callback first, then coeo/N26 follow-up, then PAIR/HelloFresh documentation response.",
-    "next_action": "Call Levová at Srdcovka to arrange the requested meeting regarding the cook position.",
+    "milestone": "Complete today's verified live obligations: coeo and PAIR follow-ups sent; Srdcovka callback remains.",
+    "next_action": "Call Levová at Srdcovka around 10:00 to arrange the requested meeting regarding the cook position.",
     "status": "ACTIVE",
     "authority": "USER_CONFIRMED_2026-09-26"
   },
@@ -19,14 +19,14 @@
     {
       "rank": 2,
       "item": "Send or prepare a concrete written follow-up to coeo/N26 because suspension was not confirmed and a 27.09.2026 installment-offer deadline is active.",
-      "status": "OPEN",
-      "authority": "GMAIL_VERIFIED_2026-09-23"
+      "status": "DONE_AWAITING_REPLY",
+      "authority": "USER_CONFIRMED_SENT_2026-09-26"
     },
     {
       "rank": 3,
       "item": "Respond to PAIR/HelloFresh after their incomplete documentation reply; preserve the dispute/review posture and do not treat the claim as accepted.",
-      "status": "OPEN",
-      "authority": "GMAIL_VERIFIED_2026-09-25"
+      "status": "DONE_AWAITING_REPLY",
+      "authority": "USER_CONFIRMED_SENT_2026-09-26"
     }
   ],
   "active_projects": [
@@ -59,20 +59,20 @@
     },
     {
       "name": "N26 / coeo",
-      "status": "OPEN_NO_SUSPENSION_CONFIRMED",
-      "last_action": "Temporary suspension request sent 2026-09-19. coeo emailed again on 2026-09-23 stating the claim remains open and offering installments until 2026-09-27.",
-      "next_action": "Request a concrete written response to the 2026-09-19 suspension request and current status/fees.",
+      "status": "FOLLOW_UP_SENT_AWAITING_REPLY",
+      "last_action": "Concrete written follow-up sent 2026-09-26 requesting an explicit response to the 2026-09-19 suspension request, current status, fees, and meaning of the 2026-09-27 deadline.",
+      "next_action": "Await substantive written reply; do not treat the case as suspended, paid, or resolved.",
       "deadline": "2026-09-27",
-      "authority": "GMAIL_VERIFIED_2026-09-23",
+      "authority": "USER_CONFIRMED_SENT_2026-09-26",
       "note": "Do not mark suspended, paid, or resolved."
     },
     {
       "name": "PAIR / HelloFresh",
-      "status": "DOCUMENTATION_INCOMPLETE",
-      "last_action": "PAIR replied 2026-09-25 with order date 2025-02-18, invoice 2971822652, 5-meal box for 2, handoff to collections 2025-04-22, and total 71.98 EUR, but did not provide most requested account/cancellation/delivery/reminder documentation.",
-      "next_action": "Request the missing documentation and preserve non-recognition of the claim pending review.",
+      "status": "FOLLOW_UP_SENT_AWAITING_DOCUMENTATION",
+      "last_action": "Follow-up sent 2026-09-26 stating that PAIR's 2026-09-25 documentation was incomplete and requesting account/cancellation, delivery, reminder, and cost documentation.",
+      "next_action": "Await the requested documentation and review it before acknowledging any claim.",
       "deadline": "2026-10-05",
-      "authority": "GMAIL_VERIFIED_2026-09-25"
+      "authority": "USER_CONFIRMED_SENT_2026-09-26"
     },
     {
       "name": "Supabase PAE",
@@ -110,5 +110,5 @@
   ],
   "blocked_items": [],
   "last_review": "2026-09-26",
-  "review_note": "Riftwake refresh after user identified stale authoritative state. Gmail and Calendar were checked read-only. User explicitly instructed the assistant to record everything worth recording and continue. Current focus was refreshed around live verified obligations; stale 2026-09-20 daily priorities were removed."
+  "review_note": "Both financial-admin follow-ups (coeo/N26 and PAIR/HelloFresh) were sent by the user on 2026-09-26 and are now awaiting external replies. Remaining immediate action is the Srdcovka callback around 10:00."
 }
