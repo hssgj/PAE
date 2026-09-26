@@ -1,32 +1,32 @@
 {
-  "version": "0.3",
-  "state_status": "PROVISIONAL",
-  "updated": "2026-09-20",
+  "version": "0.4",
+  "state_status": "CONFIRMED",
+  "updated": "2026-09-26",
   "current_focus": {
-    "project": "Daily consolidation / closure of existing obligations (not a new project)",
-    "milestone": "Finish existing administrative clean-up, correct stale Discipline OS state, and prevent new major projects today.",
-    "next_action": "Return to offline responsibilities; handle only genuine incoming obligations. Keep new major projects parked today.",
+    "project": "Close verified live obligations before opening new work",
+    "milestone": "Resolve the active income/admin items surfaced by the 2026-09-26 Riftwake review: Srdcovka callback first, then coeo/N26 follow-up, then PAIR/HelloFresh documentation response.",
+    "next_action": "Call Levová at Srdcovka to arrange the requested meeting regarding the cook position.",
     "status": "ACTIVE",
-    "authority": "USER_CONFIRMED_2026-09-20"
+    "authority": "USER_CONFIRMED_2026-09-26"
   },
   "daily_priorities": [
     {
       "rank": 1,
-      "item": "Nessie safely home after morning search",
-      "status": "DONE",
-      "authority": "USER_CONFIRMED"
+      "item": "Call Srdcovka (Levová) and arrange a meeting regarding the cook position.",
+      "status": "OPEN",
+      "authority": "GMAIL_VERIFIED_2026-09-25"
     },
     {
       "rank": 2,
-      "item": "Financial admin: confirm CraftNest cancellation and N26/coeo outgoing suspension request; preserve pending creditor response as OPEN",
-      "status": "DONE_WITH_PENDING_EXTERNAL_REPLY",
-      "authority": "GMAIL_VERIFIED_2026-09-20"
+      "item": "Send or prepare a concrete written follow-up to coeo/N26 because suspension was not confirmed and a 27.09.2026 installment-offer deadline is active.",
+      "status": "OPEN",
+      "authority": "GMAIL_VERIFIED_2026-09-23"
     },
     {
       "rank": 3,
-      "item": "Synchronize outdated Discipline OS current state without developing new functions",
-      "status": "DONE",
-      "authority": "USER_REQUESTED"
+      "item": "Respond to PAIR/HelloFresh after their incomplete documentation reply; preserve the dispute/review posture and do not treat the claim as accepted.",
+      "status": "OPEN",
+      "authority": "GMAIL_VERIFIED_2026-09-25"
     }
   ],
   "active_projects": [
@@ -34,42 +34,81 @@
       "name": "PAE / Discipline OS",
       "status": "MAINTENANCE_ONLY",
       "authority": "USER_CONFIRMED_2026-09-20",
-      "note": "User considers baseline sufficiently tested for daily use; formal red-team TEST-01 not independently verified. Further development paused."
+      "note": "Baseline remains in use. The stale-state incident observed on 2026-09-26 is logged as a concrete maintenance failure; no feature expansion is authorized by this alone."
     },
     {
       "name": "Income / job search",
-      "status": "PROVISIONAL",
-      "authority": "NEEDS_USER_CONFIRMATION"
+      "status": "ACTIVE",
+      "authority": "USER_CONFIRMED_2026-09-26",
+      "note": "Immediate next action is the Srdcovka callback requested by Levová."
     },
     {
       "name": "Víc než angličtina tutoring",
-      "status": "PROVISIONAL",
-      "authority": "NEEDS_USER_CONFIRMATION"
+      "status": "ACTIVE_EXISTING",
+      "authority": "USER_CONFIRMED_BY_EXISTING_WORK",
+      "note": "Existing project only. It is not today's current focus until the three live obligations above are handled or explicitly renegotiated."
     }
   ],
   "open_external_items": [
     {
+      "name": "Srdcovka cook application",
+      "status": "CALLBACK_REQUESTED",
+      "last_action": "Levová replied by email on 2026-09-25 asking Matěj to call and arrange a meeting.",
+      "next_action": "Call Srdcovka.",
+      "authority": "GMAIL_VERIFIED_2026-09-25"
+    },
+    {
       "name": "N26 / coeo",
-      "status": "AWAITING_REPLY",
-      "last_action": "Temporary suspension request emailed 2026-09-19; sent message verified in Gmail; no approval confirmed as of 2026-09-20",
-      "note": "Debt/collections case remains open. Do not mark paid, suspended or resolved."
+      "status": "OPEN_NO_SUSPENSION_CONFIRMED",
+      "last_action": "Temporary suspension request sent 2026-09-19. coeo emailed again on 2026-09-23 stating the claim remains open and offering installments until 2026-09-27.",
+      "next_action": "Request a concrete written response to the 2026-09-19 suspension request and current status/fees.",
+      "deadline": "2026-09-27",
+      "authority": "GMAIL_VERIFIED_2026-09-23",
+      "note": "Do not mark suspended, paid, or resolved."
+    },
+    {
+      "name": "PAIR / HelloFresh",
+      "status": "DOCUMENTATION_INCOMPLETE",
+      "last_action": "PAIR replied 2026-09-25 with order date 2025-02-18, invoice 2971822652, 5-meal box for 2, handoff to collections 2025-04-22, and total 71.98 EUR, but did not provide most requested account/cancellation/delivery/reminder documentation.",
+      "next_action": "Request the missing documentation and preserve non-recognition of the claim pending review.",
+      "deadline": "2026-10-05",
+      "authority": "GMAIL_VERIFIED_2026-09-25"
+    },
+    {
+      "name": "Supabase PAE",
+      "status": "PAUSED_BY_PROVIDER",
+      "last_action": "Supabase emailed on 2026-09-25 that project PAE has been paused.",
+      "next_action": "No action unless a confirmed blocker requires the project.",
+      "authority": "GMAIL_VERIFIED_2026-09-25"
+    },
+    {
+      "name": "Supabase hp-game",
+      "status": "PAUSED_BY_PROVIDER",
+      "last_action": "Supabase emailed on 2026-09-25 that project hp-game has been paused.",
+      "next_action": "Keep parked; do not reactivate during current admin/income focus without explicit renegotiation.",
+      "authority": "GMAIL_VERIFIED_2026-09-25"
+    },
+    {
+      "name": "MUDr. Dlouhý control",
+      "status": "SCHEDULED",
+      "last_action": "Calendar contains control on 2026-10-12 from 09:00 to 12:00 for a fresh report for dentistry.",
+      "next_action": "Attend on 2026-10-12.",
+      "deadline": "2026-10-12",
+      "authority": "CALENDAR_VERIFIED_2026-09-26"
     },
     {
       "name": "CraftNest membership",
       "status": "CANCELLATION_CONFIRMED",
-      "last_action": "Cancellation confirmation received 2026-09-20"
+      "last_action": "Cancellation confirmation received 2026-09-20.",
+      "authority": "GMAIL_VERIFIED_2026-09-20"
     }
   ],
-  "parked_for_today": [
+  "parked_for_now": [
     "New PAE features and system redesign",
-    "Shimeji implementation and other substantial creative/technical project work"
+    "Shimeji implementation and other substantial creative/technical project work",
+    "Supabase reactivation unless it becomes a concrete blocker"
   ],
-  "blocked_items": [
-    {
-      "item": "Hard enforcement of 3-project limit",
-      "reason": "Two project slots remain provisional pending user confirmation"
-    }
-  ],
-  "last_review": "2026-09-20",
-  "review_note": "Morning Riftwake Brief: dog's return confirmed, real-world garden work outside chat; user asks assistant to prevent new major projects and consolidate instead. Existing boot v0.2/TEST-01 next action superseded for today; formal test completion unverified. State synchronization completed and confirmed in GitHub."
+  "blocked_items": [],
+  "last_review": "2026-09-26",
+  "review_note": "Riftwake refresh after user identified stale authoritative state. Gmail and Calendar were checked read-only. User explicitly instructed the assistant to record everything worth recording and continue. Current focus was refreshed around live verified obligations; stale 2026-09-20 daily priorities were removed."
 }
