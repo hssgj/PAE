@@ -1,5 +1,5 @@
 {
-  "version": "0.4",
+  "version": "0.5",
   "commitments": [
     {
       "id": "C-001",
@@ -7,30 +7,32 @@
       "text": "Make Discipline OS function as an enforceable system rather than a memory-only prompt.",
       "status": "RENEGOTIATED",
       "project": "PAE / Discipline OS",
-      "next_action": "Use current OS in maintenance mode and log concrete observed failures. The stale-state failure observed 2026-09-26 is recorded; do not expand features unless a specific repair is required.",
+      "next_action": "Use current OS in maintenance mode and keep authoritative state current; do not expand features unless a specific repair is required.",
       "due": null,
-      "authority": "USER_CONFIRMED_2026-09-26",
-      "resolution_note": "Baseline remains active. The 2026-09-26 stale-state incident is a maintenance defect, not authorization for a redesign."
+      "authority": "USER_CONFIRMED_2026-09-27",
+      "resolution_note": "State refreshed on 2026-09-27 after detecting stale coeo and Srdcovka data."
     },
     {
       "id": "C-002",
       "created": "2026-09-20",
-      "text": "Follow up on N26/coeo creditor response to request for temporary suspension; do not treat collection as suspended until confirmed.",
+      "text": "Follow up on N26/coeo creditor response to request for temporary suspension.",
       "status": "WAITING_EXTERNAL",
       "project": "Financial administration",
-      "next_action": "Await coeo's substantive written reply to the follow-up sent 2026-09-26; review any reply or escalation.",
-      "due": "2026-09-27",
-      "authority": "USER_CONFIRMED_SENT_2026-09-26"
+      "next_action": "Await coeo's substantive written reply. Collection is currently suspended while they review the inquiry.",
+      "due": null,
+      "authority": "GMAIL_VERIFIED_2026-09-27",
+      "resolution_note": "Suspension is now explicitly confirmed by coeo."
     },
     {
       "id": "C-003",
       "created": "2026-09-26",
       "text": "Call Levová at Srdcovka after her reply requesting a phone call to arrange a meeting about the cook position.",
-      "status": "ACTIVE",
+      "status": "DROPPED",
       "project": "Income / job search",
-      "next_action": "Call Srdcovka and agree the meeting time.",
+      "next_action": "None.",
       "due": null,
-      "authority": "GMAIL_VERIFIED_2026-09-25"
+      "authority": "USER_CONFIRMED_2026-09-27",
+      "resolution_note": "User confirmed the Srdcovka lead fell through."
     },
     {
       "id": "C-004",
@@ -38,9 +40,9 @@
       "text": "Continue written review of the PAIR/HelloFresh claim without acknowledging the debt until the requested supporting documentation is provided and reviewed.",
       "status": "WAITING_EXTERNAL",
       "project": "Financial administration",
-      "next_action": "Await PAIR's missing documentation requested in the follow-up sent 2026-09-26; review it before acknowledging any claim.",
+      "next_action": "Await PAIR's missing documentation; review it before acknowledging any claim. Escalate to HelloFresh/legal help only if needed.",
       "due": "2026-10-05",
-      "authority": "USER_CONFIRMED_SENT_2026-09-26"
+      "authority": "GMAIL_VERIFIED_2026-09-27"
     },
     {
       "id": "C-005",
@@ -51,6 +53,16 @@
       "next_action": "Attend the calendar event on 2026-10-12 between 09:00 and 12:00.",
       "due": "2026-10-12",
       "authority": "CALENDAR_VERIFIED_2026-09-26"
+    },
+    {
+      "id": "C-006",
+      "created": "2026-09-27",
+      "text": "Follow up on the three targeted job applications sent on 2026-09-27 only when replies arrive or a reasonable follow-up point is reached.",
+      "status": "WAITING_EXTERNAL",
+      "project": "Income / job search",
+      "next_action": "Await replies from Waldgasthof Bad Einsiedel, DREGENO Spielzeugschachtel, and Caféchen/Heimatstube.",
+      "due": null,
+      "authority": "USER_CONFIRMED_2026-09-27"
     }
   ]
 }
