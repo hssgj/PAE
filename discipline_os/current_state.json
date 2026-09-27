@@ -1,32 +1,33 @@
 {
-  "version": "0.4",
+  "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "current_focus": {
-    "project": "Close verified live obligations before opening new work",
-    "milestone": "Complete today's verified live obligations: coeo and PAIR follow-ups sent; Srdcovka callback remains.",
-    "next_action": "Call Levová at Srdcovka around 10:00 to arrange the requested meeting regarding the cook position.",
-    "status": "ACTIVE",
-    "authority": "USER_CONFIRMED_2026-09-26"
+    "project": "Income / job search",
+    "milestone": "Today's bounded outreach block is complete: three targeted applications sent; no further job-search work is required today.",
+    "next_action": "Await replies from Waldgasthof Bad Einsiedel, DREGENO Spielzeugschachtel, and Caféchen/Heimatstube; review any incoming response before opening more outreach.",
+    "status": "WAITING_EXTERNAL",
+    "authority": "USER_CONFIRMED_2026-09-27"
   },
   "daily_priorities": [
     {
       "rank": 1,
-      "item": "Call Srdcovka (Levová) and arrange a meeting regarding the cook position.",
-      "status": "OPEN",
-      "authority": "GMAIL_VERIFIED_2026-09-25"
+      "item": "Send 1–2 realistic job applications reachable without a car.",
+      "status": "DONE_EXCEEDED",
+      "authority": "USER_CONFIRMED_2026-09-27",
+      "note": "Three applications were sent: Waldgasthof Bad Einsiedel, DREGENO Spielzeugschachtel, and Caféchen/Heimatstube."
     },
     {
       "rank": 2,
-      "item": "Send or prepare a concrete written follow-up to coeo/N26 because suspension was not confirmed and a 27.09.2026 installment-offer deadline is active.",
-      "status": "DONE_AWAITING_REPLY",
-      "authority": "USER_CONFIRMED_SENT_2026-09-26"
+      "item": "Keep N26/coeo paused while waiting for their substantive response.",
+      "status": "WAITING_EXTERNAL",
+      "authority": "GMAIL_VERIFIED_2026-09-27"
     },
     {
       "rank": 3,
-      "item": "Respond to PAIR/HelloFresh after their incomplete documentation reply; preserve the dispute/review posture and do not treat the claim as accepted.",
-      "status": "DONE_AWAITING_REPLY",
-      "authority": "USER_CONFIRMED_SENT_2026-09-26"
+      "item": "Keep PAIR/HelloFresh in dispute/review posture and await the requested supporting documentation.",
+      "status": "WAITING_EXTERNAL",
+      "authority": "GMAIL_VERIFIED_2026-09-27"
     }
   ],
   "active_projects": [
@@ -34,45 +35,72 @@
       "name": "PAE / Discipline OS",
       "status": "MAINTENANCE_ONLY",
       "authority": "USER_CONFIRMED_2026-09-20",
-      "note": "Baseline remains in use. The stale-state incident observed on 2026-09-26 is logged as a concrete maintenance failure; no feature expansion is authorized by this alone."
+      "note": "Baseline remains in use. Maintain state accuracy; no feature expansion authorized."
     },
     {
       "name": "Income / job search",
-      "status": "ACTIVE",
-      "authority": "USER_CONFIRMED_2026-09-26",
-      "note": "Immediate next action is the Srdcovka callback requested by Levová."
+      "status": "ACTIVE_WAITING_EXTERNAL",
+      "authority": "USER_CONFIRMED_2026-09-27",
+      "note": "Today's outreach block is complete. Transport feasibility without a car is a hard filter for future leads."
     },
     {
       "name": "Víc než angličtina tutoring",
       "status": "ACTIVE_EXISTING",
       "authority": "USER_CONFIRMED_BY_EXISTING_WORK",
-      "note": "Existing project only. It is not today's current focus until the three live obligations above are handled or explicitly renegotiated."
+      "note": "Existing project; not today's active execution focus."
     }
   ],
   "open_external_items": [
     {
+      "name": "Waldgasthof Bad Einsiedel application",
+      "status": "APPLICATION_SENT_AWAITING_REPLY",
+      "last_action": "German application with CV sent 2026-09-27 after prior poor-quality phone contact and earlier information that another cook was on trial.",
+      "next_action": "Await reply; if invited, verify shift times and transport feasibility.",
+      "authority": "GMAIL_SENT_2026-09-27"
+    },
+    {
+      "name": "DREGENO Spielzeugschachtel application",
+      "status": "APPLICATION_SENT_AWAITING_REPLY",
+      "last_action": "German application with CV sent 2026-09-27; message disclosed no car and need to align shifts with public transport.",
+      "next_action": "Await reply and verify shift/transport compatibility.",
+      "authority": "GMAIL_SENT_2026-09-27"
+    },
+    {
+      "name": "Caféchen / Heimatstube application",
+      "status": "APPLICATION_SENT_AWAITING_REPLY",
+      "last_action": "German application with CV sent 2026-09-27; message disclosed no car and need to align shifts with public transport.",
+      "next_action": "Await reply and verify shift/transport compatibility.",
+      "authority": "GMAIL_SENT_2026-09-27"
+    },
+    {
       "name": "Srdcovka cook application",
-      "status": "CALLBACK_REQUESTED",
-      "last_action": "Levová replied by email on 2026-09-25 asking Matěj to call and arrange a meeting.",
-      "next_action": "Call Srdcovka.",
-      "authority": "GMAIL_VERIFIED_2026-09-25"
+      "status": "CLOSED_NOT_PROCEEDING",
+      "last_action": "User confirmed on 2026-09-27 that the Srdcovka lead has fallen through.",
+      "next_action": "None.",
+      "authority": "USER_CONFIRMED_2026-09-27"
+    },
+    {
+      "name": "Saigerhütte cook application",
+      "status": "REJECTED",
+      "last_action": "Hotel Saigerhütte emailed on 2026-09-26 that the application would not proceed in the selection process.",
+      "next_action": "None.",
+      "authority": "GMAIL_VERIFIED_2026-09-27"
     },
     {
       "name": "N26 / coeo",
-      "status": "FOLLOW_UP_SENT_AWAITING_REPLY",
-      "last_action": "Concrete written follow-up sent 2026-09-26 requesting an explicit response to the 2026-09-19 suspension request, current status, fees, and meaning of the 2026-09-27 deadline.",
-      "next_action": "Await substantive written reply; do not treat the case as suspended, paid, or resolved.",
-      "deadline": "2026-09-27",
-      "authority": "USER_CONFIRMED_SENT_2026-09-26",
-      "note": "Do not mark suspended, paid, or resolved."
+      "status": "SUSPENDED_AWAITING_SUBSTANTIVE_REPLY",
+      "last_action": "coeo confirmed by email that the collection procedure is suspended while they review the inquiry.",
+      "next_action": "Await substantive written reply; no payment-plan action while suspension remains in effect unless new information changes the situation.",
+      "authority": "GMAIL_VERIFIED_2026-09-27",
+      "note": "Do not mark paid or resolved."
     },
     {
       "name": "PAIR / HelloFresh",
-      "status": "FOLLOW_UP_SENT_AWAITING_DOCUMENTATION",
-      "last_action": "Follow-up sent 2026-09-26 stating that PAIR's 2026-09-25 documentation was incomplete and requesting account/cancellation, delivery, reminder, and cost documentation.",
-      "next_action": "Await the requested documentation and review it before acknowledging any claim.",
+      "status": "DISPUTED_AWAITING_DOCUMENTATION",
+      "last_action": "PAIR replied again with claim summary but did not provide the full requested account/cancellation, delivery, reminder, and cost documentation.",
+      "next_action": "Await requested documentation; review before acknowledging any claim. Legal or direct HelloFresh escalation remains optional if documentation does not arrive or escalation occurs.",
       "deadline": "2026-10-05",
-      "authority": "USER_CONFIRMED_SENT_2026-09-26"
+      "authority": "GMAIL_VERIFIED_2026-09-27"
     },
     {
       "name": "Supabase PAE",
@@ -85,7 +113,7 @@
       "name": "Supabase hp-game",
       "status": "PAUSED_BY_PROVIDER",
       "last_action": "Supabase emailed on 2026-09-25 that project hp-game has been paused.",
-      "next_action": "Keep parked; do not reactivate during current admin/income focus without explicit renegotiation.",
+      "next_action": "Keep parked; do not reactivate without explicit renegotiation.",
       "authority": "GMAIL_VERIFIED_2026-09-25"
     },
     {
@@ -106,9 +134,10 @@
   "parked_for_now": [
     "New PAE features and system redesign",
     "Shimeji implementation and other substantial creative/technical project work",
-    "Supabase reactivation unless it becomes a concrete blocker"
+    "Supabase reactivation unless it becomes a concrete blocker",
+    "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
-  "last_review": "2026-09-26",
-  "review_note": "Both financial-admin follow-ups (coeo/N26 and PAIR/HelloFresh) were sent by the user on 2026-09-26 and are now awaiting external replies. Remaining immediate action is the Srdcovka callback around 10:00."
+  "last_review": "2026-09-27",
+  "review_note": "Three targeted job applications were sent and today's outreach block is complete. Srdcovka is closed, Saigerhütte rejected the application, coeo confirmed suspension, and PAIR/HelloFresh remains disputed pending documentation. No further work is required today unless a meaningful external reply arrives."
 }
