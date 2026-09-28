@@ -1,21 +1,21 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-09-27",
+  "updated": "2026-09-28",
   "current_focus": {
     "project": "Income / job search",
-    "milestone": "Today's bounded outreach block is complete: three targeted applications sent; no further job-search work is required today.",
-    "next_action": "Await replies from Waldgasthof Bad Einsiedel, DREGENO Spielzeugschachtel, and Caféchen/Heimatstube; review any incoming response before opening more outreach.",
+    "milestone": "Riftwake / morning outreach block complete. Direct applications and follow-ups were sent; no further job-search work is required today.",
+    "next_action": "Await replies from current job leads and review only meaningful incoming responses before opening more outreach.",
     "status": "WAITING_EXTERNAL",
-    "authority": "USER_CONFIRMED_2026-09-27"
+    "authority": "USER_CONFIRMED_2026-09-28"
   },
   "daily_priorities": [
     {
       "rank": 1,
-      "item": "Send 1–2 realistic job applications reachable without a car.",
+      "item": "Complete a bounded job-search outreach block focused on realistic cook roles, prioritizing accommodation or workable transport.",
       "status": "DONE_EXCEEDED",
-      "authority": "USER_CONFIRMED_2026-09-27",
-      "note": "Three applications were sent: Waldgasthof Bad Einsiedel, DREGENO Spielzeugschachtel, and Caféchen/Heimatstube."
+      "authority": "USER_CONFIRMED_2026-09-28",
+      "note": "Direct applications/follow-ups sent to JoSchi Hochkar, Hotel Antonius (Jungkoch/Koch and Chef de Partie), Hotel Riml (Chef de Partie, Frühstückskoch, Demi Chef de Partie), Alphotel Hirschegg (Jungkoch), Hotel Sommerhof (Koch), Holzwurm Seiffen (Koch), Thiele Schenke Marienberg (Koch), plus a renewed direct follow-up to Saigerhütte."
     },
     {
       "rank": 2,
@@ -25,9 +25,10 @@
     },
     {
       "rank": 3,
-      "item": "Keep PAIR/HelloFresh in dispute/review posture and await the requested supporting documentation.",
+      "item": "Keep PAIR/HelloFresh disputed and require supporting documentation before acknowledging the claim.",
       "status": "WAITING_EXTERNAL",
-      "authority": "GMAIL_VERIFIED_2026-09-27"
+      "authority": "GMAIL_SENT_2026-09-28",
+      "note": "A further written reply was sent requesting concrete order/account history, cancellation/support records, delivery proof, reminders and fee justification."
     }
   ],
   "active_projects": [
@@ -40,8 +41,8 @@
     {
       "name": "Income / job search",
       "status": "ACTIVE_WAITING_EXTERNAL",
-      "authority": "USER_CONFIRMED_2026-09-27",
-      "note": "Today's outreach block is complete. Transport feasibility without a car is a hard filter for future leads."
+      "authority": "USER_CONFIRMED_2026-09-28",
+      "note": "Today's outreach block is complete. Transport feasibility without a car remains a hard filter; accommodation can make otherwise distant roles viable."
     },
     {
       "name": "Víc než angličtina tutoring",
@@ -54,23 +55,79 @@
     {
       "name": "Waldgasthof Bad Einsiedel application",
       "status": "APPLICATION_SENT_AWAITING_REPLY",
-      "last_action": "German application with CV sent 2026-09-27 after prior poor-quality phone contact and earlier information that another cook was on trial.",
+      "last_action": "German application with CV sent 2026-09-27.",
       "next_action": "Await reply; if invited, verify shift times and transport feasibility.",
       "authority": "GMAIL_SENT_2026-09-27"
     },
     {
       "name": "DREGENO Spielzeugschachtel application",
       "status": "APPLICATION_SENT_AWAITING_REPLY",
-      "last_action": "German application with CV sent 2026-09-27; message disclosed no car and need to align shifts with public transport.",
+      "last_action": "German application with CV sent 2026-09-27.",
       "next_action": "Await reply and verify shift/transport compatibility.",
       "authority": "GMAIL_SENT_2026-09-27"
     },
     {
       "name": "Caféchen / Heimatstube application",
       "status": "APPLICATION_SENT_AWAITING_REPLY",
-      "last_action": "German application with CV sent 2026-09-27; message disclosed no car and need to align shifts with public transport.",
+      "last_action": "German application with CV sent 2026-09-27.",
       "next_action": "Await reply and verify shift/transport compatibility.",
       "authority": "GMAIL_SENT_2026-09-27"
+    },
+    {
+      "name": "JoSchi Hochkar application",
+      "status": "APPLICATION_SENT_AWAITING_REPLY",
+      "last_action": "Direct German cook application with CV sent 2026-09-28 to jobs@jo-schi.at.",
+      "next_action": "Await reply.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Hotel Antonius applications",
+      "status": "APPLICATIONS_SENT_AWAITING_REPLY",
+      "last_action": "Separate German applications with CV sent 2026-09-28 for Jungkoch/Koch and Chef de Partie.",
+      "next_action": "Await reply; compare role, pay, accommodation and season terms if contacted.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Hotel Riml applications",
+      "status": "APPLICATIONS_SENT_AWAITING_REPLY",
+      "last_action": "Separate German applications with CV sent 2026-09-28 for Chef de Partie, Frühstückskoch and Demi Chef de Partie.",
+      "next_action": "Await reply and assess best-fit role if contacted.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Alphotel Hirschegg application",
+      "status": "APPLICATION_SENT_AWAITING_REPLY",
+      "last_action": "German Jungkoch application with CV sent 2026-09-28.",
+      "next_action": "Await reply; verify final accommodation and compensation terms.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Hotel Sommerhof application",
+      "status": "APPLICATION_SENT_AWAITING_REPLY",
+      "last_action": "Direct German Koch application with CV sent 2026-09-28 to Manuel Wallner.",
+      "next_action": "Await reply.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Holzwurm Seiffen application",
+      "status": "APPLICATION_SENT_AWAITING_REPLY",
+      "last_action": "German cook application with CV sent 2026-09-28, explicitly asking whether overnight accommodation could be available on workdays.",
+      "next_action": "Await reply and confirm whether workday accommodation makes the schedule viable.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Thiele Schenke Marienberg application",
+      "status": "APPLICATION_SENT_AWAITING_REPLY",
+      "last_action": "German cook application with CV sent 2026-09-28, asking about overnight accommodation on workdays because of public-transport limits.",
+      "next_action": "Await reply and assess accommodation/shift feasibility.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Saigerhütte cook application",
+      "status": "FOLLOWUP_SENT_AWAITING_REPLY",
+      "last_action": "Despite the earlier rejection, a direct, firm follow-up with CV was sent 2026-09-28 asking why no interview or trial shift had occurred while the cook vacancy remained open.",
+      "next_action": "Await reply; do not send another follow-up unless they respond or materially change the vacancy.",
+      "authority": "GMAIL_SENT_2026-09-28"
     },
     {
       "name": "Srdcovka cook application",
@@ -80,11 +137,11 @@
       "authority": "USER_CONFIRMED_2026-09-27"
     },
     {
-      "name": "Saigerhütte cook application",
-      "status": "REJECTED",
-      "last_action": "Hotel Saigerhütte emailed on 2026-09-26 that the application would not proceed in the selection process.",
-      "next_action": "None.",
-      "authority": "GMAIL_VERIFIED_2026-09-27"
+      "name": "Motorest Výšina Most",
+      "status": "CLOSED_TRANSPORT_UNWORKABLE",
+      "last_action": "Employer had invited an in-person visit, but early shifts and no accommodation make the commute from Hora Svaté Kateřiny unrealistic without a car.",
+      "next_action": "None unless transport circumstances change.",
+      "authority": "USER_CONFIRMED_2026-09-28"
     },
     {
       "name": "N26 / coeo",
@@ -97,10 +154,10 @@
     {
       "name": "PAIR / HelloFresh",
       "status": "DISPUTED_AWAITING_DOCUMENTATION",
-      "last_action": "PAIR replied again with claim summary but did not provide the full requested account/cancellation, delivery, reminder, and cost documentation.",
-      "next_action": "Await requested documentation; review before acknowledging any claim. Legal or direct HelloFresh escalation remains optional if documentation does not arrive or escalation occurs.",
+      "last_action": "A further reply was sent 2026-09-28 disputing the claim basis/amount and requesting underlying order/account, cancellation/support, delivery, reminder and fee documentation.",
+      "next_action": "Await requested documentation and review it before acknowledging any claim.",
       "deadline": "2026-10-05",
-      "authority": "GMAIL_VERIFIED_2026-09-27"
+      "authority": "GMAIL_SENT_2026-09-28"
     },
     {
       "name": "Supabase PAE",
@@ -119,10 +176,18 @@
     {
       "name": "MUDr. Dlouhý control",
       "status": "SCHEDULED",
-      "last_action": "Calendar contains control on 2026-10-12 from 09:00 to 12:00 for a fresh report for dentistry.",
+      "last_action": "Control is confirmed for 2026-10-12 from 09:00 to 12:00 for a fresh dentistry report.",
       "next_action": "Attend on 2026-10-12.",
       "deadline": "2026-10-12",
-      "authority": "CALENDAR_VERIFIED_2026-09-26"
+      "authority": "CALENDAR_VERIFIED_2026-09-28"
+    },
+    {
+      "name": "Dentist",
+      "status": "SCHEDULED",
+      "last_action": "Latest email evidence places the dental appointment on 2026-10-15 at 12:00.",
+      "next_action": "Attend on 2026-10-15 at 12:00 with the requested/current medical report as applicable.",
+      "deadline": "2026-10-15",
+      "authority": "GMAIL_VERIFIED_2026-09-28"
     },
     {
       "name": "CraftNest membership",
@@ -138,6 +203,6 @@
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
-  "last_review": "2026-09-27",
-  "review_note": "Three targeted job applications were sent and today's outreach block is complete. Srdcovka is closed, Saigerhütte rejected the application, coeo confirmed suspension, and PAIR/HelloFresh remains disputed pending documentation. No further work is required today unless a meaningful external reply arrives."
+  "last_review": "2026-09-28",
+  "review_note": "Riftwake closed after a substantial but bounded job-outreach block and email/admin review. Multiple direct hotel/restaurant applications were sent, Saigerhütte received one final direct follow-up, PAIR received a documentation request, and transport-unworkable Motorest Výšina was closed. Current state is WAITING_EXTERNAL; no further outreach is required today."
 }
