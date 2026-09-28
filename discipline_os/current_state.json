@@ -4,9 +4,9 @@
   "updated": "2026-09-28",
   "current_focus": {
     "project": "Income / job search",
-    "milestone": "Riftwake / morning outreach block complete. Direct applications and follow-ups were sent; no further job-search work is required today.",
-    "next_action": "Await replies from current job leads and review only meaningful incoming responses before opening more outreach.",
-    "status": "WAITING_EXTERNAL",
+    "milestone": "Riftwake / morning outreach block complete. Direct applications and follow-ups were sent; DREGENO Spielzeugschachtel has replied with an interview invitation for 2026-09-30.",
+    "next_action": "Attend the DREGENO Spielzeugschachtel interview on 2026-09-30 at 11:00 if confirmed, while otherwise awaiting replies from current job leads.",
+    "status": "INTERVIEW_PENDING_CONFIRMATION",
     "authority": "USER_CONFIRMED_2026-09-28"
   },
   "daily_priorities": [
@@ -61,10 +61,10 @@
     },
     {
       "name": "DREGENO Spielzeugschachtel application",
-      "status": "APPLICATION_SENT_AWAITING_REPLY",
-      "last_action": "German application with CV sent 2026-09-27.",
-      "next_action": "Await reply and verify shift/transport compatibility.",
-      "authority": "GMAIL_SENT_2026-09-27"
+      "status": "INTERVIEW_PROPOSED_AWAITING_CONFIRMATION",
+      "last_action": "Reply sent 2026-09-28 accepting the invitation and proposing Wednesday 2026-09-30 at 11:00 in Spielzeugschachtel.",
+      "next_action": "Await confirmation of 11:00; then attend the interview and discuss transport solution, role terms and next steps.",
+      "authority": "GMAIL_SENT_2026-09-28"
     },
     {
       "name": "Caféchen / Heimatstube application",
@@ -204,5 +204,5 @@
   ],
   "blocked_items": [],
   "last_review": "2026-09-28",
-  "review_note": "Riftwake closed after a substantial but bounded job-outreach block and email/admin review. Multiple direct hotel/restaurant applications were sent, Saigerhütte received one final direct follow-up, PAIR received a documentation request, and transport-unworkable Motorest Výšina was closed. Current state is WAITING_EXTERNAL; no further outreach is required today."
+  "review_note": "DREGENO Spielzeugschachtel replied with a concrete interview invitation. Reply sent proposing Wednesday 2026-09-30 at 11:00; awaiting confirmation."
 }
