@@ -63,6 +63,17 @@
       "next_action": "Await replies from Waldgasthof Bad Einsiedel, DREGENO Spielzeugschachtel, and Caféchen/Heimatstube.",
       "due": null,
       "authority": "USER_CONFIRMED_2026-09-27"
+    },
+    {
+      "id": "C-007",
+      "created": "2026-09-29",
+      "text": "Attend the Srdcovka cook-position interview scheduled after the employer re-opened contact.",
+      "status": "ACTIVE",
+      "project": "Income / job search",
+      "next_action": "Attend the Srdcovka interview on Friday 2026-10-02 at 10:00 and clarify role terms, shifts, pay, and transport feasibility.",
+      "due": "2026-10-02",
+      "authority": "USER_CONFIRMED_2026-09-29",
+      "resolution_note": "The previously closed Srdcovka lead re-opened when the employer called on 2026-09-29 and asked whether the user was still interested."
     }
   ]
 }
