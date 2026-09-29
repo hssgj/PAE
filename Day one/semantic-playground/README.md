@@ -50,17 +50,66 @@ Experiments are designed to run on Android with Pydroid 3.
 
 ## Current experiment
 
-**0.3 / Fake LLM**
+**0.4 / Typo + concept similarity — foundation in place, similarity not implemented yet**
 
-Goal:
+The previous 0.3 experiment established the boundary:
 
 LANGUAGE INTERPRETATION ≠ PAE ORCHESTRATION
 
-The fake LLM intentionally uses simple rules. It simulates the interface a real language model could provide:
+The repository now also contains the first two foundation pieces for 0.4:
 
-natural language → structured interpretation
+1. `02_tokenization/tokenizer.py`
+   - transforms raw text into simple word / punctuation tokens,
+   - deliberately does not imitate a production LLM tokenizer.
 
-The surrounding code handles grounding, situation/context, task creation and orchestration.
+2. `02_tokenization/vocabulary_lookup.py` + `data/vocabulary/cz-mini.tsv`
+   - performs exact lookup of known Czech wordforms,
+   - returns every matching analysis,
+   - deliberately keeps unknown words UNKNOWN.
+
+### What exists now
+
+RAW TEXT
+→ SIMPLE TOKENS
+→ EXACT VOCABULARY LOOKUP
+→ KNOWN / UNKNOWN ANALYSES
+
+### What does not exist yet
+
+- typo correction or fuzzy matching,
+- similarity scoring,
+- concept normalization beyond exact known forms,
+- relation extraction,
+- embeddings,
+- a real LLM boundary.
+
+The next experiment is therefore still the missing part of 0.4:
+
+> Resolve a controlled typo / near-match such as `jisg` toward the intended concept `jíst` without pretending that exact lookup already understands language.
+
+Target example:
+
+`muze nessie jisg ostruziny?`
+
+should eventually become approximately:
+
+- subject = Nessie
+- action = EAT
+- object = BLACKBERRY
+- intent = INFORMATION_REQUEST
+
+while keeping confidence, ambiguity and UNKNOWN behavior visible.
+
+## Current files
+
+- `01_semantic_units.py` — 0.1 manual semantic representation
+- `02_rule_parser.py` — 0.2 rule-based extraction
+- `03_fake_llm.py` — 0.3 fake LLM boundary
+- `02_tokenization/tokenizer.py` — 0.4 foundation: tokenization
+- `02_tokenization/vocabulary_lookup.py` — 0.4 foundation: exact vocabulary lookup
+- `data/vocabulary/cz-mini.tsv` — deliberately small Czech teaching vocabulary
+- `checkpoints.md` — chronological learning checkpoints
+- `roadmap.md` — experiment progression
 
 ## Device
 
