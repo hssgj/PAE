@@ -1,7 +1,7 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "current_focus": {
     "project": "Income / job search",
     "milestone": "Riftwake / morning outreach block complete. Direct applications and follow-ups were sent; DREGENO Spielzeugschachtel has replied with an interview invitation for 2026-09-30.",
@@ -42,7 +42,7 @@
       "name": "Income / job search",
       "status": "ACTIVE_WAITING_EXTERNAL",
       "authority": "USER_CONFIRMED_2026-09-28",
-      "note": "Today's outreach block is complete. Transport feasibility without a car remains a hard filter; accommodation can make otherwise distant roles viable."
+      "note": "Current immediate focus remains the DREGENO interview on 2026-09-30 if confirmed. Srdcovka unexpectedly re-opened on 2026-09-29 and an interview is scheduled for 2026-10-02 at 10:00. Transport feasibility without a car remains a hard filter; accommodation can make otherwise distant roles viable."
     },
     {
       "name": "Víc než angličtina tutoring",
@@ -131,10 +131,11 @@
     },
     {
       "name": "Srdcovka cook application",
-      "status": "CLOSED_NOT_PROCEEDING",
-      "last_action": "User confirmed on 2026-09-27 that the Srdcovka lead has fallen through.",
-      "next_action": "None.",
-      "authority": "USER_CONFIRMED_2026-09-27"
+      "status": "INTERVIEW_SCHEDULED",
+      "last_action": "Employer called on 2026-09-29 and asked whether the user was still interested; user confirmed yes. Interview scheduled for Friday 2026-10-02 at 10:00.",
+      "next_action": "Attend the Srdcovka interview on 2026-10-02 at 10:00; discuss the role, shifts, pay, and transport feasibility.",
+      "authority": "USER_CONFIRMED_2026-09-29",
+      "deadline": "2026-10-02"
     },
     {
       "name": "Motorest Výšina Most",
@@ -203,6 +204,6 @@
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
-  "last_review": "2026-09-28",
-  "review_note": "DREGENO Spielzeugschachtel replied with a concrete interview invitation. Reply sent proposing Wednesday 2026-09-30 at 11:00; awaiting confirmation."
+  "last_review": "2026-09-29",
+  "review_note": "Srdcovka lead re-opened after a direct call from the employer; interview scheduled for Friday 2026-10-02 at 10:00. DREGENO remains the immediate current focus for 2026-09-30 if confirmed."
 }
