@@ -1,13 +1,13 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "current_focus": {
     "project": "Income / job search",
-    "milestone": "Riftwake / morning outreach block complete. Direct applications and follow-ups were sent; DREGENO Spielzeugschachtel has replied with an interview invitation for 2026-09-30.",
-    "next_action": "Attend the DREGENO Spielzeugschachtel interview on 2026-09-30 at 11:00 if confirmed, while otherwise awaiting replies from current job leads.",
-    "status": "INTERVIEW_PENDING_CONFIRMATION",
-    "authority": "USER_CONFIRMED_2026-09-28"
+    "milestone": "DREGENO interview was not completed on 2026-09-30 because the planned public-transport connection failed and Martin Siegert would no longer be available by the later arrival time. After direct phone contact with DREGENO staff, the interview was rescheduled for the morning of 2026-10-01.",
+    "next_action": "Attend the rescheduled DREGENO Spielzeugschachtel interview on the morning of 2026-10-01, aiming to arrive roughly between 09:00 and 10:00 unless DREGENO specifies a tighter time.",
+    "status": "INTERVIEW_RESCHEDULED",
+    "authority": "USER_CONFIRMED_2026-09-30"
   },
   "daily_priorities": [
     {
@@ -61,10 +61,11 @@
     },
     {
       "name": "DREGENO Spielzeugschachtel application",
-      "status": "INTERVIEW_PROPOSED_AWAITING_CONFIRMATION",
-      "last_action": "Reply sent 2026-09-28 accepting the invitation and proposing Wednesday 2026-09-30 at 11:00 in Spielzeugschachtel.",
-      "next_action": "Await confirmation of 11:00; then attend the interview and discuss transport solution, role terms and next steps.",
-      "authority": "GMAIL_SENT_2026-09-28"
+      "status": "INTERVIEW_RESCHEDULED",
+      "last_action": "On 2026-09-30 the original 11:00 interview became unreachable because the planned bus connection did not work as expected. User contacted DREGENO by WhatsApp/email and then by phone. DREGENO staff checked with Martin Siegert, confirmed he would no longer be available by the later arrival time, and asked the user to come the next day instead.",
+      "next_action": "Attend DREGENO on the morning of 2026-10-01, aiming for roughly 09:00-10:00 unless a tighter time is communicated.",
+      "authority": "USER_CONFIRMED_2026-09-30",
+      "deadline": "2026-10-01"
     },
     {
       "name": "Caféchen / Heimatstube application",
@@ -204,6 +205,6 @@
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
-  "last_review": "2026-09-29",
-  "review_note": "Srdcovka lead re-opened after a direct call from the employer; interview scheduled for Friday 2026-10-02 at 10:00. DREGENO remains the immediate current focus for 2026-09-30 if confirmed."
+  "last_review": "2026-09-30",
+  "review_note": "DREGENO interview moved from 2026-09-30 to the morning of 2026-10-01 after public-transport failure and direct phone coordination with DREGENO. Srdcovka remains scheduled for 2026-10-02 at 10:00."
 }
