@@ -74,6 +74,17 @@
       "due": "2026-10-02",
       "authority": "USER_CONFIRMED_2026-09-29",
       "resolution_note": "The previously closed Srdcovka lead re-opened when the employer called on 2026-09-29 and asked whether the user was still interested."
+    },
+    {
+      "id": "C-008",
+      "created": "2026-09-30",
+      "text": "Attend the rescheduled DREGENO Spielzeugschachtel cook-position interview after the original 2026-09-30 appointment became unreachable by public transport.",
+      "status": "ACTIVE",
+      "project": "Income / job search",
+      "next_action": "Attend on the morning of 2026-10-01, aiming for roughly 09:00-10:00 unless DREGENO specifies a tighter time.",
+      "due": "2026-10-01",
+      "authority": "USER_CONFIRMED_2026-09-30",
+      "resolution_note": "Original 11:00 interview on 2026-09-30 was renegotiated by phone after the user discovered the planned bus connection would not work and Martin Siegert would no longer be available at the later arrival time."
     }
   ]
 }
