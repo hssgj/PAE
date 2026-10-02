@@ -5,7 +5,7 @@
   "current_focus": {
     "project": "Income / job search",
     "milestone": "The DREGENO interview was completed on 2026-10-01 and the user confirmed new employment in Germany beginning Monday 2026-10-05. Immediate execution has shifted from job search to employment onboarding. AOK PLUS health-insurance enrollment/details are needed for the employer.",
-    "next_action": "Complete the AOK PLUS enrollment and obtain the membership/insurance confirmation or data needed by the employer before the DREGENO start on 2026-10-05.",
+    "next_action": "Await Claudia Hunger/AOK PLUS reply. Do not duplicate outreach now; when AOK responds, provide the requested information/documents, complete enrollment, and pass the employer-ready insurance confirmation/data to DREGENO before or at the 2026-10-05 start.",
     "status": "EMPLOYMENT_FOUND_ONBOARDING",
     "authority": "USER_CONFIRMED_2026-10-02"
   },
@@ -211,7 +211,17 @@
     "Supabase reactivation unless it becomes a concrete blocker",
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
-  "blocked_items": [],
+  "blocked_items": [
+    {
+      "name": "AOK PLUS membership / employer insurance data",
+      "type": "EXTERNAL_DEPENDENCY",
+      "status": "WAITING_EXTERNAL_AFTER_REQUEST_SENT",
+      "blocks": "Completion of DREGENO employment onboarding for the 2026-10-05 start.",
+      "release_condition": "AOK PLUS / Claudia Hunger replies with the enrollment steps, requested documents, or employer-ready confirmation/data.",
+      "next_action": "No duplicate outreach now; respond promptly when AOK replies.",
+      "authority": "GMAIL_VERIFIED_2026-10-02"
+    }
+  ],
   "last_review": "2026-10-02",
-  "review_note": "Employment search milestone advanced: DREGENO interview completed and new German employment starts 2026-10-05. Immediate blocker is AOK PLUS onboarding. Srdcovka closed by user email. N26/coeo counterproposal sent and awaiting reply. Sommerhof Zoom offer is held as an unactivated backup."
+  "review_note": "Employment search milestone advanced: DREGENO interview completed and new German employment starts 2026-10-05. AOK PLUS onboarding is now recorded explicitly as the current external dependency; the request was already sent, so no duplicate outreach is needed while waiting. Srdcovka is closed. N26/coeo and PAIR/HelloFresh remain waiting external. Discipline OS stays MAINTENANCE_ONLY; redesign/features remain parked."
 }
