@@ -1,34 +1,33 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-09-30",
+  "updated": "2026-10-02",
   "current_focus": {
     "project": "Income / job search",
-    "milestone": "DREGENO interview was not completed on 2026-09-30 because the planned public-transport connection failed and Martin Siegert would no longer be available by the later arrival time. After direct phone contact with DREGENO staff, the interview was rescheduled for the morning of 2026-10-01.",
-    "next_action": "Attend the rescheduled DREGENO Spielzeugschachtel interview on the morning of 2026-10-01, aiming to arrive roughly between 09:00 and 10:00 unless DREGENO specifies a tighter time.",
-    "status": "INTERVIEW_RESCHEDULED",
-    "authority": "USER_CONFIRMED_2026-09-30"
+    "milestone": "The DREGENO interview was completed on 2026-10-01 and the user confirmed new employment in Germany beginning Monday 2026-10-05. Immediate execution has shifted from job search to employment onboarding. AOK PLUS health-insurance enrollment/details are needed for the employer.",
+    "next_action": "Complete the AOK PLUS enrollment and obtain the membership/insurance confirmation or data needed by the employer before the DREGENO start on 2026-10-05.",
+    "status": "EMPLOYMENT_FOUND_ONBOARDING",
+    "authority": "USER_CONFIRMED_2026-10-02"
   },
   "daily_priorities": [
     {
       "rank": 1,
-      "item": "Complete a bounded job-search outreach block focused on realistic cook roles, prioritizing accommodation or workable transport.",
-      "status": "DONE_EXCEEDED",
-      "authority": "USER_CONFIRMED_2026-09-28",
-      "note": "Direct applications/follow-ups sent to JoSchi Hochkar, Hotel Antonius (Jungkoch/Koch and Chef de Partie), Hotel Riml (Chef de Partie, Frühstückskoch, Demi Chef de Partie), Alphotel Hirschegg (Jungkoch), Hotel Sommerhof (Koch), Holzwurm Seiffen (Koch), Thiele Schenke Marienberg (Koch), plus a renewed direct follow-up to Saigerhütte."
+      "item": "Complete AOK PLUS enrollment and obtain the insurance confirmation/data needed by the new German employer before the 2026-10-05 start.",
+      "status": "WAITING_EXTERNAL_AFTER_REQUEST_SENT",
+      "authority": "GMAIL_VERIFIED_2026-10-02",
+      "note": "Reply sent to AOK PLUS adviser Claudia Hunger on 2026-10-02 explaining the Monday start, remote-enrollment need, and request for employer-ready insurance confirmation/data."
     },
     {
       "rank": 2,
-      "item": "Keep N26/coeo paused while waiting for their substantive response.",
+      "item": "Keep N26/coeo on hold while awaiting a response to the 2026-10-01 counterproposal; do not accept the €35 installment agreement with added settlement fee by default.",
       "status": "WAITING_EXTERNAL",
-      "authority": "GMAIL_VERIFIED_2026-09-27"
+      "authority": "GMAIL_VERIFIED_2026-10-01"
     },
     {
       "rank": 3,
       "item": "Keep PAIR/HelloFresh disputed and require supporting documentation before acknowledging the claim.",
       "status": "WAITING_EXTERNAL",
-      "authority": "GMAIL_SENT_2026-09-28",
-      "note": "A further written reply was sent requesting concrete order/account history, cancellation/support records, delivery proof, reminders and fee justification."
+      "authority": "GMAIL_SENT_2026-09-28"
     }
   ],
   "active_projects": [
@@ -40,9 +39,9 @@
     },
     {
       "name": "Income / job search",
-      "status": "ACTIVE_WAITING_EXTERNAL",
-      "authority": "USER_CONFIRMED_2026-09-28",
-      "note": "Current immediate focus remains the DREGENO interview on 2026-09-30 if confirmed. Srdcovka unexpectedly re-opened on 2026-09-29 and an interview is scheduled for 2026-10-02 at 10:00. Transport feasibility without a car remains a hard filter; accommodation can make otherwise distant roles viable."
+      "status": "EMPLOYMENT_FOUND_ONBOARDING",
+      "authority": "USER_CONFIRMED_2026-10-02",
+      "note": "DREGENO interview completed 2026-10-01 and user confirmed a new German job beginning 2026-10-05. New job-search outreach is paused by default while onboarding is completed. Existing alternatives remain external/backup items unless explicitly reopened."
     },
     {
       "name": "Víc než angličtina tutoring",
@@ -61,11 +60,11 @@
     },
     {
       "name": "DREGENO Spielzeugschachtel application",
-      "status": "INTERVIEW_RESCHEDULED",
-      "last_action": "On 2026-09-30 the original 11:00 interview became unreachable because the planned bus connection did not work as expected. User contacted DREGENO by WhatsApp/email and then by phone. DREGENO staff checked with Martin Siegert, confirmed he would no longer be available by the later arrival time, and asked the user to come the next day instead.",
-      "next_action": "Attend DREGENO on the morning of 2026-10-01, aiming for roughly 09:00-10:00 unless a tighter time is communicated.",
-      "authority": "USER_CONFIRMED_2026-09-30",
-      "deadline": "2026-10-01"
+      "status": "INTERVIEW_COMPLETED_EMPLOYMENT_START_CONFIRMED",
+      "last_action": "User attended DREGENO on 2026-10-01, completed the employer form, and confirmed a new German employment start for Monday 2026-10-05.",
+      "next_action": "Complete onboarding requirements, especially AOK PLUS health-insurance details for the employer, before or at the 2026-10-05 start.",
+      "authority": "USER_CONFIRMED_2026-10-02",
+      "deadline": "2026-10-05"
     },
     {
       "name": "Caféchen / Heimatstube application",
@@ -104,10 +103,10 @@
     },
     {
       "name": "Hotel Sommerhof application",
-      "status": "APPLICATION_SENT_AWAITING_REPLY",
-      "last_action": "Direct German Koch application with CV sent 2026-09-28 to Manuel Wallner.",
-      "next_action": "Await reply.",
-      "authority": "GMAIL_SENT_2026-09-28"
+      "status": "ZOOM_INTERVIEW_OFFERED_ON_HOLD",
+      "last_action": "On 2026-10-01 Manuel Wallner offered a Zoom interview for 2026-10-06 at 11:00.",
+      "next_action": "Hold without further action until the user decides whether to keep this as a backup after the DREGENO employment start.",
+      "authority": "GMAIL_VERIFIED_2026-10-01"
     },
     {
       "name": "Holzwurm Seiffen application",
@@ -132,10 +131,10 @@
     },
     {
       "name": "Srdcovka cook application",
-      "status": "INTERVIEW_SCHEDULED",
-      "last_action": "Employer called on 2026-09-29 and asked whether the user was still interested; user confirmed yes. Interview scheduled for Friday 2026-10-02 at 10:00.",
-      "next_action": "Attend the Srdcovka interview on 2026-10-02 at 10:00; discuss the role, shifts, pay, and transport feasibility.",
-      "authority": "USER_CONFIRMED_2026-09-29",
+      "status": "CLOSED_USER_CANCELLED_AFTER_EMPLOYMENT_FOUND",
+      "last_action": "User sent a cancellation email on 2026-10-01 stating that employment had been found and the 2026-10-02 interview would not be attended.",
+      "next_action": "None.",
+      "authority": "GMAIL_VERIFIED_2026-10-01",
       "deadline": "2026-10-02"
     },
     {
@@ -147,11 +146,11 @@
     },
     {
       "name": "N26 / coeo",
-      "status": "SUSPENDED_AWAITING_SUBSTANTIVE_REPLY",
-      "last_action": "coeo confirmed by email that the collection procedure is suspended while they review the inquiry.",
-      "next_action": "Await substantive written reply; no payment-plan action while suspension remains in effect unless new information changes the situation.",
-      "authority": "GMAIL_VERIFIED_2026-09-27",
-      "note": "Do not mark paid or resolved."
+      "status": "COUNTERPROPOSAL_SENT_AWAITING_REPLY",
+      "last_action": "On 2026-10-01 coeo rejected a temporary deferral and offered €35 monthly installments with an additional settlement fee. User replied the same day declining that structure, requesting suspension through 2026-11-30 and proposing €20/month from December without the added settlement fee.",
+      "next_action": "Await coeo's substantive written response; do not accept or pay under the €35 + fee proposal by default.",
+      "authority": "GMAIL_VERIFIED_2026-10-01",
+      "note": "coeo's original offer requested a response by 2026-10-12; user already responded on 2026-10-01 with a counterproposal."
     },
     {
       "name": "PAIR / HelloFresh",
@@ -196,6 +195,14 @@
       "status": "CANCELLATION_CONFIRMED",
       "last_action": "Cancellation confirmation received 2026-09-20.",
       "authority": "GMAIL_VERIFIED_2026-09-20"
+    },
+    {
+      "name": "AOK PLUS membership / employer insurance data",
+      "status": "REQUEST_SENT_AWAITING_REPLY",
+      "last_action": "On 2026-10-02 user replied to AOK PLUS adviser Claudia Hunger, explained the new employment start on 2026-10-05, requested remote enrollment, and asked for the insurance confirmation/data needed by the employer.",
+      "next_action": "Await AOK PLUS reply; then provide requested information/documents, complete enrollment, and pass the resulting insurance confirmation/data to the employer.",
+      "deadline": "2026-10-05",
+      "authority": "GMAIL_VERIFIED_2026-10-02"
     }
   ],
   "parked_for_now": [
@@ -205,6 +212,6 @@
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
-  "last_review": "2026-09-30",
-  "review_note": "DREGENO interview moved from 2026-09-30 to the morning of 2026-10-01 after public-transport failure and direct phone coordination with DREGENO. Srdcovka remains scheduled for 2026-10-02 at 10:00."
+  "last_review": "2026-10-02",
+  "review_note": "Employment search milestone advanced: DREGENO interview completed and new German employment starts 2026-10-05. Immediate blocker is AOK PLUS onboarding. Srdcovka closed by user email. N26/coeo counterproposal sent and awaiting reply. Sommerhof Zoom offer is held as an unactivated backup."
 }
