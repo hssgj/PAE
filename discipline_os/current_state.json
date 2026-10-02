@@ -5,7 +5,7 @@
   "current_focus": {
     "project": "Income / job search",
     "milestone": "The DREGENO interview was completed on 2026-10-01 and the user confirmed new employment in Germany beginning Monday 2026-10-05. Immediate execution has shifted from job search to employment onboarding. AOK PLUS health-insurance enrollment/details are needed for the employer.",
-    "next_action": "Await Claudia Hunger/AOK PLUS reply. Do not duplicate outreach now; when AOK responds, provide the requested information/documents, complete enrollment, and pass the employer-ready insurance confirmation/data to DREGENO before or at the 2026-10-05 start.",
+    "next_action": "Complete the AOK PLUS online membership application using the personal enrollment link sent by Claudia Hunger on 2026-10-02, then click the confirmation link in the follow-up AOK email so the application is actually transmitted. After confirmation, obtain/pass the employer-ready insurance confirmation or data to DREGENO before or at the 2026-10-05 start.",
     "status": "EMPLOYMENT_FOUND_ONBOARDING",
     "authority": "USER_CONFIRMED_2026-10-02"
   },
@@ -13,9 +13,9 @@
     {
       "rank": 1,
       "item": "Complete AOK PLUS enrollment and obtain the insurance confirmation/data needed by the new German employer before the 2026-10-05 start.",
-      "status": "WAITING_EXTERNAL_AFTER_REQUEST_SENT",
+      "status": "READY_TO_EXECUTE",
       "authority": "GMAIL_VERIFIED_2026-10-02",
-      "note": "Reply sent to AOK PLUS adviser Claudia Hunger on 2026-10-02 explaining the Monday start, remote-enrollment need, and request for employer-ready insurance confirmation/data."
+      "note": "AOK PLUS adviser Claudia Hunger replied on 2026-10-02 with an online membership application link. The application must be submitted and then confirmed via the follow-up AOK confirmation email; only after that are the data transmitted to AOK PLUS."
     },
     {
       "rank": 2,
@@ -198,9 +198,9 @@
     },
     {
       "name": "AOK PLUS membership / employer insurance data",
-      "status": "REQUEST_SENT_AWAITING_REPLY",
-      "last_action": "On 2026-10-02 user replied to AOK PLUS adviser Claudia Hunger, explained the new employment start on 2026-10-05, requested remote enrollment, and asked for the insurance confirmation/data needed by the employer.",
-      "next_action": "Await AOK PLUS reply; then provide requested information/documents, complete enrollment, and pass the resulting insurance confirmation/data to the employer.",
+      "status": "APPLICATION_LINK_RECEIVED_ACTION_REQUIRED",
+      "last_action": "On 2026-10-02 AOK PLUS adviser Claudia Hunger confirmed eligibility if the employer is in Saxony or Thuringia and sent a personal online membership application link.",
+      "next_action": "Open the personal AOK application link from Claudia's email, complete and submit the form, then click 'jetzt bestätigen' in the confirmation email. Afterwards obtain/pass the employer-ready insurance confirmation/data to DREGENO.",
       "deadline": "2026-10-05",
       "authority": "GMAIL_VERIFIED_2026-10-02"
     }
@@ -211,17 +211,7 @@
     "Supabase reactivation unless it becomes a concrete blocker",
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
-  "blocked_items": [
-    {
-      "name": "AOK PLUS membership / employer insurance data",
-      "type": "EXTERNAL_DEPENDENCY",
-      "status": "WAITING_EXTERNAL_AFTER_REQUEST_SENT",
-      "blocks": "Completion of DREGENO employment onboarding for the 2026-10-05 start.",
-      "release_condition": "AOK PLUS / Claudia Hunger replies with the enrollment steps, requested documents, or employer-ready confirmation/data.",
-      "next_action": "No duplicate outreach now; respond promptly when AOK replies.",
-      "authority": "GMAIL_VERIFIED_2026-10-02"
-    }
-  ],
+  "blocked_items": [],
   "last_review": "2026-10-02",
-  "review_note": "Employment search milestone advanced: DREGENO interview completed and new German employment starts 2026-10-05. AOK PLUS onboarding is now recorded explicitly as the current external dependency; the request was already sent, so no duplicate outreach is needed while waiting. Srdcovka is closed. N26/coeo and PAIR/HelloFresh remain waiting external. Discipline OS stays MAINTENANCE_ONLY; redesign/features remain parked."
+  "review_note": "AOK PLUS external blocker released: Claudia Hunger replied with an online membership application link. Priority #1 is now executable by the user: submit the AOK form, confirm the follow-up email, then pass employer-ready insurance data to DREGENO. Tooling/free-tier fallback work remains secondary until this onboarding action is completed."
 }
