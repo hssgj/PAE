@@ -1,4 +1,12 @@
 {
   "version": "0.1",
-  "ideas": []
+  "ideas": [
+    {
+      "id": "P-001",
+      "created": "2026-10-02",
+      "title": "Free-tier fallback for Plus-limited core tools",
+      "status": "PARKED",
+      "note": "Before the current ChatGPT Plus subscription expires, review and resolve the basic workflows/tools that would be materially limited on Free. Image generation/image-hand is explicitly important. Do not activate this as a project until deliberately scheduled; first determine the actual Plus expiry date."
+    }
+  ]
 }
