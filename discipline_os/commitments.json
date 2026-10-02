@@ -90,12 +90,12 @@
       "id": "C-009",
       "created": "2026-10-02",
       "text": "Complete AOK PLUS health-insurance enrollment and provide the new German employer with the required insurance confirmation/data for the 2026-10-05 start.",
-      "status": "WAITING_EXTERNAL",
+      "status": "ACTIVE",
       "project": "Income / job search",
-      "next_action": "Await Claudia Hunger/AOK PLUS; then provide requested documents or information, complete enrollment, and pass the insurance confirmation/data to the employer.",
+      "next_action": "Complete the personal AOK PLUS online membership application from Claudia Hunger's 2026-10-02 email, submit it, then click the confirmation link in the follow-up AOK email. After confirmation, obtain/pass the required insurance confirmation/data to DREGENO.",
       "due": "2026-10-05",
       "authority": "GMAIL_VERIFIED_2026-10-02",
-      "resolution_note": "AOK PLUS reply was sent on 2026-10-02 requesting remote enrollment and employer-ready insurance confirmation/data before Monday's start."
+      "resolution_note": "AOK PLUS replied on 2026-10-02 with the online enrollment path. The external wait is over; user action is now required before the 2026-10-05 employment start."
     }
   ]
 }
