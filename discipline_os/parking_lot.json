@@ -5,8 +5,8 @@
       "id": "P-001",
       "created": "2026-10-02",
       "title": "Free-tier fallback for Plus-limited core tools",
-      "status": "PARKED",
-      "note": "Before the current ChatGPT Plus subscription expires, review and resolve the basic workflows/tools that would be materially limited on Free. Image generation/image-hand is explicitly important. Do not activate this as a project until deliberately scheduled; first determine the actual Plus expiry date."
+      "status": "AUDITED_PARKED",
+      "note": "Audited 2026-10-02. Exact current Plus expiry date is not verified from available account/email data. Free keeps image creation, image/file upload and plugin directory access but with materially tighter tool limits; Free file uploads are limited to 3/day, GPT-5.6 Sol is unavailable, and ChatGPT Work is unavailable on Free/Go. Specific plugin/app availability can still vary by plan/account. image-hand itself is independent of ChatGPT Plus: it is a Cloudflare Worker + Google Drive OAuth bridge, but its deployment workflow/config shows maintenance debt (Wrangler 3.90.0 outdated; wrangler.toml contains an unsupported [secrets] section). Do not execute migration/repair work until the active AOK onboarding action is completed or priority is explicitly renegotiated."
     }
   ]
 }
