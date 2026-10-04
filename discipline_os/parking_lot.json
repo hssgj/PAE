@@ -7,6 +7,13 @@
       "title": "Free-tier fallback for Plus-limited core tools",
       "status": "AUDITED_PARKED",
       "note": "Audited 2026-10-02. Exact current Plus expiry date is not verified from available account/email data. Free keeps image creation, image/file upload and plugin directory access but with materially tighter tool limits; Free file uploads are limited to 3/day, GPT-5.6 Sol is unavailable, and ChatGPT Work is unavailable on Free/Go. Specific plugin/app availability can still vary by plan/account. image-hand itself is independent of ChatGPT Plus: it is a Cloudflare Worker + Google Drive OAuth bridge, but its deployment workflow/config shows maintenance debt (Wrangler 3.90.0 outdated; wrangler.toml contains an unsupported [secrets] section). Do not execute migration/repair work until the active AOK onboarding action is completed or priority is explicitly renegotiated."
+    },
+    {
+      "id": "P-002",
+      "created": "2026-10-04",
+      "title": "Anael the Red Witness revival / rebuild",
+      "status": "PARKED_UNTIL_CONDITION",
+      "note": "Do not resume Anael profiling, mechanics, power-system design, psychological analysis, crossover scenes, or revival work yet. Preserve the current concept: Anael is the Red Witness, an archangel of blood magic whose virtues cast dangerous shadows; he keeps the three-meter sword and blood magic. Release condition: Daunt has been sent back home to Hogwarts. Until that condition is explicitly reached, redirect any attempt to continue Anael work back to finishing Daunt first."
     }
   ]
 }
