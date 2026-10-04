@@ -4,18 +4,18 @@
   "updated": "2026-10-04",
   "current_focus": {
     "project": "Income / job search",
-    "milestone": "The DREGENO employment start is confirmed for Monday 2026-10-05. The AOK PLUS online membership application was completed on 2026-10-04 and the required activation link was confirmed; AOK now shows the application as received/in processing. Immediate onboarding now shifts to German-insurance follow-through plus Czech cross-border registration.",
-    "next_action": "Notify VZP in writing of German employment starting 2026-10-05, then obtain AOK PLUS membership confirmation/employer-ready insurance data and request/obtain S1 for residence in Czechia. Register the S1 with VZP so VZP can act as the assisting insurer in Czechia and issue the applicable yellow TP-B card/registration confirmation.",
+    "milestone": "DREGENO employment starts Monday 2026-10-05. AOK PLUS membership application was completed and activated on 2026-10-04; AOK then emailed confirmation that the membership application was successfully transmitted and is being processed. VZP was notified by email on 2026-10-04 about the German employment start and pending AOK/S1 documentation.",
+    "next_action": "Confirm first-day reporting time for DREGENO if not already remembered from the interview; otherwise wait for AOK PLUS processing/employer-ready insurance data and VZP response, then obtain/register S1 for Czech healthcare entitlement.",
     "status": "EMPLOYMENT_FOUND_ONBOARDING",
-    "authority": "USER_CONFIRMED_2026-10-04"
+    "authority": "USER_AND_GMAIL_VERIFIED_2026-10-04"
   },
   "daily_priorities": [
     {
       "rank": 1,
-      "item": "Complete German/Czech health-insurance onboarding for the 2026-10-05 DREGENO start: AOK application is submitted/confirmed; notify VZP of German employment, obtain AOK employer data and S1, then register S1 with VZP.",
-      "status": "AOK_SUBMITTED_VZP_NOTIFICATION_NEXT",
+      "item": "Finish only remaining immediate onboarding logistics for the 2026-10-05 DREGENO start: first-day reporting time if still uncertain. AOK application is successfully transmitted; VZP has been notified; AOK/VZP/S1 follow-through is now waiting external.",
+      "status": "IMMEDIATE_LOGISTICS_ONLY_THEN_WAITING_EXTERNAL",
       "authority": "USER_AND_GMAIL_VERIFIED_2026-10-04",
-      "note": "AOK PLUS application was submitted and the activation email was confirmed on 2026-10-04; AOK displayed that the application had been received and was being processed. Remaining actions are VZP notification, AOK processing/employer data, and S1 cross-border registration."
+      "note": "AOK confirmed successful transmission of the membership application on 2026-10-04. VZP notification email was sent the same day. DREGENO email states general working hours 09:00-18:00, but does not explicitly state the first-day reporting time."
     },
     {
       "rank": 2,
@@ -62,8 +62,8 @@
       "name": "DREGENO Spielzeugschachtel application",
       "status": "INTERVIEW_COMPLETED_EMPLOYMENT_START_CONFIRMED",
       "last_action": "User attended DREGENO on 2026-10-01, completed the employer form, and confirmed a new German employment start for Monday 2026-10-05.",
-      "next_action": "Start employment on 2026-10-05 and provide AOK PLUS insurance confirmation/data as soon as available; complete Czech cross-border registration through VZP/S1.",
-      "authority": "USER_CONFIRMED_2026-10-04",
+      "next_action": "Start employment on 2026-10-05. General working hours are documented as 09:00-18:00; confirm the exact first-day reporting time only if it was not already agreed orally. Provide AOK insurance data when available.",
+      "authority": "GMAIL_AND_USER_VERIFIED_2026-10-04",
       "deadline": "2026-10-05"
     },
     {
@@ -198,11 +198,11 @@
     },
     {
       "name": "AOK PLUS membership / employer insurance data",
-      "status": "APPLICATION_SUBMITTED_CONFIRMED_AWAITING_PROCESSING",
-      "last_action": "On 2026-10-04 the user completed the AOK PLUS online membership application and clicked the required activation link; AOK then displayed that the application had been received and was in processing.",
-      "next_action": "Await AOK PLUS processing and obtain employer-ready insurance confirmation/data. Request/obtain S1 for residence in Czechia while insured through German employment, then register it with VZP.",
+      "status": "APPLICATION_SUCCESSFULLY_TRANSMITTED_AWAITING_PROCESSING",
+      "last_action": "AOK PLUS emailed confirmation on 2026-10-04 that the membership application was successfully transmitted after activation.",
+      "next_action": "Await AOK PLUS processing and employer-ready insurance confirmation/data; obtain S1 and register it with VZP.",
       "deadline": "2026-10-05",
-      "authority": "USER_AND_GMAIL_VERIFIED_2026-10-04"
+      "authority": "GMAIL_VERIFIED_2026-10-04"
     }
   ],
   "parked_for_now": [
@@ -213,5 +213,5 @@
   ],
   "blocked_items": [],
   "last_review": "2026-10-04",
-  "review_note": "AOK PLUS enrollment submission gate completed: application submitted and activation link confirmed. Current execution is VZP cross-border notification plus awaiting AOK processing/employer data and S1."
+  "review_note": "AOK application successfully transmitted and VZP notified. Remaining immediate issue is only first-day reporting time if not already known; insurance processing is now external."
 }
