@@ -92,10 +92,10 @@
       "text": "Complete AOK PLUS health-insurance enrollment and provide the new German employer with the required insurance confirmation/data for the 2026-10-05 start.",
       "status": "ACTIVE",
       "project": "Income / job search",
-      "next_action": "Complete the personal AOK PLUS online membership application from Claudia Hunger's 2026-10-02 email, submit it, then click the confirmation link in the follow-up AOK email. After confirmation, obtain/pass the required insurance confirmation/data to DREGENO.",
+      "next_action": "Notify VZP of German employment starting 2026-10-05; await AOK PLUS processing and obtain employer-ready insurance confirmation/data and S1, then register S1 with VZP for Czech healthcare coverage.",
       "due": "2026-10-05",
-      "authority": "GMAIL_VERIFIED_2026-10-02",
-      "resolution_note": "AOK PLUS replied on 2026-10-02 with the online enrollment path. The external wait is over; user action is now required before the 2026-10-05 employment start."
+      "authority": "USER_AND_GMAIL_VERIFIED_2026-10-04",
+      "resolution_note": "AOK PLUS application was completed and the activation link confirmed on 2026-10-04. The application is received/in processing; remaining onboarding is employer-ready AOK data plus Czech cross-border registration via S1/VZP."
     }
   ]
 }
