@@ -103,10 +103,10 @@
     },
     {
       "name": "Hotel Sommerhof application",
-      "status": "ZOOM_INTERVIEW_OFFERED_ON_HOLD",
-      "last_action": "On 2026-10-01 Manuel Wallner offered a Zoom interview for 2026-10-06 at 11:00.",
-      "next_action": "Hold without further action until the user decides whether to keep this as a backup after the DREGENO employment start.",
-      "authority": "GMAIL_VERIFIED_2026-10-01"
+      "status": "CLOSED_USER_DECLINED_AFTER_EMPLOYMENT_FOUND",
+      "last_action": "On 2026-10-04 the user declined the 2026-10-06 11:00 Zoom interview, stating that employment had already been found and the distance to Gosau was too great.",
+      "next_action": "None.",
+      "authority": "GMAIL_SENT_2026-10-04"
     },
     {
       "name": "Holzwurm Seiffen application",
@@ -213,5 +213,5 @@
   ],
   "blocked_items": [],
   "last_review": "2026-10-04",
-  "review_note": "Morning Riftwake Brief completed on 2026-10-04. AOK inbox rechecked: the latest substantive AOK PLUS message remains the 08:18 receipt confirmation that the membership application was successfully transmitted, so no duplicate AOK action is required now. VZP has already been notified. Remaining immediate onboarding issue is only the exact first-day DREGENO reporting time if still uncertain; otherwise wait for AOK/VZP processing and then obtain/register S1."
+  "review_note": "Sommerhof backup closed by user after DREGENO employment was confirmed; Zoom interview cancelled by email on 2026-10-04."
 }
