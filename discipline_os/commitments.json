@@ -92,10 +92,10 @@
       "text": "Complete AOK PLUS health-insurance enrollment and provide the new German employer with the required insurance confirmation/data for the 2026-10-05 start.",
       "status": "ACTIVE",
       "project": "Income / job search",
-      "next_action": "Notify VZP of German employment starting 2026-10-05; await AOK PLUS processing and obtain employer-ready insurance confirmation/data and S1, then register S1 with VZP for Czech healthcare coverage.",
+      "next_action": "Confirm first-day DREGENO reporting time if still uncertain; otherwise await AOK PLUS processing and VZP response, then obtain/register S1 and provide employer-ready AOK insurance data.",
       "due": "2026-10-05",
       "authority": "USER_AND_GMAIL_VERIFIED_2026-10-04",
-      "resolution_note": "AOK PLUS application was completed and the activation link confirmed on 2026-10-04. The application is received/in processing; remaining onboarding is employer-ready AOK data plus Czech cross-border registration via S1/VZP."
+      "resolution_note": "AOK PLUS confirmed successful transmission of the membership application on 2026-10-04. VZP was notified by email the same day. Insurance onboarding is now mostly waiting external; exact first-day reporting time remains the only immediate logistics question if not remembered from the interview."
     }
   ]
 }
