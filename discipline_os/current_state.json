@@ -5,7 +5,7 @@
   "current_focus": {
     "project": "PAE / prototype_v0",
     "milestone": "Four-day survival prototype: load a game log/canon into a small persistent runtime, chat with a model as a consistent GM, and resume the session with saved state. No general PAE architecture work.",
-    "next_action": "Create and smoke-test prototype_v0 with app.py, a provider adapter, and persistent sessions. Then connect one real model provider and run one HP5e log acceptance test.",
+    "next_action": "Connect prototype_v0 to one real local/model endpoint, verify one real response, then run the HP5e log/canon acceptance test and confirm persistence across restart.",
     "status": "ACTIVE_FOUR_DAY_BUILD_SPRINT",
     "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
   },
@@ -13,13 +13,13 @@
     {
       "rank": 1,
       "item": "Build the smallest runnable prototype_v0: CLI chat, provider layer, persistent sessions, and file/log loading.",
-      "status": "ACTIVE_NOW",
+      "status": "DONE_2026-10-05",
       "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
     },
     {
       "rank": 2,
       "item": "Connect one real model endpoint and prove a saved session can continue after restart.",
-      "status": "NEXT",
+      "status": "ACTIVE_NOW",
       "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
     },
     {
@@ -211,8 +211,8 @@
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
-  "last_review": "2026-10-04",
-  "review_note": "Sommerhof backup closed by user after DREGENO employment was confirmed; Zoom interview cancelled by email on 2026-10-04.",
+  "last_review": "2026-10-05",
+  "review_note": "prototype_v0 created on main and locally smoke-tested with echo provider. Python syntax compiled; session history persisted across process restart. Next action is connecting a real model endpoint.",
   "temporary_priority_override": {
     "project": "PAE / prototype_v0",
     "starts_at": "2026-10-05T18:03:00+02:00",
