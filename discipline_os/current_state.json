@@ -4,10 +4,10 @@
   "updated": "2026-10-05",
   "current_focus": {
     "project": "PAE / prototype_v0",
-    "milestone": "Four-day survival prototype: load a game log/canon into a small persistent runtime, chat with a model as a consistent GM, and resume the session with saved state. No general PAE architecture work.",
-    "next_action": "Connect prototype_v0 to one real local/model endpoint, verify one real response, then run the HP5e log/canon acceptance test and confirm persistence across restart.",
-    "status": "ACTIVE_FOUR_DAY_BUILD_SPRINT",
-    "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
+    "milestone": "Four-day survival prototype. Day 1 is GREEN: prototype_v0 runs on Android/Termux, reaches a real LLM through OpenRouter, persists JSON sessions, survives process restarts, and keeps sessions isolated. Day 2 target is the smallest read-only GitHub integration so the runtime can fetch authoritative project/canon files directly. HP5e, Frostfire Foundry and Matthael-vs-Bingo are future acceptance use-cases, not the current target.",
+    "next_action": "Add the smallest read-only GitHub source loader/connector to prototype_v0, prove it can fetch one known file from hssgj/PAE, persist that source in the session, and use it in one real-model answer. Do not connect Supabase, Drive, Notion, or broader architecture unless GitHub access reveals a concrete blocker.",
+    "status": "DAY_1_GREEN_DAY_2_GITHUB_READ_NEXT",
+    "authority": "USER_EXPLICIT_RENEGOTIATION_2026-10-05"
   },
   "daily_priorities": [
     {
@@ -19,22 +19,22 @@
     {
       "rank": 2,
       "item": "Connect one real model endpoint and prove a saved session can continue after restart.",
-      "status": "ACTIVE_NOW",
-      "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
+      "status": "DONE_2026-10-05",
+      "authority": "USER_AND_RUNTIME_VERIFIED_2026-10-05"
     },
     {
       "rank": 3,
-      "item": "Run the HP5e acceptance test: load log/canon -> understand state -> start/continue GM scene -> persist continuity.",
-      "status": "AFTER_RUNTIME",
-      "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
+      "item": "Close Day 1 cleanly: record smoke-test findings and set Day 2 to read-only GitHub integration. Keep HP5e/Frostfire/Bingo as future acceptance use-cases rather than current scope.",
+      "status": "DONE_2026-10-05",
+      "authority": "USER_EXPLICIT_RENEGOTIATION_2026-10-05"
     }
   ],
   "active_projects": [
     {
       "name": "PAE / Discipline OS",
-      "status": "BOUNDED_PROTOTYPE_SPRINT",
+      "status": "BOUNDED_PROTOTYPE_SPRINT_DAY_1_GREEN",
       "authority": "USER_EXPLICIT_2026-10-05",
-      "note": "Temporary 4-day prototype_v0 sprint authorized for 2026-10-05 through 2026-10-08. Scope is limited to the persistent log-driven chat runtime acceptance path. DREGENO onboarding remains priority #1; PAE may proceed in free blocks without repeated scope renegotiation. Broad PAE feature expansion remains parked."
+      "note": "Temporary four-day prototype_v0 sprint remains authorized through 2026-10-08. Day 1 verified a persistent real-model chat runtime on Android/Termux. Day 2 is narrowly scoped to read-only GitHub source access as the first system integration. Broader PAE architecture, Supabase reactivation, Drive/Notion integration, and game-specific acceptance work remain deferred unless they become concrete blockers."
     },
     {
       "name": "Income / job search",
@@ -161,10 +161,10 @@
     },
     {
       "name": "Supabase PAE",
-      "status": "PAUSED_BY_PROVIDER",
-      "last_action": "Supabase emailed on 2026-09-25 that project PAE has been paused.",
-      "next_action": "No action unless a confirmed blocker requires the project.",
-      "authority": "GMAIL_VERIFIED_2026-09-25"
+      "status": "INACTIVE_LIVE_VERIFIED",
+      "last_action": "Live Supabase project check on 2026-10-05 returned status INACTIVE for project ref ssoxrhdhesolrhxmnuah.",
+      "next_action": "Keep inactive. Do not reactivate for Day 2; GitHub read-only integration does not require Supabase. Revisit only if a concrete runtime/state blocker appears.",
+      "authority": "SUPABASE_LIVE_VERIFIED_2026-10-05"
     },
     {
       "name": "Supabase hp-game",
@@ -212,7 +212,7 @@
   ],
   "blocked_items": [],
   "last_review": "2026-10-05",
-  "review_note": "prototype_v0 created on main and locally smoke-tested with echo provider. Python syntax compiled; session history persisted across process restart. Next action is connecting a real model endpoint.",
+  "review_note": "DAY 1 GREEN. prototype_v0 ran on Android/Termux against a real OpenRouter LLM. Smoke testing exceeded 10 user/assistant turns, verified JSON persistence across multiple process restarts, and verified session isolation (smoke vs smoke5). Real defects observed: Ctrl+C during provider response produces a traceback; a user turn is persisted before inference so an interrupted request can leave a pending user-only turn; actual routed model ID is currently discarded; openrouter/free quality varies between requests. These are backlog items, not Day 1 blockers. User clarified that HP5e was an example of desired sophistication, not the immediate acceptance target. Day 2 begins with the smallest read-only GitHub integration.",
   "temporary_priority_override": {
     "project": "PAE / prototype_v0",
     "starts_at": "2026-10-05T18:03:00+02:00",
@@ -225,9 +225,9 @@
       "project": "PAE / Discipline OS",
       "valid_from": "2026-10-05",
       "valid_through": "2026-10-08",
-      "scope": "prototype_v0 only: persistent chat/session runtime, source loading, structured state extraction, GM-mode continuity, restart/real-log acceptance fixes",
-      "priority_rule": "DREGENO onboarding remains priority #1; PAE is allowed in free blocks and should not be blocked merely because the baseline project status was maintenance-only.",
-      "authority": "USER_EXPLICIT_2026-10-05"
+      "scope": "prototype_v0 only: persistent chat/session runtime, real-model provider, local/source loading, structured state extraction, restart continuity, and the smallest read-only GitHub source access needed to fetch authoritative files into a session. Game-specific acceptance cases are future validation examples, not current deliverables.",
+      "priority_rule": "PAE prototype_v0 remains the active four-day build focus. Keep Day 2 narrow: GitHub read-only first; do not fan out into Supabase, Drive, Notion, UI, agents, registries, or general architecture unless a concrete blocker requires it.",
+      "authority": "USER_EXPLICIT_RENEGOTIATION_2026-10-05"
     }
   ]
 }
