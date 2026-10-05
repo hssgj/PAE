@@ -6,6 +6,7 @@ import re
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 
 SCHEMA_VERSION = 1
@@ -32,6 +33,7 @@ class Session:
     updated_at: str = field(default_factory=utc_now)
     sources: list[dict[str, str]] = field(default_factory=list)
     messages: list[dict[str, str]] = field(default_factory=list)
+    derived_state: dict[str, Any] = field(default_factory=dict)
 
 
 class SessionStore:
@@ -94,3 +96,11 @@ class SessionStore:
         )
         self.save(session)
         return True
+
+    def set_derived_state(
+        self,
+        session: Session,
+        state: dict[str, Any],
+    ) -> None:
+        session.derived_state = state
+        self.save(session)
