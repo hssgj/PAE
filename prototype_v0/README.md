@@ -6,13 +6,23 @@ Small, intentionally disposable runtime for the four-day prototype sprint.
 
 - CLI chat loop
 - persistent JSON sessions
-- load UTF-8 game logs / canon / notes into a session
+- load UTF-8 logs / canon / notes into a session
+- structured source-state extraction into:
+  - `canon`
+  - `characters`
+  - `current_scene`
+  - `important_facts`
+  - `unknowns`
+- persistent derived state survives restart and is fed back into later chat
 - provider boundary with:
   - `echo` for zero-dependency smoke tests
   - any OpenAI-compatible `/v1/chat/completions` endpoint
 
-It deliberately does **not** contain registries, agents, a database, UI, semantic
-memory, autodiscovery, or the future PAE architecture.
+The extractor is explicitly source-grounded: unsupported scene values stay
+`UNKNOWN` instead of being guessed.
+
+It deliberately does **not** contain registries, agents, a database, UI,
+semantic memory, autodiscovery, or the future PAE architecture.
 
 ## Smoke test
 
@@ -24,10 +34,10 @@ python app.py --session smoke
 Type `hello`, exit with `/quit`, then run the same command again. The session
 file survives in `prototype_v0/data/sessions/`.
 
-## Load a game log
+## Load source material
 
 ```bash
-python app.py --session hp5e --load ../path/to/log.txt
+python app.py --session test --load ../path/to/log.txt
 ```
 
 You can also load files while running:
@@ -36,6 +46,27 @@ You can also load files while running:
 /load ../path/to/canon.txt
 /sources
 ```
+
+## Extract structured state
+
+State extraction requires a real model provider; the echo provider intentionally
+refuses to fake semantic understanding.
+
+After connecting a real provider:
+
+```text
+/analyze
+/state
+```
+
+Or load and analyze before the chat starts:
+
+```bash
+python app.py --session test --load ../path/to/log.txt --analyze
+```
+
+The extracted state is saved inside the same session JSON and is automatically
+included in future model context.
 
 ## Connect a real model
 
@@ -47,7 +78,7 @@ Linux/macOS:
 export PAE_PROVIDER=openai-compatible
 export PAE_API_URL=http://127.0.0.1:1234/v1/chat/completions
 export PAE_MODEL=your-model-name
-python app.py --session hp5e
+python app.py --session test
 ```
 
 PowerShell:
@@ -56,14 +87,15 @@ PowerShell:
 $env:PAE_PROVIDER="openai-compatible"
 $env:PAE_API_URL="http://127.0.0.1:1234/v1/chat/completions"
 $env:PAE_MODEL="your-model-name"
-python app.py --session hp5e
+python app.py --session test
 ```
 
 `PAE_API_KEY` is optional for local servers and can be set when the endpoint
 requires a bearer token.
 
-## Acceptance target
+## Day 2 acceptance target
 
-Load a real HP5e log/canon, have the model understand the setting and current
-state, continue as GM in chat, exit, reopen the same session, and continue
-without losing the persisted history/source material.
+Load one real `.txt` or `.md` source, run `/analyze`, and get a persisted
+source-grounded summary of canon, characters, current scene, and important facts.
+Missing details remain `UNKNOWN`. Exit, reopen the session, run `/state`, and
+confirm that the extracted state survived the restart.
