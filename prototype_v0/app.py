@@ -1,20 +1,23 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 from provider import build_provider
 from sessions import SessionStore
+from state_extractor import extract_state
 
 
 DEFAULT_SYSTEM_PROMPT = """You are PAE prototype_v0, a small persistent chat runtime.
 
 Treat loaded source material as authoritative context. If the source is a game
-log, canon, campaign notes, or character sheet, preserve continuity and act as
-a consistent interactive GM when the user asks to play.
+log, canon, campaign notes, project notes, or other continuity material,
+preserve it faithfully.
 
 This prototype has no hidden memory system. Everything you must remember comes
-from the loaded source material and persisted chat history.
+from the loaded source material, derived persistent state, and persisted chat
+history. Never invent a missing fact when the persistent state says UNKNOWN.
 """
 
 
@@ -31,6 +34,11 @@ def parse_args() -> argparse.Namespace:
         default=[],
         metavar="PATH",
         help="Load a UTF-8 text/log/canon file into persistent context. Repeatable.",
+    )
+    parser.add_argument(
+        "--analyze",
+        action="store_true",
+        help="Extract structured state from all loaded sources before chat starts.",
     )
     parser.add_argument(
         "--system",
@@ -60,6 +68,23 @@ def build_messages(session) -> list[dict[str, str]]:
             }
         )
 
+    if session.derived_state:
+        messages.append(
+            {
+                "role": "system",
+                "content": (
+                    "PERSISTENT DERIVED STATE\n"
+                    "This is a source-grounded extraction. UNKNOWN means unknown; "
+                    "do not fill it by guessing.\n"
+                    + json.dumps(
+                        session.derived_state,
+                        ensure_ascii=False,
+                        indent=2,
+                    )
+                ),
+            }
+        )
+
     messages.extend(session.messages)
     return messages
 
@@ -71,10 +96,26 @@ def load_file(store: SessionStore, session, raw_path: str) -> None:
     print(f"[{'loaded' if added else 'already loaded'}] {path}")
 
 
+def analyze_sources(provider, store: SessionStore, session) -> None:
+    state = extract_state(provider, session.sources)
+    store.set_derived_state(session, state)
+    print("[state extracted and saved]")
+
+
+def print_state(session) -> None:
+    if not session.derived_state:
+        print("[no derived state; run /analyze]")
+        return
+
+    print(json.dumps(session.derived_state, ensure_ascii=False, indent=2))
+
+
 def print_help() -> None:
     print(
         "Commands:\n"
         "  /load PATH   add a text/log/canon file to persistent session context\n"
+        "  /analyze     extract canon/characters/current_scene/important_facts\n"
+        "  /state       print the persisted structured state\n"
         "  /sources     list loaded persistent sources\n"
         "  /save        force-save the session\n"
         "  /help        show commands\n"
@@ -91,6 +132,12 @@ def main() -> None:
         load_file(store, session, path)
 
     provider = build_provider()
+
+    if args.analyze:
+        try:
+            analyze_sources(provider, store, session)
+        except Exception as exc:
+            print(f"[analysis error] {exc}")
 
     print(
         f"PAE prototype_v0 | session={session.session_id} | "
@@ -128,6 +175,18 @@ def main() -> None:
             else:
                 for source in session.sources:
                     print(f"- {source['name']} ({source['sha256'][:12]})")
+            continue
+
+        if user_text == "/state":
+            print_state(session)
+            continue
+
+        if user_text == "/analyze":
+            try:
+                analyze_sources(provider, store, session)
+                print_state(session)
+            except Exception as exc:
+                print(f"[analysis error] {exc}")
             continue
 
         if user_text.startswith("/load "):
