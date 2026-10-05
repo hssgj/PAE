@@ -32,9 +32,9 @@
   "active_projects": [
     {
       "name": "PAE / Discipline OS",
-      "status": "ACTIVE_FOUR_DAY_BUILD_SPRINT",
-      "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05",
-      "note": "Temporary priority override through 2026-10-09T18:03+02:00. prototype_v0 execution is authorized. Keep scope constrained to the four-day acceptance test."
+      "status": "BOUNDED_PROTOTYPE_SPRINT",
+      "authority": "USER_EXPLICIT_2026-10-05",
+      "note": "Temporary 4-day prototype_v0 sprint authorized for 2026-10-05 through 2026-10-08. Scope is limited to the persistent log-driven chat runtime acceptance path. DREGENO onboarding remains priority #1; PAE may proceed in free blocks without repeated scope renegotiation. Broad PAE feature expansion remains parked."
     },
     {
       "name": "Income / job search",
@@ -219,5 +219,15 @@
     "expires_at": "2026-10-09T18:03:00+02:00",
     "rule": "PAE has top work priority during this window. Do not BLOCK, PARK, or WARN PAE execution merely because it expands PAE scope. Still prevent unrelated scope creep inside the prototype itself.",
     "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
-  }
+  },
+  "temporary_scope_authorizations": [
+    {
+      "project": "PAE / Discipline OS",
+      "valid_from": "2026-10-05",
+      "valid_through": "2026-10-08",
+      "scope": "prototype_v0 only: persistent chat/session runtime, source loading, structured state extraction, GM-mode continuity, restart/real-log acceptance fixes",
+      "priority_rule": "DREGENO onboarding remains priority #1; PAE is allowed in free blocks and should not be blocked merely because the baseline project status was maintenance-only.",
+      "authority": "USER_EXPLICIT_2026-10-05"
+    }
+  ]
 }
