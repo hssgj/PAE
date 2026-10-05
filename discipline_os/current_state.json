@@ -1,41 +1,40 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "current_focus": {
-    "project": "Income / job search",
-    "milestone": "DREGENO employment starts Monday 2026-10-05. AOK PLUS membership application was completed and activated on 2026-10-04; AOK then emailed confirmation that the membership application was successfully transmitted and is being processed. VZP was notified by email on 2026-10-04 about the German employment start and pending AOK/S1 documentation.",
-    "next_action": "Confirm first-day reporting time for DREGENO if not already remembered from the interview; otherwise wait for AOK PLUS processing/employer-ready insurance data and VZP response, then obtain/register S1 for Czech healthcare entitlement.",
-    "status": "EMPLOYMENT_FOUND_ONBOARDING",
-    "authority": "USER_AND_GMAIL_VERIFIED_2026-10-04"
+    "project": "PAE / prototype_v0",
+    "milestone": "Four-day survival prototype: load a game log/canon into a small persistent runtime, chat with a model as a consistent GM, and resume the session with saved state. No general PAE architecture work.",
+    "next_action": "Create and smoke-test prototype_v0 with app.py, a provider adapter, and persistent sessions. Then connect one real model provider and run one HP5e log acceptance test.",
+    "status": "ACTIVE_FOUR_DAY_BUILD_SPRINT",
+    "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
   },
   "daily_priorities": [
     {
       "rank": 1,
-      "item": "Finish only remaining immediate onboarding logistics for the 2026-10-05 DREGENO start: first-day reporting time if still uncertain. AOK application is successfully transmitted; VZP has been notified; AOK/VZP/S1 follow-through is now waiting external.",
-      "status": "IMMEDIATE_LOGISTICS_ONLY_THEN_WAITING_EXTERNAL",
-      "authority": "USER_AND_GMAIL_VERIFIED_2026-10-04",
-      "note": "AOK confirmed successful transmission of the membership application on 2026-10-04. VZP notification email was sent the same day. DREGENO email states general working hours 09:00-18:00, but does not explicitly state the first-day reporting time."
+      "item": "Build the smallest runnable prototype_v0: CLI chat, provider layer, persistent sessions, and file/log loading.",
+      "status": "ACTIVE_NOW",
+      "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
     },
     {
       "rank": 2,
-      "item": "Keep N26/coeo on hold while awaiting a response to the 2026-10-01 counterproposal; do not accept the €35 installment agreement with added settlement fee by default.",
-      "status": "WAITING_EXTERNAL",
-      "authority": "GMAIL_VERIFIED_2026-10-01"
+      "item": "Connect one real model endpoint and prove a saved session can continue after restart.",
+      "status": "NEXT",
+      "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
     },
     {
       "rank": 3,
-      "item": "Keep PAIR/HelloFresh disputed and require supporting documentation before acknowledging the claim.",
-      "status": "WAITING_EXTERNAL",
-      "authority": "GMAIL_SENT_2026-09-28"
+      "item": "Run the HP5e acceptance test: load log/canon -> understand state -> start/continue GM scene -> persist continuity.",
+      "status": "AFTER_RUNTIME",
+      "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
     }
   ],
   "active_projects": [
     {
       "name": "PAE / Discipline OS",
-      "status": "MAINTENANCE_ONLY",
-      "authority": "USER_CONFIRMED_2026-09-20",
-      "note": "Baseline remains in use. Maintain state accuracy; no feature expansion authorized."
+      "status": "ACTIVE_FOUR_DAY_BUILD_SPRINT",
+      "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05",
+      "note": "Temporary priority override through 2026-10-09T18:03+02:00. prototype_v0 execution is authorized. Keep scope constrained to the four-day acceptance test."
     },
     {
       "name": "Income / job search",
@@ -206,12 +205,19 @@
     }
   ],
   "parked_for_now": [
-    "New PAE features and system redesign",
+    "General PAE architecture/system redesign outside prototype_v0 acceptance-test needs",
     "Shimeji implementation and other substantial creative/technical project work",
     "Supabase reactivation unless it becomes a concrete blocker",
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
   "last_review": "2026-10-04",
-  "review_note": "Sommerhof backup closed by user after DREGENO employment was confirmed; Zoom interview cancelled by email on 2026-10-04."
+  "review_note": "Sommerhof backup closed by user after DREGENO employment was confirmed; Zoom interview cancelled by email on 2026-10-04.",
+  "temporary_priority_override": {
+    "project": "PAE / prototype_v0",
+    "starts_at": "2026-10-05T18:03:00+02:00",
+    "expires_at": "2026-10-09T18:03:00+02:00",
+    "rule": "PAE has top work priority during this window. Do not BLOCK, PARK, or WARN PAE execution merely because it expands PAE scope. Still prevent unrelated scope creep inside the prototype itself.",
+    "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
+  }
 }
