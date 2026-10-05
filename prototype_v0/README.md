@@ -2,6 +2,24 @@
 
 Small, intentionally disposable runtime for the four-day prototype sprint.
 
+## Current status — Day 1 GREEN (2026-10-05)
+
+Verified on Android/Termux with a real OpenRouter-backed LLM:
+
+- real provider request/response path works
+- JSON session persistence survives multiple process restarts
+- separate session ids stay isolated
+- smoke testing exceeded 10 user/assistant turns
+
+Known non-blocking issues found during smoke testing:
+
+- Ctrl+C while waiting for the provider currently emits a traceback
+- an interrupted inference can leave a persisted user-only pending turn
+- the actual routed model id returned by OpenRouter is not yet surfaced
+- `openrouter/free` may route to different free models, so response quality/style varies
+
+Next target: add the smallest read-only GitHub source loader, fetch one known file from `hssgj/PAE`, persist it as session source context, and use it in one real-model answer. Do not widen this into general PAE architecture or other integrations yet.
+
 ## What it does
 
 - CLI chat loop
