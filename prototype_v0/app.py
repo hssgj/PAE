@@ -4,10 +4,11 @@ import argparse
 import json
 from pathlib import Path
 
-from github_source import fetch_github_file, source_name
 from provider import build_provider
+from runtime_tools import build_tool_registry
 from sessions import SessionStore
 from state_extractor import extract_state
+from tool_core import ToolContext
 
 
 DEFAULT_SYSTEM_PROMPT = """You are PAE prototype_v0, a small persistent chat runtime.
@@ -113,31 +114,6 @@ def load_file(store: SessionStore, session, raw_path: str) -> None:
     print(f"[{'loaded' if added else 'already loaded'}] {path}")
 
 
-def load_github_source(
-    store: SessionStore,
-    session,
-    repo: str,
-    path: str,
-    ref: str = "main",
-) -> None:
-    fetched = fetch_github_file(repo, path, ref=ref)
-    name = source_name(repo, path, ref=ref)
-    status = store.upsert_source(
-        session,
-        source_id=name,
-        name=name,
-        content=fetched.content,
-        metadata={
-            "source_type": "github",
-            "repo": repo,
-            "path": path.lstrip("/"),
-            "ref": ref,
-            "github_blob_sha": fetched.blob_sha,
-        },
-    )
-    print(f"[{status}] {name} (blob {fetched.blob_sha[:12]})")
-
-
 def analyze_sources(provider, store: SessionStore, session) -> None:
     state = extract_state(provider, session.sources)
     store.set_derived_state(session, state)
@@ -152,11 +128,22 @@ def print_state(session) -> None:
     print(json.dumps(session.derived_state, ensure_ascii=False, indent=2))
 
 
+def compact_tool_result(result: dict[str, object]) -> dict[str, object]:
+    compact = dict(result)
+    content = compact.pop("content", None)
+    if isinstance(content, str):
+        compact["content_length"] = len(content)
+        compact["content_preview"] = content[:160].replace("\n", " ")
+    return compact
+
+
 def print_help() -> None:
     print(
         "Commands:\n"
         "  /load PATH   add a text/log/canon file to persistent session context\n"
-        "  /github REPO PATH [REF]   load or refresh one GitHub text file\n"
+        "  /github REPO PATH [REF]   compatibility shortcut for github_read\n"
+        "  /tools       list registered runtime tools and their schemas\n"
+        "  /tool NAME JSON_ARGS   manually execute one registered tool\n"
         "  /analyze     extract canon/characters/current_scene/important_facts\n"
         "  /state       print the persisted structured state\n"
         "  /sources     list loaded persistent sources\n"
@@ -170,6 +157,8 @@ def main() -> None:
     args = parse_args()
     store = SessionStore()
     session = store.open_or_create(args.session, system_prompt=args.system)
+    tool_registry = build_tool_registry()
+    tool_context = ToolContext(store=store, session=session)
 
     for path in args.load:
         load_file(store, session, path)
@@ -184,7 +173,7 @@ def main() -> None:
 
     print(
         f"PAE prototype_v0 | session={session.session_id} | "
-        f"provider={provider.name}"
+        f"provider={provider.name} | tools={len(tool_registry.specs())}"
     )
     print_help()
 
@@ -210,6 +199,10 @@ def main() -> None:
         if user_text == "/save":
             store.save(session)
             print("[saved]")
+            continue
+
+        if user_text == "/tools":
+            print(json.dumps(tool_registry.specs(), ensure_ascii=False, indent=2))
             continue
 
         if user_text == "/sources":
@@ -253,9 +246,42 @@ def main() -> None:
             ref = raw_args[2] if len(raw_args) == 3 else "main"
 
             try:
-                load_github_source(store, session, repo, path, ref)
+                result = tool_registry.execute(
+                    "github_read",
+                    {"repo": repo, "path": path, "ref": ref},
+                    context=tool_context,
+                )
+                print(
+                    f"[{result['status']}] {result['source_id']} "
+                    f"(blob {str(result['github_blob_sha'])[:12]})"
+                )
             except Exception as exc:
                 print(f"[github load error] {exc}")
+            continue
+
+        if user_text.startswith("/tool "):
+            raw = user_text[len("/tool ") :].strip()
+            name, separator, raw_json = raw.partition(" ")
+            if not separator or not name or not raw_json.strip():
+                print("[usage] /tool NAME JSON_ARGS")
+                continue
+
+            try:
+                arguments = json.loads(raw_json)
+                result = tool_registry.execute(
+                    name,
+                    arguments,
+                    context=tool_context,
+                )
+                print(
+                    json.dumps(
+                        compact_tool_result(result),
+                        ensure_ascii=False,
+                        indent=2,
+                    )
+                )
+            except Exception as exc:
+                print(f"[tool error] {exc}")
             continue
 
         session.messages.append({"role": "user", "content": user_text})
