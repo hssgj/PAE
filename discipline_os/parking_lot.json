@@ -14,6 +14,13 @@
       "title": "Anael the Red Witness revival / rebuild",
       "status": "PARKED_UNTIL_CONDITION",
       "note": "Do not resume Anael profiling, mechanics, power-system design, psychological analysis, crossover scenes, or revival work yet. Preserve the current concept: Anael is the Red Witness, an archangel of blood magic whose virtues cast dangerous shadows; he keeps the three-meter sword and blood magic. Release condition: Daunt has been sent back home to Hogwarts. Until that condition is explicitly reached, redirect any attempt to continue Anael work back to finishing Daunt first."
+    },
+    {
+      "id": "P-003",
+      "created": "2026-10-06",
+      "title": "PAE embodiment / physical platform",
+      "status": "PARKED_LONG_TERM_VISION",
+      "note": "Bucket-list vision: someday design a physically realizable platform/body for PAE using the technology available at that time. PAE should be able to participate in the iterative engineering loop: propose designs, help test them, evaluate results, and improve subsequent versions. This is explicitly not current prototype_v0 scope and must not displace the active four-day survival prototype."
     }
   ]
 }
