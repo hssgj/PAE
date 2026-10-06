@@ -4,6 +4,7 @@ import base64
 import json
 import os
 import re
+from dataclasses import dataclass
 from urllib import error, parse, request
 
 
@@ -11,15 +12,21 @@ GITHUB_API_ROOT = "https://api.github.com"
 REPO_RE = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 
 
-def fetch_github_text(
+@dataclass(frozen=True)
+class GitHubTextFile:
+    content: str
+    blob_sha: str
+
+
+def fetch_github_file(
     repo: str,
     path: str,
     *,
     ref: str = "main",
     token: str | None = None,
     timeout: int = 30,
-) -> str:
-    """Fetch one UTF-8 text file from GitHub using the read-only Contents API."""
+) -> GitHubTextFile:
+    """Fetch one UTF-8 text file and its blob SHA from GitHub Contents API."""
 
     repo = repo.strip()
     path = path.strip().lstrip("/")
@@ -66,12 +73,34 @@ def fetch_github_text(
         raise RuntimeError(f"GitHub path is not a file: {repo}:{path}@{ref}")
     if data.get("encoding") != "base64" or not isinstance(data.get("content"), str):
         raise RuntimeError("GitHub response did not contain base64 file content")
+    if not isinstance(data.get("sha"), str) or not data["sha"]:
+        raise RuntimeError("GitHub response did not contain a blob SHA")
 
     try:
         raw = base64.b64decode(data["content"], validate=False)
-        return raw.decode("utf-8")
+        content = raw.decode("utf-8")
     except (ValueError, UnicodeDecodeError) as exc:
         raise RuntimeError("GitHub file is not valid UTF-8 text") from exc
+
+    return GitHubTextFile(content=content, blob_sha=data["sha"])
+
+
+def fetch_github_text(
+    repo: str,
+    path: str,
+    *,
+    ref: str = "main",
+    token: str | None = None,
+    timeout: int = 30,
+) -> str:
+    """Backward-compatible text-only wrapper."""
+    return fetch_github_file(
+        repo,
+        path,
+        ref=ref,
+        token=token,
+        timeout=timeout,
+    ).content
 
 
 def source_name(repo: str, path: str, *, ref: str = "main") -> str:
