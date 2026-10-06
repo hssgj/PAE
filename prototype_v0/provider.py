@@ -70,13 +70,22 @@ class OpenAICompatibleProvider(Provider):
         self.timeout = timeout
 
     def chat(self, messages: list[dict[str, str]]) -> str:
-        payload = json.dumps(
-            {
-                "model": self.model,
-                "messages": messages,
-                "temperature": 0.7,
+        payload_data = {
+            "model": self.model,
+            "messages": messages,
+            "temperature": 0.7,
+            "top_p": 0.8,
+            "max_tokens": int(os.getenv("PAE_MAX_TOKENS", "512")),
+        }
+
+        if os.getenv("PAE_DISABLE_THINKING", "").strip().lower() in {
+            "1", "true", "yes", "on"
+        }:
+            payload_data["chat_template_kwargs"] = {
+                "enable_thinking": False
             }
-        ).encode("utf-8")
+
+        payload = json.dumps(payload_data).encode("utf-8")
 
         headers = {"Content-Type": "application/json"}
         if self.api_key:
