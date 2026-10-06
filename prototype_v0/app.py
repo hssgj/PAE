@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from github_source import fetch_github_text, source_name
 from provider import build_provider
 from sessions import SessionStore
 from state_extractor import extract_state
@@ -96,6 +97,19 @@ def load_file(store: SessionStore, session, raw_path: str) -> None:
     print(f"[{'loaded' if added else 'already loaded'}] {path}")
 
 
+def load_github_source(
+    store: SessionStore,
+    session,
+    repo: str,
+    path: str,
+    ref: str = "main",
+) -> None:
+    content = fetch_github_text(repo, path, ref=ref)
+    name = source_name(repo, path, ref=ref)
+    added = store.add_source(session, name=name, content=content)
+    print(f"[{'loaded' if added else 'already loaded'}] {name}")
+
+
 def analyze_sources(provider, store: SessionStore, session) -> None:
     state = extract_state(provider, session.sources)
     store.set_derived_state(session, state)
@@ -114,6 +128,7 @@ def print_help() -> None:
     print(
         "Commands:\n"
         "  /load PATH   add a text/log/canon file to persistent session context\n"
+        "  /github REPO PATH [REF]   load one GitHub text file into persistent context\n"
         "  /analyze     extract canon/characters/current_scene/important_facts\n"
         "  /state       print the persisted structured state\n"
         "  /sources     list loaded persistent sources\n"
@@ -195,6 +210,21 @@ def main() -> None:
                 load_file(store, session, raw_path)
             except Exception as exc:
                 print(f"[load error] {exc}")
+            continue
+
+        if user_text.startswith("/github "):
+            raw_args = user_text[len("/github ") :].strip().split()
+            if len(raw_args) not in {2, 3}:
+                print("[usage] /github REPO PATH [REF]")
+                continue
+
+            repo, path = raw_args[0], raw_args[1]
+            ref = raw_args[2] if len(raw_args) == 3 else "main"
+
+            try:
+                load_github_source(store, session, repo, path, ref)
+            except Exception as exc:
+                print(f"[github load error] {exc}")
             continue
 
         session.messages.append({"role": "user", "content": user_text})
