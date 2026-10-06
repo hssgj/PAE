@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from github_source import fetch_github_text, source_name
+from github_source import fetch_github_file, source_name
 from provider import build_provider
 from sessions import SessionStore
 from state_extractor import extract_state
@@ -55,13 +55,29 @@ def build_messages(session) -> list[dict[str, str]]:
     ]
 
     for source in session.sources:
+        metadata_lines = []
+        if source.get("source_type") == "github":
+            metadata_lines.extend(
+                [
+                    f"Repository: {source.get('repo', 'UNKNOWN')}",
+                    f"Path: {source.get('path', 'UNKNOWN')}",
+                    f"Ref: {source.get('ref', 'UNKNOWN')}",
+                    f"GitHub blob SHA: {source.get('github_blob_sha', 'UNKNOWN')}",
+                ]
+            )
+
+        metadata = ""
+        if metadata_lines:
+            metadata = "\n" + "\n".join(metadata_lines)
+
         messages.append(
             {
                 "role": "system",
                 "content": (
                     "PERSISTENT SOURCE MATERIAL\n"
                     f"Name: {source['name']}\n"
-                    f"SHA256: {source['sha256']}\n"
+                    f"SHA256: {source['sha256']}"
+                    f"{metadata}\n"
                     "--- BEGIN SOURCE ---\n"
                     f"{source['content']}\n"
                     "--- END SOURCE ---"
@@ -104,10 +120,22 @@ def load_github_source(
     path: str,
     ref: str = "main",
 ) -> None:
-    content = fetch_github_text(repo, path, ref=ref)
+    fetched = fetch_github_file(repo, path, ref=ref)
     name = source_name(repo, path, ref=ref)
-    added = store.add_source(session, name=name, content=content)
-    print(f"[{'loaded' if added else 'already loaded'}] {name}")
+    status = store.upsert_source(
+        session,
+        source_id=name,
+        name=name,
+        content=fetched.content,
+        metadata={
+            "source_type": "github",
+            "repo": repo,
+            "path": path.lstrip("/"),
+            "ref": ref,
+            "github_blob_sha": fetched.blob_sha,
+        },
+    )
+    print(f"[{status}] {name} (blob {fetched.blob_sha[:12]})")
 
 
 def analyze_sources(provider, store: SessionStore, session) -> None:
@@ -128,7 +156,7 @@ def print_help() -> None:
     print(
         "Commands:\n"
         "  /load PATH   add a text/log/canon file to persistent session context\n"
-        "  /github REPO PATH [REF]   load one GitHub text file into persistent context\n"
+        "  /github REPO PATH [REF]   load or refresh one GitHub text file\n"
         "  /analyze     extract canon/characters/current_scene/important_facts\n"
         "  /state       print the persisted structured state\n"
         "  /sources     list loaded persistent sources\n"
@@ -189,7 +217,10 @@ def main() -> None:
                 print("[no sources loaded]")
             else:
                 for source in session.sources:
-                    print(f"- {source['name']} ({source['sha256'][:12]})")
+                    suffix = ""
+                    if source.get("github_blob_sha"):
+                        suffix = f" | blob {source['github_blob_sha'][:12]}"
+                    print(f"- {source['name']} ({source['sha256'][:12]}){suffix}")
             continue
 
         if user_text == "/state":
