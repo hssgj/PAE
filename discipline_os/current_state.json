@@ -1,40 +1,40 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "current_focus": {
     "project": "PAE / prototype_v0",
-    "milestone": "Four-day survival prototype. Day 1 is GREEN: prototype_v0 runs on Android/Termux, reaches a real LLM through OpenRouter, persists JSON sessions, survives process restarts, and keeps sessions isolated. Day 2 target is the smallest read-only GitHub integration so the runtime can fetch authoritative project/canon files directly. HP5e, Frostfire Foundry and Matthael-vs-Bingo are future acceptance use-cases, not the current target.",
-    "next_action": "Add the smallest read-only GitHub source loader/connector to prototype_v0, prove it can fetch one known file from hssgj/PAE, persist that source in the session, and use it in one real-model answer. Do not connect Supabase, Drive, Notion, or broader architecture unless GitHub access reveals a concrete blocker.",
-    "status": "DAY_1_GREEN_DAY_2_GITHUB_READ_NEXT",
-    "authority": "USER_EXPLICIT_RENEGOTIATION_2026-10-05"
+    "milestone": "Local brain milestone is GREEN. prototype_v0 now runs on Android/Termux against Qwen3-1.7B Q4_K_M through local llama-server, preserves session continuity across restarts, and has passed a true cold offline boot with airplane mode enabled. A one-command start-local.sh launcher has also been verified.",
+    "next_action": "At the next PAE work block, first add a small truthful busy/spinner indicator around long provider waits. Then continue bounded read-only tool integration one tool at a time; do not fan out into multiple integrations, extra models, fine-tuning, embeddings, UI, or broader architecture in parallel.",
+    "status": "LOCAL_BRAIN_GREEN_COLD_OFFLINE_BOOT_VERIFIED",
+    "authority": "USER_AND_RUNTIME_VERIFIED_2026-10-06"
   },
   "daily_priorities": [
     {
       "rank": 1,
-      "item": "Build the smallest runnable prototype_v0: CLI chat, provider layer, persistent sessions, and file/log loading.",
-      "status": "DONE_2026-10-05",
-      "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
+      "item": "Run a local GGUF model on Android/Termux through llama.cpp and connect prototype_v0 to it.",
+      "status": "DONE_2026-10-06",
+      "authority": "USER_AND_RUNTIME_VERIFIED_2026-10-06"
     },
     {
       "rank": 2,
-      "item": "Connect one real model endpoint and prove a saved session can continue after restart.",
-      "status": "DONE_2026-10-05",
-      "authority": "USER_AND_RUNTIME_VERIFIED_2026-10-05"
+      "item": "Prove restart continuity and a true cold offline boot with airplane mode enabled.",
+      "status": "DONE_2026-10-06",
+      "authority": "USER_AND_RUNTIME_VERIFIED_2026-10-06"
     },
     {
       "rank": 3,
-      "item": "Close Day 1 cleanly: record smoke-test findings and set Day 2 to read-only GitHub integration. Keep HP5e/Frostfire/Bingo as future acceptance use-cases rather than current scope.",
-      "status": "DONE_2026-10-05",
-      "authority": "USER_EXPLICIT_RENEGOTIATION_2026-10-05"
+      "item": "Make the local stack reproducible with one startup command and record the verified state in GitHub.",
+      "status": "DONE_2026-10-06",
+      "authority": "USER_AND_GITHUB_VERIFIED_2026-10-06"
     }
   ],
   "active_projects": [
     {
       "name": "PAE / Discipline OS",
-      "status": "BOUNDED_PROTOTYPE_SPRINT_DAY_1_GREEN",
+      "status": "BOUNDED_PROTOTYPE_SPRINT_LOCAL_BRAIN_GREEN",
       "authority": "USER_EXPLICIT_2026-10-05",
-      "note": "Temporary four-day prototype_v0 sprint remains authorized through 2026-10-08. Day 1 verified a persistent real-model chat runtime on Android/Termux. Day 2 is narrowly scoped to read-only GitHub source access as the first system integration. Broader PAE architecture, Supabase reactivation, Drive/Notion integration, and game-specific acceptance work remain deferred unless they become concrete blockers."
+      "note": "Temporary four-day prototype_v0 sprint remains authorized through 2026-10-08. Local Qwen3-1.7B Q4_K_M inference on Android/Termux is verified, including session continuity, cold offline boot, and one-command startup. Next work block starts with a small busy/spinner indicator, then bounded read-only tool integration one tool at a time. Extra models, fine-tuning, embeddings, UI, Supabase, and broad architecture remain deferred unless they become concrete blockers."
     },
     {
       "name": "Income / job search",
@@ -211,8 +211,8 @@
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
-  "last_review": "2026-10-05",
-  "review_note": "DAY 1 GREEN. prototype_v0 ran on Android/Termux against a real OpenRouter LLM. Smoke testing exceeded 10 user/assistant turns, verified JSON persistence across multiple process restarts, and verified session isolation (smoke vs smoke5). Real defects observed: Ctrl+C during provider response produces a traceback; a user turn is persisted before inference so an interrupted request can leave a pending user-only turn; actual routed model ID is currently discarded; openrouter/free quality varies between requests. These are backlog items, not Day 1 blockers. User clarified that HP5e was an example of desired sophistication, not the immediate acceptance target. Day 2 begins with the smallest read-only GitHub integration.",
+  "last_review": "2026-10-06",
+  "review_note": "LOCAL BRAIN GREEN. On Android/Termux, llama.cpp loaded Qwen3-1.7B Q4_K_M locally and served OpenAI-compatible chat completions on 127.0.0.1:8080. prototype_v0 was redirected to that endpoint with Qwen thinking disabled. Persisted session history survived process/server restarts. A true cold offline boot was verified after shutting down both PAE and llama-server, enabling airplane mode, restarting the server and PAE, and receiving the response 'OFFLINE ŽIJU'. A one-command start-local.sh launcher was then verified with the response 'LEBKA DRŽÍ'. Known issue: local 1.7B responses can be slow on large prompts; add a truthful busy indicator before the next tool-integration work.",
   "temporary_priority_override": {
     "project": "PAE / prototype_v0",
     "starts_at": "2026-10-05T18:03:00+02:00",
