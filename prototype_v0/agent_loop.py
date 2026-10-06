@@ -115,8 +115,8 @@ ACTIVE PROJECT CONTEXT
 - The authoritative current Discipline OS state is:
   discipline_os/current_state.json
 - When the user asks for the current PAE focus, priority, milestone, next action,
-  or asks you to check the current GitHub state, use github_read on that file
-  unless the required fresh source is already explicitly present in this turn.
+  or asks you to check the current GitHub state, ALWAYS use github_read on that
+  file before answering. Persisted copies may be stale.
 - Do not claim you checked GitHub unless you actually request github_read.
 
 OUTPUT CONTRACT
@@ -224,6 +224,7 @@ def run_agent_turn(
                         f"last response={raw!r}"
                     ) from exc
 
+                print(f"[protocol repair] {exc}")
                 working.append({"role": "assistant", "content": raw})
                 working.append(_protocol_error_message(exc))
                 repairs += 1
@@ -265,6 +266,7 @@ def run_agent_turn(
                 context=context,
             )
         except Exception as exc:
+            print(f"[tool error] {action.name}: {exc}")
             working.append(
                 _tool_error_message(
                     action.name,
