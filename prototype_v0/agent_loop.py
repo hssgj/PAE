@@ -57,9 +57,13 @@ def parse_agent_response(text: str) -> ToolCall | FinalAnswer:
     try:
         payload = json.loads(raw)
     except json.JSONDecodeError as exc:
-        raise AgentProtocolError(
-            "response must be exactly one JSON object"
-        ) from exc
+        # Plain text is a valid final answer. Only JSON-looking output is treated
+        # as a broken tool-protocol attempt.
+        if raw.lstrip().startswith("{"):
+            raise AgentProtocolError(
+                "malformed JSON tool/final response"
+            ) from exc
+        return FinalAnswer(content=raw.strip())
 
     if not isinstance(payload, dict):
         raise AgentProtocolError("protocol response must be a JSON object")
@@ -260,6 +264,29 @@ def _same_required_call(candidate: ToolCall, required: ToolCall) -> bool:
     return True
 
 
+def user_forbids_tools(messages: list[dict[str, str]]) -> bool:
+    """Detect explicit history-only/no-GitHub instructions for this turn."""
+    user_text = _last_user_text(messages)
+    tokens = _tokens(user_text)
+    normalized = _normalize_text(user_text)
+
+    mentions_github = _approx_any(tokens, {"github", "githbu", "git"})
+    mentions_tool = _approx_any(tokens, {"tool", "nastroj"})
+
+    if "bez" in tokens and (mentions_github or mentions_tool):
+        return True
+    if "without" in tokens and (mentions_github or mentions_tool):
+        return True
+    if "no" in tokens and mentions_tool:
+        return True
+    if "nepouzivej" in normalized and (mentions_github or mentions_tool):
+        return True
+    if "dont use" in normalized and (mentions_github or mentions_tool):
+        return True
+
+    return False
+
+
 def _protocol_error_message(error: Exception) -> dict[str, str]:
     return {
         "role": "system",
@@ -286,8 +313,8 @@ def _tool_result_message(
             + json.dumps(arguments, ensure_ascii=False, indent=2)
             + "\nResult:\n"
             + json.dumps(result, ensure_ascii=False, indent=2)
-            + "\n\nNow return exactly one JSON protocol object. "
-            "Use type=final if you can answer the user."
+            + "\n\nUse the tool result to answer the user normally in plain text, "
+            "or request another tool with one JSON tool_call object."
         ),
     }
 
@@ -305,11 +332,67 @@ def _tool_error_message(
             "Arguments:\n"
             + json.dumps(arguments, ensure_ascii=False, indent=2)
             + f"\nError: {error}\n"
-            "Correct the call if possible, or return a final answer explaining "
-            "what could not be retrieved. Return exactly one JSON protocol object."
+            "Use this error to answer the user normally in plain text, or correct "
+            "the call with one JSON tool_call object if another attempt is justified."
         ),
     }
 
+
+
+
+def _append_tool_attempt(
+    working: list[dict[str, str]],
+    action: ToolCall,
+    *,
+    registry: ToolRegistry,
+    context: ToolContext,
+) -> bool:
+    print(
+        "[tool] "
+        + action.name
+        + " "
+        + json.dumps(action.arguments, ensure_ascii=False)
+    )
+
+    working.append(
+        {
+            "role": "assistant",
+            "content": json.dumps(
+                {
+                    "type": "tool_call",
+                    "name": action.name,
+                    "arguments": action.arguments,
+                },
+                ensure_ascii=False,
+            ),
+        }
+    )
+
+    try:
+        result = registry.execute(
+            action.name,
+            action.arguments,
+            context=context,
+        )
+    except Exception as exc:
+        print(f"[tool error] {action.name}: {exc}")
+        working.append(
+            _tool_error_message(
+                action.name,
+                action.arguments,
+                exc,
+            )
+        )
+        return False
+
+    working.append(
+        _tool_result_message(
+            action.name,
+            action.arguments,
+            result,
+        )
+    )
+    return True
 
 
 def run_agent_turn(
@@ -334,10 +417,43 @@ def run_agent_turn(
             "content": build_session_facts_prompt(context),
         },
     )
+    working.insert(
+        3,
+        {
+            "role": "system",
+            "content": (
+                "HISTORY RULES\n"
+                "When the user asks what they said, named, defined, or meant earlier, "
+                "search the persisted user/assistant history supplied in this request. "
+                "Use exact earlier user wording when available. Never substitute the "
+                "session id, a source path, or a guessed value for a requested literal. "
+                "If the literal is absent, say it is unknown."
+            ),
+        },
+    )
 
     required = required_tool_call(messages)
-    required_attempted = False
+    forbid_optional_tools = required is None and user_forbids_tools(messages)
     tool_calls = 0
+
+    # If the runtime can deterministically prove a fresh/source read is required,
+    # execute it before asking the model. The model does not get to bypass it.
+    if required is not None:
+        print(
+            "[tool guard] required "
+            + required.name
+            + " "
+            + json.dumps(required.arguments, ensure_ascii=False)
+        )
+        tool_calls += 1
+        _append_tool_attempt(
+            working,
+            required,
+            registry=registry,
+            context=context,
+        )
+
+    forbidden_attempts = 0
 
     while True:
         repairs = 0
@@ -361,16 +477,45 @@ def run_agent_turn(
                 repairs += 1
 
         if isinstance(action, FinalAnswer):
-            if required is None or required_attempted:
-                return action.content
+            return action.content
 
+        if forbid_optional_tools:
+            forbidden_attempts += 1
             print(
-                "[tool guard] final rejected; forcing "
-                + required.name
-                + " "
-                + json.dumps(required.arguments, ensure_ascii=False)
+                "[tool guard] tool rejected; user requested history-only/no-tool answer: "
+                + action.name
             )
-            action = required
+            if forbidden_attempts > 1:
+                raise AgentProtocolError(
+                    "model repeatedly requested a tool despite explicit no-tool instruction"
+                )
+
+            working.append(
+                {
+                    "role": "assistant",
+                    "content": json.dumps(
+                        {
+                            "type": "tool_call",
+                            "name": action.name,
+                            "arguments": action.arguments,
+                        },
+                        ensure_ascii=False,
+                    ),
+                }
+            )
+            working.append(
+                {
+                    "role": "system",
+                    "content": (
+                        "TOOL CALL REJECTED BY RUNTIME\n"
+                        "The user explicitly requested a history-only/no-tool answer. "
+                        "Do not call GitHub or any tool for this turn. Search the supplied "
+                        "persisted chat history and answer from it. If the requested fact "
+                        "is not present there, say UNKNOWN."
+                    ),
+                }
+            )
+            continue
 
         if tool_calls >= MAX_TOOL_CALLS:
             raise AgentProtocolError(
@@ -378,51 +523,9 @@ def run_agent_turn(
             )
 
         tool_calls += 1
-        if required is not None and _same_required_call(action, required):
-            required_attempted = True
-
-        print(
-            "[tool] "
-            + action.name
-            + " "
-            + json.dumps(action.arguments, ensure_ascii=False)
-        )
-
-        working.append(
-            {
-                "role": "assistant",
-                "content": json.dumps(
-                    {
-                        "type": "tool_call",
-                        "name": action.name,
-                        "arguments": action.arguments,
-                    },
-                    ensure_ascii=False,
-                ),
-            }
-        )
-
-        try:
-            result = registry.execute(
-                action.name,
-                action.arguments,
-                context=context,
-            )
-        except Exception as exc:
-            print(f"[tool error] {action.name}: {exc}")
-            working.append(
-                _tool_error_message(
-                    action.name,
-                    action.arguments,
-                    exc,
-                )
-            )
-            continue
-
-        working.append(
-            _tool_result_message(
-                action.name,
-                action.arguments,
-                result,
-            )
+        _append_tool_attempt(
+            working,
+            action,
+            registry=registry,
+            context=context,
         )
