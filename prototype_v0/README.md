@@ -2,23 +2,25 @@
 
 Small, intentionally disposable runtime for the four-day prototype sprint.
 
-## Current status — Day 1 GREEN (2026-10-05)
+## Current status — Local brain GREEN (2026-10-06)
 
-Verified on Android/Termux with a real OpenRouter-backed LLM:
+Verified on Android/Termux:
 
-- real provider request/response path works
-- JSON session persistence survives multiple process restarts
-- separate session ids stay isolated
-- smoke testing exceeded 10 user/assistant turns
+- `prototype_v0` runs against a local Qwen3-1.7B Q4_K_M GGUF through `llama-server`
+- local inference works through the OpenAI-compatible `/v1/chat/completions` endpoint
+- Qwen thinking can be disabled through `PAE_DISABLE_THINKING=1`
+- persisted session history survives runtime and model-server restarts
+- a full cold boot succeeded with airplane mode enabled: server off -> network off -> server boot -> PAE boot -> local response
+- `~/PAE/start-local.sh <session>` reproduces the working local stack with one command
 
-Known non-blocking issues found during smoke testing:
+Current known limitations:
 
-- Ctrl+C while waiting for the provider currently emits a traceback
-- an interrupted inference can leave a persisted user-only pending turn
-- the actual routed model id returned by OpenRouter is not yet surfaced
-- `openrouter/free` may route to different free models, so response quality/style varies
+- local 1.7B inference can be slow on long prompts/tool context
+- the CLI has no busy/thinking indicator yet, so long generations look frozen
+- the model does not inherently know host/device facts unless runtime context or a tool provides them
+- network-backed tools such as GitHub still require connectivity when invoked
 
-Next target: add the smallest read-only GitHub source loader, fetch one known file from `hssgj/PAE`, persist it as session source context, and use it in one real-model answer. Do not widen this into general PAE architecture or other integrations yet.
+Next target: add a small truthful busy spinner/status indicator, then continue the bounded read-only tool integration one tool at a time.
 
 ## What it does
 
