@@ -131,16 +131,15 @@ ACTIVE PROJECT CONTEXT
 - Do not claim you checked GitHub unless you actually request github_read.
 
 OUTPUT CONTRACT
-Return exactly ONE JSON object and nothing else.
-
-To request a tool:
+To request a tool, return exactly ONE JSON object and nothing else:
 {{"type":"tool_call","name":"github_read","arguments":{{"repo":"hssgj/PAE","path":"discipline_os/current_state.json","ref":"main"}}}}
 
-To answer the user:
+If no tool is needed, answer the user normally in plain text. A JSON final object
+is also accepted:
 {{"type":"final","content":"your answer here"}}
 
 Rules:
-- Never wrap the JSON in explanatory prose.
+- Never wrap a tool-call JSON object in explanatory prose.
 - Use only registered tool names.
 - Tool arguments must follow the declared schema.
 - If the user's request requires current external/source data, request the tool
