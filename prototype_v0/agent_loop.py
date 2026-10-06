@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 from dataclasses import dataclass
+from difflib import SequenceMatcher
 from typing import Any
 
 from tool_core import ToolContext, ToolRegistry
@@ -9,6 +12,10 @@ from tool_core import ToolContext, ToolRegistry
 
 MAX_TOOL_CALLS = 3
 MAX_PROTOCOL_REPAIRS = 1
+DISCIPLINE_PATH_RE = re.compile(
+    r"(?<![A-Za-z0-9_.-])(discipline_os/[A-Za-z0-9_./-]+\.(?:json|md|txt))(?![A-Za-z0-9_.-])",
+    re.IGNORECASE,
+)
 
 
 class AgentProtocolError(RuntimeError):
@@ -139,6 +146,120 @@ Rules:
 """
 
 
+
+def build_session_facts_prompt(context: ToolContext) -> str:
+    message_count = len(context.session.messages)
+    source_count = len(context.session.sources)
+
+    return (
+        "SESSION RUNTIME FACTS\n"
+        f"Session id: {context.session.session_id}\n"
+        f"Persisted chat messages currently loaded: {message_count}\n"
+        f"Persisted sources currently loaded: {source_count}\n"
+        "The user/assistant messages supplied to this turn are persistent session "
+        "history. If the persisted chat message count is greater than 1, do not "
+        "claim that this is the first message or that prior chat history is absent."
+    )
+
+
+def _normalize_text(text: str) -> str:
+    normalized = unicodedata.normalize("NFKD", text.casefold())
+    return "".join(ch for ch in normalized if not unicodedata.combining(ch))
+
+
+def _tokens(text: str) -> list[str]:
+    return re.findall(r"[a-z0-9_]+", _normalize_text(text))
+
+
+def _approx_any(tokens: list[str], targets: set[str], cutoff: float = 0.78) -> bool:
+    for token in tokens:
+        for target in targets:
+            if token == target:
+                return True
+            if len(token) >= 4 and SequenceMatcher(None, token, target).ratio() >= cutoff:
+                return True
+    return False
+
+
+def _last_user_text(messages: list[dict[str, str]]) -> str:
+    for message in reversed(messages):
+        if message.get("role") == "user":
+            return message.get("content", "")
+    return ""
+
+
+def required_tool_call(messages: list[dict[str, str]]) -> ToolCall | None:
+    """Return a deterministic minimum tool call when source freshness is mandatory."""
+    user_text = _last_user_text(messages)
+    if not user_text:
+        return None
+
+    explicit_path = DISCIPLINE_PATH_RE.search(user_text)
+    if explicit_path:
+        return ToolCall(
+            name="github_read",
+            arguments={
+                "repo": "hssgj/PAE",
+                "path": explicit_path.group(1),
+                "ref": "main",
+            },
+        )
+
+    tokens = _tokens(user_text)
+
+    freshness_terms = {
+        "current",
+        "curent",
+        "fresh",
+        "aktualni",
+        "aktual",
+        "autoritativni",
+        "authoritative",
+        "latest",
+        "ted",
+        "tedka",
+    }
+    state_terms = {
+        "focus",
+        "foks",
+        "state",
+        "stav",
+        "priority",
+        "priorita",
+        "milestone",
+        "next",
+        "action",
+        "akce",
+        "pae",
+    }
+
+    mentions_freshness = _approx_any(tokens, freshness_terms)
+    mentions_state = _approx_any(tokens, state_terms)
+
+    if mentions_freshness and mentions_state:
+        return ToolCall(
+            name="github_read",
+            arguments={
+                "repo": "hssgj/PAE",
+                "path": "discipline_os/current_state.json",
+                "ref": "main",
+            },
+        )
+
+    return None
+
+
+def _same_required_call(candidate: ToolCall, required: ToolCall) -> bool:
+    if candidate.name != required.name:
+        return False
+
+    for key, value in required.arguments.items():
+        if candidate.arguments.get(key) != value:
+            return False
+
+    return True
+
+
 def _protocol_error_message(error: Exception) -> dict[str, str]:
     return {
         "role": "system",
@@ -190,6 +311,7 @@ def _tool_error_message(
     }
 
 
+
 def run_agent_turn(
     provider,
     messages: list[dict[str, str]],
@@ -205,7 +327,16 @@ def run_agent_turn(
             "content": build_tool_protocol_prompt(registry),
         },
     )
+    working.insert(
+        2,
+        {
+            "role": "system",
+            "content": build_session_facts_prompt(context),
+        },
+    )
 
+    required = required_tool_call(messages)
+    required_attempted = False
     tool_calls = 0
 
     while True:
@@ -230,7 +361,16 @@ def run_agent_turn(
                 repairs += 1
 
         if isinstance(action, FinalAnswer):
-            return action.content
+            if required is None or required_attempted:
+                return action.content
+
+            print(
+                "[tool guard] final rejected; forcing "
+                + required.name
+                + " "
+                + json.dumps(required.arguments, ensure_ascii=False)
+            )
+            action = required
 
         if tool_calls >= MAX_TOOL_CALLS:
             raise AgentProtocolError(
@@ -238,6 +378,9 @@ def run_agent_turn(
             )
 
         tool_calls += 1
+        if required is not None and _same_required_call(action, required):
+            required_attempted = True
+
         print(
             "[tool] "
             + action.name
