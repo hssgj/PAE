@@ -31,7 +31,7 @@ class Session:
     schema_version: int = SCHEMA_VERSION
     created_at: str = field(default_factory=utc_now)
     updated_at: str = field(default_factory=utc_now)
-    sources: list[dict[str, str]] = field(default_factory=list)
+    sources: list[dict[str, Any]] = field(default_factory=list)
     messages: list[dict[str, str]] = field(default_factory=list)
     derived_state: dict[str, Any] = field(default_factory=dict)
 
@@ -82,6 +82,7 @@ class SessionStore:
         temp_path.replace(path)
 
     def add_source(self, session: Session, *, name: str, content: str) -> bool:
+        """Add an immutable/local source, deduplicating by content hash."""
         digest = hashlib.sha256(content.encode("utf-8")).hexdigest()
 
         if any(source.get("sha256") == digest for source in session.sources):
@@ -96,6 +97,60 @@ class SessionStore:
         )
         self.save(session)
         return True
+
+    def upsert_source(
+        self,
+        session: Session,
+        *,
+        source_id: str,
+        name: str,
+        content: str,
+        metadata: dict[str, str] | None = None,
+    ) -> str:
+        """Insert or refresh a mutable source identified independently of content."""
+        digest = hashlib.sha256(content.encode("utf-8")).hexdigest()
+        metadata = dict(metadata or {})
+
+        replacement: dict[str, Any] = {
+            "source_id": source_id,
+            "name": name,
+            "sha256": digest,
+            "content": content,
+            **metadata,
+        }
+
+        matches = [
+            index
+            for index, source in enumerate(session.sources)
+            if source.get("source_id") == source_id
+            or (
+                source.get("source_id") is None
+                and source.get("name") == name
+            )
+        ]
+
+        if not matches:
+            session.sources.append(replacement)
+            self.save(session)
+            return "loaded"
+
+        first = matches[0]
+        existing = session.sources[first]
+        unchanged = (
+            existing.get("sha256") == digest
+            and all(existing.get(key) == value for key, value in metadata.items())
+        )
+
+        # Replace the canonical entry and collapse legacy duplicates with the same identity.
+        session.sources[first] = replacement
+        for index in reversed(matches[1:]):
+            del session.sources[index]
+
+        if unchanged and len(matches) == 1:
+            return "already loaded"
+
+        self.save(session)
+        return "refreshed"
 
     def set_derived_state(
         self,
