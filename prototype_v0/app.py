@@ -138,6 +138,14 @@ def compact_tool_result(result: dict[str, object]) -> dict[str, object]:
     return compact
 
 
+def print_session_debug(session) -> None:
+    print(
+        f"[session] id={session.session_id} "
+        f"history={len(session.messages)} "
+        f"sources={len(session.sources)}"
+    )
+
+
 def print_help() -> None:
     print(
         "Commands:\n"
@@ -148,6 +156,7 @@ def print_help() -> None:
         "  /analyze     extract canon/characters/current_scene/important_facts\n"
         "  /state       print the persisted structured state\n"
         "  /sources     list loaded persistent sources\n"
+        "  /session     show loaded session/history/source counts\n"
         "  /save        force-save the session\n"
         "  /help        show commands\n"
         "  /quit        save and exit"
@@ -176,6 +185,7 @@ def main() -> None:
         f"PAE prototype_v0 | session={session.session_id} | "
         f"provider={provider.name} | tools={len(tool_registry.specs())}"
     )
+    print_session_debug(session)
     print_help()
 
     while True:
@@ -204,6 +214,10 @@ def main() -> None:
 
         if user_text == "/tools":
             print(json.dumps(tool_registry.specs(), ensure_ascii=False, indent=2))
+            continue
+
+        if user_text == "/session":
+            print_session_debug(session)
             continue
 
         if user_text == "/sources":
