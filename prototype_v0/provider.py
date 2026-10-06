@@ -6,6 +6,30 @@ from abc import ABC, abstractmethod
 from urllib import error, request
 
 
+def _coerce_text_content(content) -> str | None:
+    if isinstance(content, str):
+        return content
+
+    if isinstance(content, list):
+        parts: list[str] = []
+        for item in content:
+            if isinstance(item, str):
+                parts.append(item)
+                continue
+            if not isinstance(item, dict):
+                continue
+
+            item_type = item.get("type")
+            text = item.get("text")
+            if item_type in {"text", "output_text"} and isinstance(text, str):
+                parts.append(text)
+
+        if parts:
+            return "".join(parts)
+
+    return None
+
+
 class Provider(ABC):
     name = "provider"
 
@@ -79,16 +103,32 @@ class OpenAICompatibleProvider(Provider):
         data = json.loads(body)
 
         try:
-            content = data["choices"][0]["message"]["content"]
+            choice = data["choices"][0]
+            message = choice["message"]
+            content = message.get("content")
         except (KeyError, IndexError, TypeError) as exc:
             raise RuntimeError(
-                f"unexpected provider response: {data}"
+                f"unexpected provider response shape: {type(data).__name__}"
             ) from exc
 
-        if not isinstance(content, str):
-            raise RuntimeError("provider returned non-text content")
+        text = _coerce_text_content(content)
 
-        return content.strip()
+        if text is None:
+            refusal = message.get("refusal")
+            if isinstance(refusal, str) and refusal.strip():
+                text = refusal
+
+        if text is None:
+            model_id = data.get("model", "UNKNOWN")
+            finish_reason = choice.get("finish_reason", "UNKNOWN")
+            keys = sorted(message.keys()) if isinstance(message, dict) else []
+            raise RuntimeError(
+                "provider returned non-text content "
+                f"(model={model_id!r}, finish_reason={finish_reason!r}, "
+                f"message_keys={keys})"
+            )
+
+        return text.strip()
 
 
 def build_provider() -> Provider:
