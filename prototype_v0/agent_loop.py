@@ -230,7 +230,7 @@ def required_tool_call(messages: list[dict[str, str]]) -> ToolCall | None:
         "next",
         "action",
         "akce",
-        "pae",
+        "dalsi",
     }
 
     mentions_freshness = _approx_any(tokens, freshness_terms)
