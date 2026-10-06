@@ -157,6 +157,7 @@ def print_help() -> None:
         "  /state       print the persisted structured state\n"
         "  /sources     list loaded persistent sources\n"
         "  /session     show loaded session/history/source counts\n"
+        "  /history [N] show the last N persisted chat messages (default: 10)\n"
         "  /save        force-save the session\n"
         "  /help        show commands\n"
         "  /quit        save and exit"
@@ -218,6 +219,22 @@ def main() -> None:
 
         if user_text == "/session":
             print_session_debug(session)
+            continue
+
+        if user_text == "/history" or user_text.startswith("/history "):
+            raw_limit = user_text[len("/history") :].strip()
+            try:
+                limit = int(raw_limit) if raw_limit else 10
+                if limit < 1:
+                    raise ValueError
+            except ValueError:
+                print("[usage] /history [positive integer]")
+                continue
+
+            for index, message in enumerate(session.messages[-limit:], start=max(1, len(session.messages) - limit + 1)):
+                role = message.get("role", "UNKNOWN")
+                content = message.get("content", "")
+                print(f"{index:03d} {role}> {content}")
             continue
 
         if user_text == "/sources":
