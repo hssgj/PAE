@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from agent_loop import run_agent_turn
 from provider import build_provider
 from runtime_tools import build_tool_registry
 from sessions import SessionStore
@@ -288,9 +289,14 @@ def main() -> None:
         store.save(session)
 
         try:
-            reply = provider.chat(build_messages(session))
+            reply = run_agent_turn(
+                provider,
+                build_messages(session),
+                registry=tool_registry,
+                context=tool_context,
+            )
         except Exception as exc:
-            print(f"[provider error] {exc}")
+            print(f"[agent error] {exc}")
             continue
 
         print(f"\npae> {reply}")
