@@ -5,6 +5,8 @@ on:
   push:
     paths:
       - 'pae-android/**'
+      - 'prototype_v0/**'
+      - 'start-mobile.sh'
       - '.github/workflows/build-pae-apk.yml'
 
 jobs:
