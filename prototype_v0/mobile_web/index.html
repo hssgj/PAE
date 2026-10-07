@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>PAE</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #10131a; color: #f4f6fb; }
+    main { height: 100dvh; display: grid; grid-template-rows: auto 1fr auto; max-width: 760px; margin: auto; }
+    header { padding: 18px 16px 12px; border-bottom: 1px solid #283040; display: flex; justify-content: space-between; align-items: center; }
+    h1 { font-size: 20px; margin: 0; }
+    #status { color: #f7b955; font-size: 13px; }
+    #chat { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .message { max-width: 88%; white-space: pre-wrap; line-height: 1.45; padding: 11px 13px; border-radius: 16px; }
+    .user { align-self: flex-end; background: #356ae6; }
+    .assistant { align-self: flex-start; background: #202735; }
+    form { display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 12px; border-top: 1px solid #283040; background: #10131a; }
+    textarea { resize: none; min-height: 48px; max-height: 150px; border: 1px solid #3a455b; border-radius: 14px; background: #171c26; color: white; padding: 12px; font: inherit; }
+    button { border: 0; border-radius: 14px; padding: 0 18px; background: #6e8fff; color: #081126; font-weight: 700; }
+    button:disabled { opacity: .45; }
+  </style>
+</head>
+<body>
+<main>
+  <header><h1>PAE</h1><span id="status">Připojuji…</span></header>
+  <section id="chat"></section>
+  <form id="form">
+    <textarea id="input" aria-label="Zpráva" placeholder="Napiš PAE…" rows="1"></textarea>
+    <button id="send" type="submit">Odeslat</button>
+  </form>
+</main>
+<script>
+  const chat = document.querySelector('#chat');
+  const form = document.querySelector('#form');
+  const input = document.querySelector('#input');
+  const send = document.querySelector('#send');
+  const status = document.querySelector('#status');
+  function add(role, content) {
+    const el = document.createElement('div');
+    el.className = `message ${role}`;
+    el.textContent = content;
+    chat.appendChild(el);
+    chat.scrollTop = chat.scrollHeight;
+  }
+  async function boot() {
+    try {
+      const response = await fetch('/api/history');
+      if (!response.ok) throw new Error();
+      const data = await response.json();
+      chat.replaceChildren();
+      data.messages.forEach(item => add(item.role, item.content));
+      status.textContent = 'Připraveno';
+    } catch (_) {
+      status.textContent = 'Motor se spouští…';
+      setTimeout(boot, 1500);
+    }
+  }
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const message = input.value.trim();
+    if (!message || send.disabled) return;
+    add('user', message);
+    input.value = '';
+    send.disabled = true;
+    status.textContent = 'PAE přemýšlí…';
+    try {
+      const response = await fetch('/api/chat', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({message})});
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Neznámá chyba');
+      add('assistant', data.reply);
+      status.textContent = 'Připraveno';
+    } catch (error) {
+      add('assistant', `Chyba: ${error.message}`);
+      status.textContent = 'Chyba spojení';
+    } finally {
+      send.disabled = false;
+      input.focus();
+    }
+  });
+  boot();
+</script>
+</body>
+</html>
