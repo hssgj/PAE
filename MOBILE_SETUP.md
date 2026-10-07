@@ -6,10 +6,14 @@ PAE Mobile je samostatná Android aplikace. Model, paměť, tools a registry dá
 
 ```sh
 cd ~/PAE
+git fetch origin pae-mobile-mvp
+git switch pae-mobile-mvp
 git pull
 chmod +x start-mobile.sh
 mkdir -p ~/.termux
-printf 'allow-external-apps=true\n' > ~/.termux/termux.properties
+grep -q '^allow-external-apps=' ~/.termux/termux.properties 2>/dev/null \
+  && sed -i 's/^allow-external-apps=.*/allow-external-apps=true/' ~/.termux/termux.properties \
+  || printf '\nallow-external-apps=true\n' >> ~/.termux/termux.properties
 termux-reload-settings
 ./start-mobile.sh
 ```
