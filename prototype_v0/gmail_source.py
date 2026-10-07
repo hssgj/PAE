@@ -7,7 +7,7 @@ from email.message import EmailMessage
 from email.utils import getaddresses, parseaddr, parsedate_to_datetime
 from html.parser import HTMLParser
 from urllib import error, parse, request
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from tool_core import ToolError
 
@@ -182,7 +182,7 @@ def _metadata(message: dict[str, object]) -> dict[str, object]:
         if parsed.tzinfo is None:
             parsed = parsed.astimezone()
         local_date = parsed.astimezone(ZoneInfo("Europe/Prague")).strftime("%d. %m. %Y %H:%M:%S %Z")
-    except (TypeError, ValueError, OverflowError):
+    except (TypeError, ValueError, OverflowError, ZoneInfoNotFoundError):
         pass
     return {
         "message_id": str(message.get("id", "")),
