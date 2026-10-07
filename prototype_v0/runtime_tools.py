@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from github_source import fetch_github_file, source_name
+from gmail_source import latest_message, list_messages, read_message
 from tool_core import Tool, ToolContext, ToolRegistry
 
 
@@ -74,6 +75,53 @@ def build_tool_registry() -> ToolRegistry:
                 "additionalProperties": False,
             },
             executor=_github_read,
+        )
+    )
+
+    registry.register(
+        Tool(
+            name="gmail_list_messages",
+            description="List 1 to 10 newest messages from the authorized Gmail inbox.",
+            argument_schema={
+                "type": "object",
+                "properties": {
+                    "limit": {"type": "integer", "default": 5},
+                },
+                "additionalProperties": False,
+            },
+            executor=lambda context, arguments: list_messages(arguments["limit"]),
+        )
+    )
+
+    registry.register(
+        Tool(
+            name="gmail_read_message",
+            description="Read one Gmail message by its message ID.",
+            argument_schema={
+                "type": "object",
+                "properties": {
+                    "message_id": {"type": "string", "minLength": 1},
+                },
+                "required": ["message_id"],
+                "additionalProperties": False,
+            },
+            executor=lambda context, arguments: read_message(arguments["message_id"]),
+        )
+    )
+
+    registry.register(
+        Tool(
+            name="gmail_latest_message",
+            description=(
+                "Read the subject, sender and Prague-local date/time of the newest "
+                "message in the authorized Gmail inbox."
+            ),
+            argument_schema={
+                "type": "object",
+                "properties": {},
+                "additionalProperties": False,
+            },
+            executor=lambda context, arguments: latest_message(),
         )
     )
 

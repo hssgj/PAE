@@ -210,6 +210,27 @@ def required_tool_call(messages: list[dict[str, str]]) -> ToolCall | None:
 
     tokens = _tokens(user_text)
 
+    mail_terms = {
+        "email",
+        "e-mail",
+        "gmail",
+        "mail",
+        "posta",
+        "postu",
+        "posty",
+        "zprava",
+    }
+    latest_terms = {
+        "last",
+        "latest",
+        "newest",
+        "posledni",
+        "nejnovejsi",
+        "aktualni",
+    }
+    if _approx_any(tokens, mail_terms) and _approx_any(tokens, latest_terms):
+        return ToolCall(name="gmail_latest_message", arguments={})
+
     freshness_terms = {
         "current",
         "curent",
@@ -345,7 +366,7 @@ def _append_tool_attempt(
     *,
     registry: ToolRegistry,
     context: ToolContext,
-) -> bool:
+) -> dict[str, Any] | None:
     print(
         "[tool] "
         + action.name
@@ -382,7 +403,7 @@ def _append_tool_attempt(
                 exc,
             )
         )
-        return False
+        return None
 
     working.append(
         _tool_result_message(
@@ -391,7 +412,22 @@ def _append_tool_attempt(
             result,
         )
     )
-    return True
+    return result
+
+
+def _format_required_result(action: ToolCall, result: dict[str, Any]) -> str | None:
+    if action.name != "gmail_latest_message":
+        return None
+    sender = result.get("sender_name") or result.get("sender") or "UNKNOWN"
+    sender_email = result.get("sender_email")
+    if sender_email and sender_email not in str(sender):
+        sender = f"{sender} <{sender_email}>"
+    return (
+        f"Předmět: {result.get('subject') or 'UNKNOWN'}\n"
+        f"Odesílatel: {sender}\n"
+        f"Čas: {result.get('date_local') or result.get('date') or 'UNKNOWN'}\n"
+        f"Message ID: {result.get('message_id') or 'UNKNOWN'}"
+    )
 
 
 def run_agent_turn(
@@ -445,12 +481,16 @@ def run_agent_turn(
             + json.dumps(required.arguments, ensure_ascii=False)
         )
         tool_calls += 1
-        _append_tool_attempt(
+        required_result = _append_tool_attempt(
             working,
             required,
             registry=registry,
             context=context,
         )
+        if required_result is not None:
+            deterministic_answer = _format_required_result(required, required_result)
+            if deterministic_answer is not None:
+                return deterministic_answer
 
     forbidden_attempts = 0
 
