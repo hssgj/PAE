@@ -146,6 +146,17 @@ Rules:
   before answering.
 - After receiving a TOOL RESULT, use it to answer or request another tool.
 - Never invent a tool result.
+- Never say or imply that you checked, opened, refreshed, created, updated, sent,
+  or will now perform an external action unless the matching registered tool
+  executed successfully in this turn. Do not say "please wait" for work that the
+  runtime is not actively executing.
+- If no registered tool supports the requested external action, say clearly that
+  the capability is not connected.
+- gmail_create_draft creates a real Gmail draft but does not send it. Show its
+  exact preview and ask the user for explicit confirmation.
+- Never request gmail_send in the same user turn as gmail_create_draft. The runtime
+  permits gmail_send only for the pending draft after a separate, unambiguous user
+  confirmation message.
 """
 
 
@@ -229,7 +240,7 @@ def required_tool_call(messages: list[dict[str, str]]) -> ToolCall | None:
         "aktualni",
     }
     if _approx_any(tokens, mail_terms) and _approx_any(tokens, latest_terms):
-        return ToolCall(name="gmail_latest_message", arguments={})
+        return ToolCall(name="gmail_search", arguments={"query": "in:inbox", "limit": 1})
 
     freshness_terms = {
         "current",
@@ -416,18 +427,84 @@ def _append_tool_attempt(
 
 
 def _format_required_result(action: ToolCall, result: dict[str, Any]) -> str | None:
-    if action.name != "gmail_latest_message":
+    if action.name == "gmail_send":
+        return (
+            "E-mail byl odeslán.\n"
+            f"Message ID: {result.get('message_id') or 'UNKNOWN'}\n"
+            f"Thread ID: {result.get('thread_id') or 'UNKNOWN'}"
+        )
+    if action.name != "gmail_search" or action.arguments.get("limit") != 1:
         return None
-    sender = result.get("sender_name") or result.get("sender") or "UNKNOWN"
-    sender_email = result.get("sender_email")
+    messages = result.get("messages")
+    if not isinstance(messages, list) or not messages:
+        return "V Gmailu nebyla nalezena žádná odpovídající zpráva."
+    message = messages[0]
+    if not isinstance(message, dict):
+        return None
+    sender = message.get("sender_name") or message.get("sender") or "UNKNOWN"
+    sender_email = message.get("sender_email")
     if sender_email and sender_email not in str(sender):
         sender = f"{sender} <{sender_email}>"
     return (
-        f"Předmět: {result.get('subject') or 'UNKNOWN'}\n"
+        f"Předmět: {message.get('subject') or 'UNKNOWN'}\n"
         f"Odesílatel: {sender}\n"
-        f"Čas: {result.get('date_local') or result.get('date') or 'UNKNOWN'}\n"
-        f"Message ID: {result.get('message_id') or 'UNKNOWN'}"
+        f"Čas: {message.get('date_local') or message.get('date') or 'UNKNOWN'}\n"
+        f"Message ID: {message.get('message_id') or 'UNKNOWN'}\n"
+        f"Thread ID: {message.get('thread_id') or 'UNKNOWN'}"
     )
+
+
+def _explicit_send_confirmation(messages: list[dict[str, str]]) -> bool:
+    normalized = " ".join(_tokens(_last_user_text(messages)))
+    return normalized in {
+        "send",
+        "send it",
+        "send the draft",
+        "yes send it",
+        "confirm send",
+        "odesli",
+        "odesli to",
+        "odesli koncept",
+        "ano odesli to",
+        "potvrzuji odeslani",
+        "odeslat koncept",
+    }
+
+
+def _pending_send_call(
+    messages: list[dict[str, str]], context: ToolContext
+) -> ToolCall | None:
+    pending = context.session.pending_actions.get("gmail_send")
+    if not pending or not _explicit_send_confirmation(messages):
+        return None
+    draft_id = pending.get("draft_id")
+    if not isinstance(draft_id, str) or not draft_id:
+        return None
+    return ToolCall(name="gmail_send", arguments={"draft_id": draft_id})
+
+
+def _external_action_requested(messages: list[dict[str, str]]) -> bool:
+    tokens = _tokens(_last_user_text(messages))
+    domains = {
+        "gmail", "email", "mail", "calendar", "kalendar", "drive", "contacts",
+        "kontakty", "github", "browser", "web",
+    }
+    actions = {
+        "check", "read", "search", "send", "create", "open", "refresh", "update",
+        "delete", "zkontroluj", "precti", "najdi", "odesli", "vytvor", "otevri",
+        "obnov", "uprav", "smaz",
+    }
+    return _approx_any(tokens, domains) and _approx_any(tokens, actions)
+
+
+def _is_honest_limitation(answer: str) -> bool:
+    normalized = _normalize_text(answer)
+    phrases = (
+        "cannot", "can't", "do not have", "don't have", "not connected",
+        "unavailable", "failed", "error", "nemohu", "nemuzu", "nemam",
+        "neni pripojen", "selhalo", "chyba", "auth_required", "network_unavailable",
+    )
+    return any(phrase in normalized for phrase in phrases)
 
 
 def run_agent_turn(
@@ -467,9 +544,11 @@ def run_agent_turn(
         },
     )
 
-    required = required_tool_call(messages)
+    confirmation_call = _pending_send_call(messages, context)
+    required = confirmation_call or required_tool_call(messages)
     forbid_optional_tools = required is None and user_forbids_tools(messages)
     tool_calls = 0
+    successful_tools: list[str] = []
 
     # If the runtime can deterministically prove a fresh/source read is required,
     # execute it before asking the model. The model does not get to bypass it.
@@ -481,6 +560,11 @@ def run_agent_turn(
             + json.dumps(required.arguments, ensure_ascii=False)
         )
         tool_calls += 1
+        if required.name == "gmail_send":
+            pending = context.session.pending_actions.get("gmail_send")
+            if pending is not None:
+                pending["approved"] = True
+                context.store.save(context.session)
         required_result = _append_tool_attempt(
             working,
             required,
@@ -488,9 +572,16 @@ def run_agent_turn(
             context=context,
         )
         if required_result is not None:
+            successful_tools.append(required.name)
             deterministic_answer = _format_required_result(required, required_result)
             if deterministic_answer is not None:
                 return deterministic_answer
+        elif required.name == "gmail_send":
+            return (
+                "E-mail nebyl odeslán. Gmail odeslání selhalo; pending draft zůstává "
+                "uložený bez aktivního potvrzení, takže je možné chybu opravit a odeslání "
+                "znovu výslovně potvrdit."
+            )
 
     forbidden_attempts = 0
 
@@ -516,6 +607,16 @@ def run_agent_turn(
                 repairs += 1
 
         if isinstance(action, FinalAnswer):
+            if (
+                _external_action_requested(messages)
+                and not successful_tools
+                and not _is_honest_limitation(action.content)
+            ):
+                available = ", ".join(spec["name"] for spec in registry.specs())
+                return (
+                    "Nemám úspěšný výsledek externího nástroje, takže nemohu tvrdit, "
+                    "že jsem tuto akci provedl. Dostupné runtime nástroje: " + available
+                )
             return action.content
 
         if forbid_optional_tools:
@@ -561,10 +662,19 @@ def run_agent_turn(
                 f"tool call limit exceeded ({MAX_TOOL_CALLS})"
             )
 
+        if action.name == "gmail_send":
+            return (
+                "Draft nebyl odeslán. Nejdřív musí být vytvořen jako pending draft "
+                "v této session a uživatel musí v aktuální zprávě výslovně potvrdit "
+                "odeslání, například „Odešli to“ nebo „Send it“."
+            )
+
         tool_calls += 1
-        _append_tool_attempt(
+        tool_result = _append_tool_attempt(
             working,
             action,
             registry=registry,
             context=context,
         )
+        if tool_result is not None:
+            successful_tools.append(action.name)

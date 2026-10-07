@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 from github_source import fetch_github_file, source_name
-from gmail_source import latest_message, list_messages, read_message
-from tool_core import Tool, ToolContext, ToolRegistry
+from gmail_source import create_draft, read_message, search_messages, send_draft
+from tool_core import Tool, ToolContext, ToolError, ToolRegistry
 
 
 def _github_read(
@@ -39,6 +39,53 @@ def _github_read(
         "github_blob_sha": fetched.blob_sha,
         "content": fetched.content,
     }
+
+
+def _gmail_search(context: ToolContext, arguments: dict[str, object]) -> dict[str, object]:
+    return search_messages(str(arguments["query"]), int(arguments["limit"]))
+
+
+def _gmail_read(context: ToolContext, arguments: dict[str, object]) -> dict[str, object]:
+    return read_message(
+        message_id=str(arguments.get("message_id", "")),
+        thread_id=str(arguments.get("thread_id", "")),
+    )
+
+
+def _gmail_create_draft(context: ToolContext, arguments: dict[str, object]) -> dict[str, object]:
+    result = create_draft(
+        to=str(arguments["to"]),
+        cc=str(arguments.get("cc", "")),
+        subject=str(arguments["subject"]),
+        body=str(arguments["body"]),
+        thread_id=str(arguments.get("thread_id", "")),
+        reply_to_message_id=str(arguments.get("reply_to_message_id", "")),
+    )
+    context.session.pending_actions["gmail_send"] = {
+        "draft_id": result["draft_id"],
+        "preview": result["preview"],
+        "approved": False,
+    }
+    context.store.save(context.session)
+    return result
+
+
+def _gmail_send(context: ToolContext, arguments: dict[str, object]) -> dict[str, object]:
+    draft_id = str(arguments["draft_id"])
+    pending = context.session.pending_actions.get("gmail_send")
+    if not pending or pending.get("draft_id") != draft_id:
+        raise ToolError("CONFIRMATION_REQUIRED: draft is not pending in this session")
+    if pending.get("approved") is not True:
+        raise ToolError("CONFIRMATION_REQUIRED: user has not explicitly confirmed this draft")
+    try:
+        result = send_draft(draft_id)
+    except Exception:
+        pending["approved"] = False
+        context.store.save(context.session)
+        raise
+    del context.session.pending_actions["gmail_send"]
+    context.store.save(context.session)
+    return result
 
 
 def build_tool_registry() -> ToolRegistry:
@@ -80,48 +127,81 @@ def build_tool_registry() -> ToolRegistry:
 
     registry.register(
         Tool(
-            name="gmail_list_messages",
-            description="List 1 to 10 newest messages from the authorized Gmail inbox.",
+            name="gmail_search",
+            description=(
+                "Search live Gmail using Gmail search syntax. Returns up to 10 compact "
+                "message records with ids, sender, recipients, subject, local date and snippet."
+            ),
             argument_schema={
                 "type": "object",
                 "properties": {
+                    "query": {"type": "string", "default": "in:inbox"},
                     "limit": {"type": "integer", "default": 5},
                 },
                 "additionalProperties": False,
             },
-            executor=lambda context, arguments: list_messages(arguments["limit"]),
+            executor=_gmail_search,
         )
     )
 
     registry.register(
         Tool(
-            name="gmail_read_message",
-            description="Read one Gmail message by its message ID.",
-            argument_schema={
-                "type": "object",
-                "properties": {
-                    "message_id": {"type": "string", "minLength": 1},
-                },
-                "required": ["message_id"],
-                "additionalProperties": False,
-            },
-            executor=lambda context, arguments: read_message(arguments["message_id"]),
-        )
-    )
-
-    registry.register(
-        Tool(
-            name="gmail_latest_message",
+            name="gmail_read",
             description=(
-                "Read the subject, sender and Prague-local date/time of the newest "
-                "message in the authorized Gmail inbox."
+                "Read one live Gmail message or thread as bounded plain text. Supply "
+                "exactly one of message_id or thread_id from gmail_search."
             ),
             argument_schema={
                 "type": "object",
-                "properties": {},
+                "properties": {
+                    "message_id": {"type": "string", "default": ""},
+                    "thread_id": {"type": "string", "default": ""},
+                },
                 "additionalProperties": False,
             },
-            executor=lambda context, arguments: latest_message(),
+            executor=_gmail_read,
+        )
+    )
+
+    registry.register(
+        Tool(
+            name="gmail_create_draft",
+            description=(
+                "Create a Gmail draft and store it as the one pending send action in this "
+                "session. This never sends the message. Show the returned preview and ask "
+                "for explicit confirmation."
+            ),
+            argument_schema={
+                "type": "object",
+                "properties": {
+                    "to": {"type": "string", "minLength": 3},
+                    "cc": {"type": "string", "default": ""},
+                    "subject": {"type": "string"},
+                    "body": {"type": "string"},
+                    "thread_id": {"type": "string", "default": ""},
+                    "reply_to_message_id": {"type": "string", "default": ""},
+                },
+                "required": ["to", "subject", "body"],
+                "additionalProperties": False,
+            },
+            executor=_gmail_create_draft,
+        )
+    )
+
+    registry.register(
+        Tool(
+            name="gmail_send",
+            description=(
+                "Send the one pending Gmail draft by draft_id. Runtime rejects this unless "
+                "the current user message explicitly confirms sending that pending draft."
+            ),
+            argument_schema={
+                "type": "object",
+                "properties": {"draft_id": {"type": "string", "minLength": 1}},
+                "required": ["draft_id"],
+                "additionalProperties": False,
+            },
+            executor=_gmail_send,
         )
     )
 

@@ -10,6 +10,13 @@ LLAMA_PID="$PAE_ROOT/llama-server.pid"
 MOBILE_LOG="$PAE_ROOT/mobile-server.log"
 MOBILE_PID="$PAE_ROOT/mobile-server.pid"
 MOBILE_HASH="$PAE_ROOT/mobile-server.codehash"
+GMAIL_ENV="$HOME/.config/pae/gmail.env"
+
+if [ -f "$GMAIL_ENV" ]; then
+    set -a
+    . "$GMAIL_ENV"
+    set +a
+fi
 
 if ! curl -sf --max-time 2 "http://127.0.0.1:8080/health" >/dev/null 2>&1; then
     llama-server -m "$MODEL" -c 2048 --host 127.0.0.1 --port 8080 > "$LLAMA_LOG" 2>&1 &
@@ -37,6 +44,7 @@ CODE_HASH="$(sha256sum \
     "$APP_DIR/agent_loop.py" \
     "$APP_DIR/runtime_tools.py" \
     "$APP_DIR/gmail_source.py" \
+    "$APP_DIR/sessions.py" \
     | sha256sum | cut -d' ' -f1)"
 
 RUNNING_HASH="$(cat "$MOBILE_HASH" 2>/dev/null || true)"
