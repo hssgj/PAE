@@ -77,6 +77,16 @@ def test_latest_gmail_returns_tool_evidence_not_model_promise(tmp_path, monkeypa
     assert "Please wait" not in answer
 
 
+def test_read_that_email_uses_last_reported_message_id() -> None:
+    messages = [
+        {"role": "assistant", "content": "Předmět: Test\nMessage ID: abc_123\nThread ID: t1"},
+        {"role": "user", "content": "Teď mi přečti tu zprávu."},
+    ]
+    assert required_tool_call(messages) == ToolCall(
+        name="gmail_read", arguments={"message_id": "abc_123", "thread_id": ""}
+    )
+
+
 def test_capability_honesty_blocks_unsupported_external_claim(tmp_path) -> None:
     answer = run_agent_turn(
         FakeProvider(["I opened your calendar and refreshed it."]),

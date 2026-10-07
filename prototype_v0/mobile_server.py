@@ -1,13 +1,18 @@
 from __future__ import annotations
 
 import json
+import os
+import subprocess
 import threading
+from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 
 from agent_loop import run_agent_turn
 from app import DEFAULT_SYSTEM_PROMPT, build_messages
+from github_source import github_configured
+from gmail_source import refresh_configured
 from provider import build_provider
 from runtime_tools import build_tool_registry
 from sessions import SessionStore
@@ -18,6 +23,30 @@ HOST = "127.0.0.1"
 PORT = 8765
 SESSION_ID = "pae-mobile"
 STATIC_DIR = Path(__file__).with_name("mobile_web")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+STARTED_AT = datetime.now(timezone.utc).isoformat()
+
+
+def _git_value(*args: str) -> str:
+    try:
+        completed = subprocess.run(
+            ["git", "-C", str(REPO_ROOT), *args],
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        return completed.stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        return "UNKNOWN"
+
+
+GIT_COMMIT_AT_START = _git_value("rev-parse", "HEAD")
+GIT_BRANCH_AT_START = _git_value("branch", "--show-current")
+GIT_TRACKING_AT_START = _git_value("rev-parse", "--abbrev-ref", "@{upstream}")
+GIT_RUNTIME_STATUS_AT_START = _git_value(
+    "status", "--porcelain", "--", "prototype_v0", "start-mobile.sh"
+)
 
 
 class MobileRuntime:
@@ -31,6 +60,25 @@ class MobileRuntime:
         self.context = ToolContext(store=self.store, session=self.session)
         self.lock = threading.Lock()
 
+    def runtime_info(self) -> dict[str, object]:
+        return {
+            "status": "ready",
+            "git_commit": GIT_COMMIT_AT_START,
+            "branch": GIT_BRANCH_AT_START,
+            "tracking_branch": GIT_TRACKING_AT_START,
+            "runtime_files_dirty": bool(
+                GIT_RUNTIME_STATUS_AT_START and GIT_RUNTIME_STATUS_AT_START != "UNKNOWN"
+            ),
+            "tools": [spec["name"] for spec in self.registry.specs()],
+            "gmail_configured": bool(
+                os.getenv("PAE_GMAIL_ACCESS_TOKEN", "").strip() or refresh_configured()
+            ),
+            "github_configured": github_configured(),
+            "server_started_at": STARTED_AT,
+            "server_pid": os.getpid(),
+            "listen_url": f"http://{HOST}:{PORT}",
+        }
+
     def history(self) -> list[dict[str, str]]:
         return [
             {"role": str(item.get("role", "")), "content": str(item.get("content", ""))}
@@ -40,6 +88,8 @@ class MobileRuntime:
 
     def chat(self, message: str) -> str:
         with self.lock:
+            if message.strip() == "/runtime":
+                return json.dumps(self.runtime_info(), ensure_ascii=False, indent=2)
             self.session.messages.append({"role": "user", "content": message})
             self.store.save(self.session)
             try:
@@ -80,6 +130,9 @@ class Handler(BaseHTTPRequestHandler):
         path = urlparse(self.path).path
         if path == "/api/health":
             self.send_json(200, {"status": "ready", "session": SESSION_ID})
+            return
+        if path == "/api/runtime":
+            self.send_json(200, RUNTIME.runtime_info())
             return
         if path == "/api/history":
             self.send_json(200, {"messages": RUNTIME.history()})

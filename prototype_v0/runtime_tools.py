@@ -1,6 +1,13 @@
 from __future__ import annotations
 
-from github_source import fetch_github_file, source_name
+from github_source import (
+    apply_github_write,
+    fetch_github_file,
+    list_github_path,
+    prepare_github_write,
+    search_github,
+    source_name,
+)
 from gmail_source import create_draft, read_message, search_messages, send_draft
 from tool_core import Tool, ToolContext, ToolError, ToolRegistry
 
@@ -43,6 +50,59 @@ def _github_read(
 
 def _gmail_search(context: ToolContext, arguments: dict[str, object]) -> dict[str, object]:
     return search_messages(str(arguments["query"]), int(arguments["limit"]))
+
+
+def _github_list(context: ToolContext, arguments: dict[str, object]) -> dict[str, object]:
+    return list_github_path(
+        str(arguments["repo"]),
+        str(arguments.get("path", "")),
+        ref=str(arguments.get("ref", "main")),
+        limit=int(arguments.get("limit", 50)),
+    )
+
+
+def _github_search(context: ToolContext, arguments: dict[str, object]) -> dict[str, object]:
+    return search_github(
+        str(arguments["repo"]),
+        str(arguments["query"]),
+        ref=str(arguments.get("ref", "main")),
+        limit=int(arguments.get("limit", 10)),
+    )
+
+
+def _github_prepare_write(context: ToolContext, arguments: dict[str, object]) -> dict[str, object]:
+    result = prepare_github_write(
+        str(arguments["repo"]),
+        str(arguments["path"]),
+        str(arguments["content"]),
+        branch=str(arguments.get("branch", "main")),
+    )
+    context.session.pending_actions["github_write"] = {
+        "prepared": result,
+        "approved": False,
+    }
+    context.store.save(context.session)
+    return result
+
+
+def _github_apply_write(context: ToolContext, arguments: dict[str, object]) -> dict[str, object]:
+    pending = context.session.pending_actions.get("github_write")
+    if not pending:
+        raise ToolError("CONFIRMATION_REQUIRED: no GitHub write is pending in this session")
+    if pending.get("approved") is not True:
+        raise ToolError("CONFIRMATION_REQUIRED: user has not explicitly confirmed this GitHub write")
+    prepared = pending.get("prepared")
+    if not isinstance(prepared, dict):
+        raise ToolError("CONFIRMATION_REQUIRED: pending GitHub write is invalid")
+    try:
+        result = apply_github_write(prepared)
+    except Exception:
+        pending["approved"] = False
+        context.store.save(context.session)
+        raise
+    del context.session.pending_actions["github_write"]
+    context.store.save(context.session)
+    return result
 
 
 def _gmail_read(context: ToolContext, arguments: dict[str, object]) -> dict[str, object]:
@@ -141,6 +201,81 @@ def build_tool_registry() -> ToolRegistry:
                 "additionalProperties": False,
             },
             executor=_gmail_search,
+        )
+    )
+
+    registry.register(
+        Tool(
+            name="github_list",
+            description="List a bounded GitHub repository directory. Empty path lists the repository root.",
+            argument_schema={
+                "type": "object",
+                "properties": {
+                    "repo": {"type": "string", "minLength": 3},
+                    "path": {"type": "string", "default": ""},
+                    "ref": {"type": "string", "default": "main"},
+                    "limit": {"type": "integer", "default": 50},
+                },
+                "required": ["repo"],
+                "additionalProperties": False,
+            },
+            executor=_github_list,
+        )
+    )
+
+    registry.register(
+        Tool(
+            name="github_search",
+            description=(
+                "Search filenames and text inside exactly one GitHub repository. "
+                "Returns bounded matching paths and snippets."
+            ),
+            argument_schema={
+                "type": "object",
+                "properties": {
+                    "repo": {"type": "string", "minLength": 3},
+                    "query": {"type": "string", "minLength": 1},
+                    "ref": {"type": "string", "default": "main"},
+                    "limit": {"type": "integer", "default": 10},
+                },
+                "required": ["repo", "query"],
+                "additionalProperties": False,
+            },
+            executor=_github_search,
+        )
+    )
+
+    registry.register(
+        Tool(
+            name="github_prepare_write",
+            description=(
+                "Prepare creation or update of one UTF-8 text file and return a diff. "
+                "This does not write to GitHub and requires separate explicit confirmation."
+            ),
+            argument_schema={
+                "type": "object",
+                "properties": {
+                    "repo": {"type": "string", "minLength": 3},
+                    "path": {"type": "string", "minLength": 1},
+                    "content": {"type": "string"},
+                    "branch": {"type": "string", "default": "main"},
+                },
+                "required": ["repo", "path", "content"],
+                "additionalProperties": False,
+            },
+            executor=_github_prepare_write,
+        )
+    )
+
+    registry.register(
+        Tool(
+            name="github_apply_write",
+            description=(
+                "Apply the one pending GitHub text-file write. Runtime permits this only "
+                "after a separate explicit user confirmation."
+            ),
+            argument_schema={"type": "object", "properties": {}, "additionalProperties": False},
+            executor=_github_apply_write,
         )
     )
 
