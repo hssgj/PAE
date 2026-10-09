@@ -319,6 +319,9 @@ def main() -> None:
         session.messages.append({"role": "user", "content": user_text})
         store.save(session)
 
+        # Provide immediate, truthful CLI feedback during potentially slow local inference.
+        print("[pae] Zpracovávám požadavek…", flush=True)
+
         try:
             reply = run_agent_turn(
                 provider,
