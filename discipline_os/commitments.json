@@ -92,10 +92,11 @@
       "text": "Complete AOK PLUS health-insurance enrollment and provide the new German employer with the required insurance confirmation/data for the 2026-10-05 start.",
       "status": "ACTIVE",
       "project": "Income / job search",
-      "next_action": "Confirm first-day DREGENO reporting time if still uncertain; otherwise await AOK PLUS processing and VZP response, then obtain/register S1 and provide employer-ready AOK insurance data.",
+      "next_action": "At the Monday 2026-10-12 VZP callback, confirm progress of German S072/S1, follow up with AOK if still not issued, and provide employer-ready insurance data once received. E902 was accepted by VZP on 2026-10-09; do not represent S072 as complete.",
       "due": "2026-10-05",
-      "authority": "USER_AND_GMAIL_VERIFIED_2026-10-04",
-      "resolution_note": "AOK PLUS confirmed successful transmission of the membership application on 2026-10-04. VZP was notified by email the same day. Insurance onboarding is now mostly waiting external; exact first-day reporting time remains the only immediate logistics question if not remembered from the interview."
+      "authority": "USER_REPORTED_VZP_CONFIRMATION_2026-10-09_AND_PRIOR_GMAIL",
+      "resolution_note": "Original target 2026-10-05 is preserved as the onboarding deadline, not silently moved. By 2026-10-09 the user had submitted E902, received confirmation it was acceptable, sent urgent AOK and doctor communications, and clarified the Czech address. The remaining German S072/S1 is externally pending; VZP said retroactive registration can be possible and promised a Monday 2026-10-12 callback.",
+      "follow_up_date": "2026-10-12"
     }
   ]
 }

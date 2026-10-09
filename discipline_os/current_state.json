@@ -1,46 +1,46 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-10-06",
+  "updated": "2026-10-09",
   "current_focus": {
     "project": "PAE / prototype_v0",
-    "milestone": "Local brain milestone is GREEN. prototype_v0 now runs on Android/Termux against Qwen3-1.7B Q4_K_M through local llama-server, preserves session continuity across restarts, and has passed a true cold offline boot with airplane mode enabled. A one-command start-local.sh launcher has also been verified.",
-    "next_action": "At the next PAE work block, first add a small truthful busy/spinner indicator around long provider waits. Then continue bounded read-only tool integration one tool at a time; do not fan out into multiple integrations, extra models, fine-tuning, embeddings, UI, or broader architecture in parallel.",
-    "status": "LOCAL_BRAIN_GREEN_COLD_OFFLINE_BOOT_VERIFIED",
-    "authority": "USER_AND_RUNTIME_VERIFIED_2026-10-06"
+    "milestone": "October 9 milestone: Memory Guard v0.1 installed and locally tested on Android/Termux; budget 4096 total / 3200 working input / 512 output / 384 safety margin. User-shared local runtime readings included ~362/3200, 1955/3200 and 2130/3200, with archived session data kept intact and backup created. Live Qwen responded meaningfully to the archive-versus-working-memory principle. The CLI truthful busy indicator is on GitHub (94dc030), and a real GitHub write smoke test from PAE Mobile is committed on main (195e8ca). Guard installation itself is LOCAL ONLY, not yet committed or verified as a finished production capability.",
+    "next_action": "After Saturday morning orientation and explicit choice of focus (the temporary PAE priority override expired 2026-10-09 18:03 +02:00), protect the DREGENO shift and safe transport. If a PAE work block is authorized, start with one bounded live Memory Guard regression check, document/fix the first reproduced tool-ban adherence issue, and resist unapproved scope expansion. No additional work tonight.",
+    "status": "LOCAL_MEMORY_GUARD_V0_1_TESTED_GITHUB_WRITE_SMOKE_VERIFIED",
+    "authority": "USER_SHARED_TERMUX_RUNTIME_LOGS_AND_GITHUB_MAIN_VERIFIED_2026-10-09"
   },
   "daily_priorities": [
     {
       "rank": 1,
-      "item": "Run a local GGUF model on Android/Termux through llama.cpp and connect prototype_v0 to it.",
-      "status": "DONE_2026-10-06",
-      "authority": "USER_AND_RUNTIME_VERIFIED_2026-10-06"
+      "item": "Complete Friday's DREGENO kitchen shift and maintain safe transport for Saturday's shift.",
+      "status": "FRIDAY_SHIFT_DONE_SATURDAY_TRANSPORT_TO_CHECK",
+      "authority": "USER_REPORTED_2026-10-09"
     },
     {
       "rank": 2,
-      "item": "Prove restart continuity and a true cold offline boot with airplane mode enabled.",
-      "status": "DONE_2026-10-06",
-      "authority": "USER_AND_RUNTIME_VERIFIED_2026-10-06"
+      "item": "Resolve immediate VZP/AOK paperwork: send E902 and urgent requests, inform doctor, clarify Czech address.",
+      "status": "USER_ACTIONS_DONE_E902_ACCEPTED_GERMAN_S072_PENDING_EXTERNAL",
+      "authority": "USER_AND_VZP_PHONE_CONFIRMATION_REPORTED_2026-10-09"
     },
     {
       "rank": 3,
-      "item": "Make the local stack reproducible with one startup command and record the verified state in GitHub.",
-      "status": "DONE_2026-10-06",
-      "authority": "USER_AND_GITHUB_VERIFIED_2026-10-06"
+      "item": "Within the final PAE sprint window, verify CLI feedback and GitHub write, locally install/test Memory Guard without widening scope.",
+      "status": "MILESTONES_REACHED_WITH_KNOWN_LIMITATIONS",
+      "authority": "GITHUB_COMMITS_AND_USER_TERMUX_OUTPUT_2026-10-09"
     }
   ],
   "active_projects": [
     {
       "name": "PAE / Discipline OS",
-      "status": "BOUNDED_PROTOTYPE_SPRINT_LOCAL_BRAIN_GREEN",
-      "authority": "USER_EXPLICIT_2026-10-05",
-      "note": "Temporary four-day prototype_v0 sprint remains authorized through 2026-10-08. Local Qwen3-1.7B Q4_K_M inference on Android/Termux is verified, including session continuity, cold offline boot, and one-command startup. Next work block starts with a small busy/spinner indicator, then bounded read-only tool integration one tool at a time. Extra models, fine-tuning, embeddings, UI, Supabase, and broad architecture remain deferred unless they become concrete blockers."
+      "status": "PROTOTYPE_V0_MILESTONE_REACHED_OVERRIDE_EXPIRED_ORIENTATION_REQUIRED",
+      "authority": "GITHUB_MAIN_AND_USER_RUNTIME_LOGS_2026-10-09",
+      "note": "Oct 9: truthful CLI busy status committed (94dc030); PAE Mobile GitHub write smoke verified on main (195e8ca); Memory Guard v0.1 locally installed and passed reported syntax/stress and live-Qwen checks, with session archive untouched and rollback backup. Slow local inference, imperfect Czech output and inconsistent tool-ban compliance remain open; no claim of full memory system or production readiness. The explicit top-priority override expired Oct 9 at 18:03 +02:00 and the narrower temporary scope permission expired Oct 8. Do not silently renew either. Re-orient before the next build block."
     },
     {
       "name": "Income / job search",
-      "status": "EMPLOYMENT_FOUND_ONBOARDING",
-      "authority": "USER_CONFIRMED_2026-10-02",
-      "note": "DREGENO interview completed 2026-10-01 and user confirmed a new German job beginning 2026-10-05. New job-search outreach is paused by default while onboarding is completed. Existing alternatives remain external/backup items unless explicitly reopened."
+      "status": "EMPLOYED_WORKING_ONBOARDING_IN_PROGRESS",
+      "authority": "USER_CONFIRMED_2026-10-09",
+      "note": "DREGENO employment started Oct 5. User reported completing Friday Oct 9 kitchen work and has Saturday Oct 10 shift. Safe bike/weekend bus transport still merits checking; AOK/VZP paperwork remains externally pending. New job search outreach stays paused."
     },
     {
       "name": "Víc než angličtina tutoring",
@@ -59,10 +59,10 @@
     },
     {
       "name": "DREGENO Spielzeugschachtel application",
-      "status": "INTERVIEW_COMPLETED_EMPLOYMENT_START_CONFIRMED",
-      "last_action": "User attended DREGENO on 2026-10-01, completed the employer form, and confirmed a new German employment start for Monday 2026-10-05.",
-      "next_action": "Start employment on 2026-10-05. General working hours are documented as 09:00-18:00; confirm the exact first-day reporting time only if it was not already agreed orally. Provide AOK insurance data when available.",
-      "authority": "GMAIL_AND_USER_VERIFIED_2026-10-04",
+      "status": "EMPLOYMENT_STARTED_ACTIVE",
+      "last_action": "Started work 2026-10-05; user reported a full kitchen shift on Friday 2026-10-09.",
+      "next_action": "Attend scheduled Saturday 2026-10-10 shift; check safe bike/weather/transport before departure. Supply German insurer data once issued.",
+      "authority": "USER_REPORTED_2026-10-09",
       "deadline": "2026-10-05"
     },
     {
@@ -197,11 +197,12 @@
     },
     {
       "name": "AOK PLUS membership / employer insurance data",
-      "status": "APPLICATION_SUCCESSFULLY_TRANSMITTED_AWAITING_PROCESSING",
-      "last_action": "AOK PLUS emailed confirmation on 2026-10-04 that the membership application was successfully transmitted after activation.",
-      "next_action": "Await AOK PLUS processing and employer-ready insurance confirmation/data; obtain S1 and register it with VZP.",
+      "status": "E902_ACCEPTED_BY_VZP_GERMAN_S072_PENDING",
+      "last_action": "On 2026-10-09, user sent the E902 form; VZP phone confirmation said it was acceptable. Czech address and urgent AOK request sent; doctor notified. As of the VZP call, German S072 was not yet issued/sent and AOK had only acknowledged receipt automatically.",
+      "next_action": "On Monday 2026-10-12 receive VZP's promised callback and follow up with AOK as needed for S072/S1 and employer insurance confirmation; VZP said retroactive registration is possible. Do not imply the German S072 is complete.",
       "deadline": "2026-10-05",
-      "authority": "GMAIL_VERIFIED_2026-10-04"
+      "authority": "USER_REPORTED_VZP_PHONE_CONFIRMATION_AND_SENT_EMAILS_2026-10-09",
+      "follow_up_date": "2026-10-12"
     }
   ],
   "parked_for_now": [
@@ -211,14 +212,15 @@
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
-  "last_review": "2026-10-06",
-  "review_note": "LOCAL BRAIN GREEN. On Android/Termux, llama.cpp loaded Qwen3-1.7B Q4_K_M locally and served OpenAI-compatible chat completions on 127.0.0.1:8080. prototype_v0 was redirected to that endpoint with Qwen thinking disabled. Persisted session history survived process/server restarts. A true cold offline boot was verified after shutting down both PAE and llama-server, enabling airplane mode, restarting the server and PAE, and receiving the response 'OFFLINE ŽIJU'. A one-command start-local.sh launcher was then verified with the response 'LEBKA DRŽÍ'. Known issue: local 1.7B responses can be slow on large prompts; add a truthful busy indicator before the next tool-integration work.",
+  "last_review": "2026-10-09",
+  "review_note": "EXCEPTIONAL GOLDEN RIFTBRIEF: October 9 joined ordinary life and a genuine PAE milestone. DREGENO shift done; VZP E902 accepted with German S072 still externally outstanding. Local Memory Guard v0.1 fit sessions into a declared 3200-token working budget with archival data preserved, and live Qwen articulated selective recall rather than total simultaneous context. GitHub write smoke verified. The user explicitly wanted this achievement remembered as a GOLDEN PAGE. Record both emotional importance and technical limitations; do not count local guard as deployed GitHub code. Evening closed: no feature work, no silent extension of priority override.",
   "temporary_priority_override": {
     "project": "PAE / prototype_v0",
     "starts_at": "2026-10-05T18:03:00+02:00",
     "expires_at": "2026-10-09T18:03:00+02:00",
     "rule": "PAE has top work priority during this window. Do not BLOCK, PARK, or WARN PAE execution merely because it expands PAE scope. Still prevent unrelated scope creep inside the prototype itself.",
-    "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05"
+    "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05",
+    "status": "EXPIRED_2026-10-09T18:03:00+02:00_NOT_AUTO_RENEWED"
   },
   "temporary_scope_authorizations": [
     {
