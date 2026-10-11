@@ -36,7 +36,7 @@ def main() -> int:
                 successful_tools.append("github_read")
                 last_tool_action, last_tool_result = call, result
         if failures:'''
-    new = '''            else:
+    new = r'''            else:
                 successful_tools.append("github_read")
                 last_tool_action, last_tool_result = call, result
                 # PAE_FOCUSED_RECIPE_SOURCE_V1
