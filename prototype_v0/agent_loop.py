@@ -191,6 +191,20 @@ def _last_user_text(messages: list[dict[str, str]]) -> str:
     return ""
 
 
+def is_pae_state_request(messages: list[dict[str, str]]) -> bool:
+    """Authorize authoritative DOS state only for explicit PAE-state questions."""
+    user_text = _last_user_text(messages)
+    tokens = _tokens(user_text)
+    if "discipline_os/current_state.json" in user_text:
+        return True
+    is_pae = bool(set(tokens) & {"pae", "dos", "discipline"})
+    is_state = _approx_any(tokens, {
+        "focus", "stav", "state", "priority", "priorita", "milestone",
+        "next", "action", "dalsi", "aktualni", "current",
+    })
+    return is_pae and is_state
+
+
 def required_tool_call(messages: list[dict[str, str]]) -> ToolCall | None:
     """Return a deterministic minimum tool call when source freshness is mandatory."""
     user_text = _last_user_text(messages)
@@ -239,7 +253,7 @@ def required_tool_call(messages: list[dict[str, str]]) -> ToolCall | None:
     mentions_freshness = _approx_any(tokens, freshness_terms)
     mentions_state = _approx_any(tokens, state_terms)
 
-    if mentions_freshness and mentions_state:
+    if mentions_freshness and mentions_state and is_pae_state_request(messages):
         return ToolCall(
             name="github_read",
             arguments={
@@ -504,6 +518,7 @@ def run_agent_turn(
 
     forbidden_attempts = 0
     scoped_reprompts = 0
+    unrelated_dos_reprompts = 0
 
     while True:
         repairs = 0
@@ -559,6 +574,31 @@ def run_agent_turn(
                     "TOOL REQUEST REJECTED: all explicitly requested files are "
                     "already available above. Return the comparison now with no "
                     "further tool calls; do not access Discipline OS."
+                ),
+            })
+            continue
+
+        # Never use the DOS state file as a fallback for unrelated questions.
+        if (
+            action.name == "github_read"
+            and action.arguments.get("path", "").lstrip("/")
+            == "discipline_os/current_state.json"
+            and not is_pae_state_request(messages)
+        ):
+            print("[tool guard] rejected unrelated Discipline OS state read")
+            if unrelated_dos_reprompts >= 1:
+                return (
+                    "Model opakovaně požádal o nesouvisející stav PAE. "
+                    "Čtení bylo zablokováno; zkus přesný soubor nebo otázku."
+                )
+            unrelated_dos_reprompts += 1
+            working.append({
+                "role": "system",
+                "content": (
+                    "REJECTED: The user did not request PAE Discipline OS state. "
+                    "Do NOT fetch discipline_os/current_state.json. "
+                    "Answer from the requested sources only, or clearly say "
+                    "what information is missing."
                 ),
             })
             continue
