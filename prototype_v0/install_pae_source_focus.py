@@ -49,10 +49,10 @@ def main() -> int:
                         "role": "system",
                         "content": (
                             "GITHUB FILE VERIFIED (full text archived, relevant lines "
-                            "shown below)\\n"
-                            f"Repo: {explicit_scope.repo}\\n"
-                            f"Path: {path}\\n"
-                            f"Ref: {explicit_scope.ref}\\n\\n"
+                            "shown below)\n"
+                            f"Repo: {explicit_scope.repo}\n"
+                            f"Path: {path}\n"
+                            f"Ref: {explicit_scope.ref}\n\n"
                             + excerpt
                         ),
                     }
