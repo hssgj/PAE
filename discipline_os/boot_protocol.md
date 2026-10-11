@@ -79,3 +79,15 @@ On explicit `BOOT DISCIPLINE`, reply with only:
 - STATE CONFIDENCE
 
 Keep it short. The purpose is orientation, not motivation.
+
+## State freshness guard
+At the first materially work-relevant request on a local calendar day, compare `current_state.json.updated` with the current local date and inspect whether its time-bound next actions, shift dates, and external deadlines are still in the future. If the file is dated before today or refers to an already-passed next action:
+- Mark day-specific orientation **STALE / NEEDS REVIEW** instead of repeating it as today's command.
+- Keep historical facts and completed milestones intact. Reconcile only user-confirmed or externally verified developments.
+- Do not infer that a scheduled obligation was done merely because its date passed; mark outcomes UNKNOWN until verified.
+- Do not silently renew expired priority overrides, invent a new top focus, or mark a provisional focus confirmed.
+- When the user asks to refresh state, persist the factual corrections to `current_state.json` and update `review_log.json`; use `commitments.json` for new explicit obligations only.
+- If daily priorities cannot be confirmed, surface the open orientation gap while still naming the next concrete hard commitment.
+- GitHub state freshness and device push reminders are separate systems. A written habit does **not** prove an automation is scheduled or notifications are delivered.
+
+This is a factual read/maintenance check, not a new autonomous scheduler. It only runs when a request opens the chat; never claim background checks or push delivery.
