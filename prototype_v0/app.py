@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from agent_loop import run_agent_turn
+from busy_indicator import BusyProvider
 from provider import build_provider
 from runtime_tools import build_tool_registry
 from sessions import SessionStore
@@ -174,7 +175,7 @@ def main() -> None:
     for path in args.load:
         load_file(store, session, path)
 
-    provider = build_provider()
+    provider = BusyProvider(build_provider())
 
     if args.analyze:
         try:
@@ -318,9 +319,6 @@ def main() -> None:
 
         session.messages.append({"role": "user", "content": user_text})
         store.save(session)
-
-        # Provide immediate, truthful CLI feedback during potentially slow local inference.
-        print("[pae] Zpracovávám požadavek…", flush=True)
 
         try:
             reply = run_agent_turn(
