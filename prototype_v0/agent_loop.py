@@ -8,6 +8,7 @@ from difflib import SequenceMatcher
 from typing import Any
 
 from tool_core import ToolContext, ToolRegistry
+from github_routing import extract_github_read_scope
 
 
 MAX_TOOL_CALLS = 3
@@ -121,18 +122,17 @@ You can either request exactly one runtime tool call or return the final answer.
 AVAILABLE TOOLS
 {specs}
 
-ACTIVE PROJECT CONTEXT
-- Primary repository: hssgj/PAE
-- The authoritative current Discipline OS state is:
-  discipline_os/current_state.json
-- When the user asks for the current PAE focus, priority, milestone, next action,
-  or asks you to check the current GitHub state, ALWAYS use github_read on that
-  file before answering. Persisted copies may be stale.
+GITHUB SCOPE
+- Always respect the repository and exact file path explicitly requested by the user.
+- hssgj/PAE is relevant ONLY to PAE itself, not a default for other repositories.
+- Read discipline_os/current_state.json ONLY for explicit PAE priority/focus/state
+  questions, never as fallback for an unrelated request or a failed read.
+- A GitHub read failure is NOT permission to read a different file.
 - Do not claim you checked GitHub unless you actually request github_read.
 
 OUTPUT CONTRACT
 To request a tool, return exactly ONE JSON object and nothing else:
-{{"type":"tool_call","name":"github_read","arguments":{{"repo":"hssgj/PAE","path":"discipline_os/current_state.json","ref":"main"}}}}
+{{"type":"tool_call","name":"github_read","arguments":{{"repo":"owner/repository","path":"README.md","ref":"main"}}}}
 
 If no tool is needed, answer the user normally in plain text. A JSON final object
 is also accepted:
@@ -401,7 +401,20 @@ def run_agent_turn(
     registry: ToolRegistry,
     context: ToolContext,
 ) -> str:
-    working = list(messages)
+    explicit_scope = extract_github_read_scope(_last_user_text(messages))
+
+    # For exact file comparisons, isolate the turn from unrelated cached sources
+    # and old assistant answers (including previously pasted DOS dumps).
+    if explicit_scope is not None:
+        if user_forbids_tools(messages):
+            return "Rozpor v zadání: nelze načíst GitHub a současně zakázat nástroje."
+        current_user = next(
+            message for message in reversed(messages)
+            if message.get("role") == "user"
+        )
+        working = [messages[0], current_user]
+    else:
+        working = list(messages)
     working.insert(
         1,
         {
@@ -431,9 +444,46 @@ def run_agent_turn(
         },
     )
 
-    required = required_tool_call(messages)
+    required = None if explicit_scope is not None else required_tool_call(messages)
     forbid_optional_tools = required is None and user_forbids_tools(messages)
     tool_calls = 0
+
+    # Small local models struggle to emit exact paths with spaces/quotes.
+    # Execute at most three literal file reads from the user's request.
+    if explicit_scope is not None:
+        failed_paths = []
+        for path in explicit_scope.paths:
+            call = ToolCall(
+                name="github_read",
+                arguments={
+                    "repo": explicit_scope.repo,
+                    "path": path,
+                    "ref": explicit_scope.ref,
+                },
+            )
+            tool_calls += 1
+            if not _append_tool_attempt(
+                working, call, registry=registry, context=context
+            ):
+                failed_paths.append(path)
+
+        if failed_paths:
+            return (
+                "Nepodařilo se načíst požadované soubory: "
+                + "; ".join(failed_paths)
+                + ". Porovnání neprovádím a jiné soubory nehledám."
+            )
+        working.append({
+            "role": "system",
+            "content": (
+                "EXACT FILE TASK: The requested files have already been fetched. "
+                "Do not call tools again. Compare ONLY the fetched source contents. "
+                "Never print raw GitHub tool JSON or Discipline OS state. "
+                "Answer succinctly in the user's language. If context is missing, "
+                "state the limitation rather than inventing facts."
+            ),
+        })
+
 
     # If the runtime can deterministically prove a fresh/source read is required,
     # execute it before asking the model. The model does not get to bypass it.
@@ -453,6 +503,7 @@ def run_agent_turn(
         )
 
     forbidden_attempts = 0
+    scoped_reprompts = 0
 
     while True:
         repairs = 0
@@ -476,7 +527,41 @@ def run_agent_turn(
                 repairs += 1
 
         if isinstance(action, FinalAnswer):
+            if explicit_scope is not None and not any(
+                path.startswith("discipline_os/") for path in explicit_scope.paths
+            ):
+                if (
+                    "Cesta: discipline_os/current_state.json" in action.content
+                    or (
+                        '"current_focus"' in action.content
+                        and '"open_external_items"' in action.content
+                    )
+                ):
+                    return (
+                        "Odpověď modelu byla zablokována: obsahovala nesouvisející "
+                        "stav Discipline OS. Požadované soubory byly načteny, ale "
+                        "model je nedokázal správně porovnat."
+                    )
             return action.content
+
+        if explicit_scope is not None:
+            # A model-generated path cannot override the exact user-authorized set.
+            print("[tool guard] rejected extra tool call outside exact-file task")
+            if scoped_reprompts >= 1:
+                return (
+                    "Model opakovaně žádal další nástroj místo porovnání "
+                    "načtených souborů. Žádné další soubory nebyly čteny."
+                )
+            scoped_reprompts += 1
+            working.append({
+                "role": "system",
+                "content": (
+                    "TOOL REQUEST REJECTED: all explicitly requested files are "
+                    "already available above. Return the comparison now with no "
+                    "further tool calls; do not access Discipline OS."
+                ),
+            })
+            continue
 
         if forbid_optional_tools:
             forbidden_attempts += 1
