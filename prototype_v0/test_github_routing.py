@@ -197,3 +197,26 @@ def test_genuine_pae_status_can_still_read_authoritative_state():
     assert action is not None
     assert action.arguments["repo"] == "hssgj/PAE"
     assert action.arguments["path"] == "discipline_os/current_state.json"
+
+
+def test_unrelated_cached_dos_source_and_history_are_not_injected():
+    provider = FakeProvider(["Odpověď k mouce."])
+    old_snapshot = (
+        "PERSISTENT SOURCE MATERIAL\n"
+        "Repository: hssgj/PAE\n"
+        "Path: discipline_os/current_state.json\n"
+        '{"current_focus": {}, "open_external_items": []}'
+    )
+    result = run_agent_turn(
+        provider,
+        [
+            {"role": "system", "content": "You are PAE"},
+            {"role": "system", "content": old_snapshot},
+            {"role": "assistant", "content": old_snapshot},
+            {"role": "user", "content": "Proč kynuté těsto roste?"},
+        ],
+        registry=FakeRegistry(),
+        context=FakeContext(),
+    )
+    assert result == "Odpověď k mouce."
+    assert old_snapshot not in [m.get("content") for m in provider.seen_messages[0]]
