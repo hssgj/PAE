@@ -175,7 +175,7 @@ def test_unrelated_dos_read_is_blocked_even_without_exact_paths():
 
 def test_unrelated_dos_final_dump_is_suppressed():
     provider = FakeProvider([
-        '{"current_focus": {}, "open_external_items": []}',
+        'Repo: hssgj/PAE\nCesta: discipline_os/current_state.json',
     ])
     result = run_agent_turn(
         provider,
