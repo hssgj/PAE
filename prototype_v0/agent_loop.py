@@ -542,21 +542,17 @@ def run_agent_turn(
                 repairs += 1
 
         if isinstance(action, FinalAnswer):
-            if explicit_scope is not None and not any(
-                path.startswith("discipline_os/") for path in explicit_scope.paths
+            if not is_pae_state_request(messages) and (
+                "Cesta: discipline_os/current_state.json" in action.content
+                or (
+                    '"current_focus"' in action.content
+                    and '"open_external_items"' in action.content
+                )
             ):
-                if (
-                    "Cesta: discipline_os/current_state.json" in action.content
-                    or (
-                        '"current_focus"' in action.content
-                        and '"open_external_items"' in action.content
-                    )
-                ):
-                    return (
-                        "Odpověď modelu byla zablokována: obsahovala nesouvisející "
-                        "stav Discipline OS. Požadované soubory byly načteny, ale "
-                        "model je nedokázal správně porovnat."
-                    )
+                return (
+                    "Odpověď modelu byla zablokována: obsahovala nesouvisející "
+                    "stav Discipline OS místo odpovědi na otázku."
+                )
             return action.content
 
         if explicit_scope is not None:
@@ -581,7 +577,7 @@ def run_agent_turn(
         # Never use the DOS state file as a fallback for unrelated questions.
         if (
             action.name == "github_read"
-            and action.arguments.get("path", "").lstrip("/")
+            and str(action.arguments.get("path", "")).lstrip("/")
             == "discipline_os/current_state.json"
             and not is_pae_state_request(messages)
         ):
