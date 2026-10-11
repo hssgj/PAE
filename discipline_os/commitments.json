@@ -7,10 +7,10 @@
       "text": "Make Discipline OS function as an enforceable system rather than a memory-only prompt.",
       "status": "RENEGOTIATED",
       "project": "PAE / Discipline OS",
-      "next_action": "Use current OS in maintenance mode and keep authoritative state current; do not expand features unless a specific repair is required.",
+      "next_action": "At every materially work-related boot, check current_state.updated against the current local date; surface stale daily instructions and reconcile only verified facts. Do not change priority without explicit renegotiation. Oct 11 reminder-delivery issue is deferred.",
       "due": null,
       "authority": "USER_CONFIRMED_2026-09-27",
-      "resolution_note": "State refreshed on 2026-09-27 after detecting stale coeo and Srdcovka data."
+      "resolution_note": "Original enforcement commitment remains in maintenance mode. Oct 11 reconciliation added a freshness check to boot protocol and updated current_state after an Oct 9-to-Oct 11 gap; no new priority override or automation was created."
     },
     {
       "id": "C-002",
@@ -97,6 +97,17 @@
       "authority": "USER_REPORTED_VZP_CONFIRMATION_2026-10-09_AND_PRIOR_GMAIL",
       "resolution_note": "Original target 2026-10-05 is preserved as the onboarding deadline, not silently moved. By 2026-10-09 the user had submitted E902, received confirmation it was acceptable, sent urgent AOK and doctor communications, and clarified the Czech address. The remaining German S072/S1 is externally pending; VZP said retroactive registration can be possible and promised a Monday 2026-10-12 callback.",
       "follow_up_date": "2026-10-12"
+    },
+    {
+      "id": "C-010",
+      "created": "2026-10-11",
+      "text": "Keep the agreed daily bath/self-care routine; Spiderquack belongs in the tub.",
+      "status": "ACTIVE",
+      "project": "Personal routine / existing Discipline OS",
+      "next_action": "Use daily routine during normal orientation; do not infer whether a particular day's bath was completed from Spiderquack being returned to the empty tub. Do not change or diagnose notifications in this state-maintenance pass.",
+      "due": null,
+      "authority": "USER_EXPLICIT_REPORT_2026-10-11",
+      "resolution_note": "User said daily bathing had already been agreed in Discipline OS and reported receiving zero alerts across approximately four/five Riftquakes. Notification delivery is UNVERIFIED and its investigation was explicitly deferred; do not mark reminder service as working or user as noncompliant."
     }
   ]
 }
