@@ -1,46 +1,46 @@
 {
   "version": "0.5",
-  "state_status": "CONFIRMED",
-  "updated": "2026-10-09",
+  "state_status": "PROVISIONAL",
+  "updated": "2026-10-11",
   "current_focus": {
     "project": "PAE / prototype_v0",
-    "milestone": "October 9 milestone: Memory Guard v0.1 installed and locally tested on Android/Termux; budget 4096 total / 3200 working input / 512 output / 384 safety margin. User-shared local runtime readings included ~362/3200, 1955/3200 and 2130/3200, with archived session data kept intact and backup created. Live Qwen responded meaningfully to the archive-versus-working-memory principle. The CLI truthful busy indicator is on GitHub (94dc030), and a real GitHub write smoke test from PAE Mobile is committed on main (195e8ca). Guard installation itself is LOCAL ONLY, not yet committed or verified as a finished production capability.",
-    "next_action": "After Saturday morning orientation and explicit choice of focus (the temporary PAE priority override expired 2026-10-09 18:03 +02:00), protect the DREGENO shift and safe transport. If a PAE work block is authorized, start with one bounded live Memory Guard regression check, document/fix the first reproduced tool-ban adherence issue, and resist unapproved scope expansion. No additional work tonight.",
-    "status": "LOCAL_MEMORY_GUARD_V0_1_TESTED_GITHUB_WRITE_SMOKE_VERIFIED",
-    "authority": "USER_SHARED_TERMUX_RUNTIME_LOGS_AND_GITHUB_MAIN_VERIFIED_2026-10-09"
+    "milestone": "Last confirmed focus remains PAE / prototype_v0; Oct 9 Golden Riftbrief milestone remains preserved in review_log. As of Oct 11 GitHub main additionally contains a terminal busy spinner, scoped exact-path GitHub read and unrelated DOS-fallback safeguards, regression tests, and a guarded PAE Mobile routing-hotfix installer. Experimental Safety Guard runner was rolled back. GitHub commits prove code exists, NOT local installation or successful live end-to-end routing. User-reported live test still encountered a cookbook repository/path 404 and unrelated DOS fallback. Memory Guard v0.1 was locally installed/tested on Oct 9; do not promote to deployed/production without evidence.",
+    "next_action": "FIRST: perform explicit Riftwake focus/orientation; expired PAE priority override remains expired. Protect Monday Oct 12 MUDr. Dlouhy visit (09:00–12:00), VZP callback and AOK/S072 follow-up, and safe transport. If user separately selects a bounded PAE block, check which Oct 11 routing patches are actually installed locally, then run ONE live exact-path regression and record result; do not start another new architecture/tooling branch.",
+    "status": "LAST_CONFIRMED_PAE_FOCUS_WITH_EXPIRED_OVERRIDE_AND_ORIENTATION_PENDING",
+    "authority": "GITHUB_MAIN_VERIFIED_2026-10-11;USER_REPORTED_LOCAL_TEST_2026-10-11;PRIOR_PRIORITY_OVERRIDE_EXPIRED"
   },
   "daily_priorities": [
     {
       "rank": 1,
-      "item": "Complete Friday's DREGENO kitchen shift and maintain safe transport for Saturday's shift.",
-      "status": "FRIDAY_SHIFT_DONE_SATURDAY_TRANSPORT_TO_CHECK",
-      "authority": "USER_REPORTED_2026-10-09"
+      "item": "Maintain DREGENO employment and safe travel; prepare for Monday 2026-10-12 medical appointment (MUDr. Dlouhy, 09:00–12:00).",
+      "status": "SATURDAY_SERVICE_USER_REPORTED;MONDAY_APPOINTMENT_SCHEDULED;TODAY_PRIORITY_NOT_RECONFIRMED",
+      "authority": "USER_REPORTED_SATURDAY_2026-10-10;CALENDAR_VERIFIED_2026-09-28"
     },
     {
       "rank": 2,
-      "item": "Resolve immediate VZP/AOK paperwork: send E902 and urgent requests, inform doctor, clarify Czech address.",
-      "status": "USER_ACTIONS_DONE_E902_ACCEPTED_GERMAN_S072_PENDING_EXTERNAL",
-      "authority": "USER_AND_VZP_PHONE_CONFIRMATION_REPORTED_2026-10-09"
+      "item": "Track urgent AOK PLUS / VZP onboarding: German S072/S1 still unverified; expect Monday 2026-10-12 VZP follow-up.",
+      "status": "E902_ACCEPTED_2026-10-09;S072_STILL_PENDING_AS_LAST_VERIFIED;TODAY_PRIORITY_NOT_RECONFIRMED",
+      "authority": "USER_AND_VZP_REPORT_2026-10-09"
     },
     {
       "rank": 3,
-      "item": "Within the final PAE sprint window, verify CLI feedback and GitHub write, locally install/test Memory Guard without widening scope.",
-      "status": "MILESTONES_REACHED_WITH_KNOWN_LIMITATIONS",
-      "authority": "GITHUB_COMMITS_AND_USER_TERMUX_OUTPUT_2026-10-09"
+      "item": "PAE prototype_v0 maintenance: reconcile Oct 11 GitHub routing/test changes with local deployment; live end-to-end routing remains unverified.",
+      "status": "GITHUB_CODE_COMMITTED;LOCAL_APPLICATION_UNCONFIRMED;LIVE_ERROR_REPORTED;TODAY_PRIORITY_NOT_RECONFIRMED",
+      "authority": "GITHUB_MAIN_2026-10-11;USER_LOCAL_TEST_REPORT_2026-10-11"
     }
   ],
   "active_projects": [
     {
       "name": "PAE / Discipline OS",
-      "status": "PROTOTYPE_V0_MILESTONE_REACHED_OVERRIDE_EXPIRED_ORIENTATION_REQUIRED",
-      "authority": "GITHUB_MAIN_AND_USER_RUNTIME_LOGS_2026-10-09",
-      "note": "Oct 9: truthful CLI busy status committed (94dc030); PAE Mobile GitHub write smoke verified on main (195e8ca); Memory Guard v0.1 locally installed and passed reported syntax/stress and live-Qwen checks, with session archive untouched and rollback backup. Slow local inference, imperfect Czech output and inconsistent tool-ban compliance remain open; no claim of full memory system or production readiness. The explicit top-priority override expired Oct 9 at 18:03 +02:00 and the narrower temporary scope permission expired Oct 8. Do not silently renew either. Re-orient before the next build block."
+      "status": "ACTIVE_EXISTING_LAST_FOCUS_REORIENTATION_REQUIRED",
+      "authority": "GITHUB_MAIN_COMMITS_2026-10-11_AND_USER_LIVE_TEST_2026-10-11",
+      "note": "Oct 9 Golden Riftbrief prototype milestone is retained. On Oct 11 GitHub main contains spinner and routing/path/fallback patches and tests, plus guarded local hotfix installer; this is not evidence the installer ran or that PAE Mobile works end-to-end. A recent user-reported live query still misrouted on a 404 and unrelated DOS fallback. Experimental Safety Guard runner was rolled back at c18c17d. Local Memory Guard from Oct 9 remains local unless separately verified as committed/deployed. Temporary priority override expired Oct 9; no silent renewal. Focus selection requires explicit user orientation."
     },
     {
       "name": "Income / job search",
-      "status": "EMPLOYED_WORKING_ONBOARDING_IN_PROGRESS",
-      "authority": "USER_CONFIRMED_2026-10-09",
-      "note": "DREGENO employment started Oct 5. User reported completing Friday Oct 9 kitchen work and has Saturday Oct 10 shift. Safe bike/weekend bus transport still merits checking; AOK/VZP paperwork remains externally pending. New job search outreach stays paused."
+      "status": "EMPLOYED_DREGENO_ONBOARDING_PENDING_EXTERNAL",
+      "authority": "USER_REPORTED_2026-10-10;AOK_VZP_LAST_CONFIRMED_2026-10-09",
+      "note": "DREGENO employment started Oct 5. User reported Saturday Oct 10 kitchen service positively. Next actual shift/transport plan not verified. AOK PLUS/VZP remains externally pending, with Monday Oct 12 follow-up. No revival of general job search."
     },
     {
       "name": "Víc než angličtina tutoring",
@@ -59,10 +59,10 @@
     },
     {
       "name": "DREGENO Spielzeugschachtel application",
-      "status": "EMPLOYMENT_STARTED_ACTIVE",
-      "last_action": "Started work 2026-10-05; user reported a full kitchen shift on Friday 2026-10-09.",
-      "next_action": "Attend scheduled Saturday 2026-10-10 shift; check safe bike/weather/transport before departure. Supply German insurer data once issued.",
-      "authority": "USER_REPORTED_2026-10-09",
+      "status": "EMPLOYED_ACTIVE_NEXT_SHIFT_UNVERIFIED",
+      "last_action": "User described Saturday 2026-10-10 kitchen service and prepared work positively; exact departure/shift end and next shift not independently verified.",
+      "next_action": "Verify upcoming work roster and safe bicycle/public-transport plan before next commute; provide insurance confirmation when issued.",
+      "authority": "USER_REPORTED_2026-10-10",
       "deadline": "2026-10-05"
     },
     {
@@ -212,8 +212,8 @@
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
-  "last_review": "2026-10-09",
-  "review_note": "EXCEPTIONAL GOLDEN RIFTBRIEF: October 9 joined ordinary life and a genuine PAE milestone. DREGENO shift done; VZP E902 accepted with German S072 still externally outstanding. Local Memory Guard v0.1 fit sessions into a declared 3200-token working budget with archival data preserved, and live Qwen articulated selective recall rather than total simultaneous context. GitHub write smoke verified. The user explicitly wanted this achievement remembered as a GOLDEN PAGE. Record both emotional importance and technical limitations; do not count local guard as deployed GitHub code. Evening closed: no feature work, no silent extension of priority override.",
+  "last_review": "2026-10-11",
+  "review_note": "OCT 11 FACTUAL STATE RECONCILIATION (not a completed daily Riftwake): outdated Oct 9 Saturday-in-the-future instructions replaced with dated Saturday user report and Oct 12 concrete obligations; Oct 11 GitHub commits reconciled while live PAE routing remains UNVERIFIED/failed in recent user test. The old PAE override remains expired and no new focus was chosen by assistant. User reports Spiderquack returned to tub and a daily bathing agreement, but not completion of today's bath; no bath-reminder alerts were received across roughly four/five Riftquakes. Reminder delivery investigation intentionally deferred per user. Prior Golden Riftbrief preserved in review_log. Today's priority ranking awaits user confirmation.",
   "temporary_priority_override": {
     "project": "PAE / prototype_v0",
     "starts_at": "2026-10-05T18:03:00+02:00",
