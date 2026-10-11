@@ -19,6 +19,7 @@ class FakeSession:
     session_id: str = "test"
     sources: list = field(default_factory=list)
     messages: list = field(default_factory=list)
+    pending_actions: dict = field(default_factory=dict)
 
 
 @dataclass
