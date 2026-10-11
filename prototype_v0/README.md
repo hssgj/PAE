@@ -16,11 +16,11 @@ Verified on Android/Termux:
 Current known limitations:
 
 - local 1.7B inference can be slow on long prompts/tool context
-- the CLI has no busy/thinking indicator yet, so long generations look frozen
+- a rotating busy indicator is now implemented for blocking model calls; live Termux validation is still pending
 - the model does not inherently know host/device facts unless runtime context or a tool provides them
 - network-backed tools such as GitHub still require connectivity when invoked
 
-Next target: add a small truthful busy spinner/status indicator, then continue the bounded read-only tool integration one tool at a time.
+Next target: verify the spinner during a real Termux/Qwen inference call. Latency and redundant repository reads are separate future tasks.
 
 ## What it does
 
@@ -43,6 +43,12 @@ The extractor is explicitly source-grounded: unsupported scene values stay
 
 It deliberately does **not** contain registries, agents, a database, UI,
 semantic memory, autodiscovery, or the future PAE architecture.
+
+## Busy indicator
+
+The CLI rotates `| / - \\` while `provider.chat()` is running and clears the status line before printing a reply or error. It is activity feedback, **not token streaming**. Redirected output gets one plain status line.
+
+Local unit checks: `python -m pytest -q test_busy_indicator.py` (requires pytest). For a real terminal smoke test, start the existing local Qwen stack and ask a question that takes a few seconds to answer.
 
 ## Smoke test
 
