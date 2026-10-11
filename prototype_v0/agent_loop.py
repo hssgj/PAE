@@ -205,6 +205,16 @@ def is_pae_state_request(messages: list[dict[str, str]]) -> bool:
     return is_pae and is_state
 
 
+def is_dos_dump(content: str) -> bool:
+    return (
+        "Cesta: discipline_os/current_state.json" in content
+        or (
+            '"current_focus"' in content
+            and '"open_external_items"' in content
+        )
+    )
+
+
 def required_tool_call(messages: list[dict[str, str]]) -> ToolCall | None:
     """Return a deterministic minimum tool call when source freshness is mandatory."""
     user_text = _last_user_text(messages)
@@ -429,6 +439,21 @@ def run_agent_turn(
         working = [messages[0], current_user]
     else:
         working = list(messages)
+        # GitHub reads are persisted as archive sources. Keep them on disk, but
+        # do not inject an unrelated DOS snapshot or old DOS dump into this turn.
+        if not is_pae_state_request(messages):
+            working = [
+                msg for msg in working
+                if not (
+                    msg.get("role") == "system"
+                    and msg.get("content", "").startswith("PERSISTENT SOURCE MATERIAL")
+                    and "Path: discipline_os/current_state.json" in msg.get("content", "")
+                )
+                and not (
+                    msg.get("role") == "assistant"
+                    and is_dos_dump(msg.get("content", ""))
+                )
+            ]
     working.insert(
         1,
         {
@@ -542,13 +567,7 @@ def run_agent_turn(
                 repairs += 1
 
         if isinstance(action, FinalAnswer):
-            if not is_pae_state_request(messages) and (
-                "Cesta: discipline_os/current_state.json" in action.content
-                or (
-                    '"current_focus"' in action.content
-                    and '"open_external_items"' in action.content
-                )
-            ):
+            if not is_pae_state_request(messages) and is_dos_dump(action.content):
                 return (
                     "Odpověď modelu byla zablokována: obsahovala nesouvisející "
                     "stav Discipline OS místo odpovědi na otázku."
