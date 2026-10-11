@@ -19,6 +19,7 @@ MAX_BATTERY_C = 42.0
 MIN_AVAILABLE_MB = 350
 MAX_BUSY_SECONDS = 180
 POLL_SECONDS = 5
+MAX_SENSOR_GAP_SECONDS = 20  # Tolerate brief Android sensor/API hiccups; fail closed afterward.
 
 
 def valid_temp(raw: str) -> float | None:
@@ -147,7 +148,15 @@ def main() -> int:
         print("[guard] BLOCK: available RAM too low.")
         return 2
     if args.check:
-        print("[guard] Sensor check PASS (battery, not CPU thermal protection).")
+        # A single successful Android API read does not prove repeatability.
+        for number in (2, 3):
+            time.sleep(1)
+            probe = battery_temp()
+            print(f"[guard] sample {number}/3: battery={probe if probe is not None else 'UNAVAILABLE'} C")
+            if probe is None or probe >= MAX_BATTERY_C:
+                print("[guard] BLOCK: unstable or hot temperature sensor.")
+                return 2
+        print("[guard] Sensor check PASS (3 readings; battery only, not CPU).")
         return 0
 
     print(
@@ -160,24 +169,49 @@ def main() -> int:
     )
     busy_since = None
     unknown_since = None
+    temp_missing_since = None
+    mem_missing_since = None
     saw_slots = False
     launched_at = time.monotonic()
 
     try:
         while child.poll() is None:
             temp, mem = battery_temp(), mem_available_mb()
+            now = time.monotonic()
+
             if temp is None:
-                stop_runtime(child, "temperature reading became unavailable")
-                return 3
-            if temp >= MAX_BATTERY_C:
-                stop_runtime(child, f"battery {temp} C reached threshold")
-                return 3
-            if mem is not None and mem < MIN_AVAILABLE_MB:
-                stop_runtime(child, f"available RAM {mem} MB below threshold")
-                return 3
+                if temp_missing_since is None:
+                    temp_missing_since = now
+                    print(
+                        "[guard] WARN: battery sensor unavailable; retrying for up to "
+                        f"{MAX_SENSOR_GAP_SECONDS}s (no new safe reading)",
+                        flush=True,
+                    )
+                elif now - temp_missing_since >= MAX_SENSOR_GAP_SECONDS:
+                    stop_runtime(child, "battery sensor unreadable for 20+ seconds")
+                    return 3
+            else:
+                if temp_missing_since is not None:
+                    print(f"[guard] battery sensor recovered: {temp} C", flush=True)
+                temp_missing_since = None
+                if temp >= MAX_BATTERY_C:
+                    stop_runtime(child, f"battery {temp} C reached threshold")
+                    return 3
+
+            if mem is None:
+                if mem_missing_since is None:
+                    mem_missing_since = now
+                    print("[guard] WARN: MemAvailable unreadable; retrying", flush=True)
+                elif now - mem_missing_since >= MAX_SENSOR_GAP_SECONDS:
+                    stop_runtime(child, "memory sensor unreadable for 20+ seconds")
+                    return 3
+            else:
+                mem_missing_since = None
+                if mem < MIN_AVAILABLE_MB:
+                    stop_runtime(child, f"available RAM {mem} MB below threshold")
+                    return 3
 
             active = slot_active()
-            now = time.monotonic()
             if active is None:
                 if not saw_slots and now - launched_at >= 150:
                     stop_runtime(child, "/slots never became available")
