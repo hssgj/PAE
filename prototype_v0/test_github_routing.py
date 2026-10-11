@@ -142,3 +142,58 @@ def test_dos_dump_in_final_is_blocked():
 
 def test_regular_non_scoped_question_unchanged():
     assert extract_github_read_scope("Ahoj, co je PAE?") is None
+
+
+def test_unrelated_current_status_does_not_force_pae_state():
+    from agent_loop import required_tool_call
+    messages = [
+        {"role": "user", "content": "Zjisti aktuální stav jiného GitHub repozitáře."}
+    ]
+    assert required_tool_call(messages) is None
+
+
+def test_unrelated_dos_read_is_blocked_even_without_exact_paths():
+    provider = FakeProvider([
+        '{"type":"tool_call","name":"github_read","arguments":'
+        '{"repo":"hssgj/PAE","path":"discipline_os/current_state.json","ref":"main"}}',
+        "Nemám podklady pro odpověď.",
+    ])
+    registry = FakeRegistry()
+    result = run_agent_turn(
+        provider,
+        [
+            {"role": "system", "content": "You are PAE"},
+            {"role": "user", "content": "Vysvětli prosím kvásek."},
+        ],
+        registry=registry,
+        context=FakeContext(),
+    )
+    assert result == "Nemám podklady pro odpověď."
+    assert registry.calls == []
+
+
+def test_unrelated_dos_final_dump_is_suppressed():
+    provider = FakeProvider([
+        '{"current_focus": {}, "open_external_items": []}',
+    ])
+    result = run_agent_turn(
+        provider,
+        [
+            {"role": "system", "content": "You are PAE"},
+            {"role": "user", "content": "Co je to mouka?"},
+        ],
+        registry=FakeRegistry(),
+        context=FakeContext(),
+    )
+    assert "zablokována" in result
+
+
+def test_genuine_pae_status_can_still_read_authoritative_state():
+    from agent_loop import required_tool_call
+    messages = [
+        {"role": "user", "content": "Jaký je aktuální stav PAE?"}
+    ]
+    action = required_tool_call(messages)
+    assert action is not None
+    assert action.arguments["repo"] == "hssgj/PAE"
+    assert action.arguments["path"] == "discipline_os/current_state.json"
