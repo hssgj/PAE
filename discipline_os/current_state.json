@@ -1,32 +1,32 @@
 {
   "version": "0.5",
   "state_status": "PROVISIONAL",
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "current_focus": {
     "project": "PAE / prototype_v0",
     "milestone": "Last confirmed focus remains PAE / prototype_v0; Oct 9 Golden Riftbrief milestone remains preserved in review_log. As of Oct 11 GitHub main additionally contains a terminal busy spinner, scoped exact-path GitHub read and unrelated DOS-fallback safeguards, regression tests, and a guarded PAE Mobile routing-hotfix installer. Experimental Safety Guard runner was rolled back. GitHub commits prove code exists, NOT local installation or successful live end-to-end routing. User-reported live test still encountered a cookbook repository/path 404 and unrelated DOS fallback. Memory Guard v0.1 was locally installed/tested on Oct 9; do not promote to deployed/production without evidence.",
-    "next_action": "FIRST: perform explicit Riftwake focus/orientation; expired PAE priority override remains expired. Protect Monday Oct 12 MUDr. Dlouhy visit (09:00–12:00), VZP callback and AOK/S072 follow-up, and safe transport. If user separately selects a bounded PAE block, check which Oct 11 routing patches are actually installed locally, then run ONE live exact-path regression and record result; do not start another new architecture/tooling branch.",
-    "status": "LAST_CONFIRMED_PAE_FOCUS_WITH_EXPIRED_OVERRIDE_AND_ORIENTATION_PENDING",
+    "next_action": "Tonight: stop work after the Monday quick closing brief and rest before Tuesday DREGENO work. At Tuesday orientation confirm the roster and safe transport, then handle the bounded open administrative items. Jana contact and KHARON portability are user-planned for Oct 13; no silent top-priority override. PAE code work was not done Oct 12 and is not tonight's task; if selected later, reconcile local routing patches and run one exact-path regression.",
+    "status": "LAST_CONFIRMED_PAE_FOCUS_OVERRIDE_EXPIRED_MONDAY_CLOSED_TUESDAY_ORIENTATION_PENDING",
     "authority": "GITHUB_MAIN_VERIFIED_2026-10-11;USER_REPORTED_LOCAL_TEST_2026-10-11;PRIOR_PRIORITY_OVERRIDE_EXPIRED"
   },
   "daily_priorities": [
     {
       "rank": 1,
-      "item": "Maintain DREGENO employment and safe travel; prepare for Monday 2026-10-12 medical appointment (MUDr. Dlouhy, 09:00–12:00).",
-      "status": "SATURDAY_SERVICE_USER_REPORTED;MONDAY_APPOINTMENT_SCHEDULED;TODAY_PRIORITY_NOT_RECONFIRMED",
-      "authority": "USER_REPORTED_SATURDAY_2026-10-10;CALENDAR_VERIFIED_2026-09-28"
+      "item": "DREGENO employment and safe commute on Tuesday Oct 13; exact roster and bicycle readiness not independently verified.",
+      "status": "USER_PLANNED_NEXT_DAY_WORK;ROSTER_UNVERIFIED",
+      "authority": "USER_REPORT_2026-10-12"
     },
     {
       "rank": 2,
-      "item": "Track urgent AOK PLUS / VZP onboarding: German S072/S1 still unverified; expect Monday 2026-10-12 VZP follow-up.",
-      "status": "E902_ACCEPTED_2026-10-09;S072_STILL_PENDING_AS_LAST_VERIFIED;TODAY_PRIORITY_NOT_RECONFIRMED",
-      "authority": "USER_AND_VZP_REPORT_2026-10-09"
+      "item": "Insurance proof obtained; verify remaining VZP registration and reschedule the missed doctor visit. Dental cancellation request sent.",
+      "status": "S1_ISSUED_S072_SENT;VZP_COMPLETION_AND_MEDICAL_REBOOKING_PENDING",
+      "authority": "AOK_EMAIL_VERIFIED_2026-10-12;GMAIL_SENT_2026-10-12;USER_REPORT_2026-10-12"
     },
     {
       "rank": 3,
-      "item": "PAE prototype_v0 maintenance: reconcile Oct 11 GitHub routing/test changes with local deployment; live end-to-end routing remains unverified.",
-      "status": "GITHUB_CODE_COMMITTED;LOCAL_APPLICATION_UNCONFIRMED;LIVE_ERROR_REPORTED;TODAY_PRIORITY_NOT_RECONFIRMED",
-      "authority": "GITHUB_MAIN_2026-10-11;USER_LOCAL_TEST_REPORT_2026-10-11"
+      "item": "Tuesday orientation: confirm bounded KHARON portability work and contact Jana; PAE and Discipline OS repair deferred. No new priority override.",
+      "status": "USER_PLANNED_NOT_COMPLETED;NEXT_DAY_ORDER_TO_CONFIRM",
+      "authority": "USER_EXPLICIT_PLAN_2026-10-12"
     }
   ],
   "active_projects": [
@@ -175,19 +175,19 @@
     },
     {
       "name": "MUDr. Dlouhý control",
-      "status": "SCHEDULED",
-      "last_action": "Control is confirmed for 2026-10-12 from 09:00 to 12:00 for a fresh dentistry report.",
-      "next_action": "Attend on 2026-10-12.",
+      "status": "NOT_ATTENDED_USER_CONFIRMED_REBOOKING_PENDING",
+      "last_action": "User confirmed on Oct 12 that the scheduled Monday visit did not take place. The morning appointment is preserved as missed history.",
+      "next_action": "Contact the doctor and confirm a replacement visit. User plans Wednesday Oct 14, but no time or clinic confirmation is verified.",
       "deadline": "2026-10-12",
-      "authority": "CALENDAR_VERIFIED_2026-09-28"
+      "authority": "USER_CONFIRMED_2026-10-12"
     },
     {
       "name": "Dentist",
-      "status": "SCHEDULED",
-      "last_action": "Latest email evidence places the dental appointment on 2026-10-15 at 12:00.",
-      "next_action": "Attend on 2026-10-15 at 12:00 with the requested/current medical report as applicable.",
+      "status": "CANCELLATION_REQUEST_SENT_CLINIC_CONFIRMATION_PENDING",
+      "last_action": "Oct 12 sent-email evidence: cancellation requested for Oct 15 12:00. User calls appointment cancelled; clinic confirmation has not been verified.",
+      "next_action": "Check the clinic's cancellation acknowledgement; arrange a new dental date after the doctor's visit/report.",
       "deadline": "2026-10-15",
-      "authority": "GMAIL_VERIFIED_2026-09-28"
+      "authority": "GMAIL_SENT_2026-10-12_MESSAGE_1a12f8a2a7c4e2e3;USER_REPORT_2026-10-12"
     },
     {
       "name": "CraftNest membership",
@@ -197,12 +197,12 @@
     },
     {
       "name": "AOK PLUS membership / employer insurance data",
-      "status": "E902_ACCEPTED_BY_VZP_GERMAN_S072_PENDING",
-      "last_action": "On 2026-10-09, user sent the E902 form; VZP phone confirmation said it was acceptable. Czech address and urgent AOK request sent; doctor notified. As of the VZP call, German S072 was not yet issued/sent and AOK had only acknowledged receipt automatically.",
-      "next_action": "On Monday 2026-10-12 receive VZP's promised callback and follow up with AOK as needed for S072/S1 and employer insurance confirmation; VZP said retroactive registration is possible. Do not imply the German S072 is complete.",
+      "status": "MEMBERSHIP_CONFIRMED_S1_ISSUED_S072_SENT_VZP_REGISTRATION_PENDING",
+      "last_action": "AOK Oct 12 email confirms coverage proof S1 from Oct 5, digital S072 transmitted to VZP and insurance number issued; direct AOK-to-VZP email also located. User considers urgent AOK step resolved.",
+      "next_action": "Verify VZP registration/card processing and employer receipt of insurance information. Separately send employment contract to AOK for requested start-date correction to Oct 1; no proof yet that correction was applied.",
       "deadline": "2026-10-05",
-      "authority": "USER_REPORTED_VZP_PHONE_CONFIRMATION_AND_SENT_EMAILS_2026-10-09",
-      "follow_up_date": "2026-10-12"
+      "authority": "AOK_EMAIL_VERIFIED_2026-10-12_MESSAGE_1a12f58047b0ccd1",
+      "follow_up_date": "2026-10-13"
     }
   ],
   "parked_for_now": [
@@ -212,8 +212,8 @@
     "Lesná job lead unless transport becomes realistically workable without a car"
   ],
   "blocked_items": [],
-  "last_review": "2026-10-11",
-  "review_note": "OCT 11 FACTUAL STATE RECONCILIATION (not a completed daily Riftwake): outdated Oct 9 Saturday-in-the-future instructions replaced with dated Saturday user report and Oct 12 concrete obligations; Oct 11 GitHub commits reconciled while live PAE routing remains UNVERIFIED/failed in recent user test. The old PAE override remains expired and no new focus was chosen by assistant. User reports Spiderquack returned to tub and a daily bathing agreement, but not completion of today's bath; no bath-reminder alerts were received across roughly four/five Riftquakes. Reminder delivery investigation intentionally deferred per user. Prior Golden Riftbrief preserved in review_log. Today's priority ranking awaits user confirmation.",
+  "last_review": "2026-10-12",
+  "review_note": "MONDAY QUICK CLOSING BRIEF Oct 12. User requested factual closure after initially declining the brief; state was still Oct 11. Urgent AOK proof resolved (S1 issued, S072 transmitted); VZP completion/start-date correction are not inferred. Doctor not attended, dental cancellation request sent. KHARON private demo/settings/layout deployed with simulated QA; browser QA, portable/shared content and live email delivery remain open. No PAE coding today per user; OS workflow/reminder repair deferred to tomorrow, no repair performed tonight. Chat subscription payment remains unpaid per user; broader finances not audited. Current focus remains last-confirmed/provisional; no silent priority override.",
   "temporary_priority_override": {
     "project": "PAE / prototype_v0",
     "starts_at": "2026-10-05T18:03:00+02:00",
@@ -231,5 +231,19 @@
       "priority_rule": "PAE prototype_v0 remains the active four-day build focus. Keep Day 2 narrow: GitHub read-only first; do not fan out into Supabase, Drive, Notion, UI, agents, registries, or general architecture unless a concrete blocker requires it.",
       "authority": "USER_EXPLICIT_RENEGOTIATION_2026-10-05"
     }
-  ]
+  ],
+  "last_day_closure": {
+    "date": "2026-10-12",
+    "status": "QUICK_BRIEF_COMPLETE_WITH_OPEN_FOLLOWUPS",
+    "work_done": "KHARON private demo, separate settings page, draft language UI, media fields and layout controls deployed. Latest source f4ae22285b976ab769d0467f943c370996121c51. Manual browser QA and actual email sending not completed.",
+    "pae": "NO_CODE_WORK_USER_REPORTED;PRIOR_LIVE_ROUTING_LIMITATIONS_PRESERVED",
+    "finances": "CHAT_SUBSCRIPTION_PAYMENT_NOT_DONE_USER_REPORTED;OTHER_LIVING_FINANCE_STATUS_UNVERIFIED",
+    "next_day_user_plan": [
+      "DREGENO work and safe travel",
+      "Write Jana to confirm Wednesday visit",
+      "Bounded KHARON portability work; OS repair deferred, priority order to confirm"
+    ],
+    "jana_visit": "WEDNESDAY_2026-10-14_USER_PLANNED_TIME_AND_RECIPIENT_CONFIRMATION_UNVERIFIED",
+    "calendar_note": "Doctor event annotated as not attended; no dental event found within Oct 12–16 search. Tuesday follow-up note to be recorded separately."
+  }
 }
