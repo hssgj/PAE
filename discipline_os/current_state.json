@@ -244,6 +244,6 @@
       "Bounded KHARON portability work; OS repair deferred, priority order to confirm"
     ],
     "jana_visit": "WEDNESDAY_2026-10-14_USER_PLANNED_TIME_AND_RECIPIENT_CONFIRMATION_UNVERIFIED",
-    "calendar_note": "Doctor event annotated as not attended; no dental event found within Oct 12–16 search. Tuesday follow-up note to be recorded separately."
+    "calendar_note": "Calendar read succeeded. Updating Monday doctor event and creating Tuesday follow-up note both failed with Google Calendar HTTP 403 rateLimitExceeded (project queries/minute quota). No calendar write succeeded; retry in next selected maintenance pass. No dental event found in Oct 12–16 window."
   }
 }
