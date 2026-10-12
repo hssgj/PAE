@@ -87,9 +87,10 @@
         "Dental clinic cancellation acknowledgement not verified.",
         "Wednesday doctor and Jana times not confirmed.",
         "Actual browser QA and actual email delivery not verified.",
-        "No technical repair of Discipline OS or notifications tonight."
+        "No technical repair of Discipline OS or notifications tonight.",
+        "Calendar writeback failed: Google Calendar HTTP 403 rateLimitExceeded; Monday event annotation and Tuesday follow-up note were NOT saved."
       ],
-      "next_action": "Stop tonight; Tuesday work/safe commute, brief orientation and Jana contact. Confirm replacement doctor visit; bounded portability and OS maintenance only after selecting priority.",
+      "next_action": "Stop tonight; Tuesday work/safe commute, brief orientation and Jana contact. Confirm replacement doctor visit; bounded portability and OS maintenance only after selecting priority. Calendar writeback remains pending after quota failure.",
       "authority": [
         "USER_CONFIRMED_2026-10-12",
         "GMAIL_AOK_MESSAGE_1a12f58047b0ccd1",
