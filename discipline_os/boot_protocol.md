@@ -91,3 +91,10 @@ At the first materially work-relevant request on a local calendar day, compare `
 - GitHub state freshness and device push reminders are separate systems. A written habit does **not** prove an automation is scheduled or notifications are delivered.
 
 This is a factual read/maintenance check, not a new autonomous scheduler. It only runs when a request opens the chat; never claim background checks or push delivery.
+
+## Morning Riftwake: medication adherence check
+When conducting an actual Morning Riftwake / Riftbrief, include one brief, private check: "Vzal sis dnes pravidelný předepsaný lék? Ano / ne / nejsem si jistý?" This check is part of daily orientation, not a new app, task, or research branch.
+- Record only what the user confirms during the conversation. Never infer that medicine was taken from an established routine or from carrying a bag.
+- If the user already took a delayed dose overnight or is unsure, do not reflexively instruct a second tablet; clarify the last known dose and recommend qualified medical/pharmacy guidance for the schedule. Never encourage double dosing.
+- Do not store a medicine name, diagnosis, or other sensitive treatment details in this repository protocol.
+- The check occurs only when the user opens/requests a Morning Riftwake. It is not proof of a scheduled notification, device alert, or background monitoring.
