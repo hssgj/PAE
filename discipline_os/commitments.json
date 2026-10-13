@@ -120,7 +120,7 @@
       "next_action": "User plans to visit clinic in person Wednesday Oct 14; verify clinic outcome and medication access then, rather than assume a booked appointment.",
       "due": null,
       "authority": "USER_EXPLICIT_PLAN_2026-10-13",
-      "resolution_note": "Oct 12 appointment missed remains C-005 history. User describes Oct 14 in-person visit as necessary and psychologically difficult, with limited remaining medication; exact clinic time and outcome not verified."
+      "resolution_note": "Oct 12 appointment missed remains C-005 history. User describes Oct 14 in-person visit as necessary and psychologically difficult, with limited remaining medication; exact clinic time and outcome not verified. Oct 13 evening: user confirms travel prepared for Oct 14; visit and medication access remain pending."
     },
     {
       "id": "C-012",
@@ -139,21 +139,21 @@
       "text": "Write Jana on Tuesday to agree the Wednesday KHARON demo visit.",
       "status": "RENEGOTIATED_BY_USER",
       "project": "KHARON existing demo collaboration",
-      "next_action": "No Jana message or Wednesday appointment assumed. User chose to review prior KHARON thread and run the demo link on Matěj's or another colleague's phone tonight; return to Jana only after an actual test/result or fresh decision.",
+      "next_action": "No Jana message/appointment assumed. Mobile access test now user-reported done on Laura's iPhone; PC/editing and Jana coordination may be revisited after Oct 14 medical priority.",
       "due": "2026-10-13",
       "authority": "USER_EXPLICIT_DIRECTION_2026-10-13",
-      "resolution_note": "Oct 12 plan to message Jana by Oct 13 was changed by user Oct 13 to a bounded real-device access test. Original due date preserved as history, not counted as a sent reply."
+      "resolution_note": "Oct 12 plan to message Jana by Oct 13 was changed by user Oct 13 to a bounded real-device access test. Original due date preserved as history, not counted as a sent reply. Oct 13 evening: Laura's iPhone opening succeeded per user, but this does not confirm Jana contact or visit."
     },
     {
       "id": "C-014",
       "created": "2026-10-12",
       "text": "Continue a bounded portable KHARON demo step tomorrow; avoid presenting local-only edits as shared content.",
-      "status": "ACTIVE_BOUNDED_TEST",
+      "status": "DONE_BOUNDED_MOBILE_TEST",
       "project": "KHARON existing demo collaboration",
-      "next_action": "Try the existing KHARON demo link from another person's phone and record real opening result; do not present the test as finished before it happens.",
+      "next_action": "None for the completed iPhone opening test. PC opening/editing is separate and unverified; revisit only in selected work block.",
       "due": "2026-10-13",
-      "authority": "USER_EXPLICIT_DIRECTION_2026-10-13",
-      "resolution_note": "No new KHARON features or wider portability build selected tonight."
+      "authority": "USER_REPORT_LAURA_IPHONE_2026-10-13",
+      "resolution_note": "Oct 13 evening: Laura opened the shared KHARON page on her iPhone; user reports four people liked its appearance. This closes only the bounded third-party mobile link opening test. PC opening, edit controls, full client demo and Jana confirmation remain unverified."
     }
   ]
 }
