@@ -5,7 +5,7 @@
   "current_focus": {
     "project": "PAE / prototype_v0",
     "milestone": "Last confirmed focus remains PAE / prototype_v0; Oct 9 Golden Riftbrief milestone remains preserved in review_log. As of Oct 11 GitHub main additionally contains a terminal busy spinner, scoped exact-path GitHub read and unrelated DOS-fallback safeguards, regression tests, and a guarded PAE Mobile routing-hotfix installer. Experimental Safety Guard runner was rolled back. GitHub commits prove code exists, NOT local installation or successful live end-to-end routing. User-reported live test still encountered a cookbook repository/path 404 and unrelated DOS fallback. Memory Guard v0.1 was locally installed/tested on Oct 9; do not promote to deployed/production without evidence.",
-    "next_action": "Oct 13 evening: factual state closure only; no new build or priority override. Oct 14 user plans to visit the doctor in person for time-sensitive treatment/medication follow-up; actual appointment time, access and pickup remain unconfirmed. A bounded KHARON demo link test on another person's phone is the only user-selected project step tonight. Reconfirm daily orientation after that; PAE remains last-confirmed provisional focus, not today's code work.",
+    "next_action": "Tonight: KHARON third-party iPhone opening test and tomorrow's travel preparation are user-confirmed complete; close the evening and rest. Oct 14: attend the planned in-person clinic visit for time-sensitive treatment and verify actual access/medication outcome. KHARON PC viewing/editing is a separate later check, not evidence of failure or a mandate tonight. PAE remains the last-confirmed provisional project focus; no silent override.",
     "status": "LAST_CONFIRMED_PAE_FOCUS_OVERRIDE_EXPIRED_OCT13_EVENING_USER_BOUNDED_ADMIN_AND_KHARON_TEST",
     "authority": "GITHUB_MAIN_VERIFIED_2026-10-11;USER_REPORTED_LOCAL_TEST_2026-10-11;PRIOR_PRIORITY_OVERRIDE_EXPIRED"
   },
@@ -13,14 +13,14 @@
     {
       "rank": 1,
       "item": "Oct 14: go to the doctor in person for the missed Oct 12 follow-up and time-sensitive medication pickup; user reports this is the only feasible pickup window this week. Obtain actual clinic outcome and supply; no appointment or result is assumed.",
-      "status": "USER_PLAN_TIME_SENSITIVE_OUTCOME_UNVERIFIED",
-      "authority": "USER_REPORT_2026-10-13"
+      "status": "OCT14_VISIT_PENDING_TRAVEL_PREPARED_USER_CONFIRMED",
+      "authority": "USER_REPORT_2026-10-13_EVENING"
     },
     {
       "rank": 2,
-      "item": "Oct 13 evening: open existing KHARON test, pass the demo link to Matěj or another colleague and try it from that person's phone. Record only what actually opens; Jana appointment/reply is not presumed.",
-      "status": "USER_SELECTED_BOUNDED_TEST_PENDING",
-      "authority": "USER_REPORT_2026-10-13"
+      "item": "Oct 13 bounded KHARON access test: Laura opened the shared demo on her iPhone; four people reviewed it positively. This mobile opening test is complete. PC opening and editing remain unverified and are for a later selected work block.",
+      "status": "DONE_USER_REPORTED_MOBILE_OPENING_PC_EDIT_UNKNOWN",
+      "authority": "USER_REPORT_2026-10-13_EVENING"
     },
     {
       "rank": 3,
@@ -207,7 +207,7 @@
   ],
   "blocked_items": [],
   "last_review": "2026-10-13",
-  "review_note": "OCT 13 EVENING CORRECTION. User rejected the assistant's framing of Oct 14 doctor visit as a fairy tale: in-person visit is a serious, time-sensitive plan, with medicine pickup window this week. No appointment or outcome yet verified. Tonight's bounded KHARON action is third-party phone opening test; no Jana booking assumed. DREGENO record kept by user; detailed shifts will be supplied later. Correct N26/coeo from awaiting reply to Oct 2 reply received, user defers review. AOK proof milestone remains done; follow-ups unverified. Dentist follow-up and PAIR are removed from daily prompts at user request, with historical evidence retained. Frostfire Foundry stopped/parked; PAE expected to continue within Free limits but no deployment claim or priority override. No project code, messages, bills, or calendar mutated by this review.",
+  "review_note": "OCT 13 EVENING CORRECTION. User rejected the assistant's framing of Oct 14 doctor visit as a fairy tale: in-person visit is a serious, time-sensitive plan, with medicine pickup window this week. No appointment or outcome yet verified. Tonight's bounded KHARON action is third-party phone opening test; no Jana booking assumed. DREGENO record kept by user; detailed shifts will be supplied later. Correct N26/coeo from awaiting reply to Oct 2 reply received, user defers review. AOK proof milestone remains done; follow-ups unverified. Dentist follow-up and PAIR are removed from daily prompts at user request, with historical evidence retained. Frostfire Foundry stopped/parked; PAE expected to continue within Free limits but no deployment claim or priority override. No project code, messages, bills, or calendar mutated by this review. EVENING CLOSURE 19:51 PRAGUE: user confirms tomorrow's travel prepared; Laura opened the shared KHARON page on iPhone. Group of four plus Nessie liked its appearance. Only mobile access test is DONE; PC opening and editing untested, deferred to tomorrow's later work block. Doctor visit/medication remains pending.",
   "temporary_priority_override": {
     "project": "PAE / prototype_v0",
     "starts_at": "2026-10-05T18:03:00+02:00",
@@ -227,17 +227,14 @@
     }
   ],
   "last_day_closure": {
-    "date": "2026-10-12",
-    "status": "QUICK_BRIEF_COMPLETE_WITH_OPEN_FOLLOWUPS",
-    "work_done": "KHARON private demo, separate settings page, draft language UI, media fields and layout controls deployed. Latest source f4ae22285b976ab769d0467f943c370996121c51. Manual browser QA and actual email sending not completed.",
-    "pae": "NO_CODE_WORK_USER_REPORTED;PRIOR_LIVE_ROUTING_LIMITATIONS_PRESERVED",
-    "finances": "CHAT_SUBSCRIPTION_PAYMENT_NOT_DONE_USER_REPORTED;OTHER_LIVING_FINANCE_STATUS_UNVERIFIED",
+    "date": "2026-10-13",
+    "status": "BOUNDED_EVENING_ACTIONS_COMPLETE_MEDICAL_VISIT_PENDING",
+    "work_done": "User confirms tomorrow's travel prepared. Laura opened shared KHARON demo on her iPhone; four-person subjective review positive. Do not infer PC access, edit workflow, backend readiness or wider client availability.",
+    "pae": "NO_NEW_PAE_WORK_SELECTED;LAST_CONFIRMED_FOCUS_PROVISIONAL",
     "next_day_user_plan": [
-      "DREGENO work and safe travel",
-      "Write Jana to confirm Wednesday visit",
-      "Bounded KHARON portability work; OS repair deferred, priority order to confirm"
+      "In-person clinic visit for time-sensitive treatment/medication; actual outcome unverified.",
+      "If later selected after clinic, test KHARON opening/editing on PC."
     ],
-    "jana_visit": "WEDNESDAY_2026-10-14_USER_PLANNED_TIME_AND_RECIPIENT_CONFIRMATION_UNVERIFIED",
-    "calendar_note": "Calendar read succeeded. Updating Monday doctor event and creating Tuesday follow-up note both failed with Google Calendar HTTP 403 rateLimitExceeded (project queries/minute quota). No calendar write succeeded; retry in next selected maintenance pass. No dental event found in Oct 12–16 window."
+    "jana_visit": "NO_CONFIRMED_VISIT_OR_MESSAGE_AS_OF_THIS_CLOSURE"
   }
 }
