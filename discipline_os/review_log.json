@@ -145,6 +145,78 @@
       "authority": [
         "USER_REPORT_2026-10-13_19_51_PRAGUE"
       ]
+    },
+    {
+      "date": "2026-10-13",
+      "checkpoint": "SCOPE_PRUNING",
+      "status": "USER_DECISIONS_RECORDED_NO_ASSET_DELETION",
+      "current_focus": "PAE/prototype_v0 remains last confirmed provisional; Oct 14 clinic and bounded export are time-sensitive real actions.",
+      "summary": "User reconciled numbered 57-item August-October list. Retired broad tooling, Foundry, old jobs, many game/creative follow-up queues, buyerless product expansion and optional apps from active scope. Preserve selected story/game/recipe sources and finished milestones; no published product, historical chat, file, creditor or medical record deleted. Oct 14 export check added after clinic.",
+      "removed_from_active": [
+        10,
+        11,
+        12,
+        14,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        36,
+        37,
+        38,
+        41,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51,
+        52,
+        56,
+        57
+      ],
+      "preserved_passive": [
+        23,
+        35,
+        39,
+        40,
+        49,
+        50,
+        53,
+        54,
+        55
+      ],
+      "conditional": [
+        24
+      ],
+      "unresolved": [
+        42
+      ],
+      "limitations": [
+        "#42 Naruto/Shinobi not explicitly resolved in final correction; no destructive edit.",
+        "#28 'delete from your history' is not an executed memory/chat deletion; only prospective active-scope pruning.",
+        "#22 Harvest and #24 Image Hand conditional tomorrow cannot be assumed built, completed or automatically deleted.",
+        "#5 tutoring was not explicitly selected for removal.",
+        "No deletion of released Kennel, finished stories, repos, financial correspondence or current medical obligations."
+      ],
+      "next_action": "Rest tonight. Oct 14 clinic, then verify/download newer export; no overnight scope work.",
+      "authority": [
+        "USER_EXPLICIT_NUMBERED_DECISIONS_2026-10-13",
+        "AUDIT_MATTHAEL_CLOSEUP_2026-10-13"
+      ]
     }
   ],
   "weekly_reviews": []
