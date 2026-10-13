@@ -7,10 +7,10 @@
       "text": "Make Discipline OS function as an enforceable system rather than a memory-only prompt.",
       "status": "RENEGOTIATED",
       "project": "PAE / Discipline OS",
-      "next_action": "On Oct 13 or the next explicitly selected maintenance block, review why cross-chat day closure/state writeback was missed. Tonight only persist factual Monday state and review; do not implement scheduler/reminder changes.",
+      "next_action": "Maintain existing factual DOS writeback and one current focus. No separate DOS appification, new scheduler or major enforcement-system build without explicit future selection.",
       "due": null,
       "authority": "USER_CONFIRMED_2026-09-27",
-      "resolution_note": "Original enforcement commitment remains in maintenance mode. Oct 11 reconciliation added a freshness check to boot protocol and updated current_state after an Oct 9-to-Oct 11 gap; no new priority override or automation was created. Oct 12: user requested a quick closing brief after assistant initially agreed to skip it; factual writeback is authorized now, system repair deferred."
+      "resolution_note": "Original enforcement commitment remains in maintenance mode. Oct 11 reconciliation added a freshness check to boot protocol and updated current_state after an Oct 9-to-Oct 11 gap; no new priority override or automation was created. Oct 12: user requested a quick closing brief after assistant initially agreed to skip it; factual writeback is authorized now, system repair deferred. Oct 13 user retires DOS-as-app expansion (#21), preserving core OS discipline and state integrity."
     },
     {
       "id": "C-002",
@@ -60,11 +60,12 @@
       "id": "C-006",
       "created": "2026-09-27",
       "text": "Follow up on remaining targeted job applications only when replies arrive or a reasonable follow-up point is reached; DREGENO has resolved into employment.",
-      "status": "WAITING_EXTERNAL",
+      "status": "DROPPED_GENERAL_JOB_SEARCH",
       "project": "Income / job search",
-      "next_action": "No new outreach while DREGENO onboarding is active. Handle existing external replies only if they materially matter as backups.",
+      "next_action": "None. Preserve prior applications as history/backups, not active follow-up campaign.",
       "due": null,
-      "authority": "USER_CONFIRMED_2026-10-02"
+      "authority": "USER_SCOPE_REDUCTION_2026-10-13",
+      "resolution_note": "DREGENO employment resolves general search; user explicitly removed old applications (#11) from active list on Oct 13."
     },
     {
       "id": "C-007",
@@ -154,6 +155,17 @@
       "due": "2026-10-13",
       "authority": "USER_REPORT_LAURA_IPHONE_2026-10-13",
       "resolution_note": "Oct 13 evening: Laura opened the shared KHARON page on her iPhone; user reports four people liked its appearance. This closes only the bounded third-party mobile link opening test. PC opening, edit controls, full client demo and Jana confirmation remain unverified."
+    },
+    {
+      "id": "C-015",
+      "created": "2026-10-13",
+      "text": "Verify whether the newer ChatGPT history export prepared Oct 8 was downloaded; if not, download and preserve it before the user-reported Plus downgrade.",
+      "status": "ACTIVE",
+      "project": "Subscription transition / archival",
+      "next_action": "On Oct 14 after the clinic visit, check existing download; download only if missing and confirm the saved file.",
+      "due": "2026-10-14",
+      "authority": "USER_EXPLICIT_PLAN_2026-10-13;AUDIT_EXPORT_PREPARED_2026-10-08",
+      "resolution_note": "This is a bounded preservation task, not a new harvest/automation build."
     }
   ]
 }
