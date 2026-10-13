@@ -97,6 +97,33 @@
         "GMAIL_SENT_DENTAL_MESSAGE_1a12f8a2a7c4e2e3",
         "SITES_DEPLOYMENT_appgdep_6acd31865ec48191bb629e508265d2f7"
       ]
+    },
+    {
+      "date": "2026-10-13",
+      "checkpoint": "EVENING_STATE_CORRECTION",
+      "status": "FACTS_AND_USER_DIRECTION_RECORDED_ACTIONS_PENDING",
+      "current_focus": "Last confirmed PAE / prototype_v0 remains provisional; expired override not renewed. Time-sensitive Oct 14 medical visit and bounded KHARON phone test are explicit user actions.",
+      "summary": "OCT 13 EVENING CORRECTION. User rejected the assistant's framing of Oct 14 doctor visit as a fairy tale: in-person visit is a serious, time-sensitive plan, with medicine pickup window this week. No appointment or outcome yet verified. Tonight's bounded KHARON action is third-party phone opening test; no Jana booking assumed. DREGENO record kept by user; detailed shifts will be supplied later. Correct N26/coeo from awaiting reply to Oct 2 reply received, user defers review. AOK proof milestone remains done; follow-ups unverified. Dentist follow-up and PAIR are removed from daily prompts at user request, with historical evidence retained. Frostfire Foundry stopped/parked; PAE expected to continue within Free limits but no deployment claim or priority override. No project code, messages, bills, or calendar mutated by this review.",
+      "verified_outcomes": [
+        "User reports DREGENO work records are being kept; remaining shifts to be supplied later.",
+        "User plans Oct 14 in-person doctor visit and reports time-sensitive medication pickup window; no clinic outcome verified.",
+        "Oct 2 coeo reply identified; stale WAITING_EXTERNAL status corrected.",
+        "User stopped/parked Frostfire Foundry and quieted dental and PAIR daily prompts."
+      ],
+      "limitations": [
+        "KHARON colleague phone test not yet reported done.",
+        "No Jana response/appointment confirmed in this update.",
+        "Doctor appointment and medicine pickup not confirmed.",
+        "Clinic acceptance of dental cancellation not verified.",
+        "No PAE Free runtime acceptance tested by this state write."
+      ],
+      "next_action": "User: Oct 13 bounded KHARON access test if feasible. Oct 14 in-person clinic visit and confirm outcome. Reorient next work block without silently changing provisional PAE focus.",
+      "authority": [
+        "USER_DIRECTION_2026-10-13",
+        "GMAIL_COEO_REPLY_2026-10-02",
+        "GMAIL_SENT_DENTAL_2026-10-12",
+        "GITHUB_DOS_PREVIOUS_STATE_2026-10-12"
+      ]
     }
   ],
   "weekly_reviews": []
