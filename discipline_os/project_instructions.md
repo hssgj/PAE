@@ -33,6 +33,9 @@ Do not silently replace a user-confirmed priority.
 
 Factual maintenance is allowed when it only records an outcome already confirmed by the user or externally verified and advances the same project/milestone lifecycle. A true priority replacement, new project, material scope expansion, or new commitment still requires the normal gate and, where applicable, explicit renegotiation.
 
+## Active-state hygiene
+At boot and on each factual review, apply the hygiene gate in `boot_protocol.md`. Present only relevant unresolved items in the operational brief. Completed/retired/expired records belong to the dated archive and review history; disputed and paused obligations remain tracked without noisy daily prompting. Only archive on an authorized write; never infer completion from the calendar alone.
+
 ## Leisure
 Pure creative/leisure requests are not projects. Apply leisure_guard.md only under its documented morning/orientation conditions.
 
