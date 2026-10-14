@@ -1,0 +1,241 @@
+{
+  "version": "1.0",
+  "archived_at": "2026-10-14",
+  "reason": "One-time user-authorized operational hygiene; these entries are historical, terminal, expired, or explicitly inactive; not deleted.",
+  "restore_note": "Retain original status and historical authority. Restore only when a new verified user decision or event truly reactivates an obligation. Prior MISSED records stay MISSED.",
+  "source_files": {
+    "discipline_os/current_state.json": "c903cea259306b64cd50dfb279968cfaa83fbb20",
+    "discipline_os/commitments.json": "cca0d4997793b018b3379ac0f8b7c9c88c60d9fa"
+  },
+  "historical_external_items": [
+    {
+      "name": "Waldgasthof Bad Einsiedel application",
+      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
+      "last_action": "German application with CV sent 2026-09-27.",
+      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
+      "authority": "GMAIL_SENT_2026-09-27"
+    },
+    {
+      "name": "Caféchen / Heimatstube application",
+      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
+      "last_action": "German application with CV sent 2026-09-27.",
+      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
+      "authority": "GMAIL_SENT_2026-09-27"
+    },
+    {
+      "name": "JoSchi Hochkar application",
+      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
+      "last_action": "Direct German cook application with CV sent 2026-09-28 to jobs@jo-schi.at.",
+      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Hotel Antonius applications",
+      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
+      "last_action": "Separate German applications with CV sent 2026-09-28 for Jungkoch/Koch and Chef de Partie.",
+      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Hotel Riml applications",
+      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
+      "last_action": "Separate German applications with CV sent 2026-09-28 for Chef de Partie, Frühstückskoch and Demi Chef de Partie.",
+      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Alphotel Hirschegg application",
+      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
+      "last_action": "German Jungkoch application with CV sent 2026-09-28.",
+      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Hotel Sommerhof application",
+      "status": "CLOSED_USER_DECLINED_AFTER_EMPLOYMENT_FOUND",
+      "last_action": "On 2026-10-04 the user declined the 2026-10-06 11:00 Zoom interview, stating that employment had already been found and the distance to Gosau was too great.",
+      "next_action": "None.",
+      "authority": "GMAIL_SENT_2026-10-04"
+    },
+    {
+      "name": "Holzwurm Seiffen application",
+      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
+      "last_action": "German cook application with CV sent 2026-09-28, explicitly asking whether overnight accommodation could be available on workdays.",
+      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Thiele Schenke Marienberg application",
+      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
+      "last_action": "German cook application with CV sent 2026-09-28, asking about overnight accommodation on workdays because of public-transport limits.",
+      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Saigerhütte cook application",
+      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
+      "last_action": "Despite the earlier rejection, a direct, firm follow-up with CV was sent 2026-09-28 asking why no interview or trial shift had occurred while the cook vacancy remained open.",
+      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
+      "authority": "GMAIL_SENT_2026-09-28"
+    },
+    {
+      "name": "Srdcovka cook application",
+      "status": "CLOSED_USER_CANCELLED_AFTER_EMPLOYMENT_FOUND",
+      "last_action": "User sent a cancellation email on 2026-10-01 stating that employment had been found and the 2026-10-02 interview would not be attended.",
+      "next_action": "None.",
+      "authority": "GMAIL_VERIFIED_2026-10-01",
+      "deadline": "2026-10-02"
+    },
+    {
+      "name": "Motorest Výšina Most",
+      "status": "CLOSED_TRANSPORT_UNWORKABLE",
+      "last_action": "Employer had invited an in-person visit, but early shifts and no accommodation make the commute from Hora Svaté Kateřiny unrealistic without a car.",
+      "next_action": "None unless transport circumstances change.",
+      "authority": "USER_CONFIRMED_2026-09-28"
+    },
+    {
+      "name": "Supabase PAE",
+      "status": "INACTIVE_LIVE_VERIFIED",
+      "last_action": "Live Supabase project check on 2026-10-05 returned status INACTIVE for project ref ssoxrhdhesolrhxmnuah.",
+      "next_action": "Keep inactive. Do not reactivate for Day 2; GitHub read-only integration does not require Supabase. Revisit only if a concrete runtime/state blocker appears.",
+      "authority": "SUPABASE_LIVE_VERIFIED_2026-10-05"
+    },
+    {
+      "name": "Supabase hp-game",
+      "status": "PAUSED_BY_PROVIDER",
+      "last_action": "Supabase emailed on 2026-09-25 that project hp-game has been paused.",
+      "next_action": "Keep parked; do not reactivate without explicit renegotiation.",
+      "authority": "GMAIL_VERIFIED_2026-09-25"
+    },
+    {
+      "name": "MUDr. Dlouhý control",
+      "status": "OCT14_IN_PERSON_VISIT_DONE_USER_CONFIRMED",
+      "last_action": "User reports attending in person Oct 14, obtaining regular prescribed medication and an additional doctor note for dentist. Original Oct 12 missed visit remains historic. No quantity or routine next-appointment time independently confirmed in this factual closure.",
+      "next_action": "No immediate replacement visit action required by this record. Preserve Oct 12 missed history; any future follow-up date remains to be separately confirmed.",
+      "deadline": "2026-10-12",
+      "authority": "USER_DIRECT_REPORT_2026-10-14"
+    },
+    {
+      "name": "CraftNest membership",
+      "status": "CANCELLATION_CONFIRMED",
+      "last_action": "Cancellation confirmation received 2026-09-20.",
+      "authority": "GMAIL_VERIFIED_2026-09-20"
+    }
+  ],
+  "historical_commitments": [
+    {
+      "id": "C-003",
+      "created": "2026-09-26",
+      "text": "Call Levová at Srdcovka after her reply requesting a phone call to arrange a meeting about the cook position.",
+      "status": "DROPPED",
+      "project": "Income / job search",
+      "next_action": "None.",
+      "due": null,
+      "authority": "USER_CONFIRMED_2026-09-27",
+      "resolution_note": "This original Srdcovka follow-up was dropped on 2026-09-27. Contact later reopened and was tracked separately under C-007; that later interview was cancelled on 2026-10-01 after employment was found."
+    },
+    {
+      "id": "C-005",
+      "created": "2026-09-26",
+      "text": "Attend the scheduled control with MUDr. Dlouhý for a fresh dentistry report.",
+      "status": "MISSED",
+      "project": "Personal administration",
+      "next_action": "Rebook under C-011; Wednesday Oct 14 is only a user plan until confirmed.",
+      "due": "2026-10-12",
+      "authority": "USER_CONFIRMED_2026-10-12",
+      "resolution_note": "User did not attend Oct 12 visit. Preserve original deadline; do not silently move it or mark completed."
+    },
+    {
+      "id": "C-006",
+      "created": "2026-09-27",
+      "text": "Follow up on remaining targeted job applications only when replies arrive or a reasonable follow-up point is reached; DREGENO has resolved into employment.",
+      "status": "DROPPED_GENERAL_JOB_SEARCH",
+      "project": "Income / job search",
+      "next_action": "None. Preserve prior applications as history/backups, not active follow-up campaign.",
+      "due": null,
+      "authority": "USER_SCOPE_REDUCTION_2026-10-13",
+      "resolution_note": "DREGENO employment resolves general search; user explicitly removed old applications (#11) from active list on Oct 13."
+    },
+    {
+      "id": "C-007",
+      "created": "2026-09-29",
+      "text": "Attend the Srdcovka cook-position interview scheduled after the employer re-opened contact.",
+      "status": "DROPPED",
+      "project": "Income / job search",
+      "next_action": "None.",
+      "due": "2026-10-02",
+      "authority": "GMAIL_VERIFIED_2026-10-01",
+      "resolution_note": "User cancelled the 2026-10-02 Srdcovka interview by email on 2026-10-01 after finding employment."
+    },
+    {
+      "id": "C-008",
+      "created": "2026-09-30",
+      "text": "Attend the rescheduled DREGENO Spielzeugschachtel cook-position interview after the original 2026-09-30 appointment became unreachable by public transport.",
+      "status": "DONE",
+      "project": "Income / job search",
+      "next_action": "Employment onboarding continues under the AOK/onboarding commitment.",
+      "due": "2026-10-01",
+      "authority": "USER_CONFIRMED_2026-10-02",
+      "resolution_note": "User attended DREGENO on 2026-10-01, completed the employer form, and confirmed a new employment start on 2026-10-05."
+    },
+    {
+      "id": "C-011",
+      "created": "2026-10-12",
+      "text": "Arrange a replacement medical visit after not attending Monday Oct 12.",
+      "status": "DONE_OCT14_IN_PERSON_VISIT_USER_CONFIRMED",
+      "project": "Personal administration",
+      "next_action": "Replacement in-person visit completed Oct 14, medication access confirmed. Preserve Oct 12 missed visit as history; no new urgent clinic task inferred.",
+      "due": null,
+      "authority": "USER_DIRECT_REPORT_2026-10-14",
+      "resolution_note": "Oct 12 appointment missed remains C-005 history. User describes Oct 14 in-person visit as necessary and psychologically difficult, with limited remaining medication; exact clinic time and outcome not verified. Oct 13 evening: user confirms travel prepared for Oct 14; visit and medication access remain pending. Oct 14: user directly reports successful in-person visit, medication received, and additional physician note for dentist. Routine follow-up date and exact medication quantity not independently confirmed in this state update."
+    },
+    {
+      "id": "C-012",
+      "created": "2026-10-12",
+      "text": "Resolve dental cancellation and later rebooking.",
+      "status": "DROPPED_BY_USER_FOLLOWUP",
+      "project": "Personal administration",
+      "next_action": "None in daily priority list.",
+      "due": null,
+      "authority": "GMAIL_SENT_2026-10-12;USER_DIRECTION_2026-10-13",
+      "resolution_note": "Cancellation request was sent Oct 12; clinic acknowledgement remains unverified. On Oct 13 user explicitly removed dentist follow-up/rebooking from active DOS prompts. This does not retroactively prove clinic acceptance."
+    },
+    {
+      "id": "C-014",
+      "created": "2026-10-12",
+      "text": "Continue a bounded portable KHARON demo step tomorrow; avoid presenting local-only edits as shared content.",
+      "status": "DONE_BOUNDED_MOBILE_TEST",
+      "project": "KHARON existing demo collaboration",
+      "next_action": "None for the completed iPhone opening test. PC opening/editing is separate and unverified; revisit only in selected work block.",
+      "due": "2026-10-13",
+      "authority": "USER_REPORT_LAURA_IPHONE_2026-10-13",
+      "resolution_note": "Oct 13 evening: Laura opened the shared KHARON page on her iPhone; user reports four people liked its appearance. This closes only the bounded third-party mobile link opening test. PC opening, edit controls, full client demo and Jana confirmation remain unverified."
+    }
+  ],
+  "completed_daily_priorities": [
+    {
+      "rank": 1,
+      "item": "Oct 14 in-person Bukov/Ústí clinic visit for time-sensitive treatment/medication; travel already prepared. Verify actual outcome.",
+      "status": "DONE_USER_CONFIRMED_IN_PERSON_AND_MEDICATION_RECEIPT_OCT14",
+      "authority": "USER_DIRECT_REPORT_2026-10-14"
+    }
+  ],
+  "expired_temporary_priority_override": {
+    "project": "PAE / prototype_v0",
+    "starts_at": "2026-10-05T18:03:00+02:00",
+    "expires_at": "2026-10-09T18:03:00+02:00",
+    "rule": "PAE has top work priority during this window. Do not BLOCK, PARK, or WARN PAE execution merely because it expands PAE scope. Still prevent unrelated scope creep inside the prototype itself.",
+    "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05",
+    "status": "EXPIRED_2026-10-09T18:03:00+02:00_NOT_AUTO_RENEWED"
+  },
+  "expired_temporary_scope_authorizations": [
+    {
+      "project": "PAE / Discipline OS",
+      "valid_from": "2026-10-05",
+      "valid_through": "2026-10-08",
+      "scope": "prototype_v0 only: persistent chat/session runtime, real-model provider, local/source loading, structured state extraction, restart continuity, and the smallest read-only GitHub source access needed to fetch authoritative files into a session. Game-specific acceptance cases are future validation examples, not current deliverables.",
+      "priority_rule": "PAE prototype_v0 remains the active four-day build focus. Keep Day 2 narrow: GitHub read-only first; do not fan out into Supabase, Drive, Notion, UI, agents, registries, or general architecture unless a concrete blocker requires it.",
+      "authority": "USER_EXPLICIT_RENEGOTIATION_2026-10-05"
+    }
+  ]
+}
