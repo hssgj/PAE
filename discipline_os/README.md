@@ -26,5 +26,12 @@ Important limitation: no system can run before the user sends the first message.
 - Factual maintenance may advance stale state when the underlying outcome is already user-confirmed or externally verified.
 - A genuine priority override still requires the normal gate/renegotiation rules.
 
+## Historical vs operational state
+- `current_state.json.open_external_items`: only unresolved or appropriately paused external matters; not terminal job leads or completed visits.
+- `commitments.json.commitments`: live/deferred commitments requiring possible continuation; historical terminal entries are preserved under `archive/`.
+- `archive/2026-10-14-state-hygiene.json`: reversible baseline snapshot of the 2026-10-14 cleanup, including original expired temporary authorizations.
+- `review_log.json`: immutable-style history of daily decisions and what moved.
+- The boot/writeback hygiene protocol is documented in `boot_protocol.md`. It is synchronous, never a running background cleanup agent.
+
 ## Scope
 Discipline OS should stay small. Maintenance repairs state accuracy, contradictions, stale instructions, and broken tests. New interfaces, dashboards, automation layers, or workflow features are scope expansion and require an explicit gate.
