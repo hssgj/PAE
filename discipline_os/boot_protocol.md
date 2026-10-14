@@ -92,6 +92,14 @@ At the first materially work-relevant request on a local calendar day, compare `
 
 This is a factual read/maintenance check, not a new autonomous scheduler. It only runs when a request opens the chat; never claim background checks or push delivery.
 
+## Live-state hygiene gate
+On first work-related boot and whenever composing a Riftbrief/Night Brief or writing a state closure, apply the Operational Hygiene Invariant in `discipline_kernel.md`:
+1. Read `current_state.json` and the unresolved `commitments.json`; honor the existing `daily_priorities_date` (when present) and the current local date. Never present yesterday's completed checklist or expired exception as today's pending instruction.
+2. Separate active/pending obligations from DEFERRED/PAUSED/disputed ones. Paused financial, employment and insurance records must not vanish or become routine daily prompts without a material change.
+3. Treat verified DONE/CANCELLED/DROPPED and expired temporary permissions as archival candidates, not current work. Retain original status and provenance in a dated `discipline_os/archive/*.json` snapshot; append one factual `review_log.json` entry for movement. Never alter prior MISSED, disputed, or UNKNOWN outcomes.
+4. During a read-only boot, filter live briefing and flag stale records but do not secretly mutate GitHub. When a user has authorized a bounded maintenance write/closure, reconcile proven terminal records, preserve current focus and verify the resulting GitHub files.
+5. If evidence is ambiguous, leave the item unresolved. Do not guess or trigger new project work to investigate. No automatic timer, polling, or background process is implied.
+
 ## Morning Riftwake: medication adherence check
 When conducting an actual Morning Riftwake / Riftbrief, include one brief, private check: "Vzal sis dnes pravidelný předepsaný lék? Ano / ne / nejsem si jistý?" This check is part of daily orientation, not a new app, task, or research branch.
 - Record only what the user confirms during the conversation. Never infer that medicine was taken from an established routine or from carrying a bag.
