@@ -1,11 +1,11 @@
 {
   "version": "0.5",
   "state_status": "PROVISIONAL",
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "current_focus": {
     "project": "PAE / prototype_v0",
     "milestone": "Last confirmed focus remains PAE / prototype_v0; Oct 9 Golden Riftbrief milestone remains preserved in review_log. As of Oct 11 GitHub main additionally contains a terminal busy spinner, scoped exact-path GitHub read and unrelated DOS-fallback safeguards, regression tests, and a guarded PAE Mobile routing-hotfix installer. Experimental Safety Guard runner was rolled back. GitHub commits prove code exists, NOT local installation or successful live end-to-end routing. User-reported live test still encountered a cookbook repository/path 404 and unrelated DOS fallback. Memory Guard v0.1 was locally installed/tested on Oct 9; do not promote to deployed/production without evidence.",
-    "next_action": "Oct 13 night: scope-pruning decision recorded; no rebuild or cleanup marathon. Oct 14: in-person clinic visit and verify medication outcome first; then verify/download the newer ChatGPT export before the stated Oct 15 Plus downgrade. DREGENO obligations remain real. PAE/prototype_v0 is the last-confirmed provisional project focus, with no automatic routing/performance, Memory Guard or architecture work selected.",
+    "next_action": "As of Oct 14 evening: user-confirmed in-person clinic visit and medication receipt completed; Oct 14 Jana KHARON demo email is Gmail SENT-verified, with no meeting or reply confirmed. Existing export email (Oct 8) proves ZIP prepared, not locally downloaded; verify local saved ZIP as the remaining bounded archive action. DREGENO work/transport obligations remain. PAE/prototype_v0 remains last-confirmed PROVISIONAL focus; no automatic PAE build or scope expansion selected.",
     "status": "LAST_CONFIRMED_PAE_FOCUS_OVERRIDE_EXPIRED_OCT13_EVENING_USER_BOUNDED_ADMIN_AND_KHARON_TEST",
     "authority": "GITHUB_MAIN_VERIFIED_2026-10-11;USER_REPORTED_LOCAL_TEST_2026-10-11;PRIOR_PRIORITY_OVERRIDE_EXPIRED"
   },
@@ -13,14 +13,14 @@
     {
       "rank": 1,
       "item": "Oct 14 in-person Bukov/Ústí clinic visit for time-sensitive treatment/medication; travel already prepared. Verify actual outcome.",
-      "status": "USER_PLAN_TRAVEL_PREPARED_VISIT_PENDING",
-      "authority": "USER_REPORT_2026-10-13"
+      "status": "DONE_USER_CONFIRMED_IN_PERSON_AND_MEDICATION_RECEIPT_OCT14",
+      "authority": "USER_DIRECT_REPORT_2026-10-14"
     },
     {
       "rank": 2,
       "item": "Oct 14: verify whether the newer ChatGPT export has actually been downloaded; if not, download and preserve it before user-reported Plus expiry Oct 15. Prepared Oct 8 does not prove downloaded.",
-      "status": "USER_EXPLICIT_BOUNDED_COMMITMENT_OUTCOME_PENDING",
-      "authority": "USER_REPORT_2026-10-13_NIGHT;AUDIT_2026-10-13"
+      "status": "EXPORT_READY_EMAIL_CONFIRMED_OCT08_LOCAL_ZIP_SAVE_UNVERIFIED",
+      "authority": "GMAIL_VERIFIED_2026-10-14_OCT08_EXPORT_READY;USER_LOCAL_DOWNLOAD_UNVERIFIED"
     },
     {
       "rank": 3,
@@ -175,11 +175,11 @@
     },
     {
       "name": "MUDr. Dlouhý control",
-      "status": "OCT12_MISSED_OCT14_IN_PERSON_VISIT_USER_PLANNED",
-      "last_action": "User confirmed on Oct 12 that the scheduled Monday visit did not take place. The morning appointment is preserved as missed history.",
-      "next_action": "User plans to go to clinic in person Oct 14 for time-sensitive follow-up; outcome and exact time unverified.",
+      "status": "OCT14_IN_PERSON_VISIT_DONE_USER_CONFIRMED",
+      "last_action": "User reports attending in person Oct 14, obtaining regular prescribed medication and an additional doctor note for dentist. Original Oct 12 missed visit remains historic. No quantity or routine next-appointment time independently confirmed in this factual closure.",
+      "next_action": "No immediate replacement visit action required by this record. Preserve Oct 12 missed history; any future follow-up date remains to be separately confirmed.",
       "deadline": "2026-10-12",
-      "authority": "USER_REPORT_2026-10-13"
+      "authority": "USER_DIRECT_REPORT_2026-10-14"
     },
     {
       "name": "CraftNest membership",
@@ -204,8 +204,8 @@
     "Sokol recipes/menu materials and Frostfire Chronicle (#55/#34) are preserved as professional/creative archive, removed from active work."
   ],
   "blocked_items": [],
-  "last_review": "2026-10-13",
-  "review_note": "OCT 13 NIGHT SCOPE PRUNING: User reviewed numbered 57-item August-October inventory. Many concepts/modules were explicitly removed from active fronts; see review_log decision record. Last corrections preserve #35 Pets HQ concept, #39 AOT II, #40 HP, #49 first-wave individuation (retire second wave), #50 creative material, #55 recipes and Frostfire Chronicle archive. Historical deliverables and legal/health correspondence remain. #42 choice not clear; #22/#24 conditional tomorrow not a scheduled build. User explicitly adds bounded Oct 14 export verification/download after clinic before stated Plus downgrade Oct 15. PAE #6 retained provisional; no new focus override.",
+  "last_review": "2026-10-14",
+  "review_note": "OCT 13 NIGHT SCOPE PRUNING: User reviewed numbered 57-item August-October inventory. Many concepts/modules were explicitly removed from active fronts; see review_log decision record. Last corrections preserve #35 Pets HQ concept, #39 AOT II, #40 HP, #49 first-wave individuation (retire second wave), #50 creative material, #55 recipes and Frostfire Chronicle archive. Historical deliverables and legal/health correspondence remain. #42 choice not clear; #22/#24 conditional tomorrow not a scheduled build. User explicitly adds bounded Oct 14 export verification/download after clinic before stated Plus downgrade Oct 15. PAE #6 retained provisional; no new focus override.\nOCT 14 EVENING FACTUAL CLOSURE: Clinic and medication receipt user-confirmed; Jana KHARON demo email sent and Gmail-verified, meeting/reply unconfirmed; Oct 8 ChatGPT export readiness verified but local ZIP save not verified. Provisional PAE focus unchanged; no new project scope.",
   "temporary_priority_override": {
     "project": "PAE / prototype_v0",
     "starts_at": "2026-10-05T18:03:00+02:00",
@@ -225,15 +225,15 @@
     }
   ],
   "last_day_closure": {
-    "date": "2026-10-13",
-    "status": "BOUNDED_EVENING_ACTIONS_COMPLETE_MEDICAL_VISIT_PENDING",
-    "work_done": "User confirms tomorrow's travel prepared. Laura opened shared KHARON demo on her iPhone; four-person subjective review positive. Do not infer PC access, edit workflow, backend readiness or wider client availability.",
+    "date": "2026-10-14",
+    "status": "EVENING_BOUNDED_FACTUAL_SNAPSHOT_EXPORT_LOCAL_SAVE_UNVERIFIED",
+    "work_done": "User confirms successful in-person clinic visit and medication receipt; extra doctor note for dentist. User reports visiting Jana's office but not meeting her. Gmail SENT confirms KHARON demo email to Jana on Oct 14. No meeting or reply confirmed. Evening walk/play with Nessie user-reported. No new project work executed by this closure.",
     "pae": "NO_NEW_PAE_WORK_SELECTED;LAST_CONFIRMED_FOCUS_PROVISIONAL",
     "next_day_user_plan": [
-      "In-person clinic visit for time-sensitive treatment/medication; actual outcome unverified.",
-      "If later selected after clinic, test KHARON opening/editing on PC."
+      "Confirm whether ZIP from Oct 8 ChatGPT export was actually saved on user's device; prior export-ready email alone is insufficient.",
+      "Honor DREGENO work and safe transport as applicable; exact next shift not verified in this closure."
     ],
-    "jana_visit": "NO_CONFIRMED_VISIT_OR_MESSAGE_AS_OF_THIS_CLOSURE"
+    "jana_visit": "OFFICE_VISIT_USER_REPORTED_NO_IN_PERSON_MEETING;KHARON_EMAIL_GMAIL_SENT_VERIFIED_2026-10-14;REPLY_AND_APPOINTMENT_UNVERIFIED"
   },
   "scope_reduction": {
     "date": "2026-10-13",
