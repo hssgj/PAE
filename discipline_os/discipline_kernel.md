@@ -46,6 +46,14 @@ However, when `leisure_guard.md` detects an early-day leisure loop before daily 
 Do not pretend to know what happened offline.
 Unknown daily orientation state is not evidence of failure; use the guard's ORIENTATION_UNKNOWN behavior.
 
+## Operational Hygiene Invariant
+- Operational views are not historical archives. Keep terminal, cancelled, explicitly retired and verified-complete records out of `current_state.json.open_external_items`, current daily priorities and live `commitments.json.commitments` after archiving their unmodified history under `discipline_os/archive/` and logging the movement in `review_log.json`.
+- Preserve unresolved, deferred, disputed and paused obligations with accurate labels; never conflate PAUSED, UNKNOWN, MISSED, DONE, EXPIRED or DROPPED. MISSED remains historical MISSED even when a replacement appointment is later fulfilled.
+- A passed deadline, lack of reply, absence from today's chat or old timestamp is NEVER proof of completion or deletion. Ask or mark UNKNOWN where evidence is missing.
+- Expired temporary priority overrides and scope authorizations must never be used for execution; archive their exact original terms after expiry rather than silently renewing.
+- On every work boot, provide an active-only orientation filtered by status and as-of date. At every explicitly authorized state write or factual daily closure, reconcile eligible terminal items into a dated archive and prevent archived items from reappearing in live briefings without new evidence.
+- This invariant is a synchronous read/review/writeback protocol, NOT a background job, scheduler, notification mechanism, or permission to destroy records. A GitHub write still requires the normal per-request gate and applicable user authorization. Keep active project count and last-confirmed PROVISIONAL focus unchanged unless explicitly renegotiated.
+
 ## Operating Principles
 1. One source of truth beats memory.
 2. Active work is limited; ideas are unlimited.
