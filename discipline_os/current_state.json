@@ -5,17 +5,11 @@
   "current_focus": {
     "project": "PAE / prototype_v0",
     "milestone": "Last confirmed focus remains PAE / prototype_v0; Oct 9 Golden Riftbrief milestone remains preserved in review_log. As of Oct 11 GitHub main additionally contains a terminal busy spinner, scoped exact-path GitHub read and unrelated DOS-fallback safeguards, regression tests, and a guarded PAE Mobile routing-hotfix installer. Experimental Safety Guard runner was rolled back. GitHub commits prove code exists, NOT local installation or successful live end-to-end routing. User-reported live test still encountered a cookbook repository/path 404 and unrelated DOS fallback. Memory Guard v0.1 was locally installed/tested on Oct 9; do not promote to deployed/production without evidence.",
-    "next_action": "As of Oct 14 evening: user-confirmed in-person clinic visit and medication receipt completed; Oct 14 Jana KHARON demo email is Gmail SENT-verified, with no meeting or reply confirmed. Existing export email (Oct 8) proves ZIP prepared, not locally downloaded; verify local saved ZIP as the remaining bounded archive action. DREGENO work/transport obligations remain. PAE/prototype_v0 remains last-confirmed PROVISIONAL focus; no automatic PAE build or scope expansion selected.",
-    "status": "LAST_CONFIRMED_PAE_FOCUS_OVERRIDE_EXPIRED_OCT13_EVENING_USER_BOUNDED_ADMIN_AND_KHARON_TEST",
+    "next_action": "Current bounded handoff: verify whether the ChatGPT export ZIP is actually saved locally (Oct 8 ready email is not download proof); if absent, request a fresh export when selected. Honor existing DREGENO schedule/transport and outstanding external obligations. PAE/prototype_v0 remains the last-confirmed PROVISIONAL focus, without an active priority override or newly authorized PAE build.",
+    "status": "LAST_CONFIRMED_PROVISIONAL_PAE_FOCUS_NO_ACTIVE_OVERRIDE",
     "authority": "GITHUB_MAIN_VERIFIED_2026-10-11;USER_REPORTED_LOCAL_TEST_2026-10-11;PRIOR_PRIORITY_OVERRIDE_EXPIRED"
   },
   "daily_priorities": [
-    {
-      "rank": 1,
-      "item": "Oct 14 in-person Bukov/Ústí clinic visit for time-sensitive treatment/medication; travel already prepared. Verify actual outcome.",
-      "status": "DONE_USER_CONFIRMED_IN_PERSON_AND_MEDICATION_RECEIPT_OCT14",
-      "authority": "USER_DIRECT_REPORT_2026-10-14"
-    },
     {
       "rank": 2,
       "item": "Oct 14: verify whether the newer ChatGPT export has actually been downloaded; if not, download and preserve it before user-reported Plus expiry Oct 15. Prepared Oct 8 does not prove downloaded.",
@@ -51,97 +45,12 @@
   ],
   "open_external_items": [
     {
-      "name": "Waldgasthof Bad Einsiedel application",
-      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
-      "last_action": "German application with CV sent 2026-09-27.",
-      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
-      "authority": "GMAIL_SENT_2026-09-27"
-    },
-    {
       "name": "DREGENO Spielzeugschachtel application",
       "status": "EMPLOYED_ACTIVE_USER_RECORD_KEEPING",
       "last_action": "User reports ongoing DREGENO work and keeping a shift record; detailed remaining shifts to be supplied later.",
       "next_action": "Continue existing shift records; verify next roster/transport only when needed for actual work.",
       "authority": "USER_REPORT_2026-10-13",
       "deadline": "2026-10-05"
-    },
-    {
-      "name": "Caféchen / Heimatstube application",
-      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
-      "last_action": "German application with CV sent 2026-09-27.",
-      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
-      "authority": "GMAIL_SENT_2026-09-27"
-    },
-    {
-      "name": "JoSchi Hochkar application",
-      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
-      "last_action": "Direct German cook application with CV sent 2026-09-28 to jobs@jo-schi.at.",
-      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
-      "authority": "GMAIL_SENT_2026-09-28"
-    },
-    {
-      "name": "Hotel Antonius applications",
-      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
-      "last_action": "Separate German applications with CV sent 2026-09-28 for Jungkoch/Koch and Chef de Partie.",
-      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
-      "authority": "GMAIL_SENT_2026-09-28"
-    },
-    {
-      "name": "Hotel Riml applications",
-      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
-      "last_action": "Separate German applications with CV sent 2026-09-28 for Chef de Partie, Frühstückskoch and Demi Chef de Partie.",
-      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
-      "authority": "GMAIL_SENT_2026-09-28"
-    },
-    {
-      "name": "Alphotel Hirschegg application",
-      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
-      "last_action": "German Jungkoch application with CV sent 2026-09-28.",
-      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
-      "authority": "GMAIL_SENT_2026-09-28"
-    },
-    {
-      "name": "Hotel Sommerhof application",
-      "status": "CLOSED_USER_DECLINED_AFTER_EMPLOYMENT_FOUND",
-      "last_action": "On 2026-10-04 the user declined the 2026-10-06 11:00 Zoom interview, stating that employment had already been found and the distance to Gosau was too great.",
-      "next_action": "None.",
-      "authority": "GMAIL_SENT_2026-10-04"
-    },
-    {
-      "name": "Holzwurm Seiffen application",
-      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
-      "last_action": "German cook application with CV sent 2026-09-28, explicitly asking whether overnight accommodation could be available on workdays.",
-      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
-      "authority": "GMAIL_SENT_2026-09-28"
-    },
-    {
-      "name": "Thiele Schenke Marienberg application",
-      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
-      "last_action": "German cook application with CV sent 2026-09-28, asking about overnight accommodation on workdays because of public-transport limits.",
-      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
-      "authority": "GMAIL_SENT_2026-09-28"
-    },
-    {
-      "name": "Saigerhütte cook application",
-      "status": "ARCHIVED_BACKUP_NO_ACTIVE_OUTREACH",
-      "last_action": "Despite the earlier rejection, a direct, firm follow-up with CV was sent 2026-09-28 asking why no interview or trial shift had occurred while the cook vacancy remained open.",
-      "next_action": "No active follow-up. Preserve correspondence; only address a material incoming reply if user chooses.",
-      "authority": "GMAIL_SENT_2026-09-28"
-    },
-    {
-      "name": "Srdcovka cook application",
-      "status": "CLOSED_USER_CANCELLED_AFTER_EMPLOYMENT_FOUND",
-      "last_action": "User sent a cancellation email on 2026-10-01 stating that employment had been found and the 2026-10-02 interview would not be attended.",
-      "next_action": "None.",
-      "authority": "GMAIL_VERIFIED_2026-10-01",
-      "deadline": "2026-10-02"
-    },
-    {
-      "name": "Motorest Výšina Most",
-      "status": "CLOSED_TRANSPORT_UNWORKABLE",
-      "last_action": "Employer had invited an in-person visit, but early shifts and no accommodation make the commute from Hora Svaté Kateřiny unrealistic without a car.",
-      "next_action": "None unless transport circumstances change.",
-      "authority": "USER_CONFIRMED_2026-09-28"
     },
     {
       "name": "N26 / coeo",
@@ -158,34 +67,6 @@
       "next_action": "Do not surface in daily priorities; preserve sent dispute and missing documentation for later user-directed review.",
       "deadline": "2026-10-05",
       "authority": "GMAIL_SENT_2026-09-28;USER_DIRECTION_2026-10-13"
-    },
-    {
-      "name": "Supabase PAE",
-      "status": "INACTIVE_LIVE_VERIFIED",
-      "last_action": "Live Supabase project check on 2026-10-05 returned status INACTIVE for project ref ssoxrhdhesolrhxmnuah.",
-      "next_action": "Keep inactive. Do not reactivate for Day 2; GitHub read-only integration does not require Supabase. Revisit only if a concrete runtime/state blocker appears.",
-      "authority": "SUPABASE_LIVE_VERIFIED_2026-10-05"
-    },
-    {
-      "name": "Supabase hp-game",
-      "status": "PAUSED_BY_PROVIDER",
-      "last_action": "Supabase emailed on 2026-09-25 that project hp-game has been paused.",
-      "next_action": "Keep parked; do not reactivate without explicit renegotiation.",
-      "authority": "GMAIL_VERIFIED_2026-09-25"
-    },
-    {
-      "name": "MUDr. Dlouhý control",
-      "status": "OCT14_IN_PERSON_VISIT_DONE_USER_CONFIRMED",
-      "last_action": "User reports attending in person Oct 14, obtaining regular prescribed medication and an additional doctor note for dentist. Original Oct 12 missed visit remains historic. No quantity or routine next-appointment time independently confirmed in this factual closure.",
-      "next_action": "No immediate replacement visit action required by this record. Preserve Oct 12 missed history; any future follow-up date remains to be separately confirmed.",
-      "deadline": "2026-10-12",
-      "authority": "USER_DIRECT_REPORT_2026-10-14"
-    },
-    {
-      "name": "CraftNest membership",
-      "status": "CANCELLATION_CONFIRMED",
-      "last_action": "Cancellation confirmation received 2026-09-20.",
-      "authority": "GMAIL_VERIFIED_2026-09-20"
     },
     {
       "name": "AOK PLUS membership / employer insurance data",
@@ -205,25 +86,9 @@
   ],
   "blocked_items": [],
   "last_review": "2026-10-14",
-  "review_note": "OCT 13 NIGHT SCOPE PRUNING: User reviewed numbered 57-item August-October inventory. Many concepts/modules were explicitly removed from active fronts; see review_log decision record. Last corrections preserve #35 Pets HQ concept, #39 AOT II, #40 HP, #49 first-wave individuation (retire second wave), #50 creative material, #55 recipes and Frostfire Chronicle archive. Historical deliverables and legal/health correspondence remain. #42 choice not clear; #22/#24 conditional tomorrow not a scheduled build. User explicitly adds bounded Oct 14 export verification/download after clinic before stated Plus downgrade Oct 15. PAE #6 retained provisional; no new focus override.\nOCT 14 EVENING FACTUAL CLOSURE: Clinic and medication receipt user-confirmed; Jana KHARON demo email sent and Gmail-verified, meeting/reply unconfirmed; Oct 8 ChatGPT export readiness verified but local ZIP save not verified. Provisional PAE focus unchanged; no new project scope.",
-  "temporary_priority_override": {
-    "project": "PAE / prototype_v0",
-    "starts_at": "2026-10-05T18:03:00+02:00",
-    "expires_at": "2026-10-09T18:03:00+02:00",
-    "rule": "PAE has top work priority during this window. Do not BLOCK, PARK, or WARN PAE execution merely because it expands PAE scope. Still prevent unrelated scope creep inside the prototype itself.",
-    "authority": "USER_EXPLICIT_OVERRIDE_2026-10-05",
-    "status": "EXPIRED_2026-10-09T18:03:00+02:00_NOT_AUTO_RENEWED"
-  },
-  "temporary_scope_authorizations": [
-    {
-      "project": "PAE / Discipline OS",
-      "valid_from": "2026-10-05",
-      "valid_through": "2026-10-08",
-      "scope": "prototype_v0 only: persistent chat/session runtime, real-model provider, local/source loading, structured state extraction, restart continuity, and the smallest read-only GitHub source access needed to fetch authoritative files into a session. Game-specific acceptance cases are future validation examples, not current deliverables.",
-      "priority_rule": "PAE prototype_v0 remains the active four-day build focus. Keep Day 2 narrow: GitHub read-only first; do not fan out into Supabase, Drive, Notion, UI, agents, registries, or general architecture unless a concrete blocker requires it.",
-      "authority": "USER_EXPLICIT_RENEGOTIATION_2026-10-05"
-    }
-  ],
+  "review_note": "2026-10-14: user-authorized operational hygiene moved 16 terminal/inactive external records, 8 terminal commitments, 1 completed daily priority and expired temporary authorizations to archive/2026-10-14-state-hygiene.json. Four unresolved/paused external items, seven live/deferred commitments, two unresolved day priorities and all three existing active projects remain. Historical details retained in archive and review_log. No change to PROVISIONAL focus; ChatGPT ZIP local save unverified.",
+  "temporary_priority_override": null,
+  "temporary_scope_authorizations": [],
   "last_day_closure": {
     "date": "2026-10-14",
     "status": "EVENING_BOUNDED_FACTUAL_SNAPSHOT_EXPORT_LOCAL_SAVE_UNVERIFIED",
@@ -305,5 +170,6 @@
       16
     ],
     "notes": "For #49 only second-wave continuation retired; first-wave archive preserved. #55 keeps recipes and Frostfire Chronicle as archive. #35 preserved after self-correction. #39/#40 kept after self-correction. #28 assistant-history erasure not performed; only active-scope retirement. #22/#24 'finish tomorrow or drop' does not authorize a new overnight build, and tomorrow's clinic/export have priority. #42 not resolved explicitly enough to remove. #5 tutoring was not explicitly decided in this numbered reply; existing active status retained until selected or renegotiated."
-  }
+  },
+  "daily_priorities_date": "2026-10-14"
 }
