@@ -24,17 +24,6 @@
       "resolution_note": "Oct 1 counterproposal was answered Oct 2: requested suspension through Nov 30 and €20/month rejected; creditor still asks €35/month plus settlement fee. Previous WAITING_EXTERNAL status was stale. User explicitly requests only state correction Oct 13."
     },
     {
-      "id": "C-003",
-      "created": "2026-09-26",
-      "text": "Call Levová at Srdcovka after her reply requesting a phone call to arrange a meeting about the cook position.",
-      "status": "DROPPED",
-      "project": "Income / job search",
-      "next_action": "None.",
-      "due": null,
-      "authority": "USER_CONFIRMED_2026-09-27",
-      "resolution_note": "This original Srdcovka follow-up was dropped on 2026-09-27. Contact later reopened and was tracked separately under C-007; that later interview was cancelled on 2026-10-01 after employment was found."
-    },
-    {
       "id": "C-004",
       "created": "2026-09-26",
       "text": "Continue written review of the PAIR/HelloFresh claim without acknowledging the debt until the requested supporting documentation is provided and reviewed.",
@@ -44,50 +33,6 @@
       "due": "2026-10-05",
       "authority": "GMAIL_SENT_2026-09-28;USER_DIRECTION_2026-10-13",
       "resolution_note": "User explicitly said to quiet PAIR on Oct 13. Historical disputed claim and old due date retained; no waiver or admission inferred."
-    },
-    {
-      "id": "C-005",
-      "created": "2026-09-26",
-      "text": "Attend the scheduled control with MUDr. Dlouhý for a fresh dentistry report.",
-      "status": "MISSED",
-      "project": "Personal administration",
-      "next_action": "Rebook under C-011; Wednesday Oct 14 is only a user plan until confirmed.",
-      "due": "2026-10-12",
-      "authority": "USER_CONFIRMED_2026-10-12",
-      "resolution_note": "User did not attend Oct 12 visit. Preserve original deadline; do not silently move it or mark completed."
-    },
-    {
-      "id": "C-006",
-      "created": "2026-09-27",
-      "text": "Follow up on remaining targeted job applications only when replies arrive or a reasonable follow-up point is reached; DREGENO has resolved into employment.",
-      "status": "DROPPED_GENERAL_JOB_SEARCH",
-      "project": "Income / job search",
-      "next_action": "None. Preserve prior applications as history/backups, not active follow-up campaign.",
-      "due": null,
-      "authority": "USER_SCOPE_REDUCTION_2026-10-13",
-      "resolution_note": "DREGENO employment resolves general search; user explicitly removed old applications (#11) from active list on Oct 13."
-    },
-    {
-      "id": "C-007",
-      "created": "2026-09-29",
-      "text": "Attend the Srdcovka cook-position interview scheduled after the employer re-opened contact.",
-      "status": "DROPPED",
-      "project": "Income / job search",
-      "next_action": "None.",
-      "due": "2026-10-02",
-      "authority": "GMAIL_VERIFIED_2026-10-01",
-      "resolution_note": "User cancelled the 2026-10-02 Srdcovka interview by email on 2026-10-01 after finding employment."
-    },
-    {
-      "id": "C-008",
-      "created": "2026-09-30",
-      "text": "Attend the rescheduled DREGENO Spielzeugschachtel cook-position interview after the original 2026-09-30 appointment became unreachable by public transport.",
-      "status": "DONE",
-      "project": "Income / job search",
-      "next_action": "Employment onboarding continues under the AOK/onboarding commitment.",
-      "due": "2026-10-01",
-      "authority": "USER_CONFIRMED_2026-10-02",
-      "resolution_note": "User attended DREGENO on 2026-10-01, completed the employer form, and confirmed a new employment start on 2026-10-05."
     },
     {
       "id": "C-009",
@@ -113,28 +58,6 @@
       "resolution_note": "User said daily bathing had already been agreed in Discipline OS and reported receiving zero alerts across approximately four/five Riftquakes. Notification delivery is UNVERIFIED and its investigation was explicitly deferred; do not mark reminder service as working or user as noncompliant."
     },
     {
-      "id": "C-011",
-      "created": "2026-10-12",
-      "text": "Arrange a replacement medical visit after not attending Monday Oct 12.",
-      "status": "DONE_OCT14_IN_PERSON_VISIT_USER_CONFIRMED",
-      "project": "Personal administration",
-      "next_action": "Replacement in-person visit completed Oct 14, medication access confirmed. Preserve Oct 12 missed visit as history; no new urgent clinic task inferred.",
-      "due": null,
-      "authority": "USER_DIRECT_REPORT_2026-10-14",
-      "resolution_note": "Oct 12 appointment missed remains C-005 history. User describes Oct 14 in-person visit as necessary and psychologically difficult, with limited remaining medication; exact clinic time and outcome not verified. Oct 13 evening: user confirms travel prepared for Oct 14; visit and medication access remain pending. Oct 14: user directly reports successful in-person visit, medication received, and additional physician note for dentist. Routine follow-up date and exact medication quantity not independently confirmed in this state update."
-    },
-    {
-      "id": "C-012",
-      "created": "2026-10-12",
-      "text": "Resolve dental cancellation and later rebooking.",
-      "status": "DROPPED_BY_USER_FOLLOWUP",
-      "project": "Personal administration",
-      "next_action": "None in daily priority list.",
-      "due": null,
-      "authority": "GMAIL_SENT_2026-10-12;USER_DIRECTION_2026-10-13",
-      "resolution_note": "Cancellation request was sent Oct 12; clinic acknowledgement remains unverified. On Oct 13 user explicitly removed dentist follow-up/rebooking from active DOS prompts. This does not retroactively prove clinic acceptance."
-    },
-    {
       "id": "C-013",
       "created": "2026-10-12",
       "text": "Write Jana on Tuesday to agree the Wednesday KHARON demo visit.",
@@ -144,17 +67,6 @@
       "due": "2026-10-13",
       "authority": "USER_VISIT_REPORT_2026-10-14;GMAIL_SENT_VERIFIED_2026-10-14",
       "resolution_note": "Oct 12 plan to message Jana by Oct 13 was changed by user Oct 13 to a bounded real-device access test. Original due date preserved as history, not counted as a sent reply. Oct 13 evening: Laura's iPhone opening succeeded per user, but this does not confirm Jana contact or visit. Oct 14: user visited office but did not meet Jana; actual demo follow-up email sent to Jana Oct 14 as verified in Gmail. Original Oct 13 due date is retained. Sending the revised email does not prove a meeting occurred."
-    },
-    {
-      "id": "C-014",
-      "created": "2026-10-12",
-      "text": "Continue a bounded portable KHARON demo step tomorrow; avoid presenting local-only edits as shared content.",
-      "status": "DONE_BOUNDED_MOBILE_TEST",
-      "project": "KHARON existing demo collaboration",
-      "next_action": "None for the completed iPhone opening test. PC opening/editing is separate and unverified; revisit only in selected work block.",
-      "due": "2026-10-13",
-      "authority": "USER_REPORT_LAURA_IPHONE_2026-10-13",
-      "resolution_note": "Oct 13 evening: Laura opened the shared KHARON page on her iPhone; user reports four people liked its appearance. This closes only the bounded third-party mobile link opening test. PC opening, edit controls, full client demo and Jana confirmation remain unverified."
     },
     {
       "id": "C-015",
