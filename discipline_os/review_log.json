@@ -244,6 +244,70 @@
         "GMAIL_EXPORT_READY_2026-10-08_VERIFIED_2026-10-14",
         "GITHUB_STATE_AS_OF_2026-10-13"
       ]
+    },
+    {
+      "date": "2026-10-14",
+      "checkpoint": "USER_AUTHORIZED_OPERATIONAL_HYGIENE",
+      "status": "HISTORICAL_ITEMS_ARCHIVED_LIVE_SCOPE_PRESERVED",
+      "current_focus": "PAE / prototype_v0 remains PROVISIONAL; no new focus or priority override.",
+      "summary": "User authorized cleanup of old operational state and a recurring boot/writeback hygiene rule. Exact historical contents preserved in archive/2026-10-14-state-hygiene.json. Moved 16 terminal/inactive external entries out of open_external_items, 8 terminal commitments out of live commitments, one confirmed completed day priority from live orientation, and expired temporary priority/scope authorizations. Four unresolved/paused external records, seven live/deferred commitments, two unresolved daily priorities, three active projects and all historical daily reviews retained. No source assets, messages, databases or project runtime changed.",
+      "archived_path": "discipline_os/archive/2026-10-14-state-hygiene.json",
+      "archived_external_items": [
+        "Waldgasthof Bad Einsiedel application",
+        "Caféchen / Heimatstube application",
+        "JoSchi Hochkar application",
+        "Hotel Antonius applications",
+        "Hotel Riml applications",
+        "Alphotel Hirschegg application",
+        "Hotel Sommerhof application",
+        "Holzwurm Seiffen application",
+        "Thiele Schenke Marienberg application",
+        "Saigerhütte cook application",
+        "Srdcovka cook application",
+        "Motorest Výšina Most",
+        "Supabase PAE",
+        "Supabase hp-game",
+        "MUDr. Dlouhý control",
+        "CraftNest membership"
+      ],
+      "archived_commitment_ids": [
+        "C-003",
+        "C-005",
+        "C-006",
+        "C-007",
+        "C-008",
+        "C-011",
+        "C-012",
+        "C-014"
+      ],
+      "preserved_open_external_items": [
+        "DREGENO Spielzeugschachtel application",
+        "N26 / coeo",
+        "PAIR / HelloFresh",
+        "AOK PLUS membership / employer insurance data"
+      ],
+      "preserved_live_commitments": [
+        "C-001",
+        "C-002",
+        "C-004",
+        "C-009",
+        "C-010",
+        "C-013",
+        "C-015"
+      ],
+      "safeguards": [
+        "Archive retains original MISSED status of C-005.",
+        "Paused financial disputes remain unresolved, not dismissed.",
+        "Export ZIP local presence remains UNVERIFIED; do not infer done.",
+        "Expired overrides cannot renew automatically.",
+        "Future hygiene only at boot/authorized state review/write, not in background.",
+        "No change to PROVISIONAL focus or active project set."
+      ],
+      "next_action": "At next materially work-related boot, check freshness and filter archival history out of operational brief; on authorized state writes, archive only verified terminal or explicitly retired entries. User can verify saved ChatGPT export ZIP.",
+      "authority": [
+        "USER_EXPLICIT_CLEANUP_AND_OS_RULE_2026-10-14",
+        "GITHUB_STATE_AND_REVIEW_2026-10-14"
+      ]
     }
   ],
   "weekly_reviews": []
