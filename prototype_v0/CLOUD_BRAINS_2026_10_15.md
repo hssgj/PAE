@@ -16,12 +16,25 @@ User ran PAE in Android/Termux and supplied a successful response after configur
 Run from Termux:
     bash "$HOME/PAE/start-groq.sh"
     bash "$HOME/PAE/start-gemini.sh"
+    bash "$HOME/PAE/start-groq-gpt-oss-20b.sh"
+    bash "$HOME/PAE/start-groq-qwen38.sh"
 
-Optional first argument selects a session ID. Session name does not select a model. Default Groq session is groq-first-test.
+The two new Groq launchers reuse start-groq.sh and the existing key file at ~/.config/pae/groq.key:
+- start-groq-gpt-oss-20b.sh -> openai/gpt-oss-20b; session groq-gpt-oss-20b
+- start-groq-qwen38.sh -> qwen/qwen3.8-27b; session groq-qwen38
+They set PAE_GROQ_MODEL explicitly before delegating to the existing launcher. No additional API keys are needed.
+
+Optional first argument to the base launchers selects a session ID. Session name does not select a model. Default Groq session is groq-first-test.
 Launchers configure a process-local urllib opener with PAE client identification; no need to overwrite locally modified provider.py.
-Both scripts passed bash syntax checks in the assistant environment; these new launcher files still require phone validation.
 PAE_ROOT may select a different checkout.
 PAE_GROQ_MODEL / PAE_GEMINI_MODEL may explicitly override the requested model.
+The new launcher files are committed to GitHub but still require phone validation in Termux.
+
+## Groq model availability and limits
+The current Groq model catalog lists openai/gpt-oss-20b and qwen/qwen3.8-27b. The free-plan limits page lists both with limits; provider limits can change, so verify the current Groq dashboard before relying on them.
+- Official model catalog: https://console.groq.com/docs/models
+- Official rate limits: https://console.groq.com/docs/rate-limits
+These are cloud-hosted models, not the same runtime as the local Qwen installation. Connecting local Qwen to the internet does not route it through Groq automatically; the Groq launcher makes a separate API call.
 
 ## Gemini — PREPARED, NOT LIVE VERIFIED
 - Key file: ~/.config/pae/gemini.key
