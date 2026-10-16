@@ -328,6 +328,51 @@
         "USER_REPORT_2026-10-16_ABOUT_NIGHT_RIFTBRIEF_2026-10-15",
         "CONVERSATION_CONTEXT_2026-10-15_TO_2026-10-16"
       ]
+    },
+    {
+      "date": "2026-10-15",
+      "checkpoint": "NIGHT_RIFTBRIEF_EVENT_RECONCILIATION",
+      "status": "USER_REPORTED_OCCURRENCE_CONTENT_BOUNDED",
+      "current_focus": "PAE / prototype_v0 remains last-confirmed PROVISIONAL; no priority override.",
+      "summary": "User later reported that a meaningful bathtub Night Riftbrief occurred on Oct 15 but was not persisted at the time. The occurrence is preserved; missing narrative details are not reconstructed or invented.",
+      "verified_outcomes": [
+        "User reports that the Night Riftbrief occurred in the bathtub on Oct 15."
+      ],
+      "limitations": [
+        "Full content is not recoverable from the inspected authoritative DOS state and available conversation context.",
+        "No project completion, new priority, or commitment is inferred."
+      ],
+      "next_action": "Retain the occurrence as historical context; continue with the next factual orientation without fabricating the missing story.",
+      "authority": [
+        "USER_REPORT_2026-10-16_ABOUT_NIGHT_RIFTBRIEF_2026-10-15",
+        "CONVERSATION_CONTEXT_2026-10-15_TO_2026-10-16"
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "checkpoint": "EVENING_CANONICAL_CLOSEOUT",
+      "status": "FACTUAL_CLOSEOUT_WRITTEN_NO_SCOPE_CHANGE",
+      "current_focus": "PAE / prototype_v0 remains last-confirmed PROVISIONAL; no priority override or new scope.",
+      "summary": "User requested canonical DOS writeback after the evening closeout. Reconciled the Termux/PAE retrospective: a real workbench, code and some tests exist, but provider/auth/routing issues mean reliable end-to-end operation is not established. User reports being home at the table with Meggie; Nessie walk was planned but completion is unverified. Cash-to-digital payment path remains unverified. Today's DREGENO shift outcome/hours are not confirmed. ChatGPT export ZIP local presence remains unverified. Daily priorities from Oct 14 are stale and require reorientation. No PAE runtime action, project expansion or destructive operation occurred.",
+      "verified_outcomes": [
+        "Current focus preserved as PAE / prototype_v0 PROVISIONAL.",
+        "No new project, scope expansion or priority override created.",
+        "PAE/Termux status recorded without equating code presence with operational success.",
+        "Current_state and review_log updated as a factual evening closure."
+      ],
+      "limitations": [
+        "No local Termux inspection or live PAE test in this closeout.",
+        "Today's shift result/hours and Nessie walk completion remain unverified.",
+        "Export ZIP local presence and cash-to-digital route remain unverified.",
+        "Daily priorities remain stale pending reorientation."
+      ],
+      "next_action": "At next practical orientation, re-evaluate stale daily priorities; verify the local export ZIP if selected. For PAE, wait for explicit selection and then test one complete real operation rather than redesigning architecture.",
+      "authority": [
+        "USER_REQUESTED_DOS_CLOSEOUT_2026-10-16",
+        "USER_EVENING_REPORT_2026-10-16",
+        "GITHUB_DOS_STATE_READ_2026-10-16",
+        "CONVERSATION_RECAP_PAE_TERMMUX_2026-10-07_TO_2026-10-16"
+      ]
     }
   ],
   "weekly_reviews": []
