@@ -308,6 +308,26 @@
         "USER_EXPLICIT_CLEANUP_AND_OS_RULE_2026-10-14",
         "GITHUB_STATE_AND_REVIEW_2026-10-14"
       ]
+    },
+    {
+      "date": "2026-10-15",
+      "checkpoint": "NIGHT_RIFTBRIEF_BATHTUB",
+      "status": "USER_REPORTED_OCCURRENCE_PERSISTED_NEXT_MORNING",
+      "current_focus": "PAE / prototype_v0 remains last-confirmed PROVISIONAL focus; no priority override.",
+      "summary": "User reports a meaningful Night Riftbrief in the bathtub on Oct 15. It was present in conversation but was not persisted to DOS at the time; this entry repairs that omission at the user's request. Record only the event and the available bounded context; do not invent the missing full narrative or claim new project work.",
+      "verified_outcomes": [
+        "User explicitly reports that the Oct 15 bathtub Night Riftbrief occurred.",
+        "No new priority override or project expansion is established by the available evidence."
+      ],
+      "limitations": [
+        "The full contents of the Night Riftbrief were not available in the authoritative DOS files reviewed during this write.",
+        "No unverified project, email, export, or commitment outcome is marked complete."
+      ],
+      "next_action": "Oct 16: user reports preparing for work and aiming to depart around 07:59; exact shift/roster details and today's daily priority ranking remain unverified. Review stale day-specific priorities when practical without silently changing the provisional PAE focus.",
+      "authority": [
+        "USER_REPORT_2026-10-16_ABOUT_NIGHT_RIFTBRIEF_2026-10-15",
+        "CONVERSATION_CONTEXT_2026-10-15_TO_2026-10-16"
+      ]
     }
   ],
   "weekly_reviews": []
