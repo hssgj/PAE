@@ -1,7 +1,7 @@
 {
   "version": "0.5",
   "state_status": "PROVISIONAL",
-  "updated": "2026-10-14",
+  "updated": "2026-10-16",
   "current_focus": {
     "project": "PAE / prototype_v0",
     "milestone": "Last confirmed focus remains PAE / prototype_v0; Oct 9 Golden Riftbrief milestone remains preserved in review_log. As of Oct 11 GitHub main additionally contains a terminal busy spinner, scoped exact-path GitHub read and unrelated DOS-fallback safeguards, regression tests, and a guarded PAE Mobile routing-hotfix installer. Experimental Safety Guard runner was rolled back. GitHub commits prove code exists, NOT local installation or successful live end-to-end routing. User-reported live test still encountered a cookbook repository/path 404 and unrelated DOS fallback. Memory Guard v0.1 was locally installed/tested on Oct 9; do not promote to deployed/production without evidence.",
@@ -85,20 +85,27 @@
     "Sokol recipes/menu materials and Frostfire Chronicle (#55/#34) are preserved as professional/creative archive, removed from active work."
   ],
   "blocked_items": [],
-  "last_review": "2026-10-14",
-  "review_note": "2026-10-14: user-authorized operational hygiene moved 16 terminal/inactive external records, 8 terminal commitments, 1 completed daily priority and expired temporary authorizations to archive/2026-10-14-state-hygiene.json. Four unresolved/paused external items, seven live/deferred commitments, two unresolved day priorities and all three existing active projects remain. Historical details retained in archive and review_log. No change to PROVISIONAL focus; ChatGPT ZIP local save unverified.",
+  "last_review": "2026-10-16",
+  "review_note": "2026-10-16: factual morning/night reconciliation. User reports a Night Riftbrief in the bathtub on Oct 15 that was not persisted at the time; its occurrence is now recorded in review_log, but no unprovided narrative details are inferred. User reports preparing to leave for work, aiming to depart around 07:59, with a planned stop at One1 Hora Svaté Kateřiny for tobacco/papers/cigarettes and possibly snacks; thermal layer and leather gardening gloves packed, headphones uncharged. Exact shift/roster details and today's medication adherence are not confirmed. Day-specific priorities from Oct 14 are STALE / NEEDS REVIEW. PAE / prototype_v0 remains last-confirmed PROVISIONAL focus; no priority override, project expansion, or new automation.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
-    "date": "2026-10-14",
-    "status": "EVENING_BOUNDED_FACTUAL_SNAPSHOT_EXPORT_LOCAL_SAVE_UNVERIFIED",
-    "work_done": "User confirms successful in-person clinic visit and medication receipt; extra doctor note for dentist. User reports visiting Jana's office but not meeting her. Gmail SENT confirms KHARON demo email to Jana on Oct 14. No meeting or reply confirmed. Evening walk/play with Nessie user-reported. No new project work executed by this closure.",
-    "pae": "NO_NEW_PAE_WORK_SELECTED;LAST_CONFIRMED_FOCUS_PROVISIONAL",
-    "next_day_user_plan": [
-      "Confirm whether ZIP from Oct 8 ChatGPT export was actually saved on user's device; prior export-ready email alone is insufficient.",
-      "Honor DREGENO work and safe transport as applicable; exact next shift not verified in this closure."
+    "date": "2026-10-15",
+    "status": "NIGHT_RIFTBRIEF_USER_REPORTED_OCCURRENCE_NOW_RECORDED_CONTENT_BOUNDED",
+    "work_done": "User reports a meaningful Night Riftbrief in the bathtub on Oct 15. The event was discussed in the conversation but was not written into DOS at the time. This write records its occurrence without inventing missing specifics. Existing conversational context records no new PAE scope or priority override.",
+    "limitations": [
+      "Full contents of the bathtub Night Riftbrief are not recoverable from the authoritative DOS files inspected in this update; only the user's report and available conversation context are recorded.",
+      "No claim that any unverified project action or commitment was completed."
     ],
-    "jana_visit": "OFFICE_VISIT_USER_REPORTED_NO_IN_PERSON_MEETING;KHARON_EMAIL_GMAIL_SENT_VERIFIED_2026-10-14;REPLY_AND_APPOINTMENT_UNVERIFIED"
+    "next_day_user_plan": [
+      "User reports preparing for work on Oct 16 and aiming to depart around 07:59.",
+      "Exact shift and roster details remain unverified.",
+      "Reorient day-specific priorities when practical; do not silently change the provisional PAE focus."
+    ],
+    "authority": [
+      "USER_REPORT_2026-10-16_ABOUT_NIGHT_RIFTBRIEF_2026-10-15",
+      "CONVERSATION_CONTEXT_2026-10-15_TO_2026-10-16"
+    ]
   },
   "scope_reduction": {
     "date": "2026-10-13",
@@ -171,5 +178,15 @@
     ],
     "notes": "For #49 only second-wave continuation retired; first-wave archive preserved. #55 keeps recipes and Frostfire Chronicle as archive. #35 preserved after self-correction. #39/#40 kept after self-correction. #28 assistant-history erasure not performed; only active-scope retirement. #22/#24 'finish tomorrow or drop' does not authorize a new overnight build, and tomorrow's clinic/export have priority. #42 not resolved explicitly enough to remove. #5 tutoring was not explicitly decided in this numbered reply; existing active status retained until selected or renegotiated."
   },
-  "daily_priorities_date": "2026-10-14"
+  "daily_priorities_date": "2026-10-14",
+  "morning_orientation_2026_10_16": {
+    "status": "PARTIAL_USER_REPORTED_PLAN_DAY_PRIORITIES_STALE",
+    "user_reported_plan": "Preparing to leave for work; aiming to depart around 07:59. Plans to pass One1 Hora Svaté Kateřiny for tobacco/papers/cigarettes and possibly snacks. Thermal layer and leather gardening gloves packed; headphones not charged.",
+    "unknowns": [
+      "Exact DREGENO shift/roster details not confirmed in this update",
+      "Today's prescribed-medication adherence not confirmed",
+      "Prior Oct 14 daily priorities require review; no new priority ranking inferred"
+    ],
+    "authority": "USER_REPORT_2026-10-16"
+  }
 }
