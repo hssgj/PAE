@@ -1,26 +1,26 @@
 {
   "version": "0.5",
   "state_status": "PROVISIONAL",
-  "updated": "2026-10-16",
+  "updated": "2026-10-18",
   "current_focus": {
     "project": "PAE / prototype_v0",
     "milestone": "Last confirmed focus remains PAE / prototype_v0; Oct 9 Golden Riftbrief milestone remains preserved in review_log. As of Oct 11 GitHub main additionally contains a terminal busy spinner, scoped exact-path GitHub read and unrelated DOS-fallback safeguards, regression tests, and a guarded PAE Mobile routing-hotfix installer. Experimental Safety Guard runner was rolled back. GitHub commits prove code exists, NOT local installation or successful live end-to-end routing. User-reported live test still encountered a cookbook repository/path 404 and unrelated DOS fallback. Memory Guard v0.1 was locally installed/tested on Oct 9; do not promote to deployed/production without evidence.",
-    "next_action": "Current bounded handoff: verify whether the ChatGPT export ZIP is actually saved locally (Oct 8 ready email is not download proof); if absent, request a fresh export when selected. Honor existing DREGENO schedule/transport and outstanding external obligations. PAE/prototype_v0 remains the last-confirmed PROVISIONAL focus, without an active priority override or newly authorized PAE build.",
+    "next_action": "Honor the user-reported DREGENO schedule and practical travel; do not prompt again about the ChatGPT export ZIP, which the user confirms is saved locally. Daily priorities need fresh selection when practical; PAE / prototype_v0 remains last-confirmed PROVISIONAL focus without an active override or newly authorized build.",
     "status": "LAST_CONFIRMED_PROVISIONAL_PAE_FOCUS_NO_ACTIVE_OVERRIDE",
     "authority": "GITHUB_MAIN_VERIFIED_2026-10-11;USER_REPORTED_LOCAL_TEST_2026-10-11;PRIOR_PRIORITY_OVERRIDE_EXPIRED"
   },
   "daily_priorities": [
     {
-      "rank": 2,
-      "item": "Oct 14: verify whether the newer ChatGPT export has actually been downloaded; if not, download and preserve it before user-reported Plus expiry Oct 15. Prepared Oct 8 does not prove downloaded.",
-      "status": "EXPORT_READY_EMAIL_CONFIRMED_OCT08_LOCAL_ZIP_SAVE_UNVERIFIED",
-      "authority": "GMAIL_VERIFIED_2026-10-14_OCT08_EXPORT_READY;USER_LOCAL_DOWNLOAD_UNVERIFIED"
+      "rank": 1,
+      "item": "DREGENO schedule and practical travel: Monday Oct 19 breakfast at work; Tuesday Oct 20 and Wednesday Oct 21 at home; Thursday Oct 22 and Friday Oct 23 work.",
+      "status": "USER_REPORTED_SCHEDULE_2026-10-18; shift hours and transport details not specified",
+      "authority": "USER_REPORT_2026-10-18"
     },
     {
-      "rank": 3,
-      "item": "DREGENO actual scheduled work, shift record and practical travel; user will provide remaining hours later. Confirm work/clinic conflict rather than infer attendance.",
-      "status": "ONGOING_USER_RECORD_KEEPING_ROSTER_DETAIL_UNVERIFIED",
-      "authority": "USER_REPORT_2026-10-13"
+      "rank": 2,
+      "item": "Cash-to-digital payment route remains untouched; revisit only when user chooses to address it.",
+      "status": "NOT_ADDRESSED_NO_ACTION_TAKEN",
+      "authority": "USER_REPORT_2026-10-18"
     }
   ],
   "active_projects": [
@@ -86,39 +86,33 @@
   ],
   "blocked_items": [],
   "last_review": "2026-10-16",
-  "review_note": "2026-10-16 evening factual closeout. User requested canonical DOS writeback. Current focus remains last-confirmed PROVISIONAL PAE / prototype_v0; no priority override, scope expansion, new project, or PAE execution authorized. User reports being home at the table with Meggie; Nessie walk was planned but completion is unverified. Cash-to-digital payment route was discussed but not verified and no new commitment was created. DREGENO work is ongoing, but today's shift outcome/hours remain unverified. ChatGPT export ZIP local presence remains unverified. Daily priorities still date from 2026-10-14 and are STALE / NEED REORIENTATION. Oct 15 bathtub Night Riftbrief occurrence is preserved, but its missing narrative details are not reconstructed. No code/runtime changes or destructive Termux actions were performed.",
+  "review_note": "2026-10-18 Good Night Brief 60 factual reconciliation. User confirms ChatGPT history export ZIP is saved locally; do not ask about it again absent a material reason. User reports breakfast today and plans breakfast at DREGENO Monday Oct 19; Tuesday Oct 20 and Wednesday Oct 21 at home; Thursday Oct 22 and Friday Oct 23 work. Exact shift hours, transport details, and today's shift outcome were not supplied and remain unasserted. Cash-to-digital payment route was not addressed. User says no other new facts need recording. Current focus remains last-confirmed PROVISIONAL PAE / prototype_v0; no priority override, scope expansion, or new project.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
-    "date": "2026-10-16",
-    "status": "EVENING_CLOSEOUT_RECORDED_FACTUAL_BOUNDED_NO_SCOPE_CHANGE",
-    "work_done": "User requested that the canonically important parts of the Oct 16 evening brief be written to Discipline OS. PAE/Termux retrospective recorded as a real but operationally incomplete foundation: code/workbench and some component tests exist; end-to-end reliability is unproven, including prior provider/auth/routing failures. Current focus and active project set preserved. User reports being home at the table with Meggie; Nessie walk was planned, not confirmed complete. Cash-to-digital route remains unverified.",
+    "date": "2026-10-18",
+    "status": "GOOD_NIGHT_BRIEF_60_FACTUAL_RECONCILIATION",
+    "work_done": "User reoriented practical schedule and corrected export status. ChatGPT export ZIP confirmed saved locally. User reports breakfast today; breakfast planned at DREGENO Monday Oct 19. Tuesday and Wednesday at home; Thursday and Friday work. Cash-to-digital route not addressed. No additional facts requested.",
     "verified_outcomes": [
-      "Authoritative DOS state read from GitHub before writeback.",
-      "Current focus remains PAE / prototype_v0 PROVISIONAL; no priority override or new project.",
-      "Termux/PAE history reconciled without claiming end-to-end success.",
-      "Oct 15 Night Riftbrief occurrence retained without inventing missing content."
+      "User explicitly confirms ChatGPT export ZIP is saved locally; do not ask again.",
+      "User reports Tuesday Oct 20 and Wednesday Oct 21 at home; Thursday Oct 22 and Friday Oct 23 work.",
+      "User reports breakfast today and plans breakfast at DREGENO Monday Oct 19."
     ],
     "limitations": [
-      "Today's DREGENO shift outcome and hours are not confirmed.",
-      "Completion of the planned Nessie walk is not confirmed.",
-      "Local ChatGPT export ZIP is still unverified.",
-      "PAE full live end-to-end routing/provider operation is unproven.",
-      "Cash-to-digital payment method is not verified.",
-      "Daily priorities are dated 2026-10-14 and remain stale pending reorientation.",
-      "No local Termux inspection or code/runtime execution occurred during this closeout."
+      "Exact shift hours and transport details not supplied.",
+      "Today's shift outcome was not explicitly confirmed.",
+      "Cash-to-digital payment route remains unaddressed, not resolved.",
+      "PAE / prototype_v0 remains last-confirmed PROVISIONAL focus; no new build authorized."
     ],
     "next_day_user_plan": [
-      "Reorient daily priorities when practical; do not infer today's shift outcome.",
-      "Verify whether the ChatGPT export ZIP exists locally; request a fresh export only if absent and selected.",
-      "Preserve DREGENO shift/transport records and verify the next roster only when needed.",
-      "Do not restart or rebuild PAE without explicit selection; when selected, verify one complete real operation and isolate the smallest blocker."
+      "Follow the reported Monday DREGENO plan and practical travel.",
+      "Do not ask again about the saved ChatGPT export ZIP.",
+      "Do not infer shift completion or payment-route resolution.",
+      "Reorient daily priorities when practical; do not silently activate PAE work."
     ],
     "authority": [
-      "USER_REQUESTED_DOS_CLOSEOUT_2026-10-16",
-      "USER_EVENING_REPORT_2026-10-16",
-      "GITHUB_DOS_STATE_READ_2026-10-16",
-      "CONVERSATION_RECAP_PAE_TERMMUX_2026-10-07_TO_2026-10-16"
+      "USER_REPORT_2026-10-18_GOOD_NIGHT_BRIEF_60",
+      "GITHUB_DISCIPLINE_OS_STATE_READ_2026-10-18"
     ]
   },
   "scope_reduction": {
@@ -192,7 +186,7 @@
     ],
     "notes": "For #49 only second-wave continuation retired; first-wave archive preserved. #55 keeps recipes and Frostfire Chronicle as archive. #35 preserved after self-correction. #39/#40 kept after self-correction. #28 assistant-history erasure not performed; only active-scope retirement. #22/#24 'finish tomorrow or drop' does not authorize a new overnight build, and tomorrow's clinic/export have priority. #42 not resolved explicitly enough to remove. #5 tutoring was not explicitly decided in this numbered reply; existing active status retained until selected or renegotiated."
   },
-  "daily_priorities_date": "2026-10-14",
+  "daily_priorities_date": "2026-10-18",
   "morning_orientation_2026_10_16": {
     "status": "PARTIAL_USER_REPORTED_PLAN_DAY_PRIORITIES_STALE",
     "user_reported_plan": "Preparing to leave for work; aiming to depart around 07:59. Plans to pass One1 Hora Svaté Kateřiny for tobacco/papers/cigarettes and possibly snacks. Thermal layer and leather gardening gloves packed; headphones not charged.",
@@ -203,5 +197,5 @@
     ],
     "authority": "USER_REPORT_2026-10-16"
   },
-  "daily_priorities_status": "STALE_NEEDS_REORIENTATION"
+  "daily_priorities_status": "UPDATED_FROM_USER_REPORT_2026-10-18"
 }
