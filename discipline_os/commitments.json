@@ -72,12 +72,12 @@
       "id": "C-015",
       "created": "2026-10-13",
       "text": "Verify whether the newer ChatGPT history export prepared Oct 8 was downloaded; if not, download and preserve it before the user-reported Plus downgrade.",
-      "status": "ACTIVE_READY_EMAIL_VERIFIED_LOCAL_ZIP_UNVERIFIED",
+      "status": "DONE_USER_CONFIRMED_2026-10-18",
       "project": "Subscription transition / archival",
-      "next_action": "Verify whether the ChatGPT export ZIP has been saved locally on the user's device; Oct 8 ready email does not prove it was downloaded. Request a new export only if necessary after checking.",
+      "next_action": "No further action. User explicitly confirms the ChatGPT history export ZIP is saved locally; do not ask again absent a material reason.",
       "due": "2026-10-14",
-      "authority": "GMAIL_EXPORT_READY_EMAIL_2026-10-08_VERIFIED_2026-10-14;LOCAL_ZIP_UNVERIFIED",
-      "resolution_note": "This is a bounded preservation task, not a new harvest/automation build. Oct 14 Gmail verification: export-ready email dated Oct 8 exists. Local ZIP download/preservation remains unverified; no download or new export request executed in this state-maintenance pass."
+      "authority": "GMAIL_EXPORT_READY_EMAIL_2026-10-08;USER_CONFIRMED_LOCAL_ZIP_SAVED_2026-10-18",
+      "resolution_note": "Oct 18 Good Night Brief 60: user explicitly confirms the export ZIP is saved locally. Preservation task complete; no fresh export request needed. Do not prompt again."
     }
   ]
 }
