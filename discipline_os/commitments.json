@@ -67,17 +67,6 @@
       "due": "2026-10-13",
       "authority": "USER_VISIT_REPORT_2026-10-14;GMAIL_SENT_VERIFIED_2026-10-14",
       "resolution_note": "Oct 12 plan to message Jana by Oct 13 was changed by user Oct 13 to a bounded real-device access test. Original due date preserved as history, not counted as a sent reply. Oct 13 evening: Laura's iPhone opening succeeded per user, but this does not confirm Jana contact or visit. Oct 14: user visited office but did not meet Jana; actual demo follow-up email sent to Jana Oct 14 as verified in Gmail. Original Oct 13 due date is retained. Sending the revised email does not prove a meeting occurred."
-    },
-    {
-      "id": "C-015",
-      "created": "2026-10-13",
-      "text": "Verify whether the newer ChatGPT history export prepared Oct 8 was downloaded; if not, download and preserve it before the user-reported Plus downgrade.",
-      "status": "DONE_USER_CONFIRMED_2026-10-18",
-      "project": "Subscription transition / archival",
-      "next_action": "No further action. User explicitly confirms the ChatGPT history export ZIP is saved locally; do not ask again absent a material reason.",
-      "due": "2026-10-14",
-      "authority": "GMAIL_EXPORT_READY_EMAIL_2026-10-08;USER_CONFIRMED_LOCAL_ZIP_SAVED_2026-10-18",
-      "resolution_note": "Oct 18 Good Night Brief 60: user explicitly confirms the export ZIP is saved locally. Preservation task complete; no fresh export request needed. Do not prompt again."
     }
   ]
 }
