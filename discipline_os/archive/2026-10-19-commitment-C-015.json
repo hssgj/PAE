@@ -1,0 +1,17 @@
+{
+  "archived_on": "2026-10-19",
+  "reason": "Verified terminal commitment reconciled during user-authorized factual daily closure.",
+  "source_path": "discipline_os/commitments.json",
+  "original_commitment": {
+    "id": "C-015",
+    "created": "2026-10-13",
+    "text": "Verify whether the newer ChatGPT history export prepared Oct 8 was downloaded; if not, download and preserve it before the user-reported Plus downgrade.",
+    "status": "DONE_USER_CONFIRMED_2026-10-18",
+    "project": "Subscription transition / archival",
+    "next_action": "No further action. User explicitly confirms the ChatGPT history export ZIP is saved locally; do not ask again absent a material reason.",
+    "due": "2026-10-14",
+    "authority": "GMAIL_EXPORT_READY_EMAIL_2026-10-08;USER_CONFIRMED_LOCAL_ZIP_SAVED_2026-10-18",
+    "resolution_note": "Oct 18 Good Night Brief 60: user explicitly confirms the export ZIP is saved locally. Preservation task complete; no fresh export request needed. Do not prompt again."
+  },
+  "authority": "USER_CONFIRMED_LOCAL_ZIP_SAVED_2026-10-18;USER_AUTHORIZED_DOS_UPDATE_2026-10-19"
+}
