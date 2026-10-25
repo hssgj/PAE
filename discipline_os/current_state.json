@@ -1,7 +1,7 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-10-19",
+  "updated": "2026-10-25",
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
@@ -72,8 +72,8 @@
     "Sokol recipes/menu materials and Frostfire Chronicle (#55/#34) are preserved as professional/creative archive, removed from active work."
   ],
   "blocked_items": [],
-  "last_review": "2026-10-19",
-  "review_note": "2026-10-19 morning factual review. User confirms regular pill taken just now. Damage check completed; transport arranged by Taxi Börner after bicycle/operating vehicle was unavailable today; user is on the way to work. Return is planned by bus, not independently verified. Provisions corrected: no mandarins survived; lemons remain. User explicitly clarified that focus is optional and neutral when none is selected: do not force PAE / prototype_v0 or another project into current_focus. Existing projects remain listed as active, but no current project focus or daily project priorities are selected. ChatGPT history export ZIP remains confirmed saved locally; C-015 is archived and removed from live commitments. Cash-to-digital payment route remains unaddressed, not resolved. Actual shift outcome/hours and return bus completion remain unknown.",
+  "last_review": "2026-10-25",
+  "review_note": "2026-10-25 morning Riftwake. User reports a disrupted night/early waking and intends to attend DREGENO work today after several consecutive workdays. Exact roster, shift hours, departure and return transport are not confirmed. User reports headache and cannabis use this morning; cycling plan is not treated as a safe/confirmed transport outcome. No project focus is selected and no project priority is inferred. Weekly schedule beyond today's stated intention remains unknown. Financial amounts mentioned conversationally are not converted into a project or commitment. No medication adherence confirmation supplied in this brief; ask directly in conversation.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
@@ -173,7 +173,7 @@
     ],
     "notes": "For #49 only second-wave continuation retired; first-wave archive preserved. #55 keeps recipes and Frostfire Chronicle as archive. #35 preserved after self-correction. #39/#40 kept after self-correction. #28 assistant-history erasure not performed; only active-scope retirement. #22/#24 'finish tomorrow or drop' does not authorize a new overnight build, and tomorrow's clinic/export have priority. #42 not resolved explicitly enough to remove. #5 tutoring was not explicitly decided in this numbered reply; existing active status retained until selected or renegotiated."
   },
-  "daily_priorities_date": "2026-10-18",
+  "daily_priorities_date": "2026-10-25",
   "morning_orientation_2026_10_16": {
     "status": "PARTIAL_USER_REPORTED_PLAN_DAY_PRIORITIES_STALE",
     "user_reported_plan": "Preparing to leave for work; aiming to depart around 07:59. Plans to pass One1 Hora Svaté Kateřiny for tobacco/papers/cigarettes and possibly snacks. Thermal layer and leather gardening gloves packed; headphones not charged.",
@@ -184,5 +184,18 @@
     ],
     "authority": "USER_REPORT_2026-10-16"
   },
-  "daily_priorities_status": "UPDATED_FROM_USER_REPORT_2026-10-18"
+  "daily_priorities_status": "ORIENTATION_UPDATED_NO_PROJECT_PRIORITY_SELECTED",
+  "morning_orientation_2026_10_25": {
+    "status": "USER_REPORTED_PLAN_PARTIAL_ROSTER_AND_TRANSPORT_UNCONFIRMED",
+    "user_reported_plan": "User intends to attend work today after reporting three consecutive workdays; exact shift/roster not supplied. User says weather is poor and plans to allow extra pauses if needed.",
+    "unknowns": [
+      "Exact shift hours and roster",
+      "Whether and when the user departs for work",
+      "Safe transport decision and return transport",
+      "Schedule for the rest of the week",
+      "Today's prescribed-medication adherence"
+    ],
+    "next_action": "Pause before cycling while impaired or symptomatic; choose transport only when fit to travel safely. Confirm actual shift/transport outcomes only when user reports them. No project priority selected.",
+    "authority": "USER_REPORT_2026-10-25_MORNING_RIFTWAKE"
+  }
 }
