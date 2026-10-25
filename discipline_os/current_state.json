@@ -5,7 +5,7 @@
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
-    "next_action": "Follow today's user-reported transport and DREGENO work plan. Record the actual shift outcome when the user reports it. Select a project focus only when the user identifies a meaningful priority.",
+    "next_action": "Record completed Oct 25 DREGENO shift (09:00–18:00, reported); get home safely; follow user-reported Oct 26–27 work shifts without inventing hours. No project focus selected.",
     "status": "NO_ACTIVE_FOCUS_SELECTED",
     "authority": "USER_EXPLICIT_ORIENTATION_2026-10-19"
   },
@@ -34,8 +34,8 @@
     {
       "name": "DREGENO Spielzeugschachtel application",
       "status": "EMPLOYED_ACTIVE_USER_RECORD_KEEPING",
-      "last_action": "User reports ongoing DREGENO work and keeping a shift record; detailed remaining shifts to be supplied later.",
-      "next_action": "Continue existing shift records; verify next roster/transport only when needed for actual work.",
+      "last_action": "Oct 25: user reports completed shift 09:00–18:00; discovered tips stored in packets under bar; amount and payroll hours excluding possible breaks unverified.",
+      "next_action": "Continue own shift records; Oct 26–27 work planned, actual hours and outcome not yet reported.",
       "authority": "USER_REPORT_2026-10-13",
       "deadline": "2026-10-05"
     },
@@ -73,7 +73,7 @@
   ],
   "blocked_items": [],
   "last_review": "2026-10-25",
-  "review_note": "2026-10-25 morning Riftwake, user correction. User confirms prescribed pill taken now; reports work shifts today, Monday Oct 26 and Tuesday Oct 27; expects €70 incoming (correcting prior mishearing of €10). User plans bicycle commute despite fog and earlier reported cannabis use/headache; do not record travel as safe or completed. User raises concern that project progress has stalled for 2–3 weeks since starting work, especially Freebie/PAE-adjacent work and Santa; no project focus selected and no project priority inferred. Do not introduce random priority selection as a substitute for choosing a meaningful focus. Week beyond these three shifts remains unknown.",
+  "review_note": "2026-10-25 morning Riftwake, user correction. User confirms prescribed pill taken now; reports work shifts today, Monday Oct 26 and Tuesday Oct 27; expects €70 incoming (correcting prior mishearing of €10). User plans bicycle commute despite fog and earlier reported cannabis use/headache; do not record travel as safe or completed. User raises concern that project progress has stalled for 2–3 weeks since starting work, especially Freebie/PAE-adjacent work and Santa; no project focus selected and no project priority inferred. Do not introduce random priority selection as a substitute for choosing a meaningful focus. Week beyond these three shifts remains unknown. Evening user report Oct 25: DREGENO shift completed 09:00–18:00 (9h presence; unpaid breaks unconfirmed); reports zero extra pastries consumed; discovered that tips are stored in packets at bar (amount unverified); ChatGPT Plus payment succeeded. Reporting return trip from approximately halfway along Seiffen hill at ~18:07; arrival home NOT confirmed. Do not select project focus from this.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
@@ -197,5 +197,25 @@
     ],
     "next_action": "Do not cycle while impaired or unfit; wait until fully sober and capable, or use alternative transport. For project discipline, do not draw random priorities: after the three-shift run, select one existing project and one small verifiable next action, if the user explicitly chooses to do so. No project focus selected.",
     "authority": "USER_REPORT_2026-10-25_MORNING_CORRECTION"
+  },
+  "evening_orientation_2026_10_25": {
+    "status": "USER_REPORTED_WORKDAY_DONE_RETURN_HOME_UNCONFIRMED",
+    "shift": {
+      "date": "2026-10-25",
+      "start": "09:00",
+      "end": "18:00",
+      "presence_hours": 9,
+      "unpaid_breaks": "UNKNOWN",
+      "user_reported_outcome": "COMPLETED",
+      "extra_pastries_eaten": 0
+    },
+    "finance": {
+      "tips_discovery": "Tips are kept under bar in small packets; amount not yet confirmed",
+      "chatgpt_plus": "USER_REPORT_PAID_2026-10-25"
+    },
+    "travel": "User reports being about halfway along Seiffen hill on the way home at about 18:07. Safe completion/arrival NOT confirmed.",
+    "next_known_work": "DREGENO planned Oct 26 and Oct 27; shift times not provided",
+    "project_focus": "NONE_SELECTED",
+    "authority": "USER_REPORT_2026-10-25_EVENING_DEBRIEF"
   }
 }
