@@ -446,6 +446,30 @@
         "USER_REPORT_2026-10-25_MORNING_RIFTWAKE",
         "GITHUB_DISCIPLINE_OS_READ_2026-10-25"
       ]
+    },
+    {
+      "date": "2026-10-25",
+      "checkpoint": "RIFTWAKE_USER_CORRECTION",
+      "status": "FACTUAL_CORRECTION_AND_PROJECT_DRIFT_SIGNAL_RECORDED",
+      "current_focus": "No single project focus selected; focus remains optional and no project is promoted by default.",
+      "summary": "User confirms prescribed pill taken now; reports work shifts today, Monday Oct 26 and Tuesday Oct 27; corrects expected incoming amount to €70 (not €10). User plans to cycle in fog despite earlier reporting cannabis use and headache; travel outcome is not confirmed safe or completed. User reports concern that project progress has stalled over the past 2–3 weeks since starting work, specifically mentioning Freebie and Santa. No project priority is selected.",
+      "verified_outcomes": [
+        "Prescribed pill taken, per user report.",
+        "Three workdays reported: Oct 25–27.",
+        "Expected incoming amount corrected to €70.",
+        "Project momentum concern recorded without promoting a project or inventing a deadline."
+      ],
+      "limitations": [
+        "Exact shift hours and subsequent weekly schedule unknown.",
+        "Receipt/timing of €70 unverified.",
+        "Safe transport and return journey unconfirmed.",
+        "Specific project state/progress for Freebie and Santa not re-inspected in this review."
+      ],
+      "next_action": "Do not cycle while impaired or unfit; wait until fully sober and capable or use alternative transport. After the three-shift run, if the user chooses, select one existing project and one small verifiable next action instead of drawing random priorities. No project focus selected.",
+      "authority": [
+        "USER_REPORT_2026-10-25_MORNING_CORRECTION",
+        "GITHUB_DISCIPLINE_OS_READ_2026-10-25"
+      ]
     }
   ],
   "weekly_reviews": []
