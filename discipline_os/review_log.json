@@ -423,6 +423,29 @@
         "USER_EXPLICIT_FOCUS_OPTIONAL_CORRECTION_2026-10-19",
         "GITHUB_DISCIPLINE_OS_STATE_READ_AND_WRITE_2026-10-19"
       ]
+    },
+    {
+      "date": "2026-10-25",
+      "checkpoint": "MORNING_RIFTWAKE_AND_STATE_FRESHNESS_REVIEW",
+      "status": "MORNING_ORIENTATION_WRITTEN_PARTIAL",
+      "current_focus": "No single project focus selected; focus remains optional and no project is promoted by default.",
+      "summary": "Sunday morning Riftwake. User reports a disrupted night/early waking and intends to attend DREGENO work today after several consecutive workdays. Exact shift hours, departure and return transport are not confirmed. User reports headache and cannabis use; cycling plan is not recorded as safe or completed. No project focus or project priority is selected. The coming week's roster is unknown.",
+      "verified_outcomes": [
+        "User explicitly reports intention to attend work today.",
+        "Current project focus remains unselected; no new priority or project is activated.",
+        "Day-specific orientation was refreshed from the user's report without inventing shift details."
+      ],
+      "limitations": [
+        "Exact shift/roster and work outcome are unknown.",
+        "Safe transport and return journey are unconfirmed.",
+        "The rest-of-week schedule is not available.",
+        "Medication adherence was not confirmed in this brief."
+      ],
+      "next_action": "Pause before cycling while impaired or symptomatic; choose transport only when fit to travel safely. Confirm actual shift/transport outcomes only when user reports them. Keep project priorities unselected until the user identifies a meaningful priority.",
+      "authority": [
+        "USER_REPORT_2026-10-25_MORNING_RIFTWAKE",
+        "GITHUB_DISCIPLINE_OS_READ_2026-10-25"
+      ]
     }
   ],
   "weekly_reviews": []
