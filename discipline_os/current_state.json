@@ -73,7 +73,7 @@
   ],
   "blocked_items": [],
   "last_review": "2026-10-25",
-  "review_note": "2026-10-25 morning Riftwake. User reports a disrupted night/early waking and intends to attend DREGENO work today after several consecutive workdays. Exact roster, shift hours, departure and return transport are not confirmed. User reports headache and cannabis use this morning; cycling plan is not treated as a safe/confirmed transport outcome. No project focus is selected and no project priority is inferred. Weekly schedule beyond today's stated intention remains unknown. Financial amounts mentioned conversationally are not converted into a project or commitment. No medication adherence confirmation supplied in this brief; ask directly in conversation.",
+  "review_note": "2026-10-25 morning Riftwake, user correction. User confirms prescribed pill taken now; reports work shifts today, Monday Oct 26 and Tuesday Oct 27; expects €70 incoming (correcting prior mishearing of €10). User plans bicycle commute despite fog and earlier reported cannabis use/headache; do not record travel as safe or completed. User raises concern that project progress has stalled for 2–3 weeks since starting work, especially Freebie/PAE-adjacent work and Santa; no project focus selected and no project priority inferred. Do not introduce random priority selection as a substitute for choosing a meaningful focus. Week beyond these three shifts remains unknown.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
@@ -186,16 +186,16 @@
   },
   "daily_priorities_status": "ORIENTATION_UPDATED_NO_PROJECT_PRIORITY_SELECTED",
   "morning_orientation_2026_10_25": {
-    "status": "USER_REPORTED_PLAN_PARTIAL_ROSTER_AND_TRANSPORT_UNCONFIRMED",
-    "user_reported_plan": "User intends to attend work today after reporting three consecutive workdays; exact shift/roster not supplied. User says weather is poor and plans to allow extra pauses if needed.",
+    "status": "USER_CORRECTED_PARTIAL_SCHEDULE_AND_MEDICATION_CONFIRMED_TRANSPORT_RISK_UNRESOLVED",
+    "user_reported_plan": "User confirms prescribed pill taken. Reports shifts on Sunday Oct 25, Monday Oct 26 and Tuesday Oct 27. User plans breakfast and bicycle commute with extra clothing; weather described as foggy. User reports €70 incoming, correcting earlier amount.",
+    "project_discipline_signal": "User reports perceived project momentum decline over the past 2–3 weeks since starting work, with stalled progress on Freebie and Santa. This is a concern raised by the user, not a confirmed project priority change.",
     "unknowns": [
-      "Exact shift hours and roster",
-      "Whether and when the user departs for work",
+      "Exact shift hours",
       "Safe transport decision and return transport",
-      "Schedule for the rest of the week",
-      "Today's prescribed-medication adherence"
+      "Schedule after Tuesday Oct 27",
+      "Timing/receipt of €70 incoming"
     ],
-    "next_action": "Pause before cycling while impaired or symptomatic; choose transport only when fit to travel safely. Confirm actual shift/transport outcomes only when user reports them. No project priority selected.",
-    "authority": "USER_REPORT_2026-10-25_MORNING_RIFTWAKE"
+    "next_action": "Do not cycle while impaired or unfit; wait until fully sober and capable, or use alternative transport. For project discipline, do not draw random priorities: after the three-shift run, select one existing project and one small verifiable next action, if the user explicitly chooses to do so. No project focus selected.",
+    "authority": "USER_REPORT_2026-10-25_MORNING_CORRECTION"
   }
 }
