@@ -67,6 +67,17 @@
       "due": "2026-10-13",
       "authority": "USER_VISIT_REPORT_2026-10-14;GMAIL_SENT_VERIFIED_2026-10-14",
       "resolution_note": "Oct 12 plan to message Jana by Oct 13 was changed by user Oct 13 to a bounded real-device access test. Original due date preserved as history, not counted as a sent reply. Oct 13 evening: Laura's iPhone opening succeeded per user, but this does not confirm Jana contact or visit. Oct 14: user visited office but did not meet Jana; actual demo follow-up email sent to Jana Oct 14 as verified in Gmail. Original Oct 13 due date is retained. Sending the revised email does not prove a meeting occurred."
+    },
+    {
+      "id": "C-014",
+      "created": "2026-10-27",
+      "text": "On the Oct 28 day off, go shopping in Litvinov. Decision made the previous evening; don't undo it just because of morning reluctance.",
+      "status": "ACTIVE_PLANNED",
+      "project": "Bounded personal errand, not a new active project",
+      "next_action": "Set short essentials list, spending limit and transport plan; then go shopping. Reassess only for a real constraint.",
+      "due": "2026-10-28",
+      "authority": "USER_EXPLICIT_2026-10-27",
+      "resolution_note": "Purchase list and spending budget unspecified. Existing cash budget is not a requirement to spend."
     }
   ]
 }
