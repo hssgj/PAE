@@ -57,11 +57,11 @@
     },
     {
       "name": "AOK PLUS membership / employer insurance data",
-      "status": "MEMBERSHIP_CONFIRMED_S1_ISSUED_S072_SENT_VZP_REGISTRATION_PENDING",
-      "last_action": "AOK Oct 12 email confirms coverage proof S1 from Oct 5, digital S072 transmitted to VZP and insurance number issued; direct AOK-to-VZP email also located. User considers urgent AOK step resolved.",
-      "next_action": "S1 and S072 urgent milestone done. VZP registration/card, employer receipt, insurance number access and Oct 1 date correction remain unverified; no multi-step insurance project tonight.",
+      "status": "AOK_ACTIVE_VZP_S072_REGISTRATION_CONFIRMED_CZ_CARE_ENTITLEMENT_CONFIRMED",
+      "last_action": "VZP letter dated 2026-10-21, received by user 2026-10-27: Czech registration of German S072 DE from 2026-10-05 for an indefinite period. Separate VZP certificate dated 2026-10-21 certifies full-scope healthcare benefits in Czech Republic, valid 2026-10-05 through 2027-10-04. AOK PLUS remains competent German insurer. These records resolve previously unverified VZP registration and Czech entitlement; do not interpret certificate expiry as end of indefinite S072 registration.",
+      "next_action": "Use VZP confirmation as proof with Czech healthcare providers (incl. dentist) as needed. Physical card/access, employer receipt of required insurance data, and possible correction/backdating from 2026-10-05 to 2026-10-01 remain UNVERIFIED, not urgent without a concrete issue; do not create new insurance project.",
       "deadline": "2026-10-05",
-      "authority": "AOK_EMAIL_VERIFIED_2026-10-12;USER_DIRECTION_2026-10-13",
+      "authority": "VZP_SIGNED_DOCUMENTS_DATED_2026-10-21_USER_PROVIDED_IMAGES_2026-10-27;AOK_EMAIL_VERIFIED_2026-10-12",
       "follow_up_date": null
     }
   ],
