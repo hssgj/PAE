@@ -517,6 +517,28 @@
         "USER_REPORT_2026-10-27_EVENING",
         "GITHUB_DISCIPLINE_OS_READ_AND_WRITE_2026-10-27"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "checkpoint": "AOK_VZP_CROSS_BORDER_INSURANCE_DOCUMENTS_RECEIVED",
+      "status": "VZP_REGISTRATION_AND_CZ_CARE_ENTITLEMENT_CONFIRMED",
+      "current_focus": "NO_ACTIVE_FOCUS_SELECTED — bounded administrative update only; no priority override",
+      "summary": "User provided photographs of two VZP documents received by post. VZP confirms S072 DE registration with AOK PLUS as competent German insurer from 2026-10-05 indefinitely. Separate confirmation documents Czech healthcare entitlement in full scope from 2026-10-05 through 2027-10-04. User can present confirmation to Czech dentist/provider. Physical card status, employer confirmation and Oct 1 vs Oct 5 discrepancy remain unverified.",
+      "verified_outcomes": [
+        "S072 DE registration in VZP effective 2026-10-05 for indefinite period, per signed VZP notification dated 2026-10-21",
+        "Full scope of healthcare benefits in Czech Republic under cross-border insurance, per VZP certificate dated 2026-10-21, certificate valid 2026-10-05 to 2027-10-04"
+      ],
+      "limitations": [
+        "Certificate validity is not the same as duration of indefinite S072 registration",
+        "Physical insurance card status and German employer acknowledgement are unverified",
+        "Date difference between reported German start 2026-10-01 and VZP registration 2026-10-05 not resolved",
+        "Personal identifiers and residential address deliberately not stored in repository"
+      ],
+      "next_action": "Present certificate to provider when needed; optional dentist appointment request. Do not force additional insurance work without a real need.",
+      "authority": [
+        "USER_PROVIDED_VZP_DOCUMENT_IMAGES_2026-10-27",
+        "VZP_CERTIFICATE_AND_NOTICE_DATED_2026-10-21"
+      ]
     }
   ],
   "weekly_reviews": []
