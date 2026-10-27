@@ -40,10 +40,10 @@
       "text": "Complete AOK PLUS health-insurance enrollment and provide the new German employer with the required insurance confirmation/data for the 2026-10-05 start.",
       "status": "RENEGOTIATED",
       "project": "Income / job search",
-      "next_action": "No multi-step insurance work tonight. S1/S072 done; retain VZP/card, employer receipt and Oct 1 correction as open, user-directed follow-ups.",
+      "next_action": "VZP registration and Czech full-scope benefit eligibility confirmed by VZP documents dated Oct 21 received Oct 27; physical card, employer receipt and Oct 1 vs Oct 5 date discrepancy are still unverified. Address only when needed; no urgent multistep follow-up.",
       "due": "2026-10-05",
-      "authority": "AOK_EMAIL_VERIFIED_2026-10-12;USER_DIRECTION_2026-10-13",
-      "resolution_note": "Original target 2026-10-05 is preserved as the onboarding deadline, not silently moved. By 2026-10-09 the user had submitted E902, received confirmation it was acceptable, sent urgent AOK and doctor communications, and clarified the Czech address. The remaining German S072/S1 is externally pending; VZP said retroactive registration can be possible and promised a Monday 2026-10-12 callback. Oct 12 urgent proof milestone DONE: S1 issued, S072 transmission confirmed and insurance number issued. The remaining VZP registration, employer receipt and retrospective date correction are separate unverified follow-ups.",
+      "authority": "VZP_SIGNED_DOCUMENTS_2026-10-21_RECEIVED_2026-10-27;AOK_EMAIL_VERIFIED_2026-10-12",
+      "resolution_note": "Original target 2026-10-05 is preserved as the onboarding deadline, not silently moved. By 2026-10-09 the user had submitted E902, received confirmation it was acceptable, sent urgent AOK and doctor communications, and clarified the Czech address. The remaining German S072/S1 is externally pending; VZP said retroactive registration can be possible and promised a Monday 2026-10-12 callback. Oct 12 urgent proof milestone DONE: S1 issued, S072 transmission confirmed and insurance number issued. The remaining VZP registration, employer receipt and retrospective date correction are separate unverified follow-ups. Update 2026-10-27: VZP signed confirmation certifies S072 DE registration from 2026-10-05 for indefinite duration; separate entitlement certificate covers full-scope healthcare benefits in Czech Republic from 2026-10-05 to 2027-10-04. The VZP registration milestone is DONE, not merely pending. Original 2026-10-05 deadline and remaining employer/date/card unknowns preserved; commitment status stays RENEGOTIATED until its broader fulfillment is independently verified.",
       "follow_up_date": "2026-10-13"
     },
     {
