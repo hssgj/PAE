@@ -1,11 +1,11 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-10-25",
+  "updated": "2026-10-27",
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
-    "next_action": "Record completed Oct 25 DREGENO shift (09:00–18:00, reported); get home safely; follow user-reported Oct 26–27 work shifts without inventing hours. No project focus selected.",
+    "next_action": "Oct 27: workday ended; return home safely and rest. Oct 28 day off: Litvinov shopping decided, pending list/budget/transport check. Next reported workdays Oct 29-31; exact shifts unknown. No project focus selected.",
     "status": "NO_ACTIVE_FOCUS_SELECTED",
     "authority": "USER_EXPLICIT_ORIENTATION_2026-10-19"
   },
@@ -34,8 +34,8 @@
     {
       "name": "DREGENO Spielzeugschachtel application",
       "status": "EMPLOYED_ACTIVE_USER_RECORD_KEEPING",
-      "last_action": "Oct 25: user reports completed shift 09:00–18:00; discovered tips stored in packets under bar; amount and payroll hours excluding possible breaks unverified.",
-      "next_action": "Continue own shift records; Oct 26–27 work planned, actual hours and outcome not yet reported.",
+      "last_action": "Oct 27 workday reportedly completed near 17:56 local; exact paid hours unknown. Oct 28 reported off; Oct 29-31 scheduled per user.",
+      "next_action": "Record next reported shifts and hours without guessing; safe arrival home Oct 27 not yet confirmed.",
       "authority": "USER_REPORT_2026-10-13",
       "deadline": "2026-10-05"
     },
@@ -72,34 +72,34 @@
     "Sokol recipes/menu materials and Frostfire Chronicle (#55/#34) are preserved as professional/creative archive, removed from active work."
   ],
   "blocked_items": [],
-  "last_review": "2026-10-25",
-  "review_note": "2026-10-25 morning Riftwake, user correction. User confirms prescribed pill taken now; reports work shifts today, Monday Oct 26 and Tuesday Oct 27; expects €70 incoming (correcting prior mishearing of €10). User plans bicycle commute despite fog and earlier reported cannabis use/headache; do not record travel as safe or completed. User raises concern that project progress has stalled for 2–3 weeks since starting work, especially Freebie/PAE-adjacent work and Santa; no project focus selected and no project priority inferred. Do not introduce random priority selection as a substitute for choosing a meaningful focus. Week beyond these three shifts remains unknown. Evening user report Oct 25: DREGENO shift completed 09:00–18:00 (9h presence; unpaid breaks unconfirmed); reports zero extra pastries consumed; discovered that tips are stored in packets at bar (amount unverified); ChatGPT Plus payment succeeded. Reporting return trip from approximately halfway along Seiffen hill at ~18:07; arrival home NOT confirmed. Do not select project focus from this.",
+  "last_review": "2026-10-27",
+  "review_note": "Oct 27 user reports DREGENO workday completed around 17:56, exact paid hours unknown; on the way home by bicycle in poor visibility, arrival not yet confirmed. The day felt good despite a busy shift. Reports €80 cash plus €15 remaining (total €95) and Kč350 separately in Revolut, amounts user-reported and not bank-verified. Oct 28 off, Litvinov shopping deliberately decided in advance; next workdays Oct 29-31 per user. Workday focus ends tonight; no project focus selected.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
-    "date": "2026-10-18",
-    "status": "GOOD_NIGHT_BRIEF_60_FACTUAL_RECONCILIATION",
-    "work_done": "User reoriented practical schedule and corrected export status. ChatGPT export ZIP confirmed saved locally. User reports breakfast today; breakfast planned at DREGENO Monday Oct 19. Tuesday and Wednesday at home; Thursday and Friday work. Cash-to-digital route not addressed. No additional facts requested.",
+    "date": "2026-10-27",
+    "status": "FEIERABEND_USER_REPORTED",
+    "work_done": "DREGENO Oct 27 shift completed, approximately 17:56 ending, exact paid hours unverified.",
     "verified_outcomes": [
-      "User explicitly confirms ChatGPT export ZIP is saved locally; do not ask again.",
-      "User reports Tuesday Oct 20 and Wednesday Oct 21 at home; Thursday Oct 22 and Friday Oct 23 work.",
-      "User reports breakfast today and plans breakfast at DREGENO Monday Oct 19."
+      "User reports €95 combined cash balance, made up of €80 plus €15.",
+      "User reports Kč350 separately on Revolut.",
+      "Oct 28 is a day off with Litvinov shopping chosen in advance.",
+      "User reports working Oct 29-31."
     ],
     "limitations": [
-      "Exact shift hours and transport details not supplied.",
-      "Today's shift outcome was not explicitly confirmed.",
-      "Cash-to-digital payment route remains unaddressed, not resolved.",
-      "PAE / prototype_v0 remains last-confirmed PROVISIONAL focus; no new build authorized."
+      "Return home has not been confirmed.",
+      "Actual shift start and paid hours unknown.",
+      "Shopping list, transport and budget cap not yet set.",
+      "No project priority selected."
     ],
     "next_day_user_plan": [
-      "Follow the reported Monday DREGENO plan and practical travel.",
-      "Do not ask again about the saved ChatGPT export ZIP.",
-      "Do not infer shift completion or payment-route resolution.",
-      "Reorient daily priorities when practical; do not silently activate PAE work."
+      "Confirm essential shopping list, budget limit and travel route.",
+      "Travel to Litvinov for shopping unless a real obstacle arises.",
+      "Keep work project priorities unselected pending explicit user orientation."
     ],
     "authority": [
-      "USER_REPORT_2026-10-18_GOOD_NIGHT_BRIEF_60",
-      "GITHUB_DISCIPLINE_OS_STATE_READ_2026-10-18"
+      "USER_REPORT_2026-10-27",
+      "GITHUB_STATE_READ_2026-10-27"
     ]
   },
   "scope_reduction": {
@@ -173,7 +173,7 @@
     ],
     "notes": "For #49 only second-wave continuation retired; first-wave archive preserved. #55 keeps recipes and Frostfire Chronicle as archive. #35 preserved after self-correction. #39/#40 kept after self-correction. #28 assistant-history erasure not performed; only active-scope retirement. #22/#24 'finish tomorrow or drop' does not authorize a new overnight build, and tomorrow's clinic/export have priority. #42 not resolved explicitly enough to remove. #5 tutoring was not explicitly decided in this numbered reply; existing active status retained until selected or renegotiated."
   },
-  "daily_priorities_date": "2026-10-25",
+  "daily_priorities_date": "2026-10-27",
   "morning_orientation_2026_10_16": {
     "status": "PARTIAL_USER_REPORTED_PLAN_DAY_PRIORITIES_STALE",
     "user_reported_plan": "Preparing to leave for work; aiming to depart around 07:59. Plans to pass One1 Hora Svaté Kateřiny for tobacco/papers/cigarettes and possibly snacks. Thermal layer and leather gardening gloves packed; headphones not charged.",
@@ -184,7 +184,7 @@
     ],
     "authority": "USER_REPORT_2026-10-16"
   },
-  "daily_priorities_status": "ORIENTATION_UPDATED_NO_PROJECT_PRIORITY_SELECTED",
+  "daily_priorities_status": "FEIERABEND_CLOSED_NO_PROJECT_FOCUS",
   "morning_orientation_2026_10_25": {
     "status": "USER_CORRECTED_PARTIAL_SCHEDULE_AND_MEDICATION_CONFIRMED_TRANSPORT_RISK_UNRESOLVED",
     "user_reported_plan": "User confirms prescribed pill taken. Reports shifts on Sunday Oct 25, Monday Oct 26 and Tuesday Oct 27. User plans breakfast and bicycle commute with extra clothing; weather described as foggy. User reports €70 incoming, correcting earlier amount.",
@@ -217,5 +217,27 @@
     "next_known_work": "DREGENO planned Oct 26 and Oct 27; shift times not provided",
     "project_focus": "NONE_SELECTED",
     "authority": "USER_REPORT_2026-10-25_EVENING_DEBRIEF"
+  },
+  "next_day_plan_2026_10_28": {
+    "status": "DECIDED_PERSONAL_ERRAND",
+    "day_off": true,
+    "destination": "Litvinov",
+    "purpose": "Shopping",
+    "commitment": "Do not cancel merely because of morning reluctance; reconsider if genuine safety, health, transport or budget constraints occur.",
+    "shopping_list": "UNKNOWN",
+    "transport": "UNKNOWN",
+    "budget_limit": "UNKNOWN",
+    "authority": "USER_REPORT_2026-10-27"
+  },
+  "budget_snapshot_2026_10_27": {
+    "cash_eur": 95,
+    "cash_components_eur": [
+      80,
+      15
+    ],
+    "revolut_czk": 350,
+    "segregated": true,
+    "fx_conversion": "Not stored; rate changes",
+    "source": "USER_REPORTED_NOT_EXTERNAL_VERIFIED"
   }
 }
