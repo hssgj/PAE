@@ -4,6 +4,7 @@ import json
 import os
 from abc import ABC, abstractmethod
 from urllib import error, request
+from pathlib import Path
 
 
 def _coerce_text_content(content) -> str | None:
@@ -63,11 +64,15 @@ class OpenAICompatibleProvider(Provider):
         model: str,
         api_key: str = "",
         timeout: int = 120,
+        max_tokens: int | None = None,
+        disable_thinking: bool | None = None,
     ) -> None:
         self.url = url
         self.model = model
         self.api_key = api_key
         self.timeout = timeout
+        self.max_tokens = max_tokens
+        self.disable_thinking = disable_thinking
 
     def chat(self, messages: list[dict[str, str]]) -> str:
         payload_data = {
@@ -75,19 +80,22 @@ class OpenAICompatibleProvider(Provider):
             "messages": messages,
             "temperature": 0.7,
             "top_p": 0.8,
-            "max_tokens": int(os.getenv("PAE_MAX_TOKENS", "512")),
+            "max_tokens": self.max_tokens if self.max_tokens is not None else int(os.getenv("PAE_MAX_TOKENS", "512")),
         }
 
-        if os.getenv("PAE_DISABLE_THINKING", "").strip().lower() in {
-            "1", "true", "yes", "on"
-        }:
+        disable_thinking = self.disable_thinking
+        if disable_thinking is None:
+            disable_thinking = os.getenv("PAE_DISABLE_THINKING", "").strip().lower() in {
+                "1", "true", "yes", "on"
+            }
+        if disable_thinking:
             payload_data["chat_template_kwargs"] = {
                 "enable_thinking": False
             }
 
         payload = json.dumps(payload_data).encode("utf-8")
 
-        headers = {"Content-Type": "application/json"}
+        headers = {"Content-Type": "application/json", "User-Agent": "PAE/0.1"}
         if self.api_key:
             headers["Authorization"] = f"Bearer {self.api_key}"
 
@@ -140,7 +148,25 @@ class OpenAICompatibleProvider(Provider):
         return text.strip()
 
 
-def build_provider() -> Provider:
+def build_provider(*, profile_name: str | None = None, profiles_path: str | Path | None = None) -> Provider:
+    if profile_name is not None and not profile_name.strip():
+        from model_profiles import ProfileError
+        raise ProfileError("An explicitly selected profile cannot be empty")
+    selected = profile_name if profile_name is not None else os.getenv("PAE_PROFILE", "").strip()
+    if selected:
+        from model_profiles import get_profile
+        profile = get_profile(selected, profiles_path)
+        if profile.provider == "echo":
+            provider = EchoProvider()
+        else:
+            provider = OpenAICompatibleProvider(
+                url=profile.url, model=profile.resolve_model(), api_key=profile.resolve_key(),
+                max_tokens=profile.max_output_tokens, disable_thinking=profile.disable_thinking,
+            )
+        provider.profile_id = profile.profile_id
+        provider.context_tokens = profile.context_tokens
+        return provider
+
     provider_name = os.getenv("PAE_PROVIDER", "echo").strip().lower()
 
     if provider_name == "echo":

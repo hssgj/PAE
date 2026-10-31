@@ -63,6 +63,8 @@ class MobileRuntime:
     def runtime_info(self) -> dict[str, object]:
         return {
             "status": "ready",
+            "profile": getattr(self.provider, "profile_id", None),
+            "configured_model": getattr(self.provider, "model", None),
             "git_commit": GIT_COMMIT_AT_START,
             "branch": GIT_BRANCH_AT_START,
             "tracking_branch": GIT_TRACKING_AT_START,

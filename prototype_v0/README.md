@@ -12,7 +12,9 @@ The canonical source is hssgj/PAE main. CLI and the recovered mobile branch shar
 - Local mobile HTTP bridge and Android shell source.
 - Newer main exact-file routing and unrelated-DOS suppression retained.
 
-The root [start guide](../docs/START_HERE.md) and [launcher map](../docs/LAUNCHERS.md) define current entry points. Model rotation/fallback and the phone-local context guard are not implemented or recovered by this consolidation.
+The [assembly manual](../docs/LEGO_MANUAL.md) and [launcher map](../docs/LAUNCHERS.md) define current entry points. Startup model profiles are implemented; in-process rotation/fallback and the phone-local context guard remain unavailable.
+
+`python app.py --list-profiles` lists drawers without loading credentials. `python app.py --profile echo --session lego` starts the existing CLI with one selected profile. `python tools/verify_assembly.py` from repository root proves CLI/HTTP persistence in a disposable copy, using test backends only.
 
 ## Offline smoke
 

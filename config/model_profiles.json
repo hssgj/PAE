@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "echo": {
+      "provider": "echo",
+      "verification": "offline_test_backend"
+    },
+    "local-qwen": {
+      "provider": "openai-compatible",
+      "url": "http://127.0.0.1:8080/v1/chat/completions",
+      "model": "local",
+      "context_tokens": 2048,
+      "max_output_tokens": 512,
+      "disable_thinking": true,
+      "verification": "historical_phone_response_current_device_unverified"
+    },
+    "groq": {
+      "provider": "openai-compatible",
+      "url": "https://api.groq.com/openai/v1/chat/completions",
+      "model": "openai/gpt-oss-120b",
+      "context_tokens": 8192,
+      "max_output_tokens": 1024,
+      "disable_thinking": false,
+      "api_key_env": "PAE_GROQ_API_KEY",
+      "api_key_file": "~/.config/pae/groq.key",
+      "verification": "historical_api_response_current_access_unverified"
+    },
+    "gemini": {
+      "provider": "openai-compatible",
+      "url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+      "model_env": "PAE_GEMINI_MODEL",
+      "context_tokens": 8192,
+      "max_output_tokens": 1024,
+      "disable_thinking": false,
+      "api_key_env": "PAE_GEMINI_API_KEY",
+      "api_key_file": "~/.config/pae/gemini.key",
+      "verification": "prepared_verified_model_id_required"
+    }
+  }
+}

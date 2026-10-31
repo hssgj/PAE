@@ -1,5 +1,7 @@
 # PAE — přehled spouštění
 
+Nový přímý vstup: `python prototype_v0/app.py --profile echo --session lego`. Výpis: `python prototype_v0/app.py --list-profiles`. Katalog je v config/model_profiles.json; --profiles-file umožňuje vlastní důvěryhodný JSON. Mobilní runtime čte PAE_PROFILE. Bez výběru profilu zůstává dosavadní env konfigurace launcherů zachovaná.
+
 Spouštěj z kořene zachovaného checkoutu. Před aktualizací existujícího telefonu zachyť místní změny.
 
 | Launcher | Rozhraní | Backend | Výchozí session | Ověření |

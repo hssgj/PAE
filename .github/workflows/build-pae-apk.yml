@@ -6,6 +6,8 @@ on:
     paths:
       - 'pae-android/**'
       - 'prototype_v0/**'
+      - 'config/**'
+      - 'tools/**'
       - 'start-mobile.sh'
       - '.github/workflows/build-pae-apk.yml'
 
@@ -28,6 +30,7 @@ jobs:
       - run: python -m py_compile prototype_v0/mobile_server.py prototype_v0/gmail_source.py prototype_v0/github_source.py prototype_v0/agent_loop.py prototype_v0/runtime_tools.py prototype_v0/sessions.py
       - run: python -m pytest -q -p no:cacheprovider prototype_v0
       - run: python -m unittest discover -s tools -v
+      - run: python tools/verify_assembly.py --output assembly-proof.json
       - run: bash -n start-local.sh start-mobile.sh start-groq.sh start-gemini.sh
       - run: gradle --no-daemon :app:assembleDebug
         working-directory: pae-android
@@ -35,3 +38,7 @@ jobs:
         with:
           name: pae-mobile-debug
           path: pae-android/app/build/outputs/apk/debug/app-debug.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pae-assembly-proof
+          path: assembly-proof.json

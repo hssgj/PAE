@@ -1,0 +1,797 @@
+{
+  "schema": "pae-parts-audit-v1",
+  "base_commit": "dd3ea52336fae75346c492a9c08ca7af9f04beae",
+  "base_files_byte_verified": 116,
+  "scope": "Current repository files; prior external-source evidence linked through docs/consolidation/source-registry.json. Does not cover actual phone filesystem.",
+  "files": [
+    {
+      "path": ".github/workflows/build-pae-apk.yml",
+      "category": "verification_pipeline",
+      "bytes": 1498,
+      "sha256": "536f1df6cd66950ef60c42be7ef3cd8c66b0f31ace5985900d14425cffa69e9b"
+    },
+    {
+      "path": ".gitignore",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 288,
+      "sha256": "dd2567fbd53933898e8c6433c992f6ae733abe01562a0bea487f68a373c0eeb2"
+    },
+    {
+      "path": "CANON.md",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 2555,
+      "sha256": "f832f04542b5d155d68d05ddadffc26c237a805722e53d019f912971be060b62"
+    },
+    {
+      "path": "Day one/semantic-playground/README.md",
+      "category": "preserved_reference",
+      "bytes": 186,
+      "sha256": "a8cdea78e56df5220499dd9b0ff24b4d2b3a067ebc33fc647b736f367d0bd143"
+    },
+    {
+      "path": "MEMORY.md",
+      "category": "preserved_reference",
+      "bytes": 1957,
+      "sha256": "6579c9e8c37bee695c3c62bfae283d978fec864ce6750333d59338ef072f8b70"
+    },
+    {
+      "path": "MOBILE_SETUP.md",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 1248,
+      "sha256": "35f3d50946bcf806155c96b73116ad96fccece507cd760e0d705d4a0a5b43e7e"
+    },
+    {
+      "path": "PROMISE.md",
+      "category": "preserved_reference",
+      "bytes": 8821,
+      "sha256": "ac0846b8b0af5c36f0b9e50e5809af4257e76de22c2ac0c6adb8f30c3edc87fb"
+    },
+    {
+      "path": "README.md",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 1467,
+      "sha256": "9bbf73af656d1eb4e6dd78c6da0b4ffac48a91d13ff45c5c73f8056dfa14d34b"
+    },
+    {
+      "path": "SYNC.md",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 1435,
+      "sha256": "391ce0e321b34dc514f71bca20ee585190f119474213d72f15c6ef7bc4b34091"
+    },
+    {
+      "path": "VISION.md",
+      "category": "preserved_reference",
+      "bytes": 5231,
+      "sha256": "4e476fbe52121289e943148883b5443a652803b3b3a6278c8ed12291cbe88285"
+    },
+    {
+      "path": "architecture/v0.1/CLOSED.md",
+      "category": "preserved_reference",
+      "bytes": 7846,
+      "sha256": "1414a37223e5d8e85441f090433502952c83b75f6e135f46377d78b57ce1834c"
+    },
+    {
+      "path": "architecture/v0.1/OPEN.md",
+      "category": "preserved_reference",
+      "bytes": 3472,
+      "sha256": "eecf7b40dae9173f66f7b4d8f488e22c08c2c522446a9a70e8ebc320978e6956"
+    },
+    {
+      "path": "architecture/v0.1/WEEK_PLAN.md",
+      "category": "preserved_reference",
+      "bytes": 6502,
+      "sha256": "f54411d515af28e6143982c94f5aba0eb7f1af98fef40d4448d1a3bf48003a35"
+    },
+    {
+      "path": "architecture/v0.1/WORKING.md",
+      "category": "preserved_reference",
+      "bytes": 3900,
+      "sha256": "f9b2954bfd21b96dccd934601c58b0bc52cc1fde00e223fcd816018cb1923155"
+    },
+    {
+      "path": "archive/README.md",
+      "category": "preserved_archive",
+      "bytes": 750,
+      "sha256": "13166ab5449d32c5117ea5df8807dd547fd4c6e70fdf377748e6913fa928bfce"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/01_input/examples.md",
+      "category": "preserved_archive",
+      "bytes": 2215,
+      "sha256": "27c11d1362743a50a43eaabcf6555e210b85ba9968c69757fa72e2d7471dcd8f"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/01_semantic_units.py",
+      "category": "preserved_archive",
+      "bytes": 375,
+      "sha256": "47bcf8f28dc07c0578ee5f5a10372a58c7af2b1ec234a205b128f95303b52c3f"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/02_rule_parser.py",
+      "category": "preserved_archive",
+      "bytes": 532,
+      "sha256": "f9da88db02d6c698e4e4a7e4482a31f93e4c349c4586421689477497e807f620"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/02_tokenization/tokenizer.py",
+      "category": "preserved_archive",
+      "bytes": 708,
+      "sha256": "b71b37dfd561e088633c41dd837784aaa9f84e25fb6fae54040fc62b2b9e7dac"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/02_tokenization/vocabulary_lookup.py",
+      "category": "preserved_archive",
+      "bytes": 1781,
+      "sha256": "f95ba74e52adf69dc08b49e9315c0fa41e1dea596e43f441506780419f511457"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/03_fake_llm.py",
+      "category": "preserved_archive",
+      "bytes": 2600,
+      "sha256": "d21fc41e274e4e0a0be0dce5c4abb519df6cb828200863eb5a567d27b9b66344"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/README.md",
+      "category": "preserved_archive",
+      "bytes": 3147,
+      "sha256": "21c26aac5a2ff8b7c1a20ab004010c9edf229cf82f0fd87f8be222a28c70b909"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/Readme.md",
+      "category": "preserved_archive",
+      "bytes": 383,
+      "sha256": "57360af626989153212853d3171af4acddd676300e4da18414dacb72fdbce4a7"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/checkpoints.md",
+      "category": "preserved_archive",
+      "bytes": 2270,
+      "sha256": "014bd9f27d8ff449b2afb2e784c6ec7c7a6be08453cccaba629198f47b43951c"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/concepts.md",
+      "category": "preserved_archive",
+      "bytes": 1313,
+      "sha256": "d547608786526a370b8030477033dd11d3860c62d909e61d46f2211f0832a572"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/data/vocabulary/cz-mini.tsv",
+      "category": "preserved_archive",
+      "bytes": 1521,
+      "sha256": "9d46b50d66a66898d1e6bec647cdbbc28951995b96be6674529aa349372ef30d"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/roadmap.md",
+      "category": "preserved_archive",
+      "bytes": 1056,
+      "sha256": "1426e419b529d604899c6fdaeb299e93ca1f07fe391c0ee880847f614a6a7c4c"
+    },
+    {
+      "path": "archive/experiments/semantic-playground/semantic-playground.zip",
+      "category": "preserved_archive",
+      "bytes": 5080,
+      "sha256": "06ae7010a2d1dc99c4a62936c6cd6025160eaa3ad97c45b4711e1a08e70eb56a"
+    },
+    {
+      "path": "archive/experiments/semantic-task-tree/core/README.md",
+      "category": "preserved_archive",
+      "bytes": 1594,
+      "sha256": "b3d4346675547f1bf34cdfb3dd5b8db49a162ddc3134c7da9600d1dcaac92771"
+    },
+    {
+      "path": "archive/experiments/semantic-task-tree/core/__init__.py",
+      "category": "preserved_archive",
+      "bytes": 58,
+      "sha256": "e94e13230be9b7b45966f7103e3b9e5732d7234d9a9f7e5a642be8c288b51587"
+    },
+    {
+      "path": "archive/experiments/semantic-task-tree/core/semantic_task_tree.py",
+      "category": "preserved_archive",
+      "bytes": 7319,
+      "sha256": "c1be946703af61e9d035f2d2abae7d4180a3a23c0eff8cac342723abe97880f9"
+    },
+    {
+      "path": "archive/experiments/semantic-task-tree/core/tests/test_semantic_task_tree.py",
+      "category": "preserved_archive",
+      "bytes": 2626,
+      "sha256": "fd203c6a409f364189c5f184992c51a6af3fdca1969bd46a30032628cbe19257"
+    },
+    {
+      "path": "archive/freebie/handoff/pae-transfer-probe-20261031-f84d3c91.txt",
+      "category": "preserved_archive",
+      "bytes": 130,
+      "sha256": "4fd74fc8efd4e46f407318564e32493898183316c0352bc3f1bdb8d62ef80185"
+    },
+    {
+      "path": "archive/quarantine/freebie-delivery-kit-v1/README.md",
+      "category": "preserved_archive",
+      "bytes": 304,
+      "sha256": "47c0caee885e82518f487bc9654d30a2cae38b9f87a1221f3e15a2e380e8a3e6"
+    },
+    {
+      "path": "archive/quarantine/freebie-delivery-kit-v1/STATUS.json",
+      "category": "preserved_archive",
+      "bytes": 565,
+      "sha256": "e3e4a44b7f7f07761f6fdee0ae1223d02694b2bd68ece8b90bd7d3e9d148cdcc"
+    },
+    {
+      "path": "archive/quarantine/freebie-delivery-kit-v1/bytes/artifact_delivery_kit.zip.invalid",
+      "category": "preserved_archive",
+      "bytes": 3140,
+      "sha256": "59a288fb12629a55373f3b6f5a9f7f60fac2a51996f294c8ee748fdb79b9b3d6"
+    },
+    {
+      "path": "archive/quarantine/freebie-delivery-kit-v1/reported/README.md",
+      "category": "preserved_archive",
+      "bytes": 1296,
+      "sha256": "1e4f954829a55da96d09ea47a42260c264f3f0409d0bd622e837737387ab2dff"
+    },
+    {
+      "path": "archive/quarantine/freebie-delivery-kit-v1/reported/artifact_delivery_kit.manifest.json",
+      "category": "preserved_archive",
+      "bytes": 420,
+      "sha256": "f2de1cce9b99246a0844535b26f8cdfa80d6f6178f4d0708fb41e7f67cf64736"
+    },
+    {
+      "path": "archive/quarantine/freebie-delivery-kit-v1/reported/artifact_delivery_kit.sha256.txt",
+      "category": "preserved_archive",
+      "bytes": 92,
+      "sha256": "50366392d41ae2c90076f1a627899cbe829c9b800c1b3ae1d713d96ecbb6ea3f"
+    },
+    {
+      "path": "archive/quarantine/freebie-delivery-kit-v1/reported/verification_report.json",
+      "category": "preserved_archive",
+      "bytes": 427,
+      "sha256": "03f2595fd7e3f9f56d36ee7a267a6ef6cc1a46bc906885b2d5f641a13f7ce66b"
+    },
+    {
+      "path": "archive/status-notes/prototype-readme-before-consolidation.md",
+      "category": "preserved_archive",
+      "bytes": 4096,
+      "sha256": "6af007a4c4da941806e7aa388257d7e1bf2bd135582c696f1f4854eb65c3937e"
+    },
+    {
+      "path": "config/model_profiles.json",
+      "category": "startup_configuration",
+      "bytes": 1316,
+      "sha256": "ad0c6bc895770bc9e4f085ee2fcefb5d674984db5b14a46a798e95c4da84bc10"
+    },
+    {
+      "path": "discipline_os/BOOTSTRAP.md",
+      "category": "authoritative_work_state",
+      "bytes": 2580,
+      "sha256": "583d109828761d2bafbb0b0c13dfeff52df2ccb4fc0f5b461643259ceafd354c"
+    },
+    {
+      "path": "discipline_os/README.md",
+      "category": "authoritative_work_state",
+      "bytes": 2078,
+      "sha256": "5a4de72b9b4da764a5624c2bb268db8c7a087da413194c26074987cda1bf864b"
+    },
+    {
+      "path": "discipline_os/archive/2026-10-14-state-hygiene.json",
+      "category": "authoritative_work_state",
+      "bytes": 14131,
+      "sha256": "ec09425ee7ee35ae2bfe91b0f0285b899bc7aab6af59e6db34a55f92deb35b39"
+    },
+    {
+      "path": "discipline_os/archive/2026-10-19-commitment-C-015.json",
+      "category": "authoritative_work_state",
+      "bytes": 1106,
+      "sha256": "b446f0343e381ce2fa90d16e7cc7adf1cae4ce6b2f3457a52744e780d93c6520"
+    },
+    {
+      "path": "discipline_os/boot_protocol.md",
+      "category": "authoritative_work_state",
+      "bytes": 7104,
+      "sha256": "953de5cc10a1a39d180de9e79267131335d12940eb0baee54845f538de5120dd"
+    },
+    {
+      "path": "discipline_os/chronicle/2026-10-09-golden-page.md",
+      "category": "authoritative_work_state",
+      "bytes": 4007,
+      "sha256": "c50059d6d7b7abbdec08d1aa0342d01e6a862f56d8fbe517ddf5014b96478722"
+    },
+    {
+      "path": "discipline_os/commitments.json",
+      "category": "authoritative_work_state",
+      "bytes": 7076,
+      "sha256": "dd31d02716570c69842eb10b0d4879e251a6840d23a60d2e50ce6fb7cd3dc47a"
+    },
+    {
+      "path": "discipline_os/current_state.json",
+      "category": "authoritative_work_state",
+      "bytes": 17215,
+      "sha256": "52370e6d192bba9e9f7adce2f01c1c44958f77df5fbfc42ef2f01633026eeed5"
+    },
+    {
+      "path": "discipline_os/decision_engine.md",
+      "category": "authoritative_work_state",
+      "bytes": 3247,
+      "sha256": "cad8ad3e85643bb2964af11bb26321e859ce64b63c2f2608ae5f6d2a77d34dc4"
+    },
+    {
+      "path": "discipline_os/discipline_kernel.md",
+      "category": "authoritative_work_state",
+      "bytes": 7182,
+      "sha256": "f01046c54ddfadf23f24b57ba13bbd08c2f0d202cfc6f94b1499fc4e4abd2b0b"
+    },
+    {
+      "path": "discipline_os/enforcement_tone.md",
+      "category": "authoritative_work_state",
+      "bytes": 1003,
+      "sha256": "ed58c32e94fed5c1e1b99892a561e48fb31f8a6b343e1a9737c1b37b658d54fa"
+    },
+    {
+      "path": "discipline_os/intent_resolver.md",
+      "category": "authoritative_work_state",
+      "bytes": 6024,
+      "sha256": "9c1820bf97d82eb2bd4a879c37f509786168b594c912d97d4f2e7b55667c1946"
+    },
+    {
+      "path": "discipline_os/leisure_guard.md",
+      "category": "authoritative_work_state",
+      "bytes": 4598,
+      "sha256": "bb9ac8a03ac7d19555b293ea646ae8f10f1f13663922022e9a5e9c733c75c39a"
+    },
+    {
+      "path": "discipline_os/parking_lot.json",
+      "category": "authoritative_work_state",
+      "bytes": 604,
+      "sha256": "07229b6ef639098e300c5e9d2c7a5d77a5c0e245e55ff36fa3de2f0c42ed72c5"
+    },
+    {
+      "path": "discipline_os/pattern_log.json",
+      "category": "authoritative_work_state",
+      "bytes": 40,
+      "sha256": "69b6f5e84a218026b38a8aa3f986e8aa14fcd3aad1698e5bbe403bdc348bab86"
+    },
+    {
+      "path": "discipline_os/project_instructions.md",
+      "category": "authoritative_work_state",
+      "bytes": 2360,
+      "sha256": "34a42b06798ea175a420bfe463822068acb204f3efc587bbc9b931c17df9c804"
+    },
+    {
+      "path": "discipline_os/red_team_tests.md",
+      "category": "authoritative_work_state",
+      "bytes": 2482,
+      "sha256": "5c9d47169aeed39db55bcbad39ca2ae2f32a9a1e90463616dc6f52c78eece864"
+    },
+    {
+      "path": "discipline_os/review_log.json",
+      "category": "authoritative_work_state",
+      "bytes": 40104,
+      "sha256": "29cc4e2be0731df15eccbc70672b7de01b505b32c7b08b92a988337e7c7bc384"
+    },
+    {
+      "path": "docs/LAUNCHERS.md",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 2117,
+      "sha256": "770de531a527f84588613e85e0831a05c928f1a05512aa483a990d1ffac762c7"
+    },
+    {
+      "path": "docs/LEGO_MANUAL.md",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 4311,
+      "sha256": "e4761623aa09f157e71e632436e8096946965194bc6a3d01ca114786baa84c39"
+    },
+    {
+      "path": "docs/START_HERE.md",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 2834,
+      "sha256": "43fbdf7fe05335c15a4adcff826ed6eedf6a1c38e7fce992dd93c7d177171e1e"
+    },
+    {
+      "path": "docs/audit/2026-10-31-parts.md",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 4946,
+      "sha256": "f3d3fb30326bd56c14fd3454d8e551ccefe50c95c65e469f16a0fbbbd64daca1"
+    },
+    {
+      "path": "docs/audit/assembly-proof.json",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 3936,
+      "sha256": "b8604c273edb38738a8237a3a73227a59b3265ec1a9ce28956cc9f2fc168b6db"
+    },
+    {
+      "path": "docs/consolidation/2026-10-31.md",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 5335,
+      "sha256": "6b353df6ef820ad108fa6ed838a8dd2eb4b583962b77e29e8a898e579c30449f"
+    },
+    {
+      "path": "docs/consolidation/result.json",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 1214,
+      "sha256": "e57bd793852c276a2010660529382549f6d6abb173c3524cdcc380720b3e1601"
+    },
+    {
+      "path": "docs/consolidation/source-registry.json",
+      "category": "documentation_or_repository_metadata",
+      "bytes": 34357,
+      "sha256": "07c36fa779126291a03fbe8d87fb035586a5a87524b6aaffb1ff52013ca9db7e"
+    },
+    {
+      "path": "dtf_bootstrap/START_HERE_MAMA.md",
+      "category": "preserved_reference",
+      "bytes": 5711,
+      "sha256": "c33fcb9b521abd536e809e5bfcda99fbecdc551840ab0c92aff9f63506d41aee"
+    },
+    {
+      "path": "pae-android/app/build.gradle",
+      "category": "android_shell_build_verified_device_unverified",
+      "bytes": 256,
+      "sha256": "f9b15d8680c96697cfb80d8cd41ad80c4dcbc6d83d7660bf26d94fb97d4ead67"
+    },
+    {
+      "path": "pae-android/app/src/main/AndroidManifest.xml",
+      "category": "android_shell_build_verified_device_unverified",
+      "bytes": 841,
+      "sha256": "337487165516ac4760f23e4ff29e6f00e09ec380cd58c38aec4651259a6db58e"
+    },
+    {
+      "path": "pae-android/app/src/main/java/cz/pae/mobile/MainActivity.java",
+      "category": "android_shell_build_verified_device_unverified",
+      "bytes": 2953,
+      "sha256": "49020647e28d267bf209b1a0f8436f3ac1b56a736355a5b3e74783c25ff83cfb"
+    },
+    {
+      "path": "pae-android/app/src/main/res/values/styles.xml",
+      "category": "android_shell_build_verified_device_unverified",
+      "bytes": 448,
+      "sha256": "de6ea15bc63634789e8dc241a19c37970ef9e14b5e0a67ba5a300c3be81efe2b"
+    },
+    {
+      "path": "pae-android/build.gradle",
+      "category": "android_shell_build_verified_device_unverified",
+      "bytes": 73,
+      "sha256": "c3c0cf04da0fc239f391c774554d97d890018ab6e37e87cc62f6070d0c8c9909"
+    },
+    {
+      "path": "pae-android/settings.gradle",
+      "category": "android_shell_build_verified_device_unverified",
+      "bytes": 278,
+      "sha256": "1002fb1578c6c3b5271cd36678d43dae59163a7bc4abc86500e35a325db0017f"
+    },
+    {
+      "path": "prototype_v0/.gitignore",
+      "category": "runtime_source",
+      "bytes": 60,
+      "sha256": "154ec5ec87a5409f96bd05faf0726dbe22baa46c98e54584833108b8b7ceebc9"
+    },
+    {
+      "path": "prototype_v0/CLOUD_BRAINS_2026_10_15.md",
+      "category": "runtime_source",
+      "bytes": 3561,
+      "sha256": "aa6cb43c15daa3d9fbc3a9fb55d8ebdade18480439b3e31ebac3fb8a3e55b38e"
+    },
+    {
+      "path": "prototype_v0/GITHUB_MOBILE.md",
+      "category": "runtime_source",
+      "bytes": 855,
+      "sha256": "ff7a3832cef075042d62101d8d7e0350b72dae5202361e524b89060801f6fe02"
+    },
+    {
+      "path": "prototype_v0/GMAIL_MOBILE.md",
+      "category": "runtime_source",
+      "bytes": 1053,
+      "sha256": "751a0b82b59ce426aad99dfdcf3bc34c52716df8d72b5c4486d2052cb7dc31e8"
+    },
+    {
+      "path": "prototype_v0/PERFORMANCE_PLAN_V0_2.md",
+      "category": "runtime_source",
+      "bytes": 2957,
+      "sha256": "e8f88f5fb8728cd874b68e268c386c50fa1262ed54517f40aaec36dfb5055d84"
+    },
+    {
+      "path": "prototype_v0/README.md",
+      "category": "runtime_source",
+      "bytes": 2215,
+      "sha256": "a6526bc9d8f6a994d22d693e04ceec3a1c901d7d838d3bf4ae6e56efd771b2c3"
+    },
+    {
+      "path": "prototype_v0/SMOKE_WRITE_20261009.txt",
+      "category": "runtime_source",
+      "bytes": 81,
+      "sha256": "7243050da1cf7bdb8c7f9c6e5dbc7210da2ca7f3c3c7bf0a3bfc89f6306d7ffb"
+    },
+    {
+      "path": "prototype_v0/agent_loop.py",
+      "category": "runtime_source",
+      "bytes": 39515,
+      "sha256": "45256512083e71bc4aa2310c0b30986c64637abdb20cc571b955740c5966e612"
+    },
+    {
+      "path": "prototype_v0/app.py",
+      "category": "runtime_source",
+      "bytes": 11770,
+      "sha256": "30e4bc49f9c23a1ca0d4b79b8562edd846c5c63086725395b0b42564f35fc7bd"
+    },
+    {
+      "path": "prototype_v0/apply_mobile_routing_fix.py",
+      "category": "historical_optional_installer",
+      "bytes": 10290,
+      "sha256": "e46591fda8493460b561d1b7f95e454aade1828aaa47c1bec2a51bdf7b2500b9"
+    },
+    {
+      "path": "prototype_v0/busy_indicator.py",
+      "category": "runtime_source",
+      "bytes": 1781,
+      "sha256": "1475465413e59c15b591e8aadd6dfb18567cef7e999bda1df1d9b3b8f725a6bb"
+    },
+    {
+      "path": "prototype_v0/github_routing.py",
+      "category": "runtime_source",
+      "bytes": 2418,
+      "sha256": "bd822864443fa5e68547a01464c88f306b7f18a5532688b7c084af2fd76c5c95"
+    },
+    {
+      "path": "prototype_v0/github_source.py",
+      "category": "runtime_source",
+      "bytes": 13812,
+      "sha256": "593045cf67066abef690bbb2411eeaf550bc2c64c5031776085fa114ef037ef0"
+    },
+    {
+      "path": "prototype_v0/gmail_source.py",
+      "category": "runtime_source",
+      "bytes": 12730,
+      "sha256": "088c348e6c6cb5fd0018b24ca9c71518d50dcfdc182eb52838f2aa39891daf20"
+    },
+    {
+      "path": "prototype_v0/install_pae_input_perf.py",
+      "category": "historical_optional_installer",
+      "bytes": 2992,
+      "sha256": "d88d3a49f67aad2e33ab053d649da8311bc692d2b0e74fae87a42e5669db420c"
+    },
+    {
+      "path": "prototype_v0/install_pae_source_focus.py",
+      "category": "historical_optional_installer",
+      "bytes": 3048,
+      "sha256": "62d1b06ad98eb45b7dcca8819d8dd104b353b7596f7f575644b2b4c5f8299265"
+    },
+    {
+      "path": "prototype_v0/mobile_server.py",
+      "category": "runtime_source",
+      "bytes": 6554,
+      "sha256": "e0baf2784b5c733d11ebed533227be21b71a44400d6b36bf0c836a38c2d131df"
+    },
+    {
+      "path": "prototype_v0/mobile_web/index.html",
+      "category": "runtime_source",
+      "bytes": 3581,
+      "sha256": "2aefa419e61dfb8a32dc02d091d5e32529da1685a262bb9b46db9acf1ca8e688"
+    },
+    {
+      "path": "prototype_v0/model_profiles.py",
+      "category": "runtime_source",
+      "bytes": 6857,
+      "sha256": "ff5ad41707283c00ee343d7d77831ba401e95c44412d2e7300afeab6b5a33d3c"
+    },
+    {
+      "path": "prototype_v0/paste_input.py",
+      "category": "optional_helper_not_assumed_installed",
+      "bytes": 1149,
+      "sha256": "e8fd413847a59072b7b132425268fc2da90bac46f49bbf27b0e0cd57b614198f"
+    },
+    {
+      "path": "prototype_v0/perf_log.py",
+      "category": "optional_helper_not_assumed_installed",
+      "bytes": 2780,
+      "sha256": "949c79275864ec416f3b90570d584f71d4ba0285ca7603111fdda259f73dd00f"
+    },
+    {
+      "path": "prototype_v0/provider.py",
+      "category": "runtime_source",
+      "bytes": 6273,
+      "sha256": "c87b1acb56646b8fb3cc6c99e83255a53ed44626bd32332376751e81ac85a7b1"
+    },
+    {
+      "path": "prototype_v0/runtime_tools.py",
+      "category": "runtime_source",
+      "bytes": 11923,
+      "sha256": "33efc92a2aedaa8ed6e2a6da42923f352250e6a3b00372a958d62c705af6f5c6"
+    },
+    {
+      "path": "prototype_v0/sessions.py",
+      "category": "runtime_source",
+      "bytes": 4864,
+      "sha256": "ecd9651f584cde6fd9c4de0bbc5064ad4e4bedd1439ba1ff8565b47a2e44bfa1"
+    },
+    {
+      "path": "prototype_v0/source_focus.py",
+      "category": "optional_helper_not_assumed_installed",
+      "bytes": 2770,
+      "sha256": "cf217515467c86e081bbaf223876afb08faab0d1b0d05e81406ddea74677c8e9"
+    },
+    {
+      "path": "prototype_v0/state_extractor.py",
+      "category": "runtime_source",
+      "bytes": 4588,
+      "sha256": "87e08d94ce97d6f5a9ec2a2aa1b319d6bca2282246a051a059f4df09ef80312e"
+    },
+    {
+      "path": "prototype_v0/test_busy_indicator.py",
+      "category": "regression_test",
+      "bytes": 1461,
+      "sha256": "f718eb1cddee3c066038c5f2e8040441d7d39b020b343e9fca41ad945f08e6d5"
+    },
+    {
+      "path": "prototype_v0/test_consolidation.py",
+      "category": "regression_test",
+      "bytes": 1268,
+      "sha256": "6ec024bd756adf01d6e03b404deabe706dab46e5869a41e94d5b1d450a740098"
+    },
+    {
+      "path": "prototype_v0/test_github_mobile_tools.py",
+      "category": "regression_test",
+      "bytes": 5223,
+      "sha256": "81a0d729cef8efda1bdc2069dd8c8738442bd1357571e81d17b44493a2f11fd9"
+    },
+    {
+      "path": "prototype_v0/test_github_routing.py",
+      "category": "regression_test",
+      "bytes": 7536,
+      "sha256": "b16725f6414470c2e44644e3049b768b1d0eba75f4d9308979cf8aad41db197c"
+    },
+    {
+      "path": "prototype_v0/test_gmail_mobile_routing.py",
+      "category": "regression_test",
+      "bytes": 8171,
+      "sha256": "ffde2fc6dbb9440b939e241bd53b8aecc67b9f443d537f241c9bf7ddd3dea999"
+    },
+    {
+      "path": "prototype_v0/test_mobile_runtime_identity.py",
+      "category": "regression_test",
+      "bytes": 806,
+      "sha256": "778c95a0fd46a990f0a9fe6a4b6c40e840b6d9ea7cd8b15b363967c696fe7908"
+    },
+    {
+      "path": "prototype_v0/test_model_profiles.py",
+      "category": "regression_test",
+      "bytes": 6150,
+      "sha256": "39bb26fc03dd528af055d46502deb701b2bc3d21e7233c585280903e012ce01b"
+    },
+    {
+      "path": "prototype_v0/test_pae_input_perf.py",
+      "category": "regression_test",
+      "bytes": 1794,
+      "sha256": "c9e804f18260cb3b103a64379df219ed7018d1b841740d814001272d6d772186"
+    },
+    {
+      "path": "prototype_v0/test_source_focus.py",
+      "category": "regression_test",
+      "bytes": 1192,
+      "sha256": "1e3485a4c0ccd08d852e532bfb443a67f790907f0b93fdc9db50d2e58130a72f"
+    },
+    {
+      "path": "prototype_v0/test_state_extractor.py",
+      "category": "regression_test",
+      "bytes": 2545,
+      "sha256": "2d1523ff232e3072146198aa103f72d0e7e4259936662ddc3c20e83e938825bf"
+    },
+    {
+      "path": "prototype_v0/tool_core.py",
+      "category": "runtime_source",
+      "bytes": 4581,
+      "sha256": "59366dbe9b32bcadefe79815e2434801544572b1c2d733a525422f1195d0d253"
+    },
+    {
+      "path": "resources/models/qwen/README.md",
+      "category": "resource_inventory_not_binary_backup",
+      "bytes": 2548,
+      "sha256": "2a302331b6005f16e21e4ade9067b65fa13a110c6dc2e59870931d9dc671019e"
+    },
+    {
+      "path": "start-gemini.sh",
+      "category": "startup_configuration",
+      "bytes": 1079,
+      "sha256": "37d1446187b6a702317aaa6b8b4b20276e5266045ae8c2d348f00d2662ae0284"
+    },
+    {
+      "path": "start-groq-gpt-oss-20b.sh",
+      "category": "startup_configuration",
+      "bytes": 183,
+      "sha256": "1fe054b6e86eb2f6b6608b153b26c7d6b80b6af59aeb44488ad674ef415b6dfa"
+    },
+    {
+      "path": "start-groq-qwen38.sh",
+      "category": "startup_configuration",
+      "bytes": 176,
+      "sha256": "2dbf2091992da9121fc6cdce38824f9bda7e74a95c95cefd605e42c24df818c6"
+    },
+    {
+      "path": "start-groq.sh",
+      "category": "startup_configuration",
+      "bytes": 1049,
+      "sha256": "f31c32a42c5c61347bb76c4ef4cdb668eb411d90885c10323b6cdd668cfc09b2"
+    },
+    {
+      "path": "start-local.sh",
+      "category": "startup_configuration",
+      "bytes": 1795,
+      "sha256": "7d901db3b08aaa1c3fdcbedca42d6f7da533737a24a580a25707185ea450e7e9"
+    },
+    {
+      "path": "start-mobile.sh",
+      "category": "startup_configuration",
+      "bytes": 2857,
+      "sha256": "674af44855967ba88e12fb4a1f0973fc12860beb6926bd023ff3351d3a625c41"
+    },
+    {
+      "path": "story_archive/bleach/hidden/GAKURO_ORIGIN_BLUEPRINT.md",
+      "category": "preserved_reference",
+      "bytes": 9481,
+      "sha256": "698ff12e8da7946758f80c3bec189e11229882b380b95f93d52f71978e97c5e4"
+    },
+    {
+      "path": "tools/phone_inventory.py",
+      "category": "phone_snapshot_collector",
+      "bytes": 4895,
+      "sha256": "7428e52b86aaabbdcc4455f015e3df5365fb7ed933442562ee4234c899516957"
+    },
+    {
+      "path": "tools/test_phone_inventory.py",
+      "category": "regression_test",
+      "bytes": 1852,
+      "sha256": "e08fd3b53ea03649d8fb6367adef8b87d5aecac7d18ebd05d140b451812771e4"
+    },
+    {
+      "path": "tools/verify_assembly.py",
+      "category": "repeatable_assembly_acceptance",
+      "bytes": 8467,
+      "sha256": "581385eb84f724012043576552ac93ffa443346d91f40304dfe992840164582f"
+    }
+  ],
+  "local_import_graph": {
+    "agent_loop": [
+      "github_routing",
+      "github_source",
+      "tool_core"
+    ],
+    "app": [
+      "agent_loop",
+      "busy_indicator",
+      "model_profiles",
+      "provider",
+      "runtime_tools",
+      "sessions",
+      "state_extractor",
+      "tool_core"
+    ],
+    "busy_indicator": [],
+    "github_routing": [],
+    "github_source": [],
+    "gmail_source": [
+      "tool_core"
+    ],
+    "mobile_server": [
+      "agent_loop",
+      "app",
+      "github_source",
+      "gmail_source",
+      "provider",
+      "runtime_tools",
+      "sessions",
+      "tool_core"
+    ],
+    "model_profiles": [],
+    "paste_input": [],
+    "perf_log": [],
+    "provider": [
+      "model_profiles"
+    ],
+    "runtime_tools": [
+      "github_source",
+      "gmail_source",
+      "tool_core"
+    ],
+    "sessions": [],
+    "source_focus": [],
+    "state_extractor": [
+      "provider"
+    ],
+    "tool_core": []
+  },
+  "self_exclusion": "This generated parts.json omits its own bytes to avoid a circular checksum."
+}

@@ -7,6 +7,7 @@ from pathlib import Path
 from agent_loop import run_agent_turn
 from busy_indicator import BusyProvider
 from provider import build_provider
+from model_profiles import load_profiles
 from runtime_tools import build_tool_registry
 from sessions import SessionStore
 from state_extractor import extract_state
@@ -27,6 +28,9 @@ history. Never invent a missing fact when the persistent state says UNKNOWN.
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="PAE prototype_v0")
+    parser.add_argument("--profile", help="Select one model drawer at startup")
+    parser.add_argument("--profiles-file", type=Path, help="Use a trusted JSON model catalog")
+    parser.add_argument("--list-profiles", action="store_true", help="List model drawers without loading credentials or starting a session")
     parser.add_argument(
         "--session",
         default="default",
@@ -167,6 +171,10 @@ def print_help() -> None:
 
 def main() -> None:
     args = parse_args()
+    if args.list_profiles:
+        print(json.dumps([p.summary() for p in load_profiles(args.profiles_file).values()], ensure_ascii=False, indent=2))
+        return
+    selected_provider = build_provider(profile_name=args.profile, profiles_path=args.profiles_file)
     store = SessionStore()
     session = store.open_or_create(args.session, system_prompt=args.system)
     tool_registry = build_tool_registry()
@@ -175,7 +183,7 @@ def main() -> None:
     for path in args.load:
         load_file(store, session, path)
 
-    provider = BusyProvider(build_provider())
+    provider = BusyProvider(selected_provider)
 
     if args.analyze:
         try:

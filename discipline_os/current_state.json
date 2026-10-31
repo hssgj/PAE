@@ -290,5 +290,22 @@
     ],
     "standing_focus_changed": false,
     "active_project_count_changed": false
+  },
+  "bounded_pae_assembly_2026_10_31": {
+    "status": "STARTUP_DRAWERS_AND_SHARED_RUNTIME_ASSEMBLED_TEST_BACKENDS_ONLY",
+    "authority": "USER_EXPLICIT_2026-10-31_AUDIT_BUILD_LEGO_FROM_VERIFIED_PARTS",
+    "manual": "docs/LEGO_MANUAL.md",
+    "audit": "docs/audit/2026-10-31-parts.md",
+    "proof": "docs/audit/assembly-proof.json",
+    "scope": "Existing runtime, provider, session and CLI/mobile interfaces, with validated startup profiles and reproducible isolated acceptance checks.",
+    "next_technical_action": "Capture actual phone source, compare without overwriting local changes, then validate one real model.",
+    "not_claimed": [
+      "Live Qwen/Groq/Gemini response in this build",
+      "Actual phone deployment",
+      "In-process model rotation",
+      "Recovered phone context guard"
+    ],
+    "standing_focus_changed": false,
+    "active_project_count_changed": false
   }
 }
