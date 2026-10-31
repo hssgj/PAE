@@ -7,8 +7,8 @@
     {
       "path": ".github/workflows/build-pae-apk.yml",
       "category": "verification_pipeline",
-      "bytes": 1498,
-      "sha256": "536f1df6cd66950ef60c42be7ef3cd8c66b0f31ace5985900d14425cffa69e9b"
+      "bytes": 1540,
+      "sha256": "3df2f9df65e51df91fda00e622af796edbfe31c4c863a078645ca34ceaba489c"
     },
     {
       "path": ".gitignore",
@@ -367,8 +367,8 @@
     {
       "path": "docs/LAUNCHERS.md",
       "category": "documentation_or_repository_metadata",
-      "bytes": 2117,
-      "sha256": "770de531a527f84588613e85e0831a05c928f1a05512aa483a990d1ffac762c7"
+      "bytes": 2157,
+      "sha256": "710e75423c14eb7e236bf8638b45ba5b2a2aae11f82299265da951fa0ce514ec"
     },
     {
       "path": "docs/LEGO_MANUAL.md",
@@ -385,8 +385,8 @@
     {
       "path": "docs/audit/2026-10-31-parts.md",
       "category": "documentation_or_repository_metadata",
-      "bytes": 4946,
-      "sha256": "f3d3fb30326bd56c14fd3454d8e551ccefe50c95c65e469f16a0fbbbd64daca1"
+      "bytes": 4976,
+      "sha256": "2a58cd6066d65268689e65186305125eb382a0fb023d40887a6109ba27b5a971"
     },
     {
       "path": "docs/audit/assembly-proof.json",
@@ -685,8 +685,8 @@
     {
       "path": "start-gemini.sh",
       "category": "startup_configuration",
-      "bytes": 1079,
-      "sha256": "37d1446187b6a702317aaa6b8b4b20276e5266045ae8c2d348f00d2662ae0284"
+      "bytes": 1145,
+      "sha256": "67eb5bb2bc99724078d0ee8513c2139a9ee7574b11f350997de61cdc4c8e7826"
     },
     {
       "path": "start-groq-gpt-oss-20b.sh",
@@ -697,8 +697,8 @@
     {
       "path": "start-groq-qwen38.sh",
       "category": "startup_configuration",
-      "bytes": 176,
-      "sha256": "2dbf2091992da9121fc6cdce38824f9bda7e74a95c95cefd605e42c24df818c6"
+      "bytes": 266,
+      "sha256": "bfa6314126e086dabcc30ea79c968e76f1cf73a8ed22747225dc48120428f14c"
     },
     {
       "path": "start-groq.sh",

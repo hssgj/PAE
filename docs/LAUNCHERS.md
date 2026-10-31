@@ -10,8 +10,8 @@ Spouštěj z kořene zachovaného checkoutu. Před aktualizací existujícího t
 | start-mobile.sh | HTTP na 127.0.0.1:8765, Android obal | Místní llama-server | pae-mobile | Kód sjednocen; dnešní telefon netestován |
 | start-groq.sh | CLI | Groq | groq-first-test | Starší odpověď doložena |
 | start-groq-gpt-oss-20b.sh | CLI | Varianta Groq | groq-gpt-oss-20b | Připraven, živý test nepotvrzen |
-| start-groq-qwen38.sh | CLI | Varianta Groq | groq-qwen38 | Připraven, živý test nepotvrzen |
-| start-gemini.sh | CLI | Gemini kompatibilní endpoint | Podle skriptu | Připraven, živý test nepotvrzen |
+| start-groq-qwen38.sh | CLI | Historická varianta Groq | groq-qwen38 | Vyžaduje explicitní ověřené PAE_GROQ_MODEL |
+| start-gemini.sh | CLI | Gemini kompatibilní endpoint | Podle skriptu | Vyžaduje explicitní ověřené PAE_GEMINI_MODEL |
 
 Modelová ID ve skriptech jsou požadované konfigurace, nikoli dnešní důkaz dostupnosti. Přístup a limity poskytovatele ověř při použití.
 

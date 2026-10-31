@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 set -eu
+: "${PAE_GEMINI_MODEL:?Set PAE_GEMINI_MODEL to a verified available Gemini model ID}"
 PAE_ROOT="${PAE_ROOT:-$HOME/PAE}"
 KEY_FILE="$HOME/.config/pae/gemini.key"
 if [ ! -s "$KEY_FILE" ]; then
@@ -11,7 +12,7 @@ export PAE_API_KEY="$(tr -d '\r\n' < "$KEY_FILE")"
 if [ -z "$PAE_API_KEY" ]; then echo "Empty API key."; exit 1; fi
 export PAE_PROVIDER=openai-compatible
 export PAE_API_URL="https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
-export PAE_MODEL="${PAE_GEMINI_MODEL:-gemini-3.8-flash}"
+export PAE_MODEL="$PAE_GEMINI_MODEL"
 export PAE_DISABLE_THINKING=0
 export PAE_CTX_TOKENS=8192
 export PAE_CTX_MARGIN=384

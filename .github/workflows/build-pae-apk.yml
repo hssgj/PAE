@@ -8,7 +8,7 @@ on:
       - 'prototype_v0/**'
       - 'config/**'
       - 'tools/**'
-      - 'start-mobile.sh'
+      - 'start-*.sh'
       - '.github/workflows/build-pae-apk.yml'
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
       - run: python -m pytest -q -p no:cacheprovider prototype_v0
       - run: python -m unittest discover -s tools -v
       - run: python tools/verify_assembly.py --output assembly-proof.json
-      - run: bash -n start-local.sh start-mobile.sh start-groq.sh start-gemini.sh
+      - run: bash -n start-local.sh start-mobile.sh start-groq.sh start-groq-gpt-oss-20b.sh start-groq-qwen38.sh start-gemini.sh
       - run: gradle --no-daemon :app:assembleDebug
         working-directory: pae-android
       - uses: actions/upload-artifact@v4
