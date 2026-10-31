@@ -39,3 +39,7 @@ Do **not** merge or rename duplicate uploads until their original bytes can be c
 ## Continuity
 
 CANON ≠ IDEA. UNKNOWN ≠ INVENTED. This is a resource record, not an implementation of cognition or an executable model.
+
+## Consolidation check — 2026-10-31
+
+The named original config/tokenizer files were not located by current Library title searches or the declared Drive vault inspection. The vault contained a generic promotional transcript, not model files. No original-byte transfer or model backup is claimed. See docs/consolidation/2026-10-31.md for the source boundary.

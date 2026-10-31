@@ -1,0 +1,13 @@
+{
+  "status": "QUARANTINED_INVALID_ZIP",
+  "source_repository": "hssgj/freebie_playground-",
+  "source_commit": "75eb87f94caea6f6f8915f7c97ec9031440a9aad",
+  "source_path": "artifacts/artifact-delivery-kit/v1/artifact_delivery_kit.zip",
+  "observed_bytes": 3140,
+  "observed_sha256": "59a288fb12629a55373f3b6f5a9f7f60fac2a51996f294c8ee748fdb79b9b3d6",
+  "zipfile_is_zipfile": false,
+  "reported_bytes": 7396,
+  "reported_sha256": "63e0a8ec402a18cabe0368b7b16d68d2424d70172cd2c1d5dd030ab2026df601",
+  "reported_status_is_authoritative": false,
+  "executed": false
+}

@@ -34,6 +34,7 @@ class Session:
     sources: list[dict[str, Any]] = field(default_factory=list)
     messages: list[dict[str, str]] = field(default_factory=list)
     derived_state: dict[str, Any] = field(default_factory=dict)
+    pending_actions: dict[str, dict[str, Any]] = field(default_factory=dict)
 
 
 class SessionStore:

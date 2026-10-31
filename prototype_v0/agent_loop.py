@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from difflib import SequenceMatcher
 from typing import Any
 
+from github_source import parse_github_target
 from tool_core import ToolContext, ToolRegistry
 from github_routing import extract_github_read_scope
 
@@ -17,6 +18,7 @@ DISCIPLINE_PATH_RE = re.compile(
     r"(?<![A-Za-z0-9_.-])(discipline_os/[A-Za-z0-9_./-]+\.(?:json|md|txt))(?![A-Za-z0-9_.-])",
     re.IGNORECASE,
 )
+GITHUB_URL_RE = re.compile(r"https?://(?:www\.)?github\.com/[^\s)\]>]+", re.IGNORECASE)
 
 
 class AgentProtocolError(RuntimeError):
@@ -146,6 +148,22 @@ Rules:
   before answering.
 - After receiving a TOOL RESULT, use it to answer or request another tool.
 - Never invent a tool result.
+- Never say or imply that you checked, opened, refreshed, created, updated, sent,
+  or will now perform an external action unless the matching registered tool
+  executed successfully in this turn. Do not say "please wait" for work that the
+  runtime is not actively executing.
+- If no registered tool supports the requested external action, say clearly that
+  the capability is not connected.
+- gmail_create_draft creates a real Gmail draft but does not send it. Show its
+  exact preview and ask the user for explicit confirmation.
+- Never request gmail_send in the same user turn as gmail_create_draft. The runtime
+  permits gmail_send only for the pending draft after a separate, unambiguous user
+  confirmation message.
+- A GitHub repository-root URL is a repository, not a file. Use github_list or
+  github_search to discover paths; use github_read only with an exact text-file path.
+- github_prepare_write only prepares one text-file diff. Never request
+  github_apply_write in the same user turn. The runtime permits it only after a
+  separate, unambiguous user confirmation.
 """
 
 
@@ -215,6 +233,34 @@ def is_dos_dump(content: str) -> bool:
     )
 
 
+def _last_reported_message_id(messages: list[dict[str, str]]) -> str:
+    pattern = re.compile(r"Message ID:\s*([A-Za-z0-9_-]+)", re.IGNORECASE)
+    for message in reversed(messages):
+        if message.get("role") != "assistant":
+            continue
+        match = pattern.search(message.get("content", ""))
+        if match:
+            return match.group(1)
+    return ""
+
+
+def _github_query_from_request(user_text: str, repo: str) -> str:
+    without_url = GITHUB_URL_RE.sub(" ", user_text)
+    stop = {
+        "github", "repo", "repository", "read", "find", "search", "file", "folder",
+        "chapter", "story", "please", "this", "that", "from", "inside", "look",
+        "the", "a", "an",
+        "najdi", "hledej", "precti", "soubor", "slozku", "kapitolu", "pribeh",
+        "tohle", "tomto", "repu", "repozitari", "prosim",
+    }
+    repo_words = {part.casefold() for part in re.split(r"[/_.-]+", repo)}
+    words = [
+        word for word in re.findall(r"[A-Za-z0-9_.-]{3,}", _normalize_text(without_url))
+        if word not in stop and word not in repo_words
+    ]
+    return " ".join(words[:4])
+
+
 def required_tool_call(messages: list[dict[str, str]]) -> ToolCall | None:
     """Return a deterministic minimum tool call when source freshness is mandatory."""
     user_text = _last_user_text(messages)
@@ -233,6 +279,67 @@ def required_tool_call(messages: list[dict[str, str]]) -> ToolCall | None:
         )
 
     tokens = _tokens(user_text)
+
+    read_terms = {"read", "show", "precti", "zobraz", "obsah"}
+    reference_terms = {"that", "it", "email", "mail", "zpravu", "zprava", "ho", "ji"}
+    referenced_message_id = _last_reported_message_id(messages)
+    if (
+        referenced_message_id
+        and _approx_any(tokens, read_terms)
+        and _approx_any(tokens, reference_terms)
+    ):
+        return ToolCall(
+            name="gmail_read", arguments={"message_id": referenced_message_id, "thread_id": ""}
+        )
+
+    github_url = GITHUB_URL_RE.search(user_text)
+    if github_url:
+        try:
+            target = parse_github_target(github_url.group(0).rstrip(".,;"))
+        except ValueError:
+            target = None
+        if target is not None:
+            if target.kind == "file" and target.path:
+                return ToolCall(
+                    name="github_read",
+                    arguments={"repo": target.repo, "path": target.path, "ref": target.ref},
+                )
+            if target.kind == "directory":
+                return ToolCall(
+                    name="github_list",
+                    arguments={"repo": target.repo, "path": target.path, "ref": target.ref, "limit": 50},
+                )
+            query = _github_query_from_request(user_text, target.repo)
+            if query:
+                return ToolCall(
+                    name="github_search",
+                    arguments={"repo": target.repo, "query": query, "ref": target.ref, "limit": 10},
+                )
+            return ToolCall(
+                name="github_list",
+                arguments={"repo": target.repo, "path": "", "ref": target.ref, "limit": 50},
+            )
+
+    mail_terms = {
+        "email",
+        "e-mail",
+        "gmail",
+        "mail",
+        "posta",
+        "postu",
+        "posty",
+        "zprava",
+    }
+    latest_terms = {
+        "last",
+        "latest",
+        "newest",
+        "posledni",
+        "nejnovejsi",
+        "aktualni",
+    }
+    if _approx_any(tokens, mail_terms) and _approx_any(tokens, latest_terms):
+        return ToolCall(name="gmail_search", arguments={"query": "in:inbox", "limit": 1})
 
     freshness_terms = {
         "current",
@@ -369,12 +476,17 @@ def _append_tool_attempt(
     *,
     registry: ToolRegistry,
     context: ToolContext,
-) -> bool:
+) -> dict[str, Any] | None:
+    logged_arguments = dict(action.arguments)
+    for sensitive_body in ("body", "content"):
+        value = logged_arguments.get(sensitive_body)
+        if isinstance(value, str):
+            logged_arguments[sensitive_body] = f"<{len(value)} chars>"
     print(
         "[tool] "
         + action.name
         + " "
-        + json.dumps(action.arguments, ensure_ascii=False)
+        + json.dumps(logged_arguments, ensure_ascii=False)
     )
 
     working.append(
@@ -406,7 +518,7 @@ def _append_tool_attempt(
                 exc,
             )
         )
-        return False
+        return None
 
     working.append(
         _tool_result_message(
@@ -415,7 +527,231 @@ def _append_tool_attempt(
             result,
         )
     )
-    return True
+    return result
+
+
+def _format_required_result(action: ToolCall, result: dict[str, Any]) -> str | None:
+    if action.name == "gmail_send":
+        return (
+            "E-mail byl odeslán.\n"
+            f"Message ID: {result.get('message_id') or 'UNKNOWN'}\n"
+            f"Thread ID: {result.get('thread_id') or 'UNKNOWN'}"
+        )
+    if action.name == "gmail_read":
+        messages = result.get("messages")
+        if not isinstance(messages, list) or not messages:
+            return "Gmail zpráva neobsahuje žádný čitelný obsah."
+        rendered: list[str] = []
+        for item in messages:
+            if not isinstance(item, dict):
+                continue
+            rendered.append(
+                f"Od: {item.get('sender') or 'UNKNOWN'}\n"
+                f"Komu: {item.get('to') or 'UNKNOWN'}\n"
+                f"Předmět: {item.get('subject') or 'UNKNOWN'}\n"
+                f"Čas: {item.get('date_local') or item.get('date') or 'UNKNOWN'}\n"
+                f"Message ID: {item.get('message_id') or 'UNKNOWN'}\n\n"
+                f"{str(item.get('content') or '')[:8000]}"
+            )
+        return "\n\n---\n\n".join(rendered)
+    if action.name == "gmail_create_draft":
+        preview = result.get("preview")
+        if not isinstance(preview, dict):
+            return None
+        return (
+            "Draft byl vytvořen, ale nebyl odeslán.\n\n"
+            f"Komu: {preview.get('to') or 'UNKNOWN'}\n"
+            f"CC: {preview.get('cc') or '-'}\n"
+            f"Předmět: {preview.get('subject') or ''}\n\n"
+            f"{preview.get('body') or ''}\n\n"
+            f"Draft ID: {result.get('draft_id') or 'UNKNOWN'}\n"
+            "Pro odeslání napiš v nové zprávě přesně „Odešli to“ nebo „Send it“."
+        )
+    if action.name == "github_apply_write":
+        return (
+            "GitHub zápis byl proveden.\n"
+            f"Repo: {result.get('repo')}\n"
+            f"Cesta: {result.get('path')}\n"
+            f"Commit: {result.get('commit_sha') or 'UNKNOWN'}"
+        )
+    if action.name == "github_prepare_write":
+        return (
+            "GitHub změna je připravená, ale nebyla zapsána.\n\n"
+            f"Repo: {result.get('repo')}\n"
+            f"Větev: {result.get('branch')}\n"
+            f"Cesta: {result.get('path')}\n"
+            f"Operace: {result.get('operation')}\n\n"
+            f"{result.get('diff') or '(bez textové změny)'}\n\n"
+            "Pro provedení napiš v nové zprávě přesně „Proveď zápis“ nebo „Apply it“."
+        )
+    if action.name == "github_read":
+        return (
+            f"Repo: {result.get('repo')}\nCesta: {result.get('path')}\n"
+            f"Ref: {result.get('ref')}\nBlob SHA: {result.get('github_blob_sha')}\n\n"
+            f"{str(result.get('content') or '')[:12_000]}"
+        )
+    if action.name == "github_list":
+        items = result.get("items")
+        if not isinstance(items, list):
+            return None
+        lines = [
+            f"- {item.get('type')}: {item.get('path')}"
+            for item in items if isinstance(item, dict)
+        ]
+        return (
+            f"GitHub obsah {result.get('repo')}@{result.get('ref')}:{result.get('path') or '/'}\n"
+            + ("\n".join(lines) if lines else "(prázdné)")
+        )
+    if action.name == "github_search":
+        items = result.get("results")
+        if not isinstance(items, list):
+            return None
+        lines = []
+        for item in items:
+            if isinstance(item, dict):
+                suffix = f" — {item.get('snippet')}" if item.get("snippet") else ""
+                lines.append(f"- {item.get('path')}{suffix}")
+        return (
+            f"GitHub hledání v {result.get('repo')} pro „{result.get('query')}“:\n"
+            + ("\n".join(lines) if lines else "Nebyly nalezeny žádné výsledky.")
+        )
+    if action.name != "gmail_search" or action.arguments.get("limit") != 1:
+        if action.name != "gmail_search":
+            return None
+        messages = result.get("messages")
+        if not isinstance(messages, list):
+            return None
+        lines = []
+        for message in messages:
+            if isinstance(message, dict):
+                lines.append(
+                    f"- {message.get('date_local') or message.get('date')} | "
+                    f"{message.get('sender')} | {message.get('subject')} | "
+                    f"Message ID: {message.get('message_id')} | "
+                    f"Thread ID: {message.get('thread_id')}\n  {message.get('snippet') or ''}"
+                )
+        return "Výsledky živého Gmail hledání:\n" + ("\n".join(lines) if lines else "Žádné výsledky.")
+    messages = result.get("messages")
+    if not isinstance(messages, list) or not messages:
+        return "V Gmailu nebyla nalezena žádná odpovídající zpráva."
+    message = messages[0]
+    if not isinstance(message, dict):
+        return None
+    sender = message.get("sender_name") or message.get("sender") or "UNKNOWN"
+    sender_email = message.get("sender_email")
+    if sender_email and sender_email not in str(sender):
+        sender = f"{sender} <{sender_email}>"
+    return (
+        f"Předmět: {message.get('subject') or 'UNKNOWN'}\n"
+        f"Odesílatel: {sender}\n"
+        f"Čas: {message.get('date_local') or message.get('date') or 'UNKNOWN'}\n"
+        f"Message ID: {message.get('message_id') or 'UNKNOWN'}\n"
+        f"Thread ID: {message.get('thread_id') or 'UNKNOWN'}"
+    )
+
+
+def _explicit_send_confirmation(messages: list[dict[str, str]]) -> bool:
+    normalized = " ".join(_tokens(_last_user_text(messages)))
+    return normalized in {
+        "send",
+        "send it",
+        "send the draft",
+        "yes send it",
+        "confirm send",
+        "odesli",
+        "odesli to",
+        "odesli koncept",
+        "ano odesli to",
+        "potvrzuji odeslani",
+        "odeslat koncept",
+    }
+
+
+def _pending_send_call(
+    messages: list[dict[str, str]], context: ToolContext
+) -> ToolCall | None:
+    pending = context.session.pending_actions.get("gmail_send")
+    if not pending or not _explicit_send_confirmation(messages):
+        return None
+    draft_id = pending.get("draft_id")
+    if not isinstance(draft_id, str) or not draft_id:
+        return None
+    return ToolCall(name="gmail_send", arguments={"draft_id": draft_id})
+
+
+def _explicit_github_confirmation(messages: list[dict[str, str]]) -> bool:
+    normalized = " ".join(_tokens(_last_user_text(messages)))
+    return normalized in {
+        "apply it",
+        "apply the write",
+        "write it",
+        "confirm write",
+        "proved zapis",
+        "zapis to",
+        "ano proved zapis",
+        "potvrzuji zapis",
+    }
+
+
+def _pending_github_write_call(
+    messages: list[dict[str, str]], context: ToolContext
+) -> ToolCall | None:
+    pending = context.session.pending_actions.get("github_write")
+    if not pending or not _explicit_github_confirmation(messages):
+        return None
+    return ToolCall(name="github_apply_write", arguments={})
+
+
+def _is_deferred_promise(answer: str) -> bool:
+    normalized = _normalize_text(answer)
+    phrases = (
+        "please wait",
+        "wait a moment",
+        "i will check",
+        "i will read",
+        "i am checking",
+        "i am reading",
+        "chvili pockej",
+        "prosim pockej",
+        "zkontroluji",
+        "prectu to",
+        "prave ctu",
+    )
+    return any(phrase in normalized for phrase in phrases)
+
+
+def _unsupported_success_claim(answer: str, successful_tools: list[str]) -> bool:
+    normalized = _normalize_text(answer)
+    tool_set = set(successful_tools)
+    if any(phrase in normalized for phrase in ("email was sent", "e-mail byl odeslan", "mail byl odeslan")):
+        return "gmail_send" not in tool_set
+    if any(phrase in normalized for phrase in ("wrote to github", "updated github", "zapsal na github", "gitHub zapis".casefold())):
+        return "github_apply_write" not in tool_set
+    return False
+
+
+def _external_action_requested(messages: list[dict[str, str]]) -> bool:
+    tokens = _tokens(_last_user_text(messages))
+    domains = {
+        "gmail", "email", "mail", "calendar", "kalendar", "drive", "contacts",
+        "kontakty", "github", "browser", "web",
+    }
+    actions = {
+        "check", "read", "search", "send", "create", "open", "refresh", "update",
+        "delete", "zkontroluj", "precti", "najdi", "odesli", "vytvor", "otevri",
+        "obnov", "uprav", "smaz",
+    }
+    return _approx_any(tokens, domains) and _approx_any(tokens, actions)
+
+
+def _is_honest_limitation(answer: str) -> bool:
+    normalized = _normalize_text(answer)
+    phrases = (
+        "cannot", "can't", "do not have", "don't have", "not connected",
+        "unavailable", "failed", "error", "nemohu", "nemuzu", "nemam",
+        "neni pripojen", "selhalo", "chyba", "auth_required", "network_unavailable",
+    )
+    return any(phrase in normalized for phrase in phrases)
 
 
 def run_agent_turn(
@@ -483,9 +819,18 @@ def run_agent_turn(
         },
     )
 
-    required = None if explicit_scope is not None else required_tool_call(messages)
+    confirmation_call = None if explicit_scope is not None else (
+        _pending_send_call(messages, context)
+        or _pending_github_write_call(messages, context)
+    )
+    required = confirmation_call or (
+        None if explicit_scope is not None else required_tool_call(messages)
+    )
     forbid_optional_tools = required is None and user_forbids_tools(messages)
     tool_calls = 0
+    successful_tools: list[str] = []
+    last_tool_action: ToolCall | None = None
+    last_tool_result: dict[str, Any] | None = None
 
     # Small local models struggle to emit exact paths with spaces/quotes.
     # Execute at most three literal file reads from the user's request.
@@ -534,12 +879,35 @@ def run_agent_turn(
             + json.dumps(required.arguments, ensure_ascii=False)
         )
         tool_calls += 1
-        _append_tool_attempt(
+        if required.name in {"gmail_send", "github_apply_write"}:
+            pending_key = "gmail_send" if required.name == "gmail_send" else "github_write"
+            pending = context.session.pending_actions.get(pending_key)
+            if pending is not None:
+                pending["approved"] = True
+                context.store.save(context.session)
+        required_result = _append_tool_attempt(
             working,
             required,
             registry=registry,
             context=context,
         )
+        if required_result is not None:
+            successful_tools.append(required.name)
+            deterministic_answer = _format_required_result(required, required_result)
+            if deterministic_answer is not None:
+                return deterministic_answer
+        elif required.name == "gmail_send":
+            return (
+                "E-mail nebyl odeslán. Gmail odeslání selhalo; pending draft zůstává "
+                "uložený bez aktivního potvrzení, takže je možné chybu opravit a odeslání "
+                "znovu výslovně potvrdit."
+            )
+        elif required.name == "github_apply_write":
+            return (
+                "GitHub změna nebyla zapsána. Pending preview zůstává uložený bez "
+                "aktivního potvrzení; po opravě připojení nebo oprávnění je nutné zápis "
+                "znovu výslovně potvrdit."
+            )
 
     forbidden_attempts = 0
     scoped_reprompts = 0
@@ -571,6 +939,30 @@ def run_agent_turn(
                 return (
                     "Odpověď modelu byla zablokována: obsahovala nesouvisející "
                     "stav Discipline OS místo odpovědi na otázku."
+                )
+            if _is_deferred_promise(action.content):
+                if last_tool_action is not None and last_tool_result is not None:
+                    formatted = _format_required_result(last_tool_action, last_tool_result)
+                    if formatted is not None:
+                        return formatted
+                return (
+                    "Neběží žádná skrytá práce na pozadí. Externí akce musí v tomtéž "
+                    "tahu vrátit úspěšný TOOL RESULT; jinak ji nemohu označit za provedenou."
+                )
+            if _unsupported_success_claim(action.content, successful_tools):
+                return (
+                    "Externí změna nebyla potvrzena úspěšným runtime nástrojem, takže ji "
+                    "nemohu označit za provedenou."
+                )
+            if (
+                _external_action_requested(messages)
+                and not successful_tools
+                and not _is_honest_limitation(action.content)
+            ):
+                available = ", ".join(spec["name"] for spec in registry.specs())
+                return (
+                    "Nemám úspěšný výsledek externího nástroje, takže nemohu tvrdit, "
+                    "že jsem tuto akci provedl. Dostupné runtime nástroje: " + available
                 )
             return action.content
 
@@ -661,10 +1053,38 @@ def run_agent_turn(
                 f"tool call limit exceeded ({MAX_TOOL_CALLS})"
             )
 
+        if action.name == "gmail_send":
+            return (
+                "Draft nebyl odeslán. Nejdřív musí být vytvořen jako pending draft "
+                "v této session a uživatel musí v aktuální zprávě výslovně potvrdit "
+                "odeslání, například „Odešli to“ nebo „Send it“."
+            )
+        if action.name == "github_apply_write":
+            return (
+                "GitHub změna nebyla zapsána. Nejdřív musí existovat pending preview "
+                "v této session a uživatel musí v aktuální zprávě výslovně potvrdit "
+                "zápis, například „Proveď zápis“ nebo „Apply it“."
+            )
+
         tool_calls += 1
-        _append_tool_attempt(
+        tool_result = _append_tool_attempt(
             working,
             action,
             registry=registry,
             context=context,
         )
+        if tool_result is not None:
+            successful_tools.append(action.name)
+            last_tool_action = action
+            last_tool_result = tool_result
+            if action.name in {
+                "gmail_create_draft",
+                "gmail_send",
+                "gmail_read",
+                "github_read",
+                "github_prepare_write",
+                "github_apply_write",
+            }:
+                formatted = _format_required_result(action, tool_result)
+                if formatted is not None:
+                    return formatted

@@ -1,0 +1,20 @@
+# Device-owned state and credentials stay outside source control.
+models/
+pae_backups/
+exports/
+.config/
+.venv/
+.env
+*.env
+*.key
+*.log
+*.pid
+*.codehash
+*.bak*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+prototype_v0/data/
+pae-android/.gradle/
+pae-android/**/build/
+pae-android/local.properties

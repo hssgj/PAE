@@ -1,0 +1,1009 @@
+{
+  "schema": "pae-source-registry-v1",
+  "as_of": "2026-10-31",
+  "canonical_repository": "hssgj/PAE",
+  "canonical_branch": "main",
+  "coverage": "Accessible repository snapshots, project Library assets, existing Drive/Notion indexes. The actual Android filesystem and vanished Freebie workspace were not accessible.",
+  "snapshots": [
+    {
+      "id": "pae-main",
+      "repository": "hssgj/PAE",
+      "commit": "7e4eccdd1574e839290b3f9f60a3120560f83649",
+      "truncated": false,
+      "files": [
+        {
+          "path": "CANON.md",
+          "git_blob_sha": "cd83a5732132db09be254e2a0eb25739ee52120a",
+          "bytes": 2555
+        },
+        {
+          "path": "Day one/semantic-playground/01_input/examples.md",
+          "git_blob_sha": "ed4084d27696942c1c8c996fb02fa22610a735d3",
+          "bytes": 2215
+        },
+        {
+          "path": "Day one/semantic-playground/01_semantic_units.py",
+          "git_blob_sha": "5db67651855a5ec8e5a1a24bef3edc4866e8728e",
+          "bytes": 375
+        },
+        {
+          "path": "Day one/semantic-playground/02_rule_parser.py",
+          "git_blob_sha": "bc8a7fbf15e6df4257c06d95a3681425d5ea09b9",
+          "bytes": 532
+        },
+        {
+          "path": "Day one/semantic-playground/02_tokenization/tokenizer.py",
+          "git_blob_sha": "4496f2ea93c37946dff765e5b2bd51331e2a7d91",
+          "bytes": 708
+        },
+        {
+          "path": "Day one/semantic-playground/02_tokenization/vocabulary_lookup.py",
+          "git_blob_sha": "8e0a107bd0fc91a52a5601bf76f4a40bd535a7bc",
+          "bytes": 1781
+        },
+        {
+          "path": "Day one/semantic-playground/03_fake_llm.py",
+          "git_blob_sha": "7648aa751e3c5d73cd9aa7cf8be0e5aacfd76647",
+          "bytes": 2600
+        },
+        {
+          "path": "Day one/semantic-playground/README.md",
+          "git_blob_sha": "2e4a70817a615fb65803e7f6fc38258e2022e1e2",
+          "bytes": 3147
+        },
+        {
+          "path": "Day one/semantic-playground/Readme.md",
+          "git_blob_sha": "afe2a68f8c0f7bb76c40d2e40459829b0ad3c670",
+          "bytes": 383
+        },
+        {
+          "path": "Day one/semantic-playground/checkpoints.md",
+          "git_blob_sha": "09fdfc7dd03db7d709c04153368fb11bc8ecc40c",
+          "bytes": 2270
+        },
+        {
+          "path": "Day one/semantic-playground/concepts.md",
+          "git_blob_sha": "3dcec9d134044abacc7a8b62c6603f29d93e92f1",
+          "bytes": 1313
+        },
+        {
+          "path": "Day one/semantic-playground/data/vocabulary/cz-mini.tsv",
+          "git_blob_sha": "d9f3f852295cd77b5b2617f4f2c8ee817b829b05",
+          "bytes": 1521
+        },
+        {
+          "path": "Day one/semantic-playground/roadmap.md",
+          "git_blob_sha": "c8eff46e0c25c91adeb669533cd2f17fe2bf1aa2",
+          "bytes": 1056
+        },
+        {
+          "path": "Day one/semantic-playground/semantic-playground.zip",
+          "git_blob_sha": "d2d84dd8b7b05367319260f5f29fdbf99fcf9873",
+          "bytes": 5080
+        },
+        {
+          "path": "MEMORY.md",
+          "git_blob_sha": "e9a1c3d232a5cdd733546f7e958093407035adba",
+          "bytes": 1957
+        },
+        {
+          "path": "PROMISE.md",
+          "git_blob_sha": "5eaafc3075f1481e5ad249014c36283acadc9edd",
+          "bytes": 8821
+        },
+        {
+          "path": "README.md",
+          "git_blob_sha": "d13d848c1c8a074f0766e2c15657a7f8eabd8a3e",
+          "bytes": 381
+        },
+        {
+          "path": "SYNC.md",
+          "git_blob_sha": "ef48b13ef088da0555f914ac5390ecacafeef2c3",
+          "bytes": 1245
+        },
+        {
+          "path": "VISION.md",
+          "git_blob_sha": "88bda4144c557466c3e271cadd3288b066b928eb",
+          "bytes": 5231
+        },
+        {
+          "path": "architecture/v0.1/CLOSED.md",
+          "git_blob_sha": "b476030b1c1d34b671afdfc038eb2c7c957e280c",
+          "bytes": 7846
+        },
+        {
+          "path": "architecture/v0.1/OPEN.md",
+          "git_blob_sha": "ea4ae52ec3637030e34f2ccfbcfdf82eddd975a3",
+          "bytes": 3472
+        },
+        {
+          "path": "architecture/v0.1/WEEK_PLAN.md",
+          "git_blob_sha": "ce8cf60ff13eb866cfe08ab023faa1ed3e3a5fee",
+          "bytes": 6502
+        },
+        {
+          "path": "architecture/v0.1/WORKING.md",
+          "git_blob_sha": "0c436653f801b25cbddb683a5e8ada27146bcc05",
+          "bytes": 3900
+        },
+        {
+          "path": "discipline_os/BOOTSTRAP.md",
+          "git_blob_sha": "b841df7305d35f2b393436735cc0826dd03df1df",
+          "bytes": 2580
+        },
+        {
+          "path": "discipline_os/README.md",
+          "git_blob_sha": "f9be6e0e1abaf98abc8acfb4171b64d4bf917731",
+          "bytes": 2078
+        },
+        {
+          "path": "discipline_os/archive/2026-10-14-state-hygiene.json",
+          "git_blob_sha": "ed6db9be9f642350660c9f5e9b9e98629d345354",
+          "bytes": 14131
+        },
+        {
+          "path": "discipline_os/archive/2026-10-19-commitment-C-015.json",
+          "git_blob_sha": "c823e9755fc8e764bd6ebf54d8ee3641c5f8e339",
+          "bytes": 1106
+        },
+        {
+          "path": "discipline_os/boot_protocol.md",
+          "git_blob_sha": "49bc60090085eadab0058d01fa29a1b25bb56421",
+          "bytes": 7104
+        },
+        {
+          "path": "discipline_os/chronicle/2026-10-09-golden-page.md",
+          "git_blob_sha": "b81c12c977f55981d2f3757dceaeee7a4a4abc80",
+          "bytes": 4007
+        },
+        {
+          "path": "discipline_os/commitments.json",
+          "git_blob_sha": "d174db5b25ecf87f5ab01d269a02d1de7baad68d",
+          "bytes": 7076
+        },
+        {
+          "path": "discipline_os/current_state.json",
+          "git_blob_sha": "3f0fc24b4487f1b4ef4c15e921bbdfe0b597754c",
+          "bytes": 15379
+        },
+        {
+          "path": "discipline_os/decision_engine.md",
+          "git_blob_sha": "a7f9a493df15ebb59a50d9a2b6ac384f063c27be",
+          "bytes": 3247
+        },
+        {
+          "path": "discipline_os/discipline_kernel.md",
+          "git_blob_sha": "6f2119219231ce57c3ea658cd0524e88b4dca24f",
+          "bytes": 7182
+        },
+        {
+          "path": "discipline_os/enforcement_tone.md",
+          "git_blob_sha": "331905a4eba792ace3892686baf21149f097d274",
+          "bytes": 1003
+        },
+        {
+          "path": "discipline_os/intent_resolver.md",
+          "git_blob_sha": "699312a776046923092bc2eb5f8a7895648c492b",
+          "bytes": 6024
+        },
+        {
+          "path": "discipline_os/leisure_guard.md",
+          "git_blob_sha": "19c631f3a67bb58c63f87f81d776a995be3660ac",
+          "bytes": 4598
+        },
+        {
+          "path": "discipline_os/parking_lot.json",
+          "git_blob_sha": "4b6d0032a117f3d56e46a1aca0740ee8edf9c27e",
+          "bytes": 604
+        },
+        {
+          "path": "discipline_os/pattern_log.json",
+          "git_blob_sha": "99161459c9821f67139b9da538fbaefeca6e9f0c",
+          "bytes": 40
+        },
+        {
+          "path": "discipline_os/project_instructions.md",
+          "git_blob_sha": "a634168336ae2996fbc8622cf86da541b517832a",
+          "bytes": 2360
+        },
+        {
+          "path": "discipline_os/red_team_tests.md",
+          "git_blob_sha": "a5eeebaa1c39d2f4e4c7f23cf813c281603cb9d7",
+          "bytes": 2482
+        },
+        {
+          "path": "discipline_os/review_log.json",
+          "git_blob_sha": "7cffc901f0e60fc636e1d07adf6920d5dcbf0d68",
+          "bytes": 38794
+        },
+        {
+          "path": "dtf_bootstrap/START_HERE_MAMA.md",
+          "git_blob_sha": "84fb5be7806aaf7d73e5ebcc0f1e4d637013c14a",
+          "bytes": 5711
+        },
+        {
+          "path": "prototype_v0/.gitignore",
+          "git_blob_sha": "c49e9b176eab2155d78223aa5b4b735d149f9f53",
+          "bytes": 60
+        },
+        {
+          "path": "prototype_v0/CLOUD_BRAINS_2026_10_15.md",
+          "git_blob_sha": "580ece93453229525ee59632b3d0c0b6523f4347",
+          "bytes": 3561
+        },
+        {
+          "path": "prototype_v0/PERFORMANCE_PLAN_V0_2.md",
+          "git_blob_sha": "f68078ddfaa59f0685e8a38a758e80e4c9a51906",
+          "bytes": 2957
+        },
+        {
+          "path": "prototype_v0/README.md",
+          "git_blob_sha": "056a78dcfad052d0d194ea177335d2b7db764953",
+          "bytes": 4096
+        },
+        {
+          "path": "prototype_v0/SMOKE_WRITE_20261009.txt",
+          "git_blob_sha": "1a003ea2cac0eec4772f40f51800c7766daa4851",
+          "bytes": 81
+        },
+        {
+          "path": "prototype_v0/agent_loop.py",
+          "git_blob_sha": "88d19ad30d9383c0c0583bacbc7dec86bdf762a5",
+          "bytes": 21589
+        },
+        {
+          "path": "prototype_v0/app.py",
+          "git_blob_sha": "0ab60d2a9e8c742ed5c56c92d3d146ff12889a37",
+          "bytes": 11147
+        },
+        {
+          "path": "prototype_v0/apply_mobile_routing_fix.py",
+          "git_blob_sha": "70e029eedd95a2690bc5f9203708730a498cc66a",
+          "bytes": 10290
+        },
+        {
+          "path": "prototype_v0/busy_indicator.py",
+          "git_blob_sha": "6d633dd9569d8036d040858e87e5c550d305a22d",
+          "bytes": 1781
+        },
+        {
+          "path": "prototype_v0/github_routing.py",
+          "git_blob_sha": "4cc7967b213517d8e06f3024883ebebec5ac601f",
+          "bytes": 2418
+        },
+        {
+          "path": "prototype_v0/github_source.py",
+          "git_blob_sha": "a967c7ff656d96ab2899a0f778aaeae0638f32cc",
+          "bytes": 3259
+        },
+        {
+          "path": "prototype_v0/install_pae_input_perf.py",
+          "git_blob_sha": "82d0013d37c88eb8880e53c6bf981a660d2c304e",
+          "bytes": 2992
+        },
+        {
+          "path": "prototype_v0/install_pae_source_focus.py",
+          "git_blob_sha": "efaa1b53144262a476d7265ec2beaec787523304",
+          "bytes": 3048
+        },
+        {
+          "path": "prototype_v0/paste_input.py",
+          "git_blob_sha": "cf5ef0fc616f00f8280df2299e361d22385e3092",
+          "bytes": 1149
+        },
+        {
+          "path": "prototype_v0/perf_log.py",
+          "git_blob_sha": "64219bc5eab6bec6666cc42b0af9cd8df58f6efa",
+          "bytes": 2780
+        },
+        {
+          "path": "prototype_v0/provider.py",
+          "git_blob_sha": "6f38fd3f26f78f6ca7ad001549c8a52ae469724c",
+          "bytes": 4902
+        },
+        {
+          "path": "prototype_v0/runtime_tools.py",
+          "git_blob_sha": "214f2f94f03e861725f1d7704412fed6c46c58c4",
+          "bytes": 2337
+        },
+        {
+          "path": "prototype_v0/sessions.py",
+          "git_blob_sha": "1c9b1c59927180a247c41869a065e20a782e253d",
+          "bytes": 4787
+        },
+        {
+          "path": "prototype_v0/source_focus.py",
+          "git_blob_sha": "c68207eac654ca7cb49b589dbe15bd6de48e0753",
+          "bytes": 2770
+        },
+        {
+          "path": "prototype_v0/state_extractor.py",
+          "git_blob_sha": "5c14ad529619ed76c530b51a552054ff533c4579",
+          "bytes": 4588
+        },
+        {
+          "path": "prototype_v0/test_busy_indicator.py",
+          "git_blob_sha": "71972e2233ba46c11491f1972bed15a88bed0eb0",
+          "bytes": 1461
+        },
+        {
+          "path": "prototype_v0/test_github_routing.py",
+          "git_blob_sha": "c500af6eb0fe1b5ee9a7ed7b13349f383bee3ab0",
+          "bytes": 7536
+        },
+        {
+          "path": "prototype_v0/test_pae_input_perf.py",
+          "git_blob_sha": "c92dd3a3fc48963cd342c6f7275a9c1179933764",
+          "bytes": 1794
+        },
+        {
+          "path": "prototype_v0/test_source_focus.py",
+          "git_blob_sha": "200467d80786e4191d56251417d77ebe638eb87e",
+          "bytes": 1192
+        },
+        {
+          "path": "prototype_v0/test_state_extractor.py",
+          "git_blob_sha": "377be8d8868d63120540c13c7a946c6cd5ba4a96",
+          "bytes": 2545
+        },
+        {
+          "path": "prototype_v0/tool_core.py",
+          "git_blob_sha": "5d48578f3e2b8d912b0c6f085414cc99850a3de7",
+          "bytes": 4581
+        },
+        {
+          "path": "resources/models/qwen/README.md",
+          "git_blob_sha": "4806f5f67fb46775bb9b4a29053e7923f42d189e",
+          "bytes": 2188
+        },
+        {
+          "path": "start-gemini.sh",
+          "git_blob_sha": "b64c34ec54eb79d4ac38d9a540b8af51d2c89199",
+          "bytes": 1079
+        },
+        {
+          "path": "start-groq-gpt-oss-20b.sh",
+          "git_blob_sha": "e3849abe352839f9149ae2a76ab2a04f5f94eecb",
+          "bytes": 183
+        },
+        {
+          "path": "start-groq-qwen38.sh",
+          "git_blob_sha": "9e649a57639ad51bc48d166de30352ab58edc8e5",
+          "bytes": 176
+        },
+        {
+          "path": "start-groq.sh",
+          "git_blob_sha": "f5a577caa2120299ff88c09eaa988fe892aafd8d",
+          "bytes": 1049
+        },
+        {
+          "path": "start-local.sh",
+          "git_blob_sha": "986445561cd96b78c189c8739163a68f9b48ddb5",
+          "bytes": 1782
+        },
+        {
+          "path": "story_archive/bleach/hidden/GAKURO_ORIGIN_BLUEPRINT.md",
+          "git_blob_sha": "3b146ae81d3f0535af296e591f3c3d99c397d0b1",
+          "bytes": 9481
+        }
+      ]
+    },
+    {
+      "id": "pae-mobile",
+      "repository": "hssgj/PAE",
+      "commit": "7003d0b422d8c59b27f8861a89302f89f46896d1",
+      "truncated": false,
+      "files": [
+        {
+          "path": ".github/workflows/build-pae-apk.yml",
+          "git_blob_sha": "06d95b4786931cfff42123f65e4be63f09b2750c",
+          "bytes": 1161
+        },
+        {
+          "path": "CANON.md",
+          "git_blob_sha": "cd83a5732132db09be254e2a0eb25739ee52120a",
+          "bytes": 2555
+        },
+        {
+          "path": "Day one/semantic-playground/01_input/examples.md",
+          "git_blob_sha": "ed4084d27696942c1c8c996fb02fa22610a735d3",
+          "bytes": 2215
+        },
+        {
+          "path": "Day one/semantic-playground/01_semantic_units.py",
+          "git_blob_sha": "5db67651855a5ec8e5a1a24bef3edc4866e8728e",
+          "bytes": 375
+        },
+        {
+          "path": "Day one/semantic-playground/02_rule_parser.py",
+          "git_blob_sha": "bc8a7fbf15e6df4257c06d95a3681425d5ea09b9",
+          "bytes": 532
+        },
+        {
+          "path": "Day one/semantic-playground/02_tokenization/tokenizer.py",
+          "git_blob_sha": "4496f2ea93c37946dff765e5b2bd51331e2a7d91",
+          "bytes": 708
+        },
+        {
+          "path": "Day one/semantic-playground/02_tokenization/vocabulary_lookup.py",
+          "git_blob_sha": "8e0a107bd0fc91a52a5601bf76f4a40bd535a7bc",
+          "bytes": 1781
+        },
+        {
+          "path": "Day one/semantic-playground/03_fake_llm.py",
+          "git_blob_sha": "7648aa751e3c5d73cd9aa7cf8be0e5aacfd76647",
+          "bytes": 2600
+        },
+        {
+          "path": "Day one/semantic-playground/README.md",
+          "git_blob_sha": "2e4a70817a615fb65803e7f6fc38258e2022e1e2",
+          "bytes": 3147
+        },
+        {
+          "path": "Day one/semantic-playground/Readme.md",
+          "git_blob_sha": "afe2a68f8c0f7bb76c40d2e40459829b0ad3c670",
+          "bytes": 383
+        },
+        {
+          "path": "Day one/semantic-playground/checkpoints.md",
+          "git_blob_sha": "09fdfc7dd03db7d709c04153368fb11bc8ecc40c",
+          "bytes": 2270
+        },
+        {
+          "path": "Day one/semantic-playground/concepts.md",
+          "git_blob_sha": "3dcec9d134044abacc7a8b62c6603f29d93e92f1",
+          "bytes": 1313
+        },
+        {
+          "path": "Day one/semantic-playground/data/vocabulary/cz-mini.tsv",
+          "git_blob_sha": "d9f3f852295cd77b5b2617f4f2c8ee817b829b05",
+          "bytes": 1521
+        },
+        {
+          "path": "Day one/semantic-playground/roadmap.md",
+          "git_blob_sha": "c8eff46e0c25c91adeb669533cd2f17fe2bf1aa2",
+          "bytes": 1056
+        },
+        {
+          "path": "Day one/semantic-playground/semantic-playground.zip",
+          "git_blob_sha": "d2d84dd8b7b05367319260f5f29fdbf99fcf9873",
+          "bytes": 5080
+        },
+        {
+          "path": "MEMORY.md",
+          "git_blob_sha": "e9a1c3d232a5cdd733546f7e958093407035adba",
+          "bytes": 1957
+        },
+        {
+          "path": "MOBILE_SETUP.md",
+          "git_blob_sha": "8817ff2e75ba5a62cb9fb00b6a7c24bd43c4f411",
+          "bytes": 1204
+        },
+        {
+          "path": "PROMISE.md",
+          "git_blob_sha": "5eaafc3075f1481e5ad249014c36283acadc9edd",
+          "bytes": 8821
+        },
+        {
+          "path": "README.md",
+          "git_blob_sha": "d13d848c1c8a074f0766e2c15657a7f8eabd8a3e",
+          "bytes": 381
+        },
+        {
+          "path": "SYNC.md",
+          "git_blob_sha": "ef48b13ef088da0555f914ac5390ecacafeef2c3",
+          "bytes": 1245
+        },
+        {
+          "path": "VISION.md",
+          "git_blob_sha": "88bda4144c557466c3e271cadd3288b066b928eb",
+          "bytes": 5231
+        },
+        {
+          "path": "architecture/v0.1/CLOSED.md",
+          "git_blob_sha": "b476030b1c1d34b671afdfc038eb2c7c957e280c",
+          "bytes": 7846
+        },
+        {
+          "path": "architecture/v0.1/OPEN.md",
+          "git_blob_sha": "ea4ae52ec3637030e34f2ccfbcfdf82eddd975a3",
+          "bytes": 3472
+        },
+        {
+          "path": "architecture/v0.1/WEEK_PLAN.md",
+          "git_blob_sha": "ce8cf60ff13eb866cfe08ab023faa1ed3e3a5fee",
+          "bytes": 6502
+        },
+        {
+          "path": "architecture/v0.1/WORKING.md",
+          "git_blob_sha": "0c436653f801b25cbddb683a5e8ada27146bcc05",
+          "bytes": 3900
+        },
+        {
+          "path": "discipline_os/BOOTSTRAP.md",
+          "git_blob_sha": "b841df7305d35f2b393436735cc0826dd03df1df",
+          "bytes": 2580
+        },
+        {
+          "path": "discipline_os/README.md",
+          "git_blob_sha": "dcdd7ed7d8d209f38d5016732b7fc6f3f472f233",
+          "bytes": 1375
+        },
+        {
+          "path": "discipline_os/boot_protocol.md",
+          "git_blob_sha": "070184a45f03df8297f732aa1d454bb1d9555882",
+          "bytes": 3277
+        },
+        {
+          "path": "discipline_os/commitments.json",
+          "git_blob_sha": "c6ecece22adfbcf68cdf61e6dfced9daa54c4059",
+          "bytes": 5407
+        },
+        {
+          "path": "discipline_os/current_state.json",
+          "git_blob_sha": "0c2b4751c44d4c94a9fed80ec4fa357018c47a0f",
+          "bytes": 13715
+        },
+        {
+          "path": "discipline_os/decision_engine.md",
+          "git_blob_sha": "a7f9a493df15ebb59a50d9a2b6ac384f063c27be",
+          "bytes": 3247
+        },
+        {
+          "path": "discipline_os/discipline_kernel.md",
+          "git_blob_sha": "8e31ac7bfad0d43d32b29e347c0f2b9ffc1cdeb7",
+          "bytes": 5549
+        },
+        {
+          "path": "discipline_os/enforcement_tone.md",
+          "git_blob_sha": "331905a4eba792ace3892686baf21149f097d274",
+          "bytes": 1003
+        },
+        {
+          "path": "discipline_os/intent_resolver.md",
+          "git_blob_sha": "699312a776046923092bc2eb5f8a7895648c492b",
+          "bytes": 6024
+        },
+        {
+          "path": "discipline_os/leisure_guard.md",
+          "git_blob_sha": "19c631f3a67bb58c63f87f81d776a995be3660ac",
+          "bytes": 4598
+        },
+        {
+          "path": "discipline_os/parking_lot.json",
+          "git_blob_sha": "e9f183c222d3009fec121585eae07c0cc0999381",
+          "bytes": 2216
+        },
+        {
+          "path": "discipline_os/pattern_log.json",
+          "git_blob_sha": "99161459c9821f67139b9da538fbaefeca6e9f0c",
+          "bytes": 40
+        },
+        {
+          "path": "discipline_os/project_instructions.md",
+          "git_blob_sha": "8e381948085475c3f0895e8374bb75a91120474e",
+          "bytes": 1943
+        },
+        {
+          "path": "discipline_os/red_team_tests.md",
+          "git_blob_sha": "a5eeebaa1c39d2f4e4c7f23cf813c281603cb9d7",
+          "bytes": 2482
+        },
+        {
+          "path": "discipline_os/review_log.json",
+          "git_blob_sha": "ad61a267a26d27ff10e57f43310c0b9e93939698",
+          "bytes": 771
+        },
+        {
+          "path": "dtf_bootstrap/START_HERE_MAMA.md",
+          "git_blob_sha": "84fb5be7806aaf7d73e5ebcc0f1e4d637013c14a",
+          "bytes": 5711
+        },
+        {
+          "path": "pae-android/app/build.gradle",
+          "git_blob_sha": "5d313a75bdd7e183b2267148c8c1818e1ab98ada",
+          "bytes": 256
+        },
+        {
+          "path": "pae-android/app/src/main/AndroidManifest.xml",
+          "git_blob_sha": "34b407d15ab4bd4c38aea34003fa4db3c41b6a91",
+          "bytes": 841
+        },
+        {
+          "path": "pae-android/app/src/main/java/cz/pae/mobile/MainActivity.java",
+          "git_blob_sha": "0971a218d27b7be72bdb56bbc4458d2d4b0be789",
+          "bytes": 2953
+        },
+        {
+          "path": "pae-android/app/src/main/res/values/styles.xml",
+          "git_blob_sha": "dc406d287710d00eb11bb1c9ec9c09db970bd759",
+          "bytes": 448
+        },
+        {
+          "path": "pae-android/build.gradle",
+          "git_blob_sha": "5b7ccba7c566afb5057eaea1b10b99b083851fe4",
+          "bytes": 73
+        },
+        {
+          "path": "pae-android/settings.gradle",
+          "git_blob_sha": "49e04226813dad1a99ff2e7e78e05911b28591ee",
+          "bytes": 278
+        },
+        {
+          "path": "prototype_v0/.gitignore",
+          "git_blob_sha": "c49e9b176eab2155d78223aa5b4b735d149f9f53",
+          "bytes": 60
+        },
+        {
+          "path": "prototype_v0/GITHUB_MOBILE.md",
+          "git_blob_sha": "419d370c0701216611b80b97a0d0ab4f954247e7",
+          "bytes": 855
+        },
+        {
+          "path": "prototype_v0/GMAIL_MOBILE.md",
+          "git_blob_sha": "73e0c7163d8c3f3af7ca4b6bc3b18f2d4e161592",
+          "bytes": 1053
+        },
+        {
+          "path": "prototype_v0/README.md",
+          "git_blob_sha": "00df21a478ceedb01c4a29adf05cf3e655676ee8",
+          "bytes": 3613
+        },
+        {
+          "path": "prototype_v0/agent_loop.py",
+          "git_blob_sha": "b5dc7ae1a68fafb7f1a2d9960f154d5e19915450",
+          "bytes": 33426
+        },
+        {
+          "path": "prototype_v0/app.py",
+          "git_blob_sha": "2941526a3afa94ce8443d51e13fa484ef51a541a",
+          "bytes": 11093
+        },
+        {
+          "path": "prototype_v0/github_source.py",
+          "git_blob_sha": "5215fe3d4a32bed03f74e2b189d5fee8e3405ee5",
+          "bytes": 13812
+        },
+        {
+          "path": "prototype_v0/gmail_source.py",
+          "git_blob_sha": "a8840d9d5984354c7171a7aea94f89606c604663",
+          "bytes": 12730
+        },
+        {
+          "path": "prototype_v0/mobile_server.py",
+          "git_blob_sha": "8f570722b447da203154564dd9d39a7d91944535",
+          "bytes": 6416
+        },
+        {
+          "path": "prototype_v0/mobile_web/index.html",
+          "git_blob_sha": "86866cea46744089f89e8a3ed44ca25505ba4c9c",
+          "bytes": 3581
+        },
+        {
+          "path": "prototype_v0/provider.py",
+          "git_blob_sha": "6f38fd3f26f78f6ca7ad001549c8a52ae469724c",
+          "bytes": 4902
+        },
+        {
+          "path": "prototype_v0/runtime_tools.py",
+          "git_blob_sha": "029cd9007b95c16e422e0794a9dcfdbc76c24d6e",
+          "bytes": 11923
+        },
+        {
+          "path": "prototype_v0/sessions.py",
+          "git_blob_sha": "08367e888db974a395502242a0bfa57e422bd265",
+          "bytes": 4864
+        },
+        {
+          "path": "prototype_v0/state_extractor.py",
+          "git_blob_sha": "5c14ad529619ed76c530b51a552054ff533c4579",
+          "bytes": 4588
+        },
+        {
+          "path": "prototype_v0/test_github_mobile_tools.py",
+          "git_blob_sha": "be4d13999c4296b0fd1564957bd471ccc33ae39f",
+          "bytes": 5223
+        },
+        {
+          "path": "prototype_v0/test_gmail_mobile_routing.py",
+          "git_blob_sha": "a6d02e3fce49b9c8ec128840d771293ee8b6e887",
+          "bytes": 8171
+        },
+        {
+          "path": "prototype_v0/test_mobile_runtime_identity.py",
+          "git_blob_sha": "429da008e20f56a397d0fae9445d452b6dbb1e85",
+          "bytes": 806
+        },
+        {
+          "path": "prototype_v0/test_state_extractor.py",
+          "git_blob_sha": "377be8d8868d63120540c13c7a946c6cd5ba4a96",
+          "bytes": 2545
+        },
+        {
+          "path": "prototype_v0/tool_core.py",
+          "git_blob_sha": "5d48578f3e2b8d912b0c6f085414cc99850a3de7",
+          "bytes": 4581
+        },
+        {
+          "path": "resources/models/qwen/README.md",
+          "git_blob_sha": "4806f5f67fb46775bb9b4a29053e7923f42d189e",
+          "bytes": 2188
+        },
+        {
+          "path": "start-local.sh",
+          "git_blob_sha": "986445561cd96b78c189c8739163a68f9b48ddb5",
+          "bytes": 1782
+        },
+        {
+          "path": "start-mobile.sh",
+          "git_blob_sha": "16122adaaaa07405869d6c5dfc6c5acbdb9337d6",
+          "bytes": 2982
+        },
+        {
+          "path": "story_archive/bleach/hidden/GAKURO_ORIGIN_BLUEPRINT.md",
+          "git_blob_sha": "3b146ae81d3f0535af296e591f3c3d99c397d0b1",
+          "bytes": 9481
+        }
+      ]
+    },
+    {
+      "id": "semantic-experiment",
+      "repository": "hssgj/PAE",
+      "commit": "c5c2f4afa526db5699e043de8ad133ece703a584",
+      "truncated": false,
+      "files": [
+        {
+          "path": "CANON.md",
+          "git_blob_sha": "cd83a5732132db09be254e2a0eb25739ee52120a",
+          "bytes": 2555
+        },
+        {
+          "path": "Day one/semantic-playground/01_input/examples.md",
+          "git_blob_sha": "ed4084d27696942c1c8c996fb02fa22610a735d3",
+          "bytes": 2215
+        },
+        {
+          "path": "Day one/semantic-playground/01_semantic_units.py",
+          "git_blob_sha": "5db67651855a5ec8e5a1a24bef3edc4866e8728e",
+          "bytes": 375
+        },
+        {
+          "path": "Day one/semantic-playground/02_rule_parser.py",
+          "git_blob_sha": "bc8a7fbf15e6df4257c06d95a3681425d5ea09b9",
+          "bytes": 532
+        },
+        {
+          "path": "Day one/semantic-playground/02_tokenization/tokenizer.py",
+          "git_blob_sha": "4496f2ea93c37946dff765e5b2bd51331e2a7d91",
+          "bytes": 708
+        },
+        {
+          "path": "Day one/semantic-playground/02_tokenization/vocabulary_lookup.py",
+          "git_blob_sha": "8e0a107bd0fc91a52a5601bf76f4a40bd535a7bc",
+          "bytes": 1781
+        },
+        {
+          "path": "Day one/semantic-playground/03_fake_llm.py",
+          "git_blob_sha": "7648aa751e3c5d73cd9aa7cf8be0e5aacfd76647",
+          "bytes": 2600
+        },
+        {
+          "path": "Day one/semantic-playground/README.md",
+          "git_blob_sha": "c451c0ceff1bc5c89a1db0044501ba3165435722",
+          "bytes": 1542
+        },
+        {
+          "path": "Day one/semantic-playground/Readme.md",
+          "git_blob_sha": "a6740fdfc84e5b2a5d99e66a182072e88375861e",
+          "bytes": 1664
+        },
+        {
+          "path": "Day one/semantic-playground/checkpoints.md",
+          "git_blob_sha": "6eedaaf502dd8dd15da3493c0176cfcacd6d0959",
+          "bytes": 807
+        },
+        {
+          "path": "Day one/semantic-playground/concepts.md",
+          "git_blob_sha": "3dcec9d134044abacc7a8b62c6603f29d93e92f1",
+          "bytes": 1313
+        },
+        {
+          "path": "Day one/semantic-playground/data/vocabulary/cz-mini.tsv",
+          "git_blob_sha": "d9f3f852295cd77b5b2617f4f2c8ee817b829b05",
+          "bytes": 1521
+        },
+        {
+          "path": "Day one/semantic-playground/roadmap.md",
+          "git_blob_sha": "fd0795d28342057e66f3a1e7e5ff1db2750f5e32",
+          "bytes": 529
+        },
+        {
+          "path": "Day one/semantic-playground/semantic-playground.zip",
+          "git_blob_sha": "d2d84dd8b7b05367319260f5f29fdbf99fcf9873",
+          "bytes": 5080
+        },
+        {
+          "path": "MEMORY.md",
+          "git_blob_sha": "e9a1c3d232a5cdd733546f7e958093407035adba",
+          "bytes": 1957
+        },
+        {
+          "path": "PROMISE.md",
+          "git_blob_sha": "5eaafc3075f1481e5ad249014c36283acadc9edd",
+          "bytes": 8821
+        },
+        {
+          "path": "README.md",
+          "git_blob_sha": "d13d848c1c8a074f0766e2c15657a7f8eabd8a3e",
+          "bytes": 381
+        },
+        {
+          "path": "SYNC.md",
+          "git_blob_sha": "51d3eec5308d4006a21c22dff0dbdc30688d89ef",
+          "bytes": 1110
+        },
+        {
+          "path": "VISION.md",
+          "git_blob_sha": "88bda4144c557466c3e271cadd3288b066b928eb",
+          "bytes": 5231
+        },
+        {
+          "path": "architecture/v0.1/CLOSED.md",
+          "git_blob_sha": "b476030b1c1d34b671afdfc038eb2c7c957e280c",
+          "bytes": 7846
+        },
+        {
+          "path": "architecture/v0.1/OPEN.md",
+          "git_blob_sha": "ea4ae52ec3637030e34f2ccfbcfdf82eddd975a3",
+          "bytes": 3472
+        },
+        {
+          "path": "architecture/v0.1/WEEK_PLAN.md",
+          "git_blob_sha": "ce8cf60ff13eb866cfe08ab023faa1ed3e3a5fee",
+          "bytes": 6502
+        },
+        {
+          "path": "architecture/v0.1/WORKING.md",
+          "git_blob_sha": "0c436653f801b25cbddb683a5e8ada27146bcc05",
+          "bytes": 3900
+        },
+        {
+          "path": "core/README.md",
+          "git_blob_sha": "08d5c30ed360b15a33ad4f15d6f4d0223fb7f5a5",
+          "bytes": 1594
+        },
+        {
+          "path": "core/__init__.py",
+          "git_blob_sha": "2e4ce752a4761a09dce8e13d2fe51dd1bd0ce2ee",
+          "bytes": 58
+        },
+        {
+          "path": "core/semantic_task_tree.py",
+          "git_blob_sha": "b6b54a2f5a29b51b92bcfb88b69c4c7f2cc4e9a8",
+          "bytes": 7319
+        },
+        {
+          "path": "core/tests/test_semantic_task_tree.py",
+          "git_blob_sha": "bb41c662d5eda0ced526a61c04af63b55b12c975",
+          "bytes": 2626
+        },
+        {
+          "path": "resources/models/qwen/README.md",
+          "git_blob_sha": "4806f5f67fb46775bb9b4a29053e7923f42d189e",
+          "bytes": 2188
+        }
+      ]
+    },
+    {
+      "id": "freebie",
+      "repository": "hssgj/freebie_playground-",
+      "commit": "75eb87f94caea6f6f8915f7c97ec9031440a9aad",
+      "truncated": false,
+      "files": [
+        {
+          "path": "README.md",
+          "git_blob_sha": "a567c725480f5024f607f3af83f41d5e480ee15c",
+          "bytes": 21
+        },
+        {
+          "path": "artifacts/artifact-delivery-kit/v1/README.md",
+          "git_blob_sha": "f31268d66edc9a4e4fd8d0db0c0bfdeca072ca6d",
+          "bytes": 1296
+        },
+        {
+          "path": "artifacts/artifact-delivery-kit/v1/artifact_delivery_kit.manifest.json",
+          "git_blob_sha": "4299e4f02c9bc5de459b63e796f7ae86dbd32130",
+          "bytes": 420
+        },
+        {
+          "path": "artifacts/artifact-delivery-kit/v1/artifact_delivery_kit.sha256.txt",
+          "git_blob_sha": "842ba85f014e7b53564c729728136e23f6ed8a51",
+          "bytes": 92
+        },
+        {
+          "path": "artifacts/artifact-delivery-kit/v1/artifact_delivery_kit.zip",
+          "git_blob_sha": "a4c20edf0ab365ae4eb10872b19259cd624411a7",
+          "bytes": 3140
+        },
+        {
+          "path": "artifacts/artifact-delivery-kit/v1/verification_report.json",
+          "git_blob_sha": "9e48a5ac70d954b43b185ef8ed7ba7464a815948",
+          "bytes": 427
+        },
+        {
+          "path": "handoff/pae-transfer-probe-20261031-f84d3c91.txt",
+          "git_blob_sha": "3f3f9a00dec3950b9446c4d257fe3f9c8ec0f6df",
+          "bytes": 130
+        }
+      ]
+    }
+  ],
+  "private_sources": [
+    {
+      "kind": "library",
+      "name": "PAE_CODEX_HANDOFF_2026-10-07.zip",
+      "bytes": 2816958,
+      "sha256": "9ab220a05c0c29e2ad108ff261593347a0f1d5a307ac71bf15e0b44b4e41823f",
+      "zip_integrity": "PASS",
+      "handling": "Original preserved in private Library; source appendix and project history inspected; personal text/screenshots not republished."
+    },
+    {
+      "kind": "library",
+      "name": "MATTHAEL_CLOSEUP_AUDIT_2026-10-13.md",
+      "handling": "Read for PAE evidence only; broader personal audit not imported into public repository."
+    },
+    {
+      "kind": "github-private",
+      "repository": "hssgj/frostfire_concepts",
+      "commit": "c4b1173e45b7c5122d8836149f4f34628c5e8fcf",
+      "tree_entries": 462,
+      "handling": "Tree reviewed for PAE runtime/Freebie assets. Harvest and unrelated projects remain private in their own repository."
+    }
+  ],
+  "hubs": {
+    "drive": "https://docs.google.com/document/d/1PcCEvx7JYYEbA1vYhY-Y4YguNNImWK-kzXa2op0eVt8/edit",
+    "notion": "https://app.notion.com/p/3dfdc53ee2fd8199be67d35fc1c087c5",
+    "qwen_vault": "https://drive.google.com/drive/folders/1arobz3Pz9SQ8Oyp3mJYqUurrPaZpGWGi"
+  },
+  "dispositions": [
+    {
+      "source": "pae-mobile",
+      "action": "Integrate runtime and Android shell with main; retain newer main routing/DOS guards and authoritative state."
+    },
+    {
+      "source": "semantic-experiment",
+      "action": "Preserve core/ exactly under archive/experiments/semantic-task-tree/core/; do not connect it to runtime."
+    },
+    {
+      "source": "pae-main:Day one/semantic-playground",
+      "action": "Move exact lab files under archive/experiments/semantic-playground; old path is a navigation pointer."
+    },
+    {
+      "source": "freebie:artifacts/artifact-delivery-kit/v1",
+      "action": "Copy original bytes and claims under archive/quarantine; invalid ZIP gets .invalid suffix."
+    }
+  ],
+  "unavailable": [
+    {
+      "item": "Phone-local runtime and context_guard.py",
+      "status": "REPORTED_NOT_MATERIALIZED",
+      "next": "Run tools/phone_inventory.py on actual Android checkout and compare; do not pull/reset blindly."
+    },
+    {
+      "item": "Freebie model_turntable / buffy_gauntlet source",
+      "status": "NOT_FOUND_IN_CHECKED_SOURCES",
+      "next": "Do not claim recovered or rebuild during consolidation."
+    },
+    {
+      "item": "Original Qwen config/tokenizer files",
+      "status": "NOT_LOCATED_IN_CURRENT_LIBRARY_SEARCH_OR_DRIVE_VAULT",
+      "next": "Preserve intake inventory without claiming byte backup."
+    },
+    {
+      "item": "Phone sessions, weights, credentials and backups",
+      "status": "DEVICE_ONLY_UNVERIFIED",
+      "next": "Preserve on device; excluded from public source consolidation."
+    }
+  ]
+}
+

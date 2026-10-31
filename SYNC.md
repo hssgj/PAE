@@ -1,6 +1,6 @@
 # PAE Sync Map
 
-This file records the active project surfaces for PAE.
+This file records PAE project surfaces. Consolidated source: main; see docs/START_HERE.md and docs/consolidation/2026-10-31.md. Other hubs are navigation mirrors, not parallel code sources.
 
 ## Canonical source
 
@@ -21,7 +21,7 @@ This file records the active project surfaces for PAE.
 ## Runtime / state
 
 ### Supabase
-- PAE project: INACTIVE (live verified 2026-10-05)
+- PAE project: last recorded INACTIVE on 2026-10-05; not rechecked or reactivated by source consolidation
 - Project ref: ssoxrhdhesolrhxmnuah
 - Region: eu-central-1
 - Project URL: https://ssoxrhdhesolrhxmnuah.supabase.co

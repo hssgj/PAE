@@ -2,7 +2,7 @@
 
 set -u
 
-PAE_ROOT="$HOME/PAE"
+PAE_ROOT="${PAE_ROOT:-$HOME/PAE}"
 APP_DIR="$PAE_ROOT/prototype_v0"
 MODEL="$PAE_ROOT/models/Qwen3-1.7B-Q4_K_M.gguf"
 LOG="$PAE_ROOT/llama-server.log"

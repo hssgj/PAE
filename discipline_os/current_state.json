@@ -272,5 +272,23 @@
     "project_focus": "NONE_SELECTED",
     "next_action": "Oct 31: eat breakfast, check bicycle lights/brakes/chain and depart for DREGENO on familiar route; no route exploration today. Exact shift hours and return transport remain unknown. No project execution focus selected.",
     "authority": "USER_REPORT_2026-10-31_MORNING"
+  },
+  "bounded_pae_consolidation_2026_10_31": {
+    "status": "ACCESSIBLE_SOURCES_CONSOLIDATED_PHONE_SNAPSHOT_PENDING",
+    "authority": "USER_EXPLICIT_2026-10-31_CONSOLIDATE_EXISTING_PAE_SOURCES",
+    "scope": "Existing PAE source reconciliation, mobile/main integration, archive and index cleanup. No new provider rotation or standing priority override.",
+    "canonical_repository": "hssgj/PAE",
+    "canonical_branch": "main",
+    "evidence": "docs/consolidation/2026-10-31.md",
+    "next_technical_action": "Capture actual Android/Termux source using tools/phone_inventory.py, review output, then compare local changes without blind pull/reset.",
+    "not_verified": [
+      "Current phone files and context_guard.py",
+      "Live model/API operation",
+      "APK installation",
+      "Freebie export path",
+      "Model/session/credential backups"
+    ],
+    "standing_focus_changed": false,
+    "active_project_count_changed": false
   }
 }
