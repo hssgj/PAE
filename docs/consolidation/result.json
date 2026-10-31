@@ -1,0 +1,37 @@
+{
+  "code_commit": "e6c0a5c2a05f00a32e1f3e79f60f46fbe5516093",
+  "code_tree": "5ffa7b955a5c01cce9792155bc2d6d78a5655670",
+  "canonical_branch": "main",
+  "verified_files": 115,
+  "git_blob_mismatches": 0,
+  "validation": {
+    "local_existing_runtime_test_functions": 39,
+    "local_spinner_checks": 4,
+    "archive_unittests": 6,
+    "phone_collector_unittests": 1,
+    "python_compile": "PASS",
+    "launcher_syntax": "PASS",
+    "remote_pytest": "PASS",
+    "remote_android_debug_build": "PASS",
+    "remote_workflow_url": "https://github.com/hssgj/PAE/actions/runs/41192899356"
+  },
+  "external_cleanup": {
+    "drive_index": "UPDATED_AND_READ_BACK",
+    "notion_index": "UPDATED_NO_WARNINGS",
+    "freebie_index": "UPDATED",
+    "freebie_package_claim": "REPLACED_WITH_OBSERVED_INVALID_STATUS",
+    "misfiled_transcript": {
+      "renamed": "AI-app-build-promo-transcript_en.txt",
+      "moved": "From models/qwen to existing PAE resources folder",
+      "contents_preserved": true,
+      "sharing_unchanged": true
+    }
+  },
+  "pending": {
+    "actual_phone_snapshot": true,
+    "live_models": true,
+    "apk_install_on_device": true,
+    "turntable_implementation": true
+  },
+  "no_device_mutation": true
+}
