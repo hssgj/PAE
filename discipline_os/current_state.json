@@ -1,24 +1,24 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
-    "next_action": "Oct 31: eat breakfast, check bicycle lights/brakes/chain and depart for DREGENO on familiar route; no route exploration today. Exact shift hours and return transport remain unknown. No project execution focus selected.",
+    "next_action": "Nov 1: prepare for bicycle commute to DREGENO, with planned departure 08:00-08:05 and a petrol-station stop; shift begins 09:00 per user. Confirm bicycle readiness and safe transport before departure. Arrival, shift end and return transport are unverified. No project execution focus selected.",
     "status": "NO_ACTIVE_FOCUS_SELECTED",
     "authority": "USER_EXPLICIT_ORIENTATION_2026-10-19"
   },
   "daily_priorities": [
     {
-      "item": "Breakfast, bicycle safety check and familiar-route commute",
+      "item": "Prepare and travel safely to DREGENO; intended departure 08:00-08:05 with a petrol-station stop",
       "status": "PLANNED_USER_REPORTED",
-      "authority": "USER_REPORT_2026-10-31"
+      "authority": "USER_REPORT_2026-11-01"
     },
     {
-      "item": "DREGENO kitchen shift; no additional project work selected",
+      "item": "DREGENO kitchen shift from 09:00; end time unknown",
       "status": "PLANNED_USER_REPORTED",
-      "authority": "USER_REPORT_2026-10-31"
+      "authority": "USER_REPORT_2026-11-01"
     }
   ],
   "active_projects": [
@@ -46,7 +46,7 @@
       "name": "DREGENO Spielzeugschachtel application",
       "status": "EMPLOYED_ACTIVE_USER_RECORD_KEEPING",
       "last_action": "Oct 27 workday reportedly completed near 17:56 local; exact paid hours unknown. Oct 28 reported off; Oct 29-31 scheduled per user.",
-      "next_action": "Oct 31 work confirmed by user; bicycle commute planned. Exact hours, safe arrival and return transport unknown; user keeps shift record.",
+      "next_action": "Nov 1 shift starts 09:00 per user; planned bicycle departure 08:00-08:05 with a petrol-station stop. Arrival, shift end and return transport remain unverified; user keeps shift record.",
       "authority": "USER_REPORT_2026-10-13",
       "deadline": "2026-10-05"
     },
@@ -83,8 +83,8 @@
     "Sokol recipes/menu materials and Frostfire Chronicle (#55/#34) are preserved as professional/creative archive, removed from active work."
   ],
   "blocked_items": [],
-  "last_review": "2026-10-31",
-  "review_note": "Oct 31 morning Riftwake completed with remaining logistics unknown. User reports regular prescribed medication taken, coffee nearly finished, sweatshirt/T-shirt and double socks prepared, shower completed in preceding message. Breakfast is next, not completed. User confirms work today with expected heavy kitchen service and explicitly defers alternative-route exploration. Bicycle commute planned; functional lights/brakes/chain and return transport not verified. Weather is user-reported from app (overcast, feels like -3 C, low precipitation probability), not independently checked. No additional project work selected.",
+  "last_review": "2026-11-01",
+  "review_note": "Nov 1 morning Riftwake: user explicitly confirms regular prescribed pill taken, reports breakfast resolved with a muesli bar and coffee prepared but too hot, shift starts 09:00, time reported 07:43. Bicycle departure planned 08:00-08:05 with a petrol-station stop. Do not infer breakfast consumption, mechanical readiness, sobriety, departure or arrival. No new project focus selected. Coin Ark Redemption mentioned but explanation pending; no project, spending or priority change authorized or inferred. Bounded read-only inbox/Revolut check performed; no mail/account mutations.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
@@ -178,7 +178,7 @@
     ],
     "notes": "For #49 only second-wave continuation retired; first-wave archive preserved. #55 keeps recipes and Frostfire Chronicle as archive. #35 preserved after self-correction. #39/#40 kept after self-correction. #28 assistant-history erasure not performed; only active-scope retirement. #22/#24 'finish tomorrow or drop' does not authorize a new overnight build, and tomorrow's clinic/export have priority. #42 not resolved explicitly enough to remove. #5 tutoring was not explicitly decided in this numbered reply; existing active status retained until selected or renegotiated."
   },
-  "daily_priorities_date": "2026-10-31",
+  "daily_priorities_date": "2026-11-01",
   "morning_orientation_2026_10_16": {
     "status": "PARTIAL_USER_REPORTED_PLAN_DAY_PRIORITIES_STALE",
     "user_reported_plan": "Preparing to leave for work; aiming to depart around 07:59. Plans to pass One1 Hora Svaté Kateřiny for tobacco/papers/cigarettes and possibly snacks. Thermal layer and leather gardening gloves packed; headphones not charged.",
@@ -189,7 +189,7 @@
     ],
     "authority": "USER_REPORT_2026-10-16"
   },
-  "daily_priorities_status": "RIFTWAKE_REVIEWED_WORKDAY_PLAN_LOGISTICS_PARTIALLY_UNVERIFIED",
+  "daily_priorities_status": "RIFTWAKE_ORIENTATION_DONE_WITH_OPEN_TRANSPORT_LOGISTICS",
   "morning_orientation_2026_10_25": {
     "status": "USER_CORRECTED_PARTIAL_SCHEDULE_AND_MEDICATION_CONFIRMED_TRANSPORT_RISK_UNRESOLVED",
     "user_reported_plan": "User confirms prescribed pill taken. Reports shifts on Sunday Oct 25, Monday Oct 26 and Tuesday Oct 27. User plans breakfast and bicycle commute with extra clothing; weather described as foggy. User reports €70 incoming, correcting earlier amount.",
@@ -307,5 +307,33 @@
     ],
     "standing_focus_changed": false,
     "active_project_count_changed": false
+  },
+  "morning_orientation_2026_11_01": {
+    "status": "ORIENTATION_DONE_WITH_OPEN_TRANSPORT_LOGISTICS",
+    "medication_adherence": "TAKEN_USER_CONFIRMED",
+    "breakfast": "USER_REPORTS_BREAKFAST_RESOLVED_WITH_AVAILABLE_MUESLI_BAR; consumption not independently confirmed",
+    "coffee": "Prepared; reported too hot to drink at 07:43",
+    "work": {
+      "date": "2026-11-01",
+      "start": "09:00",
+      "end": "UNKNOWN"
+    },
+    "transport": {
+      "mode": "Bicycle planned",
+      "departure": "08:00-08:05 planned",
+      "stop": "Petrol station to buy cigarettes; user reports existing cigarettes left in colleague's car",
+      "arrival": "UNKNOWN",
+      "return": "UNKNOWN"
+    },
+    "safety": "User earlier mentioned intended cannabis use; advised not to cycle impaired. Actual consumption and bicycle mechanical readiness remain unconfirmed.",
+    "project_focus": "NONE_SELECTED",
+    "next_action": "Nov 1: prepare for bicycle commute to DREGENO, with planned departure 08:00-08:05 and a petrol-station stop; shift begins 09:00 per user. Confirm bicycle readiness and safe transport before departure. Arrival, shift end and return transport are unverified. No project execution focus selected.",
+    "unknowns": [
+      "Actual departure and arrival",
+      "Bicycle lights/brakes/chain readiness",
+      "Actual cannabis consumption and fitness to cycle",
+      "Shift end and return transport"
+    ],
+    "authority": "USER_REPORT_2026-11-01_AT_07:43_EUROPE_PRAGUE"
   }
 }
