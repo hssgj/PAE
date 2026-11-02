@@ -1,24 +1,24 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
-    "next_action": "Nov 1: prepare for bicycle commute to DREGENO, with planned departure 08:00-08:05 and a petrol-station stop; shift begins 09:00 per user. Confirm bicycle readiness and safe transport before departure. Arrival, shift end and return transport are unverified. No project execution focus selected.",
+    "next_action": "Nov 2: no project execution focus chosen. Morning priority is safe travel preparation for user's planned DREGENO workday: intended departure 07:20 (latest 07:30), bicycle proposed but user reports current impairment; DO NOT cycle while impaired. Arrange a safe ride/public transport or delay as appropriate. Shift start, arrival and actual transport are unverified.",
     "status": "NO_ACTIVE_FOCUS_SELECTED",
     "authority": "USER_EXPLICIT_ORIENTATION_2026-10-19"
   },
   "daily_priorities": [
     {
-      "item": "Prepare and travel safely to DREGENO; intended departure 08:00-08:05 with a petrol-station stop",
-      "status": "PLANNED_USER_REPORTED",
-      "authority": "USER_REPORT_2026-11-01"
+      "item": "Finish practical morning preparation (hygiene reported complete, coffee prepared; food and water intake not fully confirmed) and secure safe transport to DREGENO; do not cycle while impaired.",
+      "status": "IN_PROGRESS_USER_REPORTED_WITH_SAFETY_RISK",
+      "authority": "USER_REPORT_2026-11-02_MORNING"
     },
     {
-      "item": "DREGENO kitchen shift from 09:00; end time unknown",
-      "status": "PLANNED_USER_REPORTED",
-      "authority": "USER_REPORT_2026-11-01"
+      "item": "Attend planned DREGENO kitchen day when safely able; verify storage history and food safety of prepared raw/breaded cutlets before use.",
+      "status": "PLANNED_USER_REPORTED_SHIFT_TIME_UNVERIFIED",
+      "authority": "USER_REPORT_2026-11-02_MORNING"
     }
   ],
   "active_projects": [
@@ -45,9 +45,9 @@
     {
       "name": "DREGENO Spielzeugschachtel application",
       "status": "EMPLOYED_ACTIVE_USER_RECORD_KEEPING",
-      "last_action": "Oct 27 workday reportedly completed near 17:56 local; exact paid hours unknown. Oct 28 reported off; Oct 29-31 scheduled per user.",
-      "next_action": "Nov 1 shift starts 09:00 per user; planned bicycle departure 08:00-08:05 with a petrol-station stop. Arrival, shift end and return transport remain unverified; user keeps shift record.",
-      "authority": "USER_REPORT_2026-10-13",
+      "last_action": "Nov 1 kitchen food prep described by user on Nov 2; exact paid hours/finish unknown. Nov 2 upcoming kitchen duties user-reported.",
+      "next_action": "Nov 2: prepare safe commute (no cycling while impaired; alternate route needed), then kitchen shift if scheduled. Verify prepared raw and breaded cutlet storage/time/temperature with responsible staff; do not serve questionable food. Shift times unverified.",
+      "authority": "USER_REPORT_2026-11-02_MORNING",
       "deadline": "2026-10-05"
     },
     {
@@ -83,8 +83,8 @@
     "Sokol recipes/menu materials and Frostfire Chronicle (#55/#34) are preserved as professional/creative archive, removed from active work."
   ],
   "blocked_items": [],
-  "last_review": "2026-11-01",
-  "review_note": "Nov 1 morning Riftwake: user explicitly confirms regular prescribed pill taken, reports breakfast resolved with a muesli bar and coffee prepared but too hot, shift starts 09:00, time reported 07:43. Bicycle departure planned 08:00-08:05 with a petrol-station stop. Do not infer breakfast consumption, mechanical readiness, sobriety, departure or arrival. No new project focus selected. Coin Ark Redemption mentioned but explanation pending; no project, spending or priority change authorized or inferred. Bounded read-only inbox/Revolut check performed; no mail/account mutations.",
+  "last_review": "2026-11-02",
+  "review_note": "Nov 2 morning Riftwake: user reports prescribed tablet taken and shower/washing conquered; coffee available, ham opened for breakfast, ingestion of breakfast/water not confirmed. User proposes cycling at 07:20-07:30 but also reports current impairment; cycling is unsafe until fit, alternative transport unresolved. Morning camera/leisure loop interrupted for routine. User expects DREGENO kitchen shift, exact time unconfirmed, and describes meat prepared approximately three days earlier; food safety must be verified, not assumed. Read-only Gmail review of Nov 1-2: Epic/LEGO account linking confirmed; OpenAI Chat/Work update informative; no urgent work/finance deadlines in matching messages; no mail mutations. Current project focus remains NONE_SELECTED; no new project. Prior dated Nov 1 travel plan preserved historically, not carried forward.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
@@ -178,7 +178,7 @@
     ],
     "notes": "For #49 only second-wave continuation retired; first-wave archive preserved. #55 keeps recipes and Frostfire Chronicle as archive. #35 preserved after self-correction. #39/#40 kept after self-correction. #28 assistant-history erasure not performed; only active-scope retirement. #22/#24 'finish tomorrow or drop' does not authorize a new overnight build, and tomorrow's clinic/export have priority. #42 not resolved explicitly enough to remove. #5 tutoring was not explicitly decided in this numbered reply; existing active status retained until selected or renegotiated."
   },
-  "daily_priorities_date": "2026-11-01",
+  "daily_priorities_date": "2026-11-02",
   "morning_orientation_2026_10_16": {
     "status": "PARTIAL_USER_REPORTED_PLAN_DAY_PRIORITIES_STALE",
     "user_reported_plan": "Preparing to leave for work; aiming to depart around 07:59. Plans to pass One1 Hora Svaté Kateřiny for tobacco/papers/cigarettes and possibly snacks. Thermal layer and leather gardening gloves packed; headphones not charged.",
@@ -189,7 +189,7 @@
     ],
     "authority": "USER_REPORT_2026-10-16"
   },
-  "daily_priorities_status": "RIFTWAKE_ORIENTATION_DONE_WITH_OPEN_TRANSPORT_LOGISTICS",
+  "daily_priorities_status": "ORIENTATION_DONE_SAFETY_TRANSPORT_UNRESOLVED",
   "morning_orientation_2026_10_25": {
     "status": "USER_CORRECTED_PARTIAL_SCHEDULE_AND_MEDICATION_CONFIRMED_TRANSPORT_RISK_UNRESOLVED",
     "user_reported_plan": "User confirms prescribed pill taken. Reports shifts on Sunday Oct 25, Monday Oct 26 and Tuesday Oct 27. User plans breakfast and bicycle commute with extra clothing; weather described as foggy. User reports €70 incoming, correcting earlier amount.",
@@ -335,5 +335,26 @@
       "Shift end and return transport"
     ],
     "authority": "USER_REPORT_2026-11-01_AT_07:43_EUROPE_PRAGUE"
+  },
+  "morning_orientation_2026_11_02": {
+    "status": "RIFTWAKE_USER_REPORTED_PARTIAL_COMPLETION_TRANSPORT_SAFETY_OPEN",
+    "medication_adherence": "TAKEN_USER_CONFIRMED_SINGLE_DOSE; DROPPED_TABLET_RETRIEVAL_NOT_CONFIRMED",
+    "washing": "DONE_USER_REPORTED",
+    "coffee": "PREPARED_USER_REPORTED",
+    "breakfast": "HAM_AVAILABLE; ACTUAL_CONSUMPTION_UNVERIFIED",
+    "water": "UNVERIFIED",
+    "departure_plan": "07:20 target; 07:30 maximum; bicycle intended but not safe while impaired",
+    "fitness_to_cycle": "USER_REPORTS_CURRENT_IMPAIRMENT; NO_CYCLING_UNTIL_SAFE",
+    "DREGENO": "User reports planned kitchen work Nov 2, specific shift start not reconfirmed; check food storage safety before use.",
+    "inbox": "Nov 1-2 Gmail reviewed read-only. LEGO/Epic linking confirmation received; OpenAI platform update informational; no urgent invoice/work deadline found among matching inbox messages.",
+    "project_focus": "NO_ACTIVE_FOCUS_SELECTED",
+    "unknowns": [
+      "Alternative safe transport and actual departure/arrival",
+      "Exact shift start and finish",
+      "Food and water consumption",
+      "Condition and safety of prepared meat",
+      "Dropped tablet removed from reach of pets"
+    ],
+    "authority": "USER_REPORT_2026-11-02_MORNING;GMAIL_READ_ONLY_REVIEW_2026-11-02"
   }
 }
