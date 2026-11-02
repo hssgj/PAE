@@ -14,6 +14,7 @@ import subprocess
 import zipfile
 
 CODE_SUFFIXES = {'.py', '.sh', '.html', '.java', '.xml', '.gradle', '.toml'}
+MODEL_PROFILES_PATH = Path('config/model_profiles.json')
 EXCLUDED_PARTS = {'data', 'models', 'pae_backups', 'exports', '__pycache__', '.git', '.gradle', 'build', '.venv'}
 SECRET_PATTERNS = (
     re.compile(r'\b(?:sk-(?:proj-)?[A-Za-z0-9_-]{16,}|gsk_[A-Za-z0-9]{16,}|gh[pousr]_[A-Za-z0-9]{16,}|github_pat_[A-Za-z0-9_]{16,}|AIza[A-Za-z0-9_-]{20,})'),
@@ -38,6 +39,7 @@ def collect(root: Path, output: Path, include_source: bool = False) -> dict:
         raise FileExistsError('Output already exists; choose a new filename')
     candidates = list((root / 'prototype_v0').rglob('*'))
     candidates += list(root.glob('start-*.sh'))
+    candidates.append(root / MODEL_PROFILES_PATH)
     if (root / 'pae-android').is_dir():
         candidates += list((root / 'pae-android').rglob('*'))
     report = {
@@ -59,7 +61,7 @@ def collect(root: Path, output: Path, include_source: bool = False) -> dict:
             continue
         if not path.is_file() or set(relative.parts) & EXCLUDED_PARTS:
             continue
-        if path.suffix not in CODE_SUFFIXES or '.bak' in path.name:
+        if (path.suffix not in CODE_SUFFIXES and relative != MODEL_PROFILES_PATH) or '.bak' in path.name:
             continue
         if not path.resolve().is_relative_to(root):
             raise ValueError('Source path escaped checkout')
