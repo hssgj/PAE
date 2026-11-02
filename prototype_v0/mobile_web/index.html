@@ -43,6 +43,7 @@
     el.textContent = content;
     chat.appendChild(el);
     chat.scrollTop = chat.scrollHeight;
+    return el;
   }
   async function boot() {
     try {
@@ -61,20 +62,23 @@
     event.preventDefault();
     const message = input.value.trim();
     if (!message || send.disabled) return;
-    add('user', message);
-    input.value = '';
+    const outgoing = add('user', message);
+    input.disabled = true;
     send.disabled = true;
     status.textContent = 'PAE přemýšlí…';
     try {
       const response = await fetch('/api/chat', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({message})});
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Neznámá chyba');
+      input.value = '';
       add('assistant', data.reply);
       status.textContent = 'Připraveno';
     } catch (error) {
+      outgoing.remove();
       add('assistant', `Chyba: ${error.message}`);
       status.textContent = 'Chyba spojení';
     } finally {
+      input.disabled = false;
       send.disabled = false;
       input.focus();
     }
