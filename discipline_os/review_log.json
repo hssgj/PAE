@@ -743,6 +743,35 @@
         "USER_NOV_5_EVENING_REPORT",
         "GITHUB_STATE_WRITE_2026-11-05"
       ]
+    },
+    {
+      "date": "2026-11-05",
+      "checkpoint": "EVENING_CLOSE_DETAIL_REFINEMENT",
+      "status": "FACTUAL_CORRECTION_NO_PROJECT_ACTIVATION",
+      "summary": "Refined already-present Nov 5 checkpoint with user-reported 08:20–17:30 shift and 30-minute break (8h40m net presence), €20 tips, two roasts and cold-kitchen salads, first-month congratulations/chocolate, nine-minute assisted uphill walk after bus journey. Phone reclamation email reported sent; response pending. Nov 6 user-declared free day, previously proposed in-person errand not a commitment. Five Matthael 2.3 prompts remain parked in separately saved Markdown files.",
+      "limitations": [
+        "User-reported details are not independent verification of payroll, break recording or seller response.",
+        "Evening bath, food, hydration, pet care and rest not confirmed done.",
+        "No separate Questbook project or seven-day strategy launch."
+      ],
+      "focus_change": "None. current_focus.project remains null; existing three active projects unchanged.",
+      "gate": {
+        "classification": "MAINTENANCE",
+        "semantic_intents": [
+          "REVIEW",
+          "EXECUTION",
+          "ARCHIVE"
+        ],
+        "impact": 3,
+        "decision": "ALLOW",
+        "reason": "User explicitly requested factual Nov 5 evening close and DOS writeback; no new project or priority override."
+      },
+      "hygiene": "Previously archived Nov 2 dated snapshot retained; no new terminal obligations proven, no status erasures; paused/disputed records untouched.",
+      "authority": [
+        "USER_NOV_5_SHIFTDAY_REPORT",
+        "USER_NOV_5_NIGHT_CLOSURE_REQUEST",
+        "GITHUB_STATE_REFINED_2026-11-05"
+      ]
     }
   ],
   "weekly_reviews": []
