@@ -7,6 +7,13 @@
       "title": "Free-tier fallback for Plus-limited core tools",
       "status": "AUDITED_NO_ACTIVE_MIGRATION",
       "note": "Oct 13 current official pricing confirms ChatGPT Work and Codex included on Free with tighter usage and rollout-dependent desktop Luna; Codex Cloud and Sites are not included with Free. User reports Plus expires Oct 15. Preserve existing export and small local workflows; no new migration tool or urgent rebuild. Earlier note claiming Work unavailable on Free was stale."
+    },
+    {
+      "id": "P-002",
+      "created": "2026-11-05",
+      "title": "Matthael 2.3 Questbook — five AI leverage / life strategy prompts",
+      "status": "PARKED_UNTESTED_NOT_ACTIVE",
+      "note": "Five original Instagram Reel prompts: Ruthless Leverage Finder; Money Flow Hijacker; Perception Control; Unfair Advantage Builder; Time vs Wealth Rewire. User wants to apply them systematically beyond money (especially organizing everyday life), with a future grimoire addition. Their text is preserved as five individual Markdown files plus ZIP in the Nov 5 ChatGPT conversation, not mirrored into GitHub. User explicitly deferred analysis/execution; no activated project, commitment, promised outcome or deadline. Revisit one by one only when user says ready."
     }
   ]
 }
