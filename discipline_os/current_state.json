@@ -5,15 +5,15 @@
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
-    "next_action": "Nov 5 evening: no project focus selected. User reports DREGENO workday finished; eat, hydrate and recover, with bath planned. Nov 6 is a user-declared free day. Matthael 2.3 Questbook is parked, not an active project.",
+    "next_action": "Nov 5 evening: completed DREGENO workday reported; food, hydration, safe bath and recovery still planned. Nov 6 user-declared free day. Phone reclamation email awaiting reply; optional errand not imposed. Matthael 2.3 Questbook PARKED, not an active project.",
     "status": "NO_ACTIVE_FOCUS_SELECTED",
     "authority": "USER_EXPLICIT_ORIENTATION_2026-10-19"
   },
   "daily_priorities": [
     {
       "item": "Complete Nov 5 DREGENO kitchen workday.",
-      "status": "COMPLETED_USER_REPORTED",
-      "authority": "USER_REPORT_2026-11-05_EVENING"
+      "status": "COMPLETED_USER_REPORTED_08_20_17_30_30MIN_BREAK_20EUR_TIPS",
+      "authority": "USER_NOV_5_END_OF_SHIFT_REPORT"
     },
     {
       "item": "Eat, hydrate, bathe safely and recover after work.",
@@ -74,6 +74,14 @@
       "deadline": "2026-10-05",
       "authority": "VZP_SIGNED_DOCUMENTS_DATED_2026-10-21_USER_PROVIDED_IMAGES_2026-10-27;AOK_EMAIL_VERIFIED_2026-10-12",
       "follow_up_date": null
+    },
+    {
+      "name": "Samsung Galaxy XCover7 — reklamační požadavek",
+      "status": "EMAIL_SENT_WAITING_RESPONSE_USER_REPORTED",
+      "last_action": "Nov 5: user reports complaint email sent to seller and phone continues to malfunction; no written reply verified.",
+      "next_action": "Await seller response; user earlier considered a Nov 6 in-person errand but confirmed a day off for enjoyment, so no unconfirmed trip should be imposed.",
+      "authority": "USER_REPORT_2026-11-05",
+      "deadline": null
     }
   ],
   "parked_for_now": [
@@ -89,26 +97,37 @@
   "temporary_scope_authorizations": [],
   "last_day_closure": {
     "date": "2026-11-05",
-    "status": "EVENING_CLOSURE_WORK_USER_REPORTED_DONE_SELF_CARE_PENDING",
+    "status": "EVENING_CLOSURE_SHIFT_REPORTED_DONE_RECOVERY_PENDING",
     "verified_outcomes": [
       "User reports today's DREGENO workday completed and describes the day positively.",
       "User reports significant cold-kitchen/salad preparation, and preparation of a whole approximately 5 kg roast.",
       "User describes frosty conditions during commute and a walking stick helping on the icy ascent; bus return mentioned.",
       "User shared five AI strategy prompts from a social-media video, requested preservation in a 'Matthael 2.3 Questbook', and explicitly chose not to execute them now.",
-      "User reports Friday Nov 6 is a deliberate day off."
+      "User reports Friday Nov 6 is a deliberate day off.",
+      "User reports 08:20–17:30 DREGENO attendance on Nov 5 with a 30-minute break (8h40m net presence by arithmetic; paid hours not verified).",
+      "User reports preparing two roasts, including a whole approximately 5 kg roast, along with substantial cold-kitchen salads and presentation work.",
+      "User reports €20 tips, congratulations for completing the first month, and receiving chocolate.",
+      "User reports bus return and a nine-minute uphill walk using a recovered walking stick after frosty conditions.",
+      "User reports having sent an email regarding Samsung XCover7 problems earlier Nov 5; seller response still pending.",
+      "User explicitly chose Nov 6 as a free day for enjoyment, with no Matthael 2.3 strategy execution tonight."
     ],
     "limitations": [
       "Nov 5 paid hours, break accounting and wages not independently verified.",
       "Exact commute route, home arrival and completion of pet care not independently confirmed.",
       "Evening food, hydration and bath are planned, not yet confirmed complete.",
       "Five prompts are archived in ChatGPT conversation Markdown ZIP; future activation or outcomes not established.",
-      "No new single active project focus selected; preserved older paused or disputed commitments remain unresolved."
+      "No new single active project focus selected; preserved older paused or disputed commitments remain unresolved.",
+      "Attendance and 30-minute break are user-reported; actual paid hours, payroll and tips are not externally verified.",
+      "Nov 5 evening food, bath, pet care and sleep are planned or not independently confirmed, not marked completed.",
+      "Nov 6 phone-shop visit had been considered earlier; the evening direction prioritizes enjoying a free day, so no visit is imposed as a new commitment."
     ],
-    "next_action": "Nov 5: food, hydration, safe bath and sleep. Nov 6: enjoy planned day off without initiating any of the five Questbook strategies unless explicitly chosen later.",
+    "next_action": "Nov 5: eat, hydrate, bathe safely and rest. Nov 6: deliberate free day; decide on optional phone-reclamation errand only if desired. Keep five Questbook prompts PARKED, not in execution.",
     "authority": [
       "USER_2026-11-05_WORKDAY_AND_EVENING_REPORT",
       "USER_2026-11-05_QUESTBOOK_PARK_DIRECTION",
-      "GITHUB_STATE_REVIEW_2026-11-05"
+      "GITHUB_STATE_REVIEW_2026-11-05",
+      "USER_NOV_5_SHIFT_COMPLETION_REPORT",
+      "USER_NOV_5_EVENING_FREE_DAY_AND_QUESTBOOK_DIRECTION"
     ]
   },
   "scope_reduction": {
