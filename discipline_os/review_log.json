@@ -799,6 +799,28 @@
         "USER_NOV_7_20_47_EVENING_REPORT",
         "GITHUB_STATE_WRITE_2026-11-07"
       ]
+    },
+    {
+      "date": "2026-11-07",
+      "checkpoint": "EVENING_BATH_PLAN_CORRECTION",
+      "status": "FACTUAL_CORRECTION_BATH_PREPARED_NOT_COMPLETE",
+      "summary": "User corrects earlier shower plan: a bath has been filled. Prior DREGENO work, Nessie care, mattress and blanket ready remain user-reported completed. Actual bathing, hydration and rest not yet confirmed.",
+      "focus_change": "None; current_focus.project remains null, existing active projects unchanged.",
+      "gate": {
+        "classification": "MAINTENANCE",
+        "semantic_intents": [
+          "REVIEW",
+          "EXECUTION"
+        ],
+        "impact": 3,
+        "decision": "ALLOW",
+        "reason": "Bounded factual correction of evening plan, user invited a state update if needed; no priority or scope change."
+      },
+      "hygiene": "No new archival candidates evidenced. Unresolved, paused and awaiting-external records unchanged.",
+      "authority": [
+        "USER_2026-11-07_BATH_CORRECTION",
+        "GITHUB_STATE_WRITE_2026-11-07"
+      ]
     }
   ],
   "weekly_reviews": []
