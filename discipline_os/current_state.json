@@ -5,7 +5,7 @@
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
-    "next_action": "Nov 7 evening: shower, hydrate and rest. No single active project focus selected. Confirm next shift/transport only when relevant; phone complaint reply still unverified. Matthael 2.3 Questbook remains PARKED.",
+    "next_action": "Nov 7 evening: bath planned (tub filled), hydrate and rest. No single active project focus selected. Confirm next shift/transport only when relevant; phone complaint reply still unverified. Matthael 2.3 Questbook remains PARKED.",
     "status": "NO_ACTIVE_FOCUS_SELECTED",
     "authority": "USER_EXPLICIT_ORIENTATION_2026-10-19"
   },
@@ -21,9 +21,9 @@
       "authority": "USER_2026-11-07_EVENING_REPORT"
     },
     {
-      "item": "Shower safely, hydrate and rest after work.",
-      "status": "PLANNED_NOT_YET_CONFIRMED",
-      "authority": "USER_2026-11-07_EVENING_PLAN"
+      "item": "Take a safe bath, hydrate and rest after work.",
+      "status": "BATH_PREPARED_NOT_YET_CONFIRMED_COMPLETED",
+      "authority": "USER_2026-11-07_EVENING_CORRECTION"
     }
   ],
   "active_projects": [
@@ -97,28 +97,29 @@
   ],
   "blocked_items": [],
   "last_review": "2026-11-07",
-  "review_note": "Nov 7 2026 evening user reports DREGENO work completed, Nessie cared for, and a new mattress and blanket ready. User says day's brief already happened and is now preparing a shower, not yet completed. No new project/focus, new deadline, paid-hour evidence or phone seller reply. Nov 5 daily orientation archived unchanged.",
+  "review_note": "Nov 7 2026 evening user reports DREGENO work completed, Nessie cared for and new mattress and blanket ready. Earlier shower plan replaced by user-reported filled bath; actual bathing, hydration and sleep not yet confirmed. No new project/focus, deadline, paid-hour evidence or seller reply.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
     "date": "2026-11-07",
-    "status": "EVENING_CHECKPOINT_WORK_PET_CARE_DONE_SHOWER_PENDING",
+    "status": "EVENING_CHECKPOINT_WORK_PET_CARE_DONE_BATH_PREPARED",
     "verified_outcomes": [
       "User reports Nov 7 work completed; precise shift and paid hours not supplied here.",
       "User reports Nessie cared for.",
       "User reports new mattress and blanket ready for rest.",
-      "User reports day brief already completed elsewhere and plans a shower instead of a bath."
+      "User corrects the shower plan: a bath has been filled; actual bathing not yet confirmed."
     ],
     "limitations": [
       "Reports are user-supplied, not independent verification of employment hours/payroll.",
-      "Shower, hydration and sleep not yet confirmed completed.",
+      "Bathing, hydration and sleep not yet confirmed completed.",
       "Next shift and homeward travel details not verified in this checkpoint.",
       "No evidence of resolution of earlier paused or awaiting-external matters."
     ],
-    "next_action": "Shower safely, hydrate and rest; review next necessary shift or transit details when relevant. No new focus activation.",
+    "next_action": "Enjoy the already-prepared bath safely, hydrate and rest; review next shift/transit details only when relevant. No new focus activation.",
     "authority": [
       "USER_2026-11-07_20_47_EVENING_REPORT",
-      "GITHUB_STATE_MAINTENANCE_2026-11-07"
+      "GITHUB_STATE_MAINTENANCE_2026-11-07",
+      "USER_2026-11-07_BATH_CORRECTION"
     ]
   },
   "scope_reduction": {
@@ -203,7 +204,7 @@
     ],
     "authority": "USER_REPORT_2026-10-16"
   },
-  "daily_priorities_status": "EVENING_REPORT_WORK_AND_PET_CARE_DONE_SHOWER_PENDING",
+  "daily_priorities_status": "EVENING_REPORT_WORK_AND_PET_CARE_DONE_BATH_PREPARED",
   "morning_orientation_2026_10_25": {
     "status": "USER_CORRECTED_PARTIAL_SCHEDULE_AND_MEDICATION_CONFIRMED_TRANSPORT_RISK_UNRESOLVED",
     "user_reported_plan": "User confirms prescribed pill taken. Reports shifts on Sunday Oct 25, Monday Oct 26 and Tuesday Oct 27. User plans breakfast and bicycle commute with extra clothing; weather described as foggy. User reports €70 incoming, correcting earlier amount.",
