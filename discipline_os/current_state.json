@@ -1,7 +1,7 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
@@ -87,6 +87,14 @@
       "next_action": "Await seller response; user earlier considered a Nov 6 in-person errand but confirmed a day off for enjoyment, so no unconfirmed trip should be imposed.",
       "authority": "USER_REPORT_2026-11-05",
       "deadline": null
+    },
+    {
+      "name": "Seiffen housing — 3 long-term rental enquiries",
+      "status": "THREE_ENQUIRIES_SENT_USER_REPORTED_WAITING_FOR_REPLIES",
+      "last_action": "Nov 8: user reports sending three German housing inquiries: Jahnstraße 18 (advertised €330 warm, Jacqueline Klemm via ImmoScout), Pension am Wildbach (Rolf Stephani), and Ferienwohnung Biermann (via Seiffen tourist information forwarding request). Delivery and recipient responses not independently verified. No booking or lease agreed.",
+      "next_action": "Await replies; when received, compare actual monthly all-in price, deposit, availability, minimum rental period, notice period and pet policy. No further broad search or new project implied.",
+      "authority": "USER_2026-11-08_REPORT;CHAT_DRAFTS_AND_CONTACTS_2026-11-08",
+      "deadline": null
     }
   ],
   "parked_for_now": [
@@ -97,7 +105,7 @@
   ],
   "blocked_items": [],
   "last_review": "2026-11-07",
-  "review_note": "Nov 7 2026 evening user reports DREGENO work completed, Nessie cared for and new mattress and blanket ready. Earlier shower plan replaced by user-reported filled bath; actual bathing, hydration and sleep not yet confirmed. No new project/focus, deadline, paid-hour evidence or seller reply.",
+  "review_note": "Nov 8 bounded housing follow-up: user reports all three apartment/pension inquiry messages sent. Added as awaiting-external, not a fourth active project or replacement focus. Previous Nov 7 daily priorities are historical/stale for Nov 8; daily orientation not re-confirmed here.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
