@@ -16,12 +16,12 @@
       "id": "C-002",
       "created": "2026-09-20",
       "text": "Follow up on N26/coeo creditor response to request for temporary suspension.",
-      "status": "REPLY_RECEIVED_REVIEW_DEFERRED_BY_USER",
+      "status": "NOV09_NEW_COEO_LEGAL_ESCALATION_NOTICE_RESPONSE_DECISION_PENDING",
       "project": "Financial administration",
-      "next_action": "No active prompt tonight. If user resumes, review coeo's Oct 2 rejection of the Oct 1 counterproposal; no acceptance or payment inferred.",
-      "due": null,
-      "authority": "GMAIL_VERIFIED_2026-10-02;USER_DIRECTION_2026-10-13",
-      "resolution_note": "Oct 1 counterproposal was answered Oct 2: requested suspension through Nov 30 and €20/month rejected; creditor still asks €35/month plus settlement fee. Previous WAITING_EXTERNAL status was stale. User explicitly requests only state correction Oct 13."
+      "next_action": "Before conditional lawyer-referral date 2026-11-16, review Nov 9 €129.71 claimed balance and choose realistic written response/negotiation if user authorizes; do not infer payment, assent or judicial order.",
+      "due": "2026-11-16",
+      "authority": "GMAIL_COEO_RECHTSABTEILUNG_2026-11-09;USER_DIRECTION_2026-10-13",
+      "resolution_note": "Oct 1 counterproposal was answered Oct 2: requested suspension through Nov 30 and €20/month rejected; creditor still asks €35/month plus settlement fee. Previous WAITING_EXTERNAL status was stale. User explicitly requests only state correction Oct 13. Nov 9 new material development supersedes passive no-prompt status: coeo says it plans to forward the case to Kanzlei Mumm on Nov 16 if payment is still absent and mentions assessment for possible Mahnverfahren; not proof of attorney handoff or court order. €129.71 currently claimed; no confirmed payment or acceptance. The Nov 16 date is the collection firm's conditional referral date, not a verified court deadline."
     },
     {
       "id": "C-004",
