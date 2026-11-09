@@ -5,7 +5,7 @@
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
-    "next_action": "No active project execution focus selected. Following Nov 9 shift: travel home safely with brother, hydrate and rest; confirm next shift/commute only when relevant. Housing and phone-complaint responses remain pending; do not force new project focus.",
+    "next_action": "No active project execution focus selected. Nov 9 evening: home arrival confirmed; dinner, hydration and rest are the immediate next step. New conditional coeo attorney-referral date Nov 16 requires a bounded written-response decision before that date, not a forced new project focus. Housing other enquiries pending; verify next shift/transport when needed.",
     "status": "NO_ACTIVE_FOCUS_SELECTED",
     "authority": "USER_EXPLICIT_ORIENTATION_2026-10-19"
   },
@@ -17,13 +17,13 @@
     },
     {
       "item": "Travel home with brother after work.",
-      "status": "RIDE_ARRANGED_ARRIVAL_NOT_YET_CONFIRMED",
-      "authority": "USER_2026-11-09_FEIERABEND_REPORT"
+      "status": "USER_CONFIRMED_HOME_ARRIVAL_2026_11_09_EVENING_TRANSPORT_MODE_NOT_RECONFIRMED",
+      "authority": "USER_2026-11-09_EVENING_HOME_REPORT"
     },
     {
       "item": "Post-work hydration, food if needed, and rest.",
-      "status": "NOT_YET_CONFIRMED_COMPLETED",
-      "authority": "USER_2026-11-09_FEIERABEND_REPORT"
+      "status": "DINNER_TIME_NOW_HYDRATION_REST_NOT_YET_CONFIRMED",
+      "authority": "USER_2026-11-09_EVENING_HOME_REPORT"
     }
   ],
   "active_projects": [
@@ -57,11 +57,12 @@
     },
     {
       "name": "N26 / coeo",
-      "status": "REPLY_RECEIVED_REVIEW_DEFERRED_BY_USER",
-      "last_action": "Oct 2 written coeo response to Oct 1 counterproposal rejected suspension through Nov 30 and €20/month; coeo insists on €35/month plus settlement fee. Oct 13 user asked to correct this stale WAITING_EXTERNAL state only, without opening negotiation tonight.",
-      "next_action": "No active task tonight; review the Oct 2 reply when user resumes this file. Do not treat creditor proposal as accepted.",
-      "authority": "GMAIL_VERIFIED_2026-10-02;USER_DIRECTION_2026-10-13",
-      "note": "coeo's original offer requested a response by 2026-10-12; user already responded on 2026-10-01 with a counterproposal."
+      "status": "NEW_WARNING_NOV09_CONDITIONAL_ATTORNEY_REFERRAL_NOV16_REVIEW_REQUIRED",
+      "last_action": "Nov 9 email from coeo legal department claims €129.71 outstanding on N26 matter and announces conditional handoff to Rechtsanwaltskanzlei Mumm on Nov 16 if payment remains outstanding, in context of reviewing initiation of gerichtliches Mahnverfahren. This is NOT proof of lawyer referral or court Mahnbescheid already issued. Oct 2 rejection of proposed suspension/€20 plan remains historical; no agreement or payment inferred.",
+      "next_action": "Before Nov 16 review claimed balance and choose a written response/realistic proposal to coeo (rechtsabteilung@coeo-inkasso.de). Do not automatically pay, promise, or acknowledge terms. If an actual court Mahnbescheid arrives, handle its formal response period separately and promptly.",
+      "authority": "GMAIL_COEO_LEGAL_EMAIL_2026-11-09;GMAIL_COEO_REPLY_2026-10-02",
+      "note": "coeo's original offer requested a response by 2026-10-12; user already responded on 2026-10-01 with a counterproposal.",
+      "deadline": "2026-11-16"
     },
     {
       "name": "PAIR / HelloFresh",
@@ -82,18 +83,18 @@
     },
     {
       "name": "Samsung Galaxy XCover7 — reklamační požadavek",
-      "status": "EMAIL_SENT_WAITING_RESPONSE_USER_REPORTED",
-      "last_action": "Nov 5: user reports complaint email sent to seller and phone continues to malfunction; no written reply verified.",
-      "next_action": "Await seller response; user earlier considered a Nov 6 in-person errand but confirmed a day off for enjoyment, so no unconfirmed trip should be imposed.",
-      "authority": "USER_REPORT_2026-11-05",
+      "status": "SELLER_REPLIED_NOV05_IN_PERSON_COMPLAINT_PENDING_USER_DECISION",
+      "last_action": "Nov 5 T-Mobile Prodejna Most emailed that user should bring only the phone, no box needed; a loaner phone should be available, and a deposit is thought unlikely but not guaranteed. No user visit or lodged claim verified.",
+      "next_action": "On user's chosen day, back up important phone data, bring handset to T-Mobile Most for complaint and confirm loaner/deposit at handoff; do not assume visit happened or create a new mandatory errand.",
+      "authority": "GMAIL_TMOBILE_PRODEJNA_2026-11-05;USER_2026-11-05_COMPLAINT_REPORT",
       "deadline": null
     },
     {
-      "name": "Seiffen housing — 3 long-term rental enquiries",
-      "status": "THREE_ENQUIRIES_SENT_USER_REPORTED_WAITING_FOR_REPLIES",
-      "last_action": "Nov 8: user reports sending three German housing inquiries: Jahnstraße 18 (advertised €330 warm, Jacqueline Klemm via ImmoScout), Pension am Wildbach (Rolf Stephani), and Ferienwohnung Biermann (via Seiffen tourist information forwarding request). Delivery and recipient responses not independently verified. No booking or lease agreed.",
-      "next_action": "Await replies; when received, compare actual monthly all-in price, deposit, availability, minimum rental period, notice period and pet policy. No further broad search or new project implied.",
-      "authority": "USER_2026-11-08_REPORT;CHAT_DRAFTS_AND_CONTACTS_2026-11-08",
+      "name": "Seiffen / Neuhausen housing enquiries",
+      "status": "JAHNSTR_NO_IMMEDIATE_AVAILABILITY_OTHERS_PENDING",
+      "last_action": "Nov 9 Jacqueline Klemm replied: no small Jahnstraße 18 flats immediately available; renovation needs at least 8–10 weeks. Nov 8 sent housing enquiries include Wildbach and Biermann, one email for 3 Neuhausen flats to Grand City Property, and RF-937 in Seiffen to Ronny Fröhlich; Gmail verifies these outgoing messages. RF-937 agent sent exposé and invited arranging viewings, but no viewing scheduled. No lease, deposit or move-in confirmed.",
+      "next_action": "Treat Jahnstraße 18 as unavailable for immediate move; await remaining actionable answers (Wildbach/Biermann/Neuhausen/RF-937). For any viable option confirm actual warm rent, deposit, near-term availability, duration, notice and pet terms; no new broad search required.",
+      "authority": "GMAIL_KLEMM_REPLY_2026-11-09;GMAIL_OUTGOING_HOUSING_2026-11-08;GMAIL_RF937_2026-11-08",
       "deadline": null
     }
   ],
@@ -105,30 +106,41 @@
   ],
   "blocked_items": [],
   "last_review": "2026-11-09",
-  "review_note": "Nov 9 bounded Feierabend closure: user reports kitchen shift recorded 08:15–18:00 (9 h 45 min on the time record), cold-kitchen salads completed during two-person staffing, €25 tips, brother arranged for ride home. Gross calculation 9.75×€14.50 = €141.38 before breaks/deductions, not verified payroll. Boss declined keys during probation; user reports probation continues into December, exact end date unknown. No focus change. Archived Nov 7 priorities and prior closure under discipline_os/archive/daily_priority_snapshot_2026-11-07_archived_2026-11-09.json.",
+  "review_note": "Nov 9 night closure: user arrived home after shift; dinner/rest not yet done. Gmail reviewed: coeo demands €129.71 and conditionally plans lawyer referral Nov 16 (not court order); Klemm states Jahnstraße requires at least 8–10 weeks renovation; other housing enquiries pending; T-Mobile Most already replied Nov 5. No new project or focus change, no reply/payment/deletion.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
     "date": "2026-11-09",
-    "status": "FEIERABEND_REPORTED_SHIFT_COMPLETED_TRANSPORT_ARRANGED",
+    "status": "SHIFT_DONE_HOME_ARRIVAL_CONFIRMED_DINNER_AND_REST_PENDING",
     "verified_outcomes": [
       "User reports kitchen shift recorded 08:15–18:00, nominal time span 9 h 45 min; actual paid hours and breaks not verified.",
       "User reports cold kitchen and salads handled during a two-person staffing day, colleague covering hot kitchen.",
       "User reports €25 gratuities taken home; no cakes or ice creams were handled by user today.",
       "User reports boss declined to issue work keys while employee remains on probation; user understands probation includes December.",
-      "User reports brother will drive user home; arrival not confirmed."
+      "User reports arriving home Nov 9 evening around 20:53; precise mode of return not reconfirmed."
     ],
     "limitations": [
       "Shift time and gratuities are user reports, not employer/payroll verification.",
       "At 17:53 user was already headed home; 18:00 is recorded shift end, not independently confirmed actual work end.",
       "No signed update to probationary period seen; exact contract end date of probation unknown.",
-      "Home arrival, hydration, self-care, sleep and tomorrow's roster are not confirmed.",
-      "No evidence of new replies on Seiffen housing or Samsung complaint."
+      "Hydration, dinner completion, rest and next work roster remain unconfirmed."
     ],
-    "next_action": "Travel home safely with brother, drink water and rest. Check next shift/transport when actually needed; key access can be revisited after probation or via supervisor if needed.",
+    "next_action": "Have dinner and hydrate; rest after completed shift. On a subsequent suitable moment, review coeo notice in advance of conditional Nov 16 referral; no payment or reply authorized by this update.",
     "authority": [
-      "USER_2026-11-09_FEIERABEND_REPORT"
-    ]
+      "USER_2026-11-09_FEIERABEND_REPORT",
+      "USER_2026-11-09_EVENING_HOME_REPORT",
+      "GMAIL_COEO_2026-11-09",
+      "GMAIL_KLEMM_2026-11-09",
+      "GMAIL_TMOBILE_2026-11-05"
+    ],
+    "email_review": {
+      "date": "2026-11-09",
+      "coeo": "€129.71 claimed; handoff to counsel on Nov 16 conditional on nonpayment; no court-issued order verified.",
+      "jahnst": "Klemm: small apartment not available immediately; at least 8–10 weeks renovation.",
+      "samsung": "T-Mobile replied Nov 5 with phone-only dropoff and provisional loaner availability; claim submission not verified.",
+      "other": "RF-937 viewing invitation/exposé Nov 8; no confirmed viewing. Google reported pomelliai.app sign-in Nov 9, no authorization concern confirmed.",
+      "inbox": "Nov 9 recent mail reviewed; only current unread recent message is coeo. No messages sent or deleted."
+    }
   },
   "scope_reduction": {
     "date": "2026-10-13",
