@@ -1,29 +1,29 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
-    "next_action": "Nov 7 evening: bath planned (tub filled), hydrate and rest. No single active project focus selected. Confirm next shift/transport only when relevant; phone complaint reply still unverified. Matthael 2.3 Questbook remains PARKED.",
+    "next_action": "No active project execution focus selected. Following Nov 9 shift: travel home safely with brother, hydrate and rest; confirm next shift/commute only when relevant. Housing and phone-complaint responses remain pending; do not force new project focus.",
     "status": "NO_ACTIVE_FOCUS_SELECTED",
     "authority": "USER_EXPLICIT_ORIENTATION_2026-10-19"
   },
   "daily_priorities": [
     {
-      "item": "Complete Nov 7 DREGENO workday.",
-      "status": "COMPLETED_USER_REPORTED_HOURS_AND_PAY_UNVERIFIED",
-      "authority": "USER_2026-11-07_EVENING_REPORT"
+      "item": "Complete Nov 9 DREGENO kitchen shift, recorded as 08:15–18:00.",
+      "status": "USER_REPORTED_COMPLETED_RECORDED_9H45_PAID_HOURS_UNVERIFIED",
+      "authority": "USER_2026-11-09_FEIERABEND_REPORT"
     },
     {
-      "item": "Care for Nessie and prepare clean sleep setup (new mattress and blanket).",
-      "status": "COMPLETED_USER_REPORTED",
-      "authority": "USER_2026-11-07_EVENING_REPORT"
+      "item": "Travel home with brother after work.",
+      "status": "RIDE_ARRANGED_ARRIVAL_NOT_YET_CONFIRMED",
+      "authority": "USER_2026-11-09_FEIERABEND_REPORT"
     },
     {
-      "item": "Take a safe bath, hydrate and rest after work.",
-      "status": "BATH_PREPARED_NOT_YET_CONFIRMED_COMPLETED",
-      "authority": "USER_2026-11-07_EVENING_CORRECTION"
+      "item": "Post-work hydration, food if needed, and rest.",
+      "status": "NOT_YET_CONFIRMED_COMPLETED",
+      "authority": "USER_2026-11-09_FEIERABEND_REPORT"
     }
   ],
   "active_projects": [
@@ -50,9 +50,9 @@
     {
       "name": "DREGENO Spielzeugschachtel application",
       "status": "EMPLOYED_ACTIVE_USER_RECORD_KEEPING",
-      "last_action": "Nov 5: user reports today's kitchen workday completed; prepared salads/cold kitchen and a whole approximately 5 kg roast. Precise paid hours unverified.",
-      "next_action": "Nov 6: user-declared free day; no job search. Confirm next roster and food-safety matters on return as needed.",
-      "authority": "USER_REPORT_2026-11-02_EVENING",
+      "last_action": "Nov 9: user reports two-person kitchen service, completed cold-kitchen salads and a shift recorded 08:15–18:00 (9 h 45 min nominal), €25 tips. Boss declined keys during probation; user says probation continues through December, end date not verified.",
+      "next_action": "Continue scheduled shifts and own time records. For building keys, confirm probation contract/end date before re-requesting; no independent key access promised. Verify next roster/transport only as needed.",
+      "authority": "USER_2026-11-09_FEIERABEND_REPORT",
       "deadline": "2026-10-05"
     },
     {
@@ -104,30 +104,30 @@
     "Sokol recipes/menu materials and Frostfire Chronicle (#55/#34) are preserved as professional/creative archive, removed from active work."
   ],
   "blocked_items": [],
-  "last_review": "2026-11-07",
-  "review_note": "Nov 8 bounded housing follow-up: user reports all three apartment/pension inquiry messages sent. Added as awaiting-external, not a fourth active project or replacement focus. Previous Nov 7 daily priorities are historical/stale for Nov 8; daily orientation not re-confirmed here.",
+  "last_review": "2026-11-09",
+  "review_note": "Nov 9 bounded Feierabend closure: user reports kitchen shift recorded 08:15–18:00 (9 h 45 min on the time record), cold-kitchen salads completed during two-person staffing, €25 tips, brother arranged for ride home. Gross calculation 9.75×€14.50 = €141.38 before breaks/deductions, not verified payroll. Boss declined keys during probation; user reports probation continues into December, exact end date unknown. No focus change. Archived Nov 7 priorities and prior closure under discipline_os/archive/daily_priority_snapshot_2026-11-07_archived_2026-11-09.json.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
-    "date": "2026-11-07",
-    "status": "EVENING_CHECKPOINT_WORK_PET_CARE_DONE_BATH_PREPARED",
+    "date": "2026-11-09",
+    "status": "FEIERABEND_REPORTED_SHIFT_COMPLETED_TRANSPORT_ARRANGED",
     "verified_outcomes": [
-      "User reports Nov 7 work completed; precise shift and paid hours not supplied here.",
-      "User reports Nessie cared for.",
-      "User reports new mattress and blanket ready for rest.",
-      "User corrects the shower plan: a bath has been filled; actual bathing not yet confirmed."
+      "User reports kitchen shift recorded 08:15–18:00, nominal time span 9 h 45 min; actual paid hours and breaks not verified.",
+      "User reports cold kitchen and salads handled during a two-person staffing day, colleague covering hot kitchen.",
+      "User reports €25 gratuities taken home; no cakes or ice creams were handled by user today.",
+      "User reports boss declined to issue work keys while employee remains on probation; user understands probation includes December.",
+      "User reports brother will drive user home; arrival not confirmed."
     ],
     "limitations": [
-      "Reports are user-supplied, not independent verification of employment hours/payroll.",
-      "Bathing, hydration and sleep not yet confirmed completed.",
-      "Next shift and homeward travel details not verified in this checkpoint.",
-      "No evidence of resolution of earlier paused or awaiting-external matters."
+      "Shift time and gratuities are user reports, not employer/payroll verification.",
+      "At 17:53 user was already headed home; 18:00 is recorded shift end, not independently confirmed actual work end.",
+      "No signed update to probationary period seen; exact contract end date of probation unknown.",
+      "Home arrival, hydration, self-care, sleep and tomorrow's roster are not confirmed.",
+      "No evidence of new replies on Seiffen housing or Samsung complaint."
     ],
-    "next_action": "Enjoy the already-prepared bath safely, hydrate and rest; review next shift/transit details only when relevant. No new focus activation.",
+    "next_action": "Travel home safely with brother, drink water and rest. Check next shift/transport when actually needed; key access can be revisited after probation or via supervisor if needed.",
     "authority": [
-      "USER_2026-11-07_20_47_EVENING_REPORT",
-      "GITHUB_STATE_MAINTENANCE_2026-11-07",
-      "USER_2026-11-07_BATH_CORRECTION"
+      "USER_2026-11-09_FEIERABEND_REPORT"
     ]
   },
   "scope_reduction": {
@@ -201,7 +201,7 @@
     ],
     "notes": "For #49 only second-wave continuation retired; first-wave archive preserved. #55 keeps recipes and Frostfire Chronicle as archive. #35 preserved after self-correction. #39/#40 kept after self-correction. #28 assistant-history erasure not performed; only active-scope retirement. #22/#24 'finish tomorrow or drop' does not authorize a new overnight build, and tomorrow's clinic/export have priority. #42 not resolved explicitly enough to remove. #5 tutoring was not explicitly decided in this numbered reply; existing active status retained until selected or renegotiated."
   },
-  "daily_priorities_date": "2026-11-07",
+  "daily_priorities_date": "2026-11-09",
   "morning_orientation_2026_10_16": {
     "status": "PARTIAL_USER_REPORTED_PLAN_DAY_PRIORITIES_STALE",
     "user_reported_plan": "Preparing to leave for work; aiming to depart around 07:59. Plans to pass One1 Hora Svaté Kateřiny for tobacco/papers/cigarettes and possibly snacks. Thermal layer and leather gardening gloves packed; headphones not charged.",
@@ -212,7 +212,7 @@
     ],
     "authority": "USER_REPORT_2026-10-16"
   },
-  "daily_priorities_status": "EVENING_REPORT_WORK_AND_PET_CARE_DONE_BATH_PREPARED",
+  "daily_priorities_status": "NOV_09_SHIFT_REPORTED_DONE_TRANSPORT_ARRANGED_REST_PENDING",
   "morning_orientation_2026_10_25": {
     "status": "USER_CORRECTED_PARTIAL_SCHEDULE_AND_MEDICATION_CONFIRMED_TRANSPORT_RISK_UNRESOLVED",
     "user_reported_plan": "User confirms prescribed pill taken. Reports shifts on Sunday Oct 25, Monday Oct 26 and Tuesday Oct 27. User plans breakfast and bicycle commute with extra clothing; weather described as foggy. User reports €70 incoming, correcting earlier amount.",
