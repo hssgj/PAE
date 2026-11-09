@@ -881,6 +881,46 @@
         "USER_2026-11-09_FEIERABEND_REPORT",
         "GITHUB_STATE_WRITE_2026-11-09"
       ]
+    },
+    {
+      "date": "2026-11-09",
+      "checkpoint": "NIGHT_BRIEF_HOME_ARRIVAL_AND_GMAIL_RECONCILIATION",
+      "status": "HOME_CONFIRMED_EXTERNAL_NOTICES_TRIAGED",
+      "summary": "User reports arriving home after Nov 9 DREGENO shift; dinner/rest pending. Gmail review surfaced conditional coeo lawyer referral Nov 16 (claimed €129.71), Klemm Jahnstraße not move-in ready for at least 8–10 weeks, Nov 5 T-Mobile complaint response, and RF-937 exposé/viewing invitation. No responses or payments sent.",
+      "mail_review": {
+        "coeo": "GMAIL_2026-11-09_UNREAD_NOTICE_NOV16",
+        "jahnst": "GMAIL_2026-11-09_REPLY_DELAY_8_TO_10_WEEKS",
+        "samsung": "GMAIL_2026-11-05_STORE_REPLY",
+        "housing": "OTHER_OUTGOING_INQUIRIES_CONFIRMED_SOME_REPLIES_PENDING",
+        "google_signin": "POMELLIAI_APP_GOOGLE_SIGNIN_NOTIFICATION_2026-11-09_NO_FURTHER_ACTION_ASSUMED"
+      },
+      "limitations": [
+        "Court order and lawyer referral not established; date Nov 16 conditional notice only.",
+        "User has not agreed to creditor payment or plan.",
+        "Other rental replies and move-in are unconfirmed.",
+        "Dinner/hydration/rest and next roster not reported complete.",
+        "Stale Oct 28 shopping plan remains unresolved, not silently marked done."
+      ],
+      "focus_change": "None: current_focus.project remains null; three existing active projects unchanged.",
+      "next_action": "Dinner, water and rest tonight. Review response option for coeo before Nov 16; housing replies as received.",
+      "hygiene": "No proven terminal commitment silently removed; historical and paused items retained, no archive warranted from tonight's evidence.",
+      "gate": {
+        "classification": "MAINTENANCE",
+        "semantic_intents": [
+          "REVIEW",
+          "EXECUTION"
+        ],
+        "impact": 3,
+        "decision": "ALLOW",
+        "reason": "Explicit bounded end-of-day GitHub state write and Gmail triage; no project expansion or priority override."
+      },
+      "authority": [
+        "USER_2026-11-09_EVENING_HOME_REPORT",
+        "GMAIL_COEO_2026-11-09",
+        "GMAIL_KLEMM_2026-11-09",
+        "GMAIL_TMOBILE_2026-11-05",
+        "GMAIL_HOUSING_2026-11-08"
+      ]
     }
   ],
   "weekly_reviews": []
