@@ -921,6 +921,18 @@
         "GMAIL_TMOBILE_2026-11-05",
         "GMAIL_HOUSING_2026-11-08"
       ]
+    },
+    {
+      "date": "2026-11-16",
+      "checkpoint": "NIGHTFALL_BRIEF",
+      "status": "USER_REPORTED_CLOSURE_WITH_UNVERIFIED_PAYMENT",
+      "current_focus": "NO_ACTIVE_FOCUS_SELECTED",
+      "summary": "DREGENO shift and cycling home reported complete; coeo email verified sent Nov 15; €30 transfer reported Nov 16 but not bank verified. No new project focus.",
+      "next_action": "Food, water, charge phone, rest; await coeo reply; handle any formal court notice promptly.",
+      "authority": [
+        "USER_2026-11-16_NIGHT_REPORT",
+        "GMAIL_SENT_COEO_2026-11-15"
+      ]
     }
   ],
   "weekly_reviews": []
