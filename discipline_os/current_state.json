@@ -1,29 +1,26 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-11-09",
+  "updated": "2026-11-16",
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
-    "next_action": "No active project execution focus selected. Nov 9 evening: home arrival confirmed; dinner, hydration and rest are the immediate next step. New conditional coeo attorney-referral date Nov 16 requires a bounded written-response decision before that date, not a forced new project focus. Housing other enquiries pending; verify next shift/transport when needed.",
+    "next_action": "No active project focus selected. Nov 16 evening: eat, hydrate, recharge phone and rest. N26/coeo email was sent Nov 15; €30 transfer reported Nov 16, not bank-verified; await response and watch for formal court notices. Verify next shift/transport as needed.",
     "status": "NO_ACTIVE_FOCUS_SELECTED",
     "authority": "USER_EXPLICIT_ORIENTATION_2026-10-19"
   },
   "daily_priorities": [
     {
-      "item": "Complete Nov 9 DREGENO kitchen shift, recorded as 08:15–18:00.",
-      "status": "USER_REPORTED_COMPLETED_RECORDED_9H45_PAID_HOURS_UNVERIFIED",
-      "authority": "USER_2026-11-09_FEIERABEND_REPORT"
+      "item": "DREGENO shift and kitchen preparation",
+      "status": "USER_REPORTED_DONE_2026_11_16"
     },
     {
-      "item": "Travel home with brother after work.",
-      "status": "USER_CONFIRMED_HOME_ARRIVAL_2026_11_09_EVENING_TRANSPORT_MODE_NOT_RECONFIRMED",
-      "authority": "USER_2026-11-09_EVENING_HOME_REPORT"
+      "item": "Return home safely by bicycle",
+      "status": "USER_CONFIRMED_HOME_ARRIVAL_APPROX_20_30"
     },
     {
-      "item": "Post-work hydration, food if needed, and rest.",
-      "status": "DINNER_TIME_NOW_HYDRATION_REST_NOT_YET_CONFIRMED",
-      "authority": "USER_2026-11-09_EVENING_HOME_REPORT"
+      "item": "N26/coeo written response and €30 transfer",
+      "status": "EMAIL_SENT_GMAIL_VERIFIED_2026_11_15_PAYMENT_USER_REPORTED_2026_11_16_BANK_CONFIRMATION_UNVERIFIED"
     }
   ],
   "active_projects": [
@@ -57,10 +54,10 @@
     },
     {
       "name": "N26 / coeo",
-      "status": "NEW_WARNING_NOV09_CONDITIONAL_ATTORNEY_REFERRAL_NOV16_REVIEW_REQUIRED",
-      "last_action": "Nov 9 email from coeo legal department claims €129.71 outstanding on N26 matter and announces conditional handoff to Rechtsanwaltskanzlei Mumm on Nov 16 if payment remains outstanding, in context of reviewing initiation of gerichtliches Mahnverfahren. This is NOT proof of lawyer referral or court Mahnbescheid already issued. Oct 2 rejection of proposed suspension/€20 plan remains historical; no agreement or payment inferred.",
-      "next_action": "Before Nov 16 review claimed balance and choose a written response/realistic proposal to coeo (rechtsabteilung@coeo-inkasso.de). Do not automatically pay, promise, or acknowledge terms. If an actual court Mahnbescheid arrives, handle its formal response period separately and promptly.",
-      "authority": "GMAIL_COEO_LEGAL_EMAIL_2026-11-09;GMAIL_COEO_REPLY_2026-10-02",
+      "status": "WRITTEN_PROPOSAL_SENT_NOV15_PAYMENT_30EUR_USER_REPORTED_NOV16_AWAITING_REPLY",
+      "last_action": "Gmail confirms written partial-payment proposal to coeo sent Nov 15. Nov 16 user reports sending €30. Payment not bank-verified; acceptance, lawyer handoff and court action unknown.",
+      "next_action": "Await written response, verify transfer if needed; respond promptly to any formal court Mahnbescheid. Do not assume debt settled or agreement accepted.",
+      "authority": "GMAIL_SENT_2026-11-15;USER_2026-11-16_NIGHT_REPORT",
       "note": "coeo's original offer requested a response by 2026-10-12; user already responded on 2026-10-01 with a counterproposal.",
       "deadline": "2026-11-16"
     },
@@ -105,42 +102,29 @@
     "Sokol recipes/menu materials and Frostfire Chronicle (#55/#34) are preserved as professional/creative archive, removed from active work."
   ],
   "blocked_items": [],
-  "last_review": "2026-11-09",
-  "review_note": "Nov 9 night closure: user arrived home after shift; dinner/rest not yet done. Gmail reviewed: coeo demands €129.71 and conditionally plans lawyer referral Nov 16 (not court order); Klemm states Jahnstraße requires at least 8–10 weeks renovation; other housing enquiries pending; T-Mobile Most already replied Nov 5. No new project or focus change, no reply/payment/deletion.",
+  "last_review": "2026-11-16",
+  "review_note": "Nov 16 night closure: user reports DREGENO shift, bicycle journey home around 20:30, phone battery depleted en route; Gmail verifies coeo email sent Nov 15 (not Nov 16); user reports €30 payment, transfer not independently verified. No proof of creditor acceptance or attorney/court action. No change of project focus.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
-    "date": "2026-11-09",
-    "status": "SHIFT_DONE_HOME_ARRIVAL_CONFIRMED_DINNER_AND_REST_PENDING",
+    "date": "2026-11-16",
+    "status": "USER_REPORTED_SHIFT_DONE_HOME_ARRIVAL_CONFIRMED_REST_PENDING",
     "verified_outcomes": [
-      "User reports kitchen shift recorded 08:15–18:00, nominal time span 9 h 45 min; actual paid hours and breaks not verified.",
-      "User reports cold kitchen and salads handled during a two-person staffing day, colleague covering hot kitchen.",
-      "User reports €25 gratuities taken home; no cakes or ice creams were handled by user today.",
-      "User reports boss declined to issue work keys while employee remains on probation; user understands probation includes December.",
-      "User reports arriving home Nov 9 evening around 20:53; precise mode of return not reconfirmed."
+      "User reports work shift and cold-kitchen preparation completed; exact paid hours and gratuities not established in this closure.",
+      "User confirms arrival home around 20:30 after cycling from Seiffen; phone battery ran out during route.",
+      "Gmail sent folder verifies coeo partial-payment proposal email dated Nov 15, 2026.",
+      "User reports sending €30 toward N26/coeo matter; transfer receipt, settlement agreement and creditor posting not verified."
     ],
     "limitations": [
-      "Shift time and gratuities are user reports, not employer/payroll verification.",
-      "At 17:53 user was already headed home; 18:00 is recorded shift end, not independently confirmed actual work end.",
-      "No signed update to probationary period seen; exact contract end date of probation unknown.",
-      "Hydration, dinner completion, rest and next work roster remain unconfirmed."
+      "Food, hydration and sleep not yet confirmed.",
+      "No confirmed reply from coeo or formal legal process status.",
+      "No verified next shift schedule."
     ],
-    "next_action": "Have dinner and hydrate; rest after completed shift. On a subsequent suitable moment, review coeo notice in advance of conditional Nov 16 referral; no payment or reply authorized by this update.",
+    "next_action": "Dinner, water, recharge phone and rest; await creditor reply and separately handle any actual court notice.",
     "authority": [
-      "USER_2026-11-09_FEIERABEND_REPORT",
-      "USER_2026-11-09_EVENING_HOME_REPORT",
-      "GMAIL_COEO_2026-11-09",
-      "GMAIL_KLEMM_2026-11-09",
-      "GMAIL_TMOBILE_2026-11-05"
-    ],
-    "email_review": {
-      "date": "2026-11-09",
-      "coeo": "€129.71 claimed; handoff to counsel on Nov 16 conditional on nonpayment; no court-issued order verified.",
-      "jahnst": "Klemm: small apartment not available immediately; at least 8–10 weeks renovation.",
-      "samsung": "T-Mobile replied Nov 5 with phone-only dropoff and provisional loaner availability; claim submission not verified.",
-      "other": "RF-937 viewing invitation/exposé Nov 8; no confirmed viewing. Google reported pomelliai.app sign-in Nov 9, no authorization concern confirmed.",
-      "inbox": "Nov 9 recent mail reviewed; only current unread recent message is coeo. No messages sent or deleted."
-    }
+      "USER_2026-11-16_NIGHT_REPORT",
+      "GMAIL_SENT_COEO_2026-11-15"
+    ]
   },
   "scope_reduction": {
     "date": "2026-10-13",
