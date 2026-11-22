@@ -1,0 +1,42 @@
+{
+  "archived_on": "2026-11-22",
+  "source": "discipline_os/current_state.json",
+  "reason": "Preserve prior dated operational view before recording Nov 22 night closure. Prior records retained verbatim, not reclassified as today.",
+  "prior_daily_priorities_date": "2026-11-09",
+  "prior_daily_priorities_status": "NOV_09_SHIFT_REPORTED_DONE_TRANSPORT_ARRANGED_REST_PENDING",
+  "prior_daily_priorities": [
+    {
+      "item": "DREGENO shift and kitchen preparation",
+      "status": "USER_REPORTED_DONE_2026_11_16"
+    },
+    {
+      "item": "Return home safely by bicycle",
+      "status": "USER_CONFIRMED_HOME_ARRIVAL_APPROX_20_30"
+    },
+    {
+      "item": "N26/coeo written response and €30 transfer",
+      "status": "EMAIL_SENT_GMAIL_VERIFIED_2026_11_15_PAYMENT_USER_REPORTED_2026_11_16_BANK_CONFIRMATION_UNVERIFIED"
+    }
+  ],
+  "prior_last_day_closure": {
+    "date": "2026-11-16",
+    "status": "USER_REPORTED_SHIFT_DONE_HOME_ARRIVAL_CONFIRMED_REST_PENDING",
+    "verified_outcomes": [
+      "User reports work shift and cold-kitchen preparation completed; exact paid hours and gratuities not established in this closure.",
+      "User confirms arrival home around 20:30 after cycling from Seiffen; phone battery ran out during route.",
+      "Gmail sent folder verifies coeo partial-payment proposal email dated Nov 15, 2026.",
+      "User reports sending €30 toward N26/coeo matter; transfer receipt, settlement agreement and creditor posting not verified."
+    ],
+    "limitations": [
+      "Food, hydration and sleep not yet confirmed.",
+      "No confirmed reply from coeo or formal legal process status.",
+      "No verified next shift schedule."
+    ],
+    "next_action": "Dinner, water, recharge phone and rest; await creditor reply and separately handle any actual court notice.",
+    "authority": [
+      "USER_2026-11-16_NIGHT_REPORT",
+      "GMAIL_SENT_COEO_2026-11-15"
+    ]
+  },
+  "prior_current_focus_next_action": "No active project focus selected. Nov 16 evening: eat, hydrate, recharge phone and rest. N26/coeo email was sent Nov 15; €30 transfer reported Nov 16, not bank-verified; await response and watch for formal court notices. Verify next shift/transport as needed."
+}
