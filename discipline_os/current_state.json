@@ -1,28 +1,15 @@
 {
   "version": "0.5",
   "state_status": "CONFIRMED",
-  "updated": "2026-11-16",
+  "updated": "2026-11-22",
   "current_focus": {
     "project": null,
     "milestone": "No single active execution focus is selected. Focus is optional; do not force PAE or another project into this field merely to fill it. Existing active projects remain active, but none is today's chosen project priority.",
-    "next_action": "No active project focus selected. Nov 16 evening: eat, hydrate, recharge phone and rest. N26/coeo email was sent Nov 15; €30 transfer reported Nov 16, not bank-verified; await response and watch for formal court notices. Verify next shift/transport as needed.",
+    "next_action": "No active project execution focus selected. Nov 22 night: rest. At the next DREGENO shift, notice the first work-restlessness trigger and, if useful, clarify one concrete kitchen responsibility (existing C-015). Verify shift transport only as needed. N26/coeo response and settlement remain unverified; address any actual formal notice.",
     "status": "NO_ACTIVE_FOCUS_SELECTED",
     "authority": "USER_EXPLICIT_ORIENTATION_2026-10-19"
   },
-  "daily_priorities": [
-    {
-      "item": "DREGENO shift and kitchen preparation",
-      "status": "USER_REPORTED_DONE_2026_11_16"
-    },
-    {
-      "item": "Return home safely by bicycle",
-      "status": "USER_CONFIRMED_HOME_ARRIVAL_APPROX_20_30"
-    },
-    {
-      "item": "N26/coeo written response and €30 transfer",
-      "status": "EMAIL_SENT_GMAIL_VERIFIED_2026_11_15_PAYMENT_USER_REPORTED_2026_11_16_BANK_CONFIRMATION_UNVERIFIED"
-    }
-  ],
+  "daily_priorities": [],
   "active_projects": [
     {
       "name": "PAE / Discipline OS",
@@ -102,28 +89,45 @@
     "Sokol recipes/menu materials and Frostfire Chronicle (#55/#34) are preserved as professional/creative archive, removed from active work."
   ],
   "blocked_items": [],
-  "last_review": "2026-11-16",
-  "review_note": "Nov 16 night closure: user reports DREGENO shift, bicycle journey home around 20:30, phone battery depleted en route; Gmail verifies coeo email sent Nov 15 (not Nov 16); user reports €30 payment, transfer not independently verified. No proof of creditor acceptance or attorney/court action. No change of project focus.",
+  "last_review": "2026-11-22",
+  "review_note": "Nov 22 bounded night closure based on user reports: DREGENO shift 10:20–16:45 (6 h 25 m elapsed; breaks/paid hours unverified), tips left in workplace pouch (amount unverified), approved early departure, safe home return with bicycle, Nessie walked. Year-end restlessness milestone C-015 already exists; no new commitment or project focus. Earlier daily view archived; unrelated external-item statuses not globally reverified.",
   "temporary_priority_override": null,
   "temporary_scope_authorizations": [],
   "last_day_closure": {
-    "date": "2026-11-16",
-    "status": "USER_REPORTED_SHIFT_DONE_HOME_ARRIVAL_CONFIRMED_REST_PENDING",
-    "verified_outcomes": [
-      "User reports work shift and cold-kitchen preparation completed; exact paid hours and gratuities not established in this closure.",
-      "User confirms arrival home around 20:30 after cycling from Seiffen; phone battery ran out during route.",
-      "Gmail sent folder verifies coeo partial-payment proposal email dated Nov 15, 2026.",
-      "User reports sending €30 toward N26/coeo matter; transfer receipt, settlement agreement and creditor posting not verified."
+    "date": "2026-11-22",
+    "status": "USER_REPORTED_SHIFT_COMPLETED_HOME_SAFE_NESSIE_WALKED_TIPS_UNCOUNTED",
+    "work_shift": {
+      "workplace": "DREGENO / Spielzeugschachtel Seiffen",
+      "start_local": "10:20",
+      "end_local": "16:45",
+      "elapsed_minutes": 385,
+      "elapsed_duration": "6 h 25 min",
+      "break_minutes": null,
+      "paid_hours_status": "UNVERIFIED",
+      "wage_for_shift_status": "NOT_CALCULATED_OR_CONFIRMED",
+      "tips_amount": null,
+      "tips_location": "LEFT_IN_POUCH_AT_WORKPLACE_USER_REPORTED",
+      "early_departure": "APPROVED_USER_REPORTED",
+      "manager_praise": "USER_REPORTED"
+    },
+    "user_reported_outcomes": [
+      "Completed the Nov 22 DREGENO shift; preparation work included schnitzels and ducks, with idle periods reported.",
+      "Early departure approved after request regarding bicycle; user reports being praised.",
+      "Arrived home safely with bicycle; earlier report indicates approximately 18:02.",
+      "By 19:58 user reports Nessie walked, no longer outside in freezing weather, home and preparing Swiss chocolate reward.",
+      "Existing year-end work-restlessness achievement C-015 recognized; first trigger identification is the next bounded work practice."
     ],
     "limitations": [
-      "Food, hydration and sleep not yet confirmed.",
-      "No confirmed reply from coeo or formal legal process status.",
-      "No verified next shift schedule."
+      "Shift break length, payable hours, and actual wages not confirmed.",
+      "Gratuities amount unknown; pouch left at workplace; not treated as received cash.",
+      "No formal Nov 22 daily priority ranking inferred from this retrospective closure.",
+      "Other external commitments and dated statuses were not reverified in this closure."
     ],
-    "next_action": "Dinner, water, recharge phone and rest; await creditor reply and separately handle any actual court notice.",
+    "next_action": "Rest tonight. At the next shift, notice the first boredom/restlessness trigger before choosing a response; clarify one responsibility if useful. Count tips and reconcile actual paid hours when available.",
     "authority": [
-      "USER_2026-11-16_NIGHT_REPORT",
-      "GMAIL_SENT_COEO_2026-11-15"
+      "USER_2026-11-22_EVENING_SHIFT_HOURS_AND_TIPS_REPORT",
+      "USER_2026-11-22_HOME_AND_NESSIE_CONFIRMATION",
+      "USER_2026-11-22_DAY_CONVERSATION"
     ]
   },
   "scope_reduction": {
@@ -197,7 +201,7 @@
     ],
     "notes": "For #49 only second-wave continuation retired; first-wave archive preserved. #55 keeps recipes and Frostfire Chronicle as archive. #35 preserved after self-correction. #39/#40 kept after self-correction. #28 assistant-history erasure not performed; only active-scope retirement. #22/#24 'finish tomorrow or drop' does not authorize a new overnight build, and tomorrow's clinic/export have priority. #42 not resolved explicitly enough to remove. #5 tutoring was not explicitly decided in this numbered reply; existing active status retained until selected or renegotiated."
   },
-  "daily_priorities_date": "2026-11-09",
+  "daily_priorities_date": "2026-11-22",
   "morning_orientation_2026_10_16": {
     "status": "PARTIAL_USER_REPORTED_PLAN_DAY_PRIORITIES_STALE",
     "user_reported_plan": "Preparing to leave for work; aiming to depart around 07:59. Plans to pass One1 Hora Svaté Kateřiny for tobacco/papers/cigarettes and possibly snacks. Thermal layer and leather gardening gloves packed; headphones not charged.",
@@ -208,7 +212,7 @@
     ],
     "authority": "USER_REPORT_2026-10-16"
   },
-  "daily_priorities_status": "NOV_09_SHIFT_REPORTED_DONE_TRANSPORT_ARRANGED_REST_PENDING",
+  "daily_priorities_status": "NO_FORMAL_DAILY_PRIORITY_LIST_RECONFIRMED_2026_11_22_NIGHT_CLOSURE_ONLY",
   "morning_orientation_2026_10_25": {
     "status": "USER_CORRECTED_PARTIAL_SCHEDULE_AND_MEDICATION_CONFIRMED_TRANSPORT_RISK_UNRESOLVED",
     "user_reported_plan": "User confirms prescribed pill taken. Reports shifts on Sunday Oct 25, Monday Oct 26 and Tuesday Oct 27. User plans breakfast and bicycle commute with extra clothing; weather described as foggy. User reports €70 incoming, correcting earlier amount.",
