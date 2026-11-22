@@ -78,6 +78,17 @@
       "due": "2026-10-28",
       "authority": "USER_EXPLICIT_2026-10-27",
       "resolution_note": "Purchase list and spending budget unspecified. Existing cash budget is not a requirement to spend."
+    },
+    {
+      "id": "C-015",
+      "created": "2026-11-22",
+      "text": "By the end of 2026, make measurable progress in staying with work-related restlessness or boredom without immediately acting on the urge to leave; also improve clarity about task ownership in the kitchen.",
+      "status": "ACTIVE_USER_SELECTED_YEAR_END_ACHIEVEMENT_MEASURE_PENDING",
+      "project": "DREGENO employment / onboarding (existing, not a new project)",
+      "next_action": "At the next shift, notice the first 'I want to leave' moment; name the trigger (idle time, task taken over, frustration, fatigue), pause before deciding, and if useful clarify one concrete responsibility with a coworker. Review what actually happened after the shift.",
+      "due": "2026-12-31",
+      "authority": "USER_EXPLICIT_2026-11-22_HOMEBOUND_CONVERSATION",
+      "resolution_note": "User identifies low stimulation, uncertain task ownership, and perceived availability of early departure as possible triggers. These are working hypotheses, not diagnoses. Success criteria beyond the desired year-end milestone are not yet agreed. Legitimate breaks, illness, safety and approved departures remain valid; no all-or-nothing full-shift rule. No change to current focus or project count."
     }
   ]
 }
