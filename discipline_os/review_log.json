@@ -933,6 +933,44 @@
         "USER_2026-11-16_NIGHT_REPORT",
         "GMAIL_SENT_COEO_2026-11-15"
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "checkpoint": "FEIERABEND_SHIFT_HOURS_AND_NIGHT_CLOSURE",
+      "status": "USER_REPORTED_SHIFT_DONE_HOME_AND_NESSIE_CONFIRMED_TIPS_AMOUNT_UNKNOWN",
+      "summary": "User reports DREGENO shift 10:20–16:45 (elapsed 6 h 25 min; break and payable hours unknown). Early departure with praise reported. Tips left in a pouch at work; amount unknown, not counted as received cash. User confirms safe home arrival with bicycle and Nessie walked by 19:58. No further inbox check requested tonight.",
+      "work_shift": {
+        "start_local": "10:20",
+        "end_local": "16:45",
+        "elapsed_minutes": 385,
+        "break_minutes": null,
+        "payable_hours": "UNVERIFIED",
+        "tips_amount": null,
+        "tips_status": "LEFT_IN_WORKPLACE_POUCH_USER_REPORTED"
+      },
+      "year_end_commitment": "Existing C-015 (restlessness/task ownership through 2026-12-31) preserved; no new commitment created.",
+      "archival": "discipline_os/archive/daily_state_snapshot_2026-11-16_archived_2026-11-22.json",
+      "focus_change": "None; current_focus.project remains null; active project count unchanged.",
+      "limitations": [
+        "No confirmation of actual paid work hours, break duration, tips amount, or wage.",
+        "No new formal daily-priority ordering inferred from retrospectively reported outcomes.",
+        "Unrelated external-item states have not been independently refreshed."
+      ],
+      "next_action": "Rest tonight. During next DREGENO shift, notice first idle-time/restlessness trigger and clarify responsibility where useful. Reconcile tips and paid hours when available.",
+      "gate": {
+        "classification": "MAINTENANCE",
+        "semantic_intents": [
+          "REVIEW",
+          "EXECUTION"
+        ],
+        "impact": 3,
+        "decision": "ALLOW",
+        "reason": "User explicitly requested bounded factual DOS state write for today's shift; no expansion or priority override."
+      },
+      "authority": [
+        "USER_2026-11-22_EVENING_SHIFT_HOURS_AND_TIPS_REPORT",
+        "USER_2026-11-22_EVENING_HOME_AND_NESSIE_REPORT"
+      ]
     }
   ],
   "weekly_reviews": []
