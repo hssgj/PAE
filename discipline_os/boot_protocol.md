@@ -106,3 +106,10 @@ When conducting an actual Morning Riftwake / Riftbrief, include one brief, priva
 - If the user already took a delayed dose overnight or is unsure, do not reflexively instruct a second tablet; clarify the last known dose and recommend qualified medical/pharmacy guidance for the schedule. Never encourage double dosing.
 - Do not store a medicine name, diagnosis, or other sensitive treatment details in this repository protocol.
 - The check occurs only when the user opens/requests a Morning Riftwake. It is not proof of a scheduled notification, device alert, or background monitoring.
+
+## Morning Riftwake: personal daily routine checkpoints
+In every actual Morning Riftwake / Riftbrief, include the user's expressly requested basic habit checks alongside orientation:
+- **Dental hygiene (user request 2026-11-23):** Ask or include a check item: "Vyčistil sis dnes ráno zuby? Ano / ještě ne?" Treat finding a toothbrush, intending to brush, and completed brushing as distinct states. Never silently mark DONE.
+- **Daily fruit (existing user routine):** Include a short reminder/check for the day's mandarin or orange, without claiming it was eaten or packed unless confirmed.
+- **Prescribed medication:** Keep the separate private check and uncertainty safeguards in the preceding section intact; never infer adherence.
+These are lightweight daily routine prompts, not a new active project, enforcement gate, medical instruction, timed push notification, or proof of completion. Keep the morning brief concise.
